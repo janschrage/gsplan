@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :teammembers
+  map.resources :teammembers, :active_scaffold => true
 
   map.resources :countries, :active_scaffold => true
 
@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :teams, :active_scaffold => true
 
   map.resources :employees, :active_scaffold => true
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

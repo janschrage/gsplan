@@ -1,0 +1,32 @@
+<h1>Reports</h1>
+
+<p>Team capacities of <%= h Date.yesterday -%></p>
+
+<table>
+<%   @capacities.to_a.each_with_index do |kv, i| %>
+<tr><td><%= h kv[0] %></td><td><%= h kv[1] %></td></tr>
+ <%end%>
+</table>
+
+<!-- amcolumn script-->
+  <script type="text/javascript" src="amcolumn/swfobject.js"></script>
+	<div id="flashcontent">
+		<strong>You need to upgrade your Flash Player</strong>
+	</div>
+
+	<script type="text/javascript">
+		// <![CDATA[		
+		var so = new SWFObject("/amcolumn/amcolumn.swf", "amcolumn", "520", "400", "8", "#FFFFFF");
+		so.addVariable("path", "/amcolumn/");
+		so.addVariable("settings_file", escape("/amcolumn/amcolumn_settings.xml")); // you can set two or more different settings files here (separated by commas)
+		so.addVariable("data_file", escape("<%= @teamcapacities_data_link %>"));		
+//	so.addVariable("chart_data", chartData);                                          // you can pass chart data as a string directly from this file
+//	so.addVariable("chart_settings", "");                                      // you can pass chart settings as a string directly from this file
+//	so.addVariable("additional_chart_settings", "");                           // you append some chart settings to the loaded ones
+//  so.addVariable("loading_settings", "LOADING SETTINGS");                    // you can set custom "loading settings" text here
+//  so.addVariable("loading_data", "LOADING DATA");                            // you can set custom "loading data" text here
+    so.addVariable("preloader_color", "#000000");	
+		so.write("flashcontent");
+		// ]]>
+	</script>
+<!-- end of amcolumn script -->

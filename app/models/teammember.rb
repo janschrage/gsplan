@@ -13,4 +13,16 @@ class Teammember < ActiveRecord::Base
     @employee = Employee.find_by_id(:employee_id)
     "#{@employee.name}"
   end
+  
+  def countMembers(team_id,report_date)
+    members = []
+    members=@self.find_by_team_id(team_id)
+    members.each do |member| 
+      if member.endda >= report_date then
+         count=count+1 
+      end
+    end
+    return count
+  end
+ 
 end
