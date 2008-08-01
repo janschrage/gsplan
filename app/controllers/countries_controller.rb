@@ -1,6 +1,8 @@
 class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.xml
+  layout "countries"
+  
   active_scaffold :country do |config|
     config.label = "Countries"
     config.columns = [:isocode, :name]
