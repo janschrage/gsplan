@@ -1,0 +1,982 @@
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:01:33) [GET]
+  Session ID: 0653cc6ccdd589dd96c553eafbfa65a7
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mSQL (0.000200)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000097)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmployee Load (0.076285)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.11723 (8 reqs/sec) | Rendering: 0.02148 (18%) | DB: 0.07658 (65%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:01:35) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--816cc9b3a4a3cc4da21ba55d356492b2de10eb19
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+  [4;35;1mEmployee Columns (0.194198)[0m   [0mSHOW FIELDS FROM `employees`[0m
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 0.23676 (4 reqs/sec) | Rendering: 0.01907 (8%) | DB: 0.19420 (82%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:01:37) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000095)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.01133 (88 reqs/sec) | Rendering: 0.00101 (8%) | DB: 0.00010 (0%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:10:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mSQL (0.000145)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmployee Load (0.000089)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.01639 (61 reqs/sec) | Rendering: 0.00639 (38%) | DB: 0.00030 (1%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:10:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+  [4;35;1mEmployee Columns (0.000671)[0m   [0mSHOW FIELDS FROM `employees`[0m
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 0.02378 (42 reqs/sec) | Rendering: 0.00978 (41%) | DB: 0.00067 (2%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:12:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.003164)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.04687 (21 reqs/sec) | Rendering: 0.00117 (2%) | DB: 0.00316 (6%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:12:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+  [4;35;1mEmployee Columns (0.000753)[0m   [0mSHOW FIELDS FROM `employees`[0m
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 0.03225 (31 reqs/sec) | Rendering: 0.01132 (35%) | DB: 0.00075 (2%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2008-08-01 14:12:52) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"commit"=>"Create", "employee"=>{"name"=>"Fred Tester", "pernr"=>"I123456"}, "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"create", "controller"=>"employees"}
+  [4;36;1mEmployee Columns (0.000667)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mSQL (0.000057)[0m   [0mBEGIN[0m
+  [4;36;1mEmployee Create (0.054137)[0m   [0;1mINSERT INTO `employees` (`name`, `pernr`) VALUES('Fred Tester', 'I123456')[0m
+  [4;35;1mSQL (0.050342)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/employees/1
+Completed in 0.12792 (7 reqs/sec) | DB: 0.10520 (82%) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-08-01 14:12:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--5183e07506b1968fe173d9b885e5d84073ccc402
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Columns (0.001042)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.036212)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`id` = 1) [0m
+Rendering template within layouts/employees
+Rendering employees/show
+Completed in 0.05314 (18 reqs/sec) | Rendering: 0.00324 (6%) | DB: 0.03725 (70%) | 200 OK [http://localhost/employees/1]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:12:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--be920cb3b73b275ce4356d95833b92bdd745b585
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001039)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+  [4;35;1mEmployee Columns (0.001489)[0m   [0mSHOW FIELDS FROM `employees`[0m
+Completed in 0.03422 (29 reqs/sec) | Rendering: 0.00569 (16%) | DB: 0.00253 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:16:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000378)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.01231 (81 reqs/sec) | Rendering: 0.00135 (10%) | DB: 0.00038 (3%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:16:46) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+  [4;35;1mEmployee Columns (0.000720)[0m   [0mSHOW FIELDS FROM `employees`[0m
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 0.01435 (69 reqs/sec) | Rendering: 0.00406 (28%) | DB: 0.00072 (5%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2008-08-01 14:16:53) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"commit"=>"Create", "employee"=>{"name"=>"Fred Tester", "pernr"=>"I123456"}, "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"create", "controller"=>"employees"}
+  [4;36;1mEmployee Columns (0.000663)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mSQL (0.000061)[0m   [0mBEGIN[0m
+  [4;36;1mEmployee Create (0.000215)[0m   [0;1mINSERT INTO `employees` (`name`, `pernr`) VALUES('Fred Tester', 'I123456')[0m
+  [4;35;1mSQL (0.004972)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/employees/1
+Completed in 0.01752 (57 reqs/sec) | DB: 0.00591 (33%) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-08-01 14:16:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--5183e07506b1968fe173d9b885e5d84073ccc402
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Columns (0.001102)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.000219)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`id` = 1) [0m
+Rendering template within layouts/employees
+Rendering employees/show
+Completed in 0.01329 (75 reqs/sec) | Rendering: 0.00238 (17%) | DB: 0.00132 (9%) | 200 OK [http://localhost/employees/1]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:16:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--be920cb3b73b275ce4356d95833b92bdd745b585
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000494)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+  [4;35;1mEmployee Columns (0.000642)[0m   [0mSHOW FIELDS FROM `employees`[0m
+Completed in 0.01436 (69 reqs/sec) | Rendering: 0.00344 (23%) | DB: 0.00114 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:18:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"countries"}
+  [4;36;1mCountry Load (0.000425)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 0.01371 (72 reqs/sec) | Rendering: 0.00403 (29%) | DB: 0.00042 (3%) | 200 OK [http://localhost/countries]
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2008-08-01 14:18:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"countries"}
+  [4;35;1mCountry Columns (0.000672)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Rendering template within layouts/countries
+Rendering countries/new
+Completed in 0.01763 (56 reqs/sec) | Rendering: 0.00501 (28%) | DB: 0.00067 (3%) | 200 OK [http://localhost/countries/new]
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:18:07) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"commit"=>"Create", "country"=>{"name"=>"Italy", "isocode"=>"IT"}, "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"index", "controller"=>"countries"}
+  [4;36;1mCountry Load (0.001020)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 0.13143 (7 reqs/sec) | Rendering: 0.00153 (1%) | DB: 0.00102 (0%) | 200 OK [http://localhost/countries]
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2008-08-01 14:18:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"countries"}
+  [4;35;1mCountry Columns (0.000673)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Rendering template within layouts/countries
+Rendering countries/new
+Completed in 0.01696 (58 reqs/sec) | Rendering: 0.00537 (31%) | DB: 0.00067 (3%) | 200 OK [http://localhost/countries/new]
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:18:20) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"commit"=>"Create", "country"=>{"name"=>"Italy", "isocode"=>"IT"}, "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"index", "controller"=>"countries"}
+  [4;36;1mCountry Load (0.000103)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 0.03987 (25 reqs/sec) | Rendering: 0.00155 (3%) | DB: 0.00010 (0%) | 200 OK [http://localhost/countries]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-01 14:18:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.000516)[0m   [0mSELECT * FROM `worktypes` [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/index
+Completed in 0.03637 (27 reqs/sec) | Rendering: 0.02621 (72%) | DB: 0.00052 (1%) | 200 OK [http://localhost/worktypes]
+
+
+Processing WorktypesController#new (for 127.0.0.1 at 2008-08-01 14:18:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"worktypes"}
+  [4;36;1mWorktype Columns (0.001074)[0m   [0;1mSHOW FIELDS FROM `worktypes`[0m
+Rendering template within layouts/worktypes
+Rendering worktypes/new
+Completed in 0.02028 (49 reqs/sec) | Rendering: 0.00628 (30%) | DB: 0.00107 (5%) | 200 OK [http://localhost/worktypes/new]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-01 14:18:42) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"worktype"=>{"name"=>"LC", "description"=>"Legal Change", "preload"=>"1"}, "commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"index", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.000102)[0m   [0mSELECT * FROM `worktypes` [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/index
+Completed in 0.01130 (88 reqs/sec) | Rendering: 0.00142 (12%) | DB: 0.00010 (0%) | 200 OK [http://localhost/worktypes]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-01 14:18:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"worktypes"}
+  [4;36;1mWorktype Load (0.000102)[0m   [0;1mSELECT * FROM `worktypes` [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/index
+Completed in 0.01496 (66 reqs/sec) | Rendering: 0.00213 (14%) | DB: 0.00010 (0%) | 200 OK [http://localhost/worktypes]
+
+
+Processing WorktypesController#new (for 127.0.0.1 at 2008-08-01 14:22:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"worktypes"}
+  [4;35;1mWorktype Columns (0.000715)[0m   [0mSHOW FIELDS FROM `worktypes`[0m
+Rendering template within layouts/worktypes
+Rendering worktypes/new
+Completed in 0.01612 (62 reqs/sec) | Rendering: 0.00498 (30%) | DB: 0.00071 (4%) | 200 OK [http://localhost/worktypes/new]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-01 14:22:28) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"worktype"=>{"name"=>"LC", "description"=>"Legal Change", "preload"=>"1"}, "commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"index", "controller"=>"worktypes"}
+  [4;36;1mWorktype Load (0.000103)[0m   [0;1mSELECT * FROM `worktypes` [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/index
+Completed in 0.01098 (91 reqs/sec) | Rendering: 0.00106 (9%) | DB: 0.00010 (0%) | 200 OK [http://localhost/worktypes]
+  [4;36;1mSQL (0.000961)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000719)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.221084)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.006663)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000628)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000326)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000167)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000164)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployees (20080801171016)
+  [4;35;1mSQL (0.001184)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.059502)[0m   [0;1mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.005283)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080801171016')[0m
+Migrating to CreateTeams (20080801171413)
+  [4;36;1mSQL (0.000574)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.012413)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.004681)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080801171413')[0m
+Migrating to CreateWorktypes (20080801171601)
+  [4;35;1mSQL (0.000711)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.007450)[0m   [0;1mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.014850)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080801171601')[0m
+Migrating to CreateCountries (20080801171745)
+  [4;36;1mSQL (0.000891)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.007110)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.005226)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080801171745')[0m
+  [4;35;1mSQL (0.000552)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001215)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000151)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000449)[0m   [0;1mPRAGMA index_list("employees")[0m
+  [4;35;1mSQL (0.000087)[0m   [0mPRAGMA index_list("teams")[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:28:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000094)[0m   [0mSELECT * FROM `employees` [0m
+Rendering template within layouts/employees
+Rendering employees/index
+  [4;36;1mEmployee Columns (0.001178)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+Completed in 0.07246 (13 reqs/sec) | Rendering: 0.02319 (31%) | DB: 0.00127 (1%) | 200 OK [http://localhost/employees]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-01 14:28:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.000122)[0m   [0mSELECT * FROM `worktypes` [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/index
+Completed in 0.01110 (90 reqs/sec) | Rendering: 0.00103 (9%) | DB: 0.00012 (1%) | 200 OK [http://localhost/worktypes]
+
+
+Processing WorktypesController#new (for 127.0.0.1 at 2008-08-01 14:28:37) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"worktypes"}
+  [4;36;1mWorktype Columns (0.002388)[0m   [0;1mSHOW FIELDS FROM `worktypes`[0m
+Rendering template within layouts/worktypes
+Rendering worktypes/new
+Completed in 0.02335 (42 reqs/sec) | Rendering: 0.00752 (32%) | DB: 0.00239 (10%) | 200 OK [http://localhost/worktypes/new]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-01 14:28:44) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"worktype"=>{"name"=>"LC", "description"=>"Legal Change", "preload"=>"1"}, "commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"index", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.000115)[0m   [0mSELECT * FROM `worktypes` [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/index
+Completed in 0.01323 (75 reqs/sec) | Rendering: 0.00152 (11%) | DB: 0.00012 (0%) | 200 OK [http://localhost/worktypes]
+
+
+Processing WorktypesController#create (for 127.0.0.1 at 2008-08-01 14:29:30) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"worktype"=>{"name"=>"LC", "description"=>"Legal Change", "preload"=>"1"}, "commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"create", "controller"=>"worktypes"}
+  [4;36;1mWorktype Create (0.000578)[0m   [0;1mINSERT INTO "worktypes" ("name", "updated_at", "description", "preload", "created_at") VALUES('LC', '2008-08-01 17:29:31', 'Legal Change', 't', '2008-08-01 17:29:31')[0m
+Redirected to http://localhost:3000/worktypes/1
+Completed in 0.20891 (4 reqs/sec) | DB: 0.00058 (0%) | 302 Found [http://localhost/worktypes]
+
+
+Processing WorktypesController#show (for 127.0.0.1 at 2008-08-01 14:29:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidXb3JrdHlwZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--f38279de61bd8cbdf49502f6469429748d7b79de
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.001149)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/show
+Completed in 0.02519 (39 reqs/sec) | Rendering: 0.00654 (25%) | DB: 0.00115 (4%) | 200 OK [http://localhost/worktypes/1]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-01 14:29:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidXb3JrdHlwZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--e37c3db2a4e7e83d84fa1157ca4dc3513fad20f0
+  Parameters: {"action"=>"index", "controller"=>"worktypes"}
+  [4;36;1mWorktype Load (0.001410)[0m   [0;1mSELECT * FROM "worktypes" [0m
+Rendering template within layouts/worktypes
+Rendering worktypes/index
+Completed in 0.04622 (21 reqs/sec) | Rendering: 0.03182 (68%) | DB: 0.00141 (3%) | 200 OK [http://localhost/worktypes]
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:29:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"countries"}
+  [4;35;1mCountry Load (0.000939)[0m   [0mSELECT * FROM "countries" [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 0.03566 (28 reqs/sec) | Rendering: 0.00435 (12%) | DB: 0.00094 (2%) | 200 OK [http://localhost/countries]
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2008-08-01 14:29:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"countries"}
+Rendering template within layouts/countries
+Rendering countries/new
+Completed in 0.03505 (28 reqs/sec) | Rendering: 0.00965 (27%) | DB: 0.00000 (0%) | 200 OK [http://localhost/countries/new]
+
+
+Processing CountriesController#create (for 127.0.0.1 at 2008-08-01 14:29:48) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"commit"=>"Create", "country"=>{"name"=>"Italy", "isocode"=>"IT"}, "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"create", "controller"=>"countries"}
+  [4;36;1mCountry Create (0.000360)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "isocode", "created_at") VALUES('Italy', '2008-08-01 17:29:48', 'IT', '2008-08-01 17:29:48')[0m
+Redirected to http://localhost:3000/countries/1
+Completed in 0.02496 (40 reqs/sec) | DB: 0.00036 (1%) | 302 Found [http://localhost/countries]
+
+
+Processing CountriesController#show (for 127.0.0.1 at 2008-08-01 14:29:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiZDb3VudHJ5IHdhcyBzdWNjZXNzZnVsbHkgY3JlYXRl
+ZC4GOgpAdXNlZHsGOwdG--0692949cd06c506aa2ef917d57a6abd0c51ad9b3
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"countries"}
+  [4;35;1mCountry Load (0.000442)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendering template within layouts/countries
+Rendering countries/show
+Completed in 0.03123 (32 reqs/sec) | Rendering: 0.00600 (19%) | DB: 0.00044 (1%) | 200 OK [http://localhost/countries/1]
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:29:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiZDb3VudHJ5IHdhcyBzdWNjZXNzZnVsbHkgY3JlYXRl
+ZC4GOgpAdXNlZHsGOwdU--1350ec29bfa8ebe9cadd0760aa7f148c833a0e6f
+  Parameters: {"action"=>"index", "controller"=>"countries"}
+  [4;36;1mCountry Load (0.001134)[0m   [0;1mSELECT * FROM "countries" [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 0.14115 (7 reqs/sec) | Rendering: 0.00570 (4%) | DB: 0.00113 (0%) | 200 OK [http://localhost/countries]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:30:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000616)[0m   [0mSELECT * FROM "employees" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.42641 (2 reqs/sec) | Rendering: 0.40258 (94%) | DB: 0.00062 (0%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:30:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 0.03447 (29 reqs/sec) | Rendering: 0.02247 (65%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:31:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mSQL (0.001041)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000733)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `active_scaffold' for #<Class:0xb6716090>):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/base.rb:1667:in `method_missing'
+    /app/models/employee.rb:2
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:215:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:215:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:214:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:95:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:260:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:467:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:479:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:485:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:485:in `const_missing'
+    /app/controllers/employees_controller.rb:5:in `index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:32:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTJkOGY0YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEy
+MjMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--84a597b505d0f368308e95904b988c733b40b416
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000379)[0m   [0;1mSELECT * FROM "employees" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.02076 (48 reqs/sec) | Rendering: 0.00296 (14%) | DB: 0.00038 (1%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:32:36) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 0.01374 (72 reqs/sec) | Rendering: 0.00407 (29%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:35:43) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000268)[0m   [0mSELECT * FROM "employees" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.01112 (89 reqs/sec) | Rendering: 0.00225 (20%) | DB: 0.00027 (2%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:35:45) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.020148)[0m   [0;1mSELECT * FROM "employees" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.03279 (30 reqs/sec) | Rendering: 0.00204 (6%) | DB: 0.02015 (61%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:36:34) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000897)[0m   [0mSELECT * FROM "employees" [0m
+Rendering template within layouts/admin
+Rendering employees/index
+
+
+ActionView::MissingTemplate (Missing layout layouts/admin.html.erb in view path /home/jan/projects/rails/GSPlan/app/views):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:85:in `raise_missing_template_exception'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:78:in `set_extension_and_file_name'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:15:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `new'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:257:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render_without_active_scaffold'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render_without_active_scaffold'
+    /vendor/plugins/active_scaffold/lib/extensions/action_controller_rendering.rb:13:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `custom'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `respond'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `each'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `respond'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    /app/controllers/employees_controller.rb:19:in `index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:36:46) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000279)[0m   [0;1mSELECT * FROM "employees" [0m
+Rendering template within layouts/employee
+Rendering employees/index
+
+
+ActionView::MissingTemplate (Missing layout layouts/employee.html.erb in view path /home/jan/projects/rails/GSPlan/app/views):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:85:in `raise_missing_template_exception'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:78:in `set_extension_and_file_name'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:15:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `new'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:257:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render_without_active_scaffold'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render_without_active_scaffold'
+    /vendor/plugins/active_scaffold/lib/extensions/action_controller_rendering.rb:13:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `custom'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `respond'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `each'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `respond'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    /app/controllers/employees_controller.rb:19:in `index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:36:54) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000379)[0m   [0mSELECT * FROM "employees" [0m
+Rendering template within layouts/employees
+Rendering employees/index
+Completed in 0.04235 (23 reqs/sec) | Rendering: 0.02021 (47%) | DB: 0.00038 (0%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:36:58) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/employees
+Rendering employees/new
+Completed in 0.01569 (63 reqs/sec) | Rendering: 0.00442 (28%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+ActiveScaffold: extending RESTful routes for employees
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:39:39) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7ADoMY3NyZl9pZCIlMTJkOGY0
+YjI0ZTFhYzFiNzU1NmQ3MWIwZjc3MTEyMjMiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--16cc9cef1d9680c0595f40c8d41ea6ab9f17bce3
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mSQL (0.000423)[0m   [0;1mSELECT count(*) AS count_all FROM "employees" [0m
+  [4;35;1mEmployee Load (0.000294)[0m   [0mSELECT * FROM "employees" ORDER BY employees."name" ASC LIMIT 15 OFFSET 0[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "employees" ORDER BY employees."name" ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/employees
+Rendering employees/list
+Rendered employees/_list_header (0.00375)
+Rendered employees/_list_column_headings (0.00384)
+Rendered employees/_messages (0.00005)
+Rendered employees/_list (0.01035)
+Completed in 0.07142 (14 reqs/sec) | Rendering: 0.05824 (81%) | DB: 0.00072 (1%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-08-01 14:39:42) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGOgxjc3JmX2lk
+IiUxMmQ4ZjRiMjRlMWFjMWI3NTU2ZDcxYjBmNzcxMTIyMyIKZmxhc2hJQzon
+QWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7
+AA==--ddbf6b5fe7e9ec48aa65cd1ffca463e4eac03073
+  Parameters: {"_method"=>"get", "action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/employees
+Rendering employees/create_form
+Rendered employees/_messages (0.00004)
+Rendered employees/_form_messages (0.00106)
+Rendered employees/_form_attribute (0.00050)
+Rendered employees/_form_attribute (0.00031)
+Rendered employees/_form (0.00518)
+Rendered employees/_create_form (0.01475)
+Completed in 0.05654 (17 reqs/sec) | Rendering: 0.04898 (86%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new?_method=get]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2008-08-01 14:39:50) [POST]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGOgxjc3JmX2lk
+IiUxMmQ4ZjRiMjRlMWFjMWI3NTU2ZDcxYjBmNzcxMTIyMyIKZmxhc2hJQzon
+QWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7
+AA==--ddbf6b5fe7e9ec48aa65cd1ffca463e4eac03073
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"create", "controller"=>"employees", "record"=>{"name"=>"Fred Tester", "pernr"=>"I123456"}}
+  [4;35;1mEmployee Create (0.000352)[0m   [0mINSERT INTO "employees" ("name", "pernr", "updated_at", "created_at") VALUES('Fred Tester', 'I123456', '2008-08-01 17:39:50', '2008-08-01 17:39:50')[0m
+Redirected to http://localhost:3000/employees?authenticity_token=dd9d37cf94342e310cfdf5a72bfe3e6e97608963&commit=Create&record%5Bname%5D=Fred+Tester&record%5Bpernr%5D=I123456
+Completed in 0.22382 (4 reqs/sec) | DB: 0.00035 (0%) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-08-01 14:39:51) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGOgxjc3JmX2lk
+IiUxMmQ4ZjRiMjRlMWFjMWI3NTU2ZDcxYjBmNzcxMTIyMyIKZmxhc2hJQzon
+QWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOglpbmZvIhhD
+cmVhdGVkIEZyZWQgVGVzdGVyBjoKQHVzZWR7BjsIRg==--a37313d1e22060b67352b5ae18fd235834bb595e
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"index", "controller"=>"employees", "record"=>{"name"=>"Fred Tester", "pernr"=>"I123456"}}
+  [4;36;1mSQL (0.000897)[0m   [0;1mSELECT count(*) AS count_all FROM "employees" [0m
+  [4;35;1mEmployee Load (0.000533)[0m   [0mSELECT * FROM "employees" ORDER BY employees."name" ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/employees
+Rendering employees/list
+Rendered employees/_list_header (0.00446)
+Rendered employees/_list_column_headings (0.00667)
+Rendered employees/_messages (0.00011)
+Rendered employees/_list_actions (0.00384)
+Rendered employees/_list_record (0.00944)
+Rendered employees/_list (0.04034)
+Completed in 0.06007 (16 reqs/sec) | Rendering: 0.04971 (82%) | DB: 0.00143 (2%) | 200 OK [http://localhost/employees?authenticity_token=dd9d37cf94342e310cfdf5a72bfe3e6e97608963&commit=Create&record%5Bname%5D=Fred+Tester&record%5Bpernr%5D=I123456]
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:43:22) [GET]
+  Session ID: BAh7CCIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGOgxjc3JmX2lk
+IiUxMmQ4ZjRiMjRlMWFjMWI3NTU2ZDcxYjBmNzcxMTIyMyIKZmxhc2hJQzon
+QWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOglpbmZvIhhD
+cmVhdGVkIEZyZWQgVGVzdGVyBjoKQHVzZWR7BjsIVA==--d9ec679625663fa7bb5995f5955843f40d8bcdb5
+  Parameters: {"action"=>"index", "controller"=>"countries"}
+  [4;36;1mSQL (0.000395)[0m   [0;1mSELECT count(*) AS count_all FROM "countries" [0m
+  [4;35;1mCountry Load (0.002167)[0m   [0mSELECT * FROM "countries" ORDER BY countries."name" ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/countries
+Rendering countries/list
+Rendered countries/_list_header (0.00515)
+Rendered countries/_list_column_headings (0.00445)
+Rendered countries/_messages (0.00005)
+Rendered countries/_list_actions (0.00554)
+Rendered countries/_list_record (0.00874)
+Rendered countries/_list (0.02438)
+Completed in 0.05262 (19 reqs/sec) | Rendering: 0.03590 (68%) | DB: 0.00256 (4%) | 200 OK [http://localhost/countries]
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:44:32) [GET]
+  Session ID: BAh7CSIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGIhFhczpjb3Vu
+dHJpZXN7BjsAewA6DGNzcmZfaWQiJTEyZDhmNGIyNGUxYWMxYjc1NTZkNzFi
+MGY3NzExMjIzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c9d13184f00290f5c0989f6f1089e30c8f87e2e7
+  Parameters: {"action"=>"index", "controller"=>"countries"}
+  [4;36;1mSQL (0.000387)[0m   [0;1mSELECT count(*) AS count_all FROM "countries" [0m
+  [4;35;1mCountry Load (0.000886)[0m   [0mSELECT * FROM "countries" ORDER BY countries."name" ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/countries
+Rendering countries/list
+Rendered countries/_list_header (0.00201)
+Rendered countries/_list_column_headings (0.00329)
+Rendered countries/_messages (0.00004)
+Rendered countries/_list_actions (0.00162)
+Rendered countries/_list_record (0.00455)
+Rendered countries/_list (0.01191)
+Completed in 0.03060 (32 reqs/sec) | Rendering: 0.01973 (64%) | DB: 0.00127 (4%) | 200 OK [http://localhost/countries]
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2008-08-01 14:44:34) [GET]
+  Session ID: BAh7CSIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGIhFhczpjb3Vu
+dHJpZXN7BjsAewA6DGNzcmZfaWQiJTEyZDhmNGIyNGUxYWMxYjc1NTZkNzFi
+MGY3NzExMjIzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c9d13184f00290f5c0989f6f1089e30c8f87e2e7
+  Parameters: {"_method"=>"get", "action"=>"new", "controller"=>"countries"}
+Rendering template within layouts/countries
+Rendering countries/create_form
+Rendered countries/_messages (0.00005)
+Rendered countries/_form_messages (0.00154)
+Rendered countries/_form_attribute (0.00101)
+Rendered countries/_form_attribute (0.00034)
+Rendered countries/_form (0.00392)
+Rendered countries/_create_form (0.01167)
+Completed in 0.02451 (40 reqs/sec) | Rendering: 0.01649 (67%) | DB: 0.00000 (0%) | 200 OK [http://localhost/countries/new?_method=get]
+
+
+Processing CountriesController#create (for 127.0.0.1 at 2008-08-01 14:44:39) [POST]
+  Session ID: BAh7CSIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGIhFhczpjb3Vu
+dHJpZXN7BjsAewA6DGNzcmZfaWQiJTEyZDhmNGIyNGUxYWMxYjc1NTZkNzFi
+MGY3NzExMjIzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c9d13184f00290f5c0989f6f1089e30c8f87e2e7
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"create", "controller"=>"countries", "record"=>{"name"=>"Argentina", "isocode"=>"AR"}}
+  [4;36;1mCountry Create (0.000402)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "isocode", "created_at") VALUES('Argentina', '2008-08-01 17:44:39', 'AR', '2008-08-01 17:44:39')[0m
+Redirected to http://localhost:3000/countries?authenticity_token=dd9d37cf94342e310cfdf5a72bfe3e6e97608963&commit=Create&record%5Bisocode%5D=AR&record%5Bname%5D=Argentina
+Completed in 0.02927 (34 reqs/sec) | DB: 0.00040 (1%) | 302 Found [http://localhost/countries]
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2008-08-01 14:44:40) [GET]
+  Session ID: BAh7CSIRYXM6ZW1wbG95ZWVzewY6CWxpc3R7BiIJcGFnZWkGIhFhczpjb3Vu
+dHJpZXN7BjsAewA6DGNzcmZfaWQiJTEyZDhmNGIyNGUxYWMxYjc1NTZkNzFi
+MGY3NzExMjIzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewY6CWluZm8iFkNyZWF0ZWQgQXJnZW50aW5hBjoKQHVzZWR7
+BjsIRg==--7fac6b2938195302af8bdadd639644a8c1642c6c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dd9d37cf94342e310cfdf5a72bfe3e6e97608963", "action"=>"index", "controller"=>"countries", "record"=>{"name"=>"Argentina", "isocode"=>"AR"}}
+  [4;35;1mSQL (0.000472)[0m   [0mSELECT count(*) AS count_all FROM "countries" [0m
+  [4;36;1mCountry Load (0.000954)[0m   [0;1mSELECT * FROM "countries" ORDER BY countries."name" ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/countries
+Rendering countries/list
+Rendered countries/_list_header (0.00304)
+Rendered countries/_list_column_headings (0.00419)
+Rendered countries/_messages (0.00008)
+Rendered countries/_list_actions (0.00288)
+Rendered countries/_list_record (0.00638)
+Rendered countries/_list_actions (0.00226)
+Rendered countries/_list_record (0.00481)
+Rendered countries/_list (0.01958)
+Completed in 0.04757 (21 reqs/sec) | Rendering: 0.02834 (59%) | DB: 0.00143 (2%) | 200 OK [http://localhost/countries?authenticity_token=dd9d37cf94342e310cfdf5a72bfe3e6e97608963&commit=Create&record%5Bisocode%5D=AR&record%5Bname%5D=Argentina]

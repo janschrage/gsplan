@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @worktype.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @worktype.description %>
+</p>
+
+<p>
+  <b>Preload:</b>
+  <%=h @worktype.preload %>
+</p>
+
+
+<%= link_to 'Edit', edit_worktype_path(@worktype) %> |
+<%= link_to 'Back', worktypes_path %>
