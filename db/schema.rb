@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080801180329) do
+ActiveRecord::Schema.define(:version => 20080801195623) do
 
   create_table "countries", :force => true do |t|
     t.string   "isocode"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20080801180329) do
   end
 
   create_table "teammembers", :force => true do |t|
-    t.integer  "eid"
-    t.integer  "tid"
+    t.integer  "employee_id"
+    t.integer  "team_id"
     t.date     "endda"
     t.date     "begda"
     t.datetime "created_at"

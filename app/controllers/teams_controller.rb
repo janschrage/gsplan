@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.xml
-  layout "employees"
+  layout "teams"
   
   active_scaffold :team do |config|
     config.label = "Teams"
@@ -10,4 +10,5 @@ class TeamsController < ApplicationController
     columns[:name].label = "Team"
     columns[:description].label = "Description"
   end
+   
 end
