@@ -1,0 +1,23 @@
+<p>
+  <b>Team:</b>
+  <%=h  @output[:teamname] %>
+</p>
+
+<p>
+  <b>Yearmonth:</b>
+  <%=h @teamcommitment.yearmonth %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @output[:projectname] %>
+</p>
+
+<p>
+  <b>Days:</b>
+  <%=h @teamcommitment.days %>
+</p>
+
+
+<%= link_to 'Edit', edit_teamcommitment_path(@teamcommitment) %> |
+<%= link_to 'Back', teamcommitments_path %>

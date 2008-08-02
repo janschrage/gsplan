@@ -1,0 +1,28 @@
+<h1>Editing teamcommitment</h1>
+
+<% form_for(@teamcommitment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :team_id %><br />
+    <%= f.text_field :team_id %>
+  </p>
+  <p>
+    <%= f.label :yearmonth %><br />
+    <%= f.date_select :yearmonth %>
+  </p>
+  <p>
+    <%= f.label :project_id %><br />
+    <%= f.text_field :project_id %>
+  </p>
+  <p>
+    <%= f.label :days %><br />
+    <%= f.text_field :days %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @teamcommitment %> |
+<%= link_to 'Back', teamcommitments_path %>

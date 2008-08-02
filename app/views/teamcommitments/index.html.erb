@@ -1,0 +1,26 @@
+<h1>Listing Team Commitments</h1>
+
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Month/Year</th>
+    <th>Project</th>
+    <th>Days</th>
+  </tr>
+
+<% for teamcommitment in @outputlist %>
+  <tr>
+    <td><%=h teamcommitment[:teamname] %></td>
+    <td><%=h teamcommitment[:yearmonth] %></td>
+    <td><%=h teamcommitment[:projectname] %></td>
+    <td><%=h teamcommitment[:days] %></td>
+    <td><%= link_to 'Show', teamcommitment[:classname] %></td>
+    <td><%= link_to 'Edit', edit_teamcommitment_path(teamcommitment[:classname]) %></td>
+    <td><%= link_to 'Destroy', teamcommitment[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New teamcommitment', new_teamcommitment_path %>

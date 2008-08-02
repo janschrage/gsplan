@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  team_id: 1
+  yearmonth: 2008-08-02
+  project_id: 1
+  days: 1
+
+two:
+  team_id: 1
+  yearmonth: 2008-08-02
+  project_id: 1
+  days: 1

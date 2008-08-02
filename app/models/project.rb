@@ -4,6 +4,9 @@ class Project < ActiveRecord::Base
   belongs_to :employee
   belongs_to :worktype
 
+  has_many :teamcommitments
+  has_and_belongs_to_many :teams
+  
   validates_presence_of :employee_id, :country_id, :worktype_id, :planbeg, :planend, :name, :planeffort
   validates_uniqueness_of :name
 

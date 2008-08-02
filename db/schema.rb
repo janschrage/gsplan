@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080802021521) do
+ActiveRecord::Schema.define(:version => 20080802161026) do
 
   create_table "countries", :force => true do |t|
     t.string   "isocode"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(:version => 20080802021521) do
     t.integer  "planeffort"
     t.integer  "employee_id"
     t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teamcommitments", :force => true do |t|
+    t.integer  "team_id"
+    t.date     "yearmonth"
+    t.integer  "project_id"
+    t.integer  "days"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
