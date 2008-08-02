@@ -5,7 +5,10 @@
 
   <p>
     <%= f.label :team_id %><br />
-    <%= f.text_field :team_id %>
+	<%=
+ 		@teams = Team.find(:all, :order => "name" )
+ 		f.collection_select(:team_id, @teams, :id, :name)
+	%>
   </p>
   <p>
     <%= f.label :yearmonth %><br />
@@ -13,7 +16,10 @@
   </p>
   <p>
     <%= f.label :project_id %><br />
-    <%= f.text_field :project_id %>
+ 	<%=
+ 		@projects = Project.find(:all, :order => "name" )
+ 		f.collection_select(:project_id, @projects, :id, :name)
+	%>
   </p>
   <p>
     <%= f.label :days %><br />

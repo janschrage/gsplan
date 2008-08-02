@@ -1,13 +1,7 @@
 <h1>Reports</h1>
 
-<p>Team capacities of </p>
+<p>Team capacities of <%=h Date.today %></p>
 
-<% form_for :report_date do |form|%>
-<%= form.date_select(Date.today, :order => [:day,:month,:year]) %>
-<% form_remote_tag :url => { :action => :update_graph, :report_date => :report_date } do %>
-  <%= submit_tag "Update" %>
-<% end %>
-<% end %>
 <table>
 <%   @capacities.to_a.each_with_index do |kv, i| %>
 <tr><td><%= h kv[0] %></td><td><%= h kv[1] %></td></tr>

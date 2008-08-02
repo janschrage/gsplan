@@ -49,7 +49,12 @@ module Graphs
       labels << team
     end
     ymax = capa_values.max
-    y_axis.set_range(0,ymax+5,10)   
+    if free_values.min < 0 then
+      ymin = free_values.min - 2
+    else
+      ymin = 0
+    end
+    y_axis.set_range(ymin,ymax+5,10)   
     x_axis.labels=labels
     #capacity
     bar1 = BarGlass.new

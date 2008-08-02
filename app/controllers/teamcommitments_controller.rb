@@ -6,14 +6,22 @@ class TeamcommitmentsController < ApplicationController
     
   def index
     @report_date = Date.today
-    @teamusage = calculate_usage(@report_date)
-    @capacities = calculate_capacities(@report_date)
+    @teamusage   = calculate_usage(@report_date)
+    @capacities  = calculate_capacities(@report_date)
+    @projectplan = calculate_project_days()
+    
     @graph = open_flash_chart_object(600,300,"/report/graph_usage")
  
     @freecapacity = {}
     @capacities.to_a.each do |team, capacity|
       @freecapacity[team]=capacity - @teamusage[team]
     end
+    
+    @missingdays = {}
+    @projectplan.to_a.each do |project, planned|
+      @missingdays[project] = Project.find_by_name(project).planeffort - planned
+    end
+    
     @teamcommitments = Teamcommitment.find(:all)
  
     @outputlist = []

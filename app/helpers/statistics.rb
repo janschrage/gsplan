@@ -40,4 +40,22 @@
     end
     return commitmentcount
   end    
+  
+  def calculate_project_days
+    # count team members
+    commitmentcount = {}
+    projectindex = {}
+    @projects = Project::find(:all)
+    @projects.each do |@project|
+      commitmentcount[@project.name] = 0;
+      projectindex[@project.id] = @project.name
+    end
+    commitments = Teamcommitment::find(:all)
+    
+    
+    commitments.each do |commitment|
+      commitmentcount[projectindex[commitment.project_id]] += commitment.days 
+    end
+    return commitmentcount
+  end    
 end

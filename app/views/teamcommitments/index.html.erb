@@ -4,6 +4,7 @@
 <%= @graph %>
 
 <div id="list">
+<h2>Teams</h2>
 <table>
 <tr><th>Team</th<th>Committed</th><th>Capacity</th><th>Free</th></tr>
 <%   @teamusage.to_a.each do |team, used| %>
@@ -14,7 +15,17 @@
  <%end%>
 </table>
 
+<h2>Projects</h2>
+<table>
+<tr><th>Project</th><th>Planned</th><th>Committed</th><th>Missing</th></tr>
+<%   @projectplan.to_a.each do |project, planned| %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+	<td><%= h project %></td><td><%= h planned+@missingdays[project] %></td><td><%= h planned %></td><td><%= h @missingdays[project] %></td>
+</tr>
+ <%end%>
+</table>
 
+<h2>Commitments</h2>
 <table>
   <tr>
     <th>Team</th>
@@ -38,4 +49,4 @@
 </div>
 <br />
 
-<%= link_to 'New teamcommitment', new_teamcommitment_path %>
+<%= link_to 'New Commitment', new_teamcommitment_path %>
