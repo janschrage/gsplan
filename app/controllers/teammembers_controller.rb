@@ -5,10 +5,9 @@ class TeammembersController < ApplicationController
   
   active_scaffold :teammember do |config|
     config.label = "Current Team Members"
-    config.list.columns.exclude :employee_id, :team_id
+    config.list.columns = [:teamname, :eename, :begda, :endda]   
     config.columns = [:teamname, :eename, :begda, :endda]
     list.sorting = {:teamname => 'ASC'}
-    # In the List view, we'll combine two fields into one by hiding two "real" fields and adding one "virtual" field.
    
     columns[:eename].label = 'Employee'
     columns[:teamname].label = 'Team'

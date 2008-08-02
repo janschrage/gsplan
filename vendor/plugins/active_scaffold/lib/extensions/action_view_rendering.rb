@@ -34,9 +34,14 @@ module ActionView #:nodoc:
         template_path = caller.find{|c| known_extensions.include?(c.split(':')[-3].split('.').last.to_sym) }
         template = File.basename(template_path).split('.').first
         active_scaffold_config.template_search_path.each do |active_scaffold_template_path|
+          active_scaffold_template_path = File.expand_path(active_scaffold_template_path, "app/views")
           next if template_path.include? active_scaffold_template_path
-          active_scaffold_template = File.join(active_scaffold_template_path, template)
-          return render(:file => active_scaffold_template, :locals => options[:locals]) if @finder.file_exists? active_scaffold_template
+
+          path = File.join(active_scaffold_template_path, template)
+          extension = find_template_extension_from_handler(path) rescue 'rhtml' # the rescue is a hack for rails 1.2.x compat
+          template_file = "#{path}.#{extension}"
+
+          return render(:file => template_file, :locals => options[:locals], :use_full_path => false) if File.file? template_file
         end
       elsif args.first.is_a?(Hash) and args.first[:active_scaffold]
         require 'digest/md5'
@@ -55,40 +60,38 @@ module ActionView #:nodoc:
         render_without_active_scaffold(*args, &block)
       end
     end
-    alias_method_chain :render, :active_scaffold
-    
-    def partial_pieces(partial_path)
-      if partial_path.include?('/')
-        return File.dirname(partial_path), File.basename(partial_path)
-      else
-        return controller.class.controller_path, partial_path
-      end
-    end
-  end
-end
+    alias_method_chain :render, :active_scaffold unless method_defined?(:render_without_active_scaffold)
 
-module ActionView #:nodoc:
-  class PartialTemplate < Template #:nodoc:
-    def initialize_with_active_scaffold(view, partial_path, object = nil, locals = {})
-      if view.controller.class.respond_to?(:uses_active_scaffold?) and view.controller.class.uses_active_scaffold?
-        partial_path = rewrite_partial_path_for_active_scaffold(view, partial_path)
+    def render_partial_with_active_scaffold(partial_path, local_assigns = nil, deprecated_local_assigns = nil) #:nodoc:
+      if self.controller.class.respond_to?(:uses_active_scaffold?) and self.controller.class.uses_active_scaffold?
+        partial_path = rewrite_partial_path_for_active_scaffold(partial_path)
       end
-      initialize_without_active_scaffold(view, partial_path, object, locals)
+      render_partial_without_active_scaffold(partial_path, local_assigns, deprecated_local_assigns)
     end
-    alias_method_chain :initialize, :active_scaffold
-    
+    alias_method_chain :render_partial, :active_scaffold unless method_defined?(:render_partial_without_active_scaffold)
+
     private
-      def rewrite_partial_path_for_active_scaffold(view, partial_path)
-        path, partial_name = partial_pieces(view, partial_path)
 
-        # test for the actual file
-        return partial_path if view.finder.file_exists? File.join(path, "_#{partial_name}")
-      
-        # check the ActiveScaffold-specific directories
-        view.controller.active_scaffold_config.template_search_path.each do |template_path|
-          return File.join(template_path, partial_name) if view.finder.file_exists? File.join(template_path, "_#{partial_name}")
-        end
-        return partial_path
+    # FIXME hack, this has been removed in edge rails
+    def active_scaffold_partial_pieces(partial_path) 
+      if partial_path.include?('/') 
+        return File.dirname(partial_path), File.basename(partial_path) 
+      else 
+        return controller.class.controller_path, partial_path 
+      end 
+    end
+            
+    def rewrite_partial_path_for_active_scaffold(partial_path)
+      path, partial_name = active_scaffold_partial_pieces(partial_path)
+
+      # test for the actual file
+      return partial_path if finder.file_exists? File.join(path, "_#{partial_name}")
+
+      # check the ActiveScaffold-specific directories
+      active_scaffold_config.template_search_path.each do |template_path|
+        return File.join(template_path, "_#{partial_name}") if (finder.file_exists? File.join(template_path, "_#{partial_name}"))
       end
+      return partial_path
+    end
   end
 end
