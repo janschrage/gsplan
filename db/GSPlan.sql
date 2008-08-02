@@ -60,7 +60,7 @@ create table projects (
 	planbeg					date			not null default '19000101',
 	worktype_id				int				not null,
 	planeffort				int(5)			not null,
-	responsible_id	 		int				not null,
+	employee_id	 			int				not null,
 	country_id				int				not null,		
 	foreign key (worktype_id) references worktypes(id),
 	foreign key (country_id) references countries(id),

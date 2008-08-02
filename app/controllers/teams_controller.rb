@@ -1,6 +1,4 @@
 class TeamsController < ApplicationController
-  # GET /teams
-  # GET /teams.xml
   layout "teams"
   
   active_scaffold :team do |config|

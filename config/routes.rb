@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :projects, :active_scaffold => true
+
   map.resources :teammembers, :active_scaffold => true
 
   map.resources :countries, :active_scaffold => true
