@@ -1,4 +1,19 @@
-<h1>Listing Team Commitments</h1>
+<h1>Listing Team Commitments (Today +20-30 days)</h1>
+
+<script type="text/javascript" src="/javascripts/swfobject.js"></script>
+<%= @graph %>
+
+<div id="list">
+<table>
+<tr><th>Team</th<th>Committed</th><th>Capacity</th><th>Free</th></tr>
+<%   @teamusage.to_a.each do |team, used| %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+	<td><%= h team %></td><td><%= h used %></td>
+	<td><%= h @capacities[team] %></td><td><%= h @freecapacity[team] %></td>
+</tr>
+ <%end%>
+</table>
+
 
 <table>
   <tr>
@@ -9,7 +24,7 @@
   </tr>
 
 <% for teamcommitment in @outputlist %>
-  <tr>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
     <td><%=h teamcommitment[:teamname] %></td>
     <td><%=h teamcommitment[:yearmonth] %></td>
     <td><%=h teamcommitment[:projectname] %></td>
@@ -20,7 +35,7 @@
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'New teamcommitment', new_teamcommitment_path %>

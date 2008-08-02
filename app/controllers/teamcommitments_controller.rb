@@ -1,7 +1,19 @@
 class TeamcommitmentsController < ApplicationController
   # GET /teamcommitments
   # GET /teamcommitments.xml
+  
+  include Statistics, Graphs
+    
   def index
+    @report_date = Date.today
+    @teamusage = calculate_usage(@report_date)
+    @capacities = calculate_capacities(@report_date)
+    @graph = open_flash_chart_object(600,300,"/report/graph_usage")
+ 
+    @freecapacity = {}
+    @capacities.to_a.each do |team, capacity|
+      @freecapacity[team]=capacity - @teamusage[team]
+    end
     @teamcommitments = Teamcommitment.find(:all)
  
     @outputlist = []
@@ -103,4 +115,6 @@ class TeamcommitmentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+ 
 end
