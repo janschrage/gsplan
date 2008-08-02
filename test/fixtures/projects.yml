@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  planend: 2008-08-01
+  planbeg: 2008-08-01
+  worktype_id: 1
+  planeffort: 1
+  employee_id: 1
+  country_id: 1
+
+two:
+  name: MyString
+  planend: 2008-08-01
+  planbeg: 2008-08-01
+  worktype_id: 1
+  planeffort: 1
+  employee_id: 1
+  country_id: 1
