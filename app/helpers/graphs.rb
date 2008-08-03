@@ -60,14 +60,18 @@ module Graphs
     bar1 = BarGlass.new
     bar1.colour = "#00ffff"
     bar1.set_values(capa_values)
+    bar1.set_key("Capacity", 3)
     #usage
     bar2 = BarGlass.new
     bar2.colour = "#ff0000"
     bar2.set_values(usage_values)
+    bar2.set_key("Utilization", 3)
     #free
     bar3 = BarGlass.new
     bar3.colour = "#00ff00"
     bar3.set_values(free_values)
+    bar3.set_key("Free Capacity", 3)
+
     chart = OpenFlashChart.new
     chart.title = title
     chart.x_axis = x_axis

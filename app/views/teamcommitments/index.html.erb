@@ -1,9 +1,13 @@
-<h1>Listing Team Commitments (Today +20-30 days)</h1>
+<h1>Team Commitment Planning (Today +20-30 days)</h1>
 
 <script type="text/javascript" src="/javascripts/swfobject.js"></script>
-<%= @graph %>
 
-<div id="list">
+<div id="pagecontent">
+<div id="teams">
+<div id="teamgraph">
+<%= @graph %>
+</div>
+<div id="teamstats">
 <h2>Teams</h2>
 <table>
 <tr><th>Team</th<th>Committed</th><th>Capacity</th><th>Free</th></tr>
@@ -14,7 +18,11 @@
 </tr>
  <%end%>
 </table>
+</div>
+</div>
 
+<div id="projects">
+<div id="projectstats">	
 <h2>Projects</h2>
 <table>
 <tr><th>Project</th><th>Planned</th><th>Committed</th><th>Missing</th></tr>
@@ -24,7 +32,10 @@
 </tr>
  <%end%>
 </table>
+</div>
+</div>
 
+<div id="teamcommitments">
 <h2>Commitments</h2>
 <table>
   <tr>
@@ -46,7 +57,9 @@
   </tr>
 <% end %>
 </table>
-</div>
+
 <br />
 
 <%= link_to 'New Commitment', new_teamcommitment_path %>
+</div>
+</div>
