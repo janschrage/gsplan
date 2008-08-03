@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :teamcommitments
 
-  map.resources :projects, :active_scaffold => true
-
+  map.resources :projects
+  
   map.resources :teammembers, :active_scaffold => true
 
   map.resources :countries, :active_scaffold => true

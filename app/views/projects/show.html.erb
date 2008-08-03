@@ -1,0 +1,32 @@
+<p>
+  <b>Project:</b>
+  <%=h  @output[:name] %>
+</p>
+<p>
+  <b>Planned Begin:</b>
+  <%=h @output[:planbeg] %>
+</p>
+<p>
+  <b>Planned End:</b>
+  <%=h @output[:planend] %>
+</p>
+<p>
+  <b>Type:</b>
+  <%=h  @output[:worktypename] %>
+</p>
+<p>
+  <b>Country:</b>
+  <%=h  @output[:countryname] %>
+</p>
+<p>
+  <b>Planned Effort:</b>
+  <%=h @output[:planeffort] %>
+</p>
+<p>
+  <b>Responsible:</b>
+  <%=h @output[:employeename] %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@output[:classname]) %> |
+<%= link_to 'Back', projects_path %>

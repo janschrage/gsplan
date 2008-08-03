@@ -1,0 +1,50 @@
+<h1>Editing Project</h1>
+
+<% form_for(@project) do |f| %>
+  <%= f.error_messages %>
+
+   <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :planbeg %><br />
+    <%= f.date_select :planbeg %>
+  </p>
+  <p>
+    <%= f.label :planend %><br />
+    <%= f.date_select :planend %>
+  </p>
+   <p>
+    <%= f.label :planeffort %><br />
+    <%= f.text_field :planeffort %>
+  </p> 
+  <p>
+    <%= f.label :country_id %><br />
+ 	<%=
+ 		@countries = Country.find(:all, :order => "name" )
+ 		f.collection_select(:country_id, @countries, :id, :name)
+	%>
+  </p>
+
+  <p>
+    <%= f.label :worktype_id %><br />
+ 	<%=
+ 		@worktypes = Worktype.find(:all, :order => "name" )
+ 		f.collection_select(:worktype_id, @worktypes, :id, :name)
+	%>
+  </p>
+  <p>
+    <%= f.label :employee_id %><br />
+ 	<%=
+ 		@employees = Employee.find(:all, :order => "name" )
+ 		f.collection_select(:employee_id, @employees, :id, :name)
+	%>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>

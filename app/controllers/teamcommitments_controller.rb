@@ -85,7 +85,7 @@ class TeamcommitmentsController < ApplicationController
 
     respond_to do |format|
       if @teamcommitment.save
-        flash[:notice] = 'Teamcommitment was successfully created.'
+        flash[:notice] = 'Commitment was successfully created.'
         format.html { redirect_to(@teamcommitment) }
         format.xml  { render :xml => @teamcommitment, :status => :created, :location => @teamcommitment }
       else
@@ -102,7 +102,7 @@ class TeamcommitmentsController < ApplicationController
 
     respond_to do |format|
       if @teamcommitment.update_attributes(params[:teamcommitment])
-        flash[:notice] = 'Teamcommitment was successfully updated.'
+        flash[:notice] = 'Commitment was successfully updated.'
         format.html { redirect_to(@teamcommitment) }
         format.xml  { head :ok }
       else
