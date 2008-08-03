@@ -1,5 +1,13 @@
  module Statistics
  
+  def get_month_beg_end(curdate)
+    month_begin = Date::strptime(curdate.year().to_s+'-'+curdate.month().to_s+'-01')
+    month_end = (month_begin>>(1)) - 1
+    month = { :first_day => month_begin,
+              :last_day  => month_end }
+    return month
+  end
+  
   def calculate_capacities(report_date)
     # count team members
     membercount = {}
@@ -30,8 +38,9 @@
     end
     commitments = Teamcommitment::find(:all)
     
-    month_begin = report_date; month_begin=month_begin-30
-    month_end = report_date; month_end=month_end+20
+    monthbegend = get_month_beg_end(report_date)
+    month_begin = monthbegend[:first_day]
+    month_end = monthbegend[:last_day]
     
     commitments.each do |commitment|
       if commitment.yearmonth >= month_begin and commitment.yearmonth <= month_end then

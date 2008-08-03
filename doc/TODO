@@ -1,0 +1,15 @@
+TODO
+
++ Add "closed" flag to projects
++ In teamcommitments allow to select month
++ Create page that shows all (future?) team commitments
++ new teamcommitment => only allow if between begda,endda of project
++ Add check for begda<endda on projects, teammmembers
++ on projects page allow to filter out closed projects
++ Reporting dashboard
+
+DONE
+
+2008-08-03
++ In teamcommitments show only those for current month
++ Fix reports & graphs => must be between 1.-last of month

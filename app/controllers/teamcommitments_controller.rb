@@ -25,16 +25,23 @@ class TeamcommitmentsController < ApplicationController
     @teamcommitments = Teamcommitment.find(:all)
  
     @outputlist = []
+ 
+    #Only show for current month
+    monthbegend = get_month_beg_end(@report_date)
+    month_begin = monthbegend[:first_day]
+    month_end = monthbegend[:last_day]
     
     @teamcommitments.each do |@commitment| 
-      teamname = Team.find_by_id(@commitment[:team_id]).name
-      projectname = Project.find_by_id(@commitment[:project_id]).name
-      output = { :classname => @commitment,
-                 :teamname => teamname, 
-                 :yearmonth => @commitment.yearmonth,
-                 :projectname => projectname,
-                 :days => @commitment.days }
-      @outputlist << output
+      if @commitment.yearmonth <= month_end and @commitment.yearmonth >= month_begin then
+        teamname = Team.find_by_id(@commitment[:team_id]).name
+        projectname = Project.find_by_id(@commitment[:project_id]).name
+        output = { :classname => @commitment,
+                   :teamname => teamname, 
+                   :yearmonth => @commitment.yearmonth,
+                   :projectname => projectname,
+                   :days => @commitment.days }
+        @outputlist << output
+      end
     end
     
     respond_to do |format|
