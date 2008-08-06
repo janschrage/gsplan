@@ -29,8 +29,8 @@ module Graphs
     render :text => chart.to_s
   end
   
-  def graph_usage
-   date = Date.today
+ def graph_usage
+   date = Date::strptime(cookies[:report_date])
    @capacities = calculate_capacities(date)
    @usage = calculate_usage(date)
    title = Title.new("Resource Usage")

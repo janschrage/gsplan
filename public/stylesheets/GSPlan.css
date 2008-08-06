@@ -1,10 +1,10 @@
 body {
 }
 
-#teamgraph {position: absolute; left: 10px; top: 80px;}
-#teamstats {position: absolute; left: 650px; top: 80px;}
-#projectstats {position: absolute; left: 650px; top: 400px;}
-#teamcommitments {position: absolute; left: 10px; top: 400px; width: 630px;}
+#teamgraph {position: absolute; left: 10px; top: 120px;}
+#teamstats {position: absolute; left: 650px; top: 120px;}
+#projectstats {position: absolute; left: 650px; top: 440px;}
+#teamcommitments {position: absolute; left: 10px; top: 440px; width: 630px;}
 
 .list-line-even {
   background:   #e0f8f8 ;

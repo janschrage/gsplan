@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   include Statistics
   
   def index
-    @projectplan = calculate_project_days()
+    @projectplan = calculate_project_days(nil)
         
     @missingdays = {}
     

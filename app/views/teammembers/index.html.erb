@@ -1,0 +1,24 @@
+<h1>Team Members</h1>
+
+<script type="text/javascript" src="/javascripts/swfobject.js"></script>
+
+<div id="pagecontent">
+
+<div id="teammembers">
+<table>
+<tr><th>Team</th><th>Member</th><th>Begin</th><th>End</th></tr>
+<%   @outputlist.each do |teammember| %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+	<td><%= h teammember[:teamname] %></td>
+	<td><%= h teammember[:employeename] %></td>
+	<td><%= h teammember[:planbeg] %></td>
+	<td><%= h teammember[:planend] %></td>
+    <td><%= link_to 'Edit', edit_teammember_path(teammember[:classname]) %></td>
+    <td><%= link_to 'Destroy', teammember[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
+ <%end%>
+</table>
+<%= link_to 'New teammember', new_teammember_path %>
+</div>
+</div>
+

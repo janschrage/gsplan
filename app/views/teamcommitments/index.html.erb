@@ -1,4 +1,9 @@
-<h1>Team Commitment Planning (current month)</h1>
+<h1>Team Commitment Planning</h1>
+<h2><%= link_to '<<<', {:action => "index", :controller =>
+"teamcommitments", :report_date => @report_date<<(1) } %>
+<%= h Date::MONTHNAMES[@report_date.month]+" "+@report_date.year.to_s %>
+<%= link_to '>>>',  {:action => "index", :controller =>
+"teamcommitments", :report_date => @report_date>>(1) } %></h2>
 
 <script type="text/javascript" src="/javascripts/swfobject.js"></script>
 

@@ -50,20 +50,34 @@
     return commitmentcount
   end    
   
-  def calculate_project_days
+  def calculate_project_days(report_date)
     # count team members
     commitmentcount = {}
     projectindex = {}
+    
+    if report_date then
+      month = get_month_beg_end(report_date)
+      begda = month[:first_day]
+      endda = month[:last_day]
+    else
+      begda = Date::strptime('1900-01-01')
+      endda = Date::strptime('9999-12-31')
+    end
+    
     @projects = Project::find(:all)
-    @projects.each do |@project|
-      commitmentcount[@project.name] = 0;
-      projectindex[@project.id] = @project.name
+    @projects.each do |project|
+      if  project.planbeg <= endda and project.planend >= begda 
+        commitmentcount[project.name] = 0;
+        projectindex[project.id] = project.name
+      end
     end
     commitments = Teamcommitment::find(:all)
     
     
     commitments.each do |commitment|
-      commitmentcount[projectindex[commitment.project_id]] += commitment.days 
+      if projectindex[commitment.project_id] then
+        commitmentcount[projectindex[commitment.project_id]] += commitment.days 
+      end
     end
     return commitmentcount
   end    

@@ -1,0 +1,34 @@
+<h1>Editing Team Membership</h1>
+
+<% form_for(@teammember) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :employee_id %><br />
+ 	<%=
+ 		@employees = Employee.find(:all, :order => "name" )
+ 		f.collection_select(:employee_id, @employees, :id, :name)
+	%>
+  </p>
+  <p>
+    <%= f.label :team_id %><br />
+ 	<%=
+ 		@teams = Team.find(:all, :order => "name" )
+ 		f.collection_select(:team_id, @teams, :id, :name)
+	%>
+  </p>  
+  <p>
+    <%= f.label :begda %><br />
+    <%= f.date_select :begda %>
+  </p>
+  <p>
+    <%= f.label :endda %><br />
+    <%= f.date_select :endda %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @teammember %> |
+<%= link_to 'Back', teammembers_path %>
