@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
       employeename = Employee.find_by_id(project[:employee_id]).name
       worktypename = Worktype.find_by_id(project[:worktype_id]).name
       
-      committed = @projectplan[project.name]
+      committed = @projectplan[project.id][:committed_total]
       missing = project.planeffort - committed
       
       output = { :classname => project,

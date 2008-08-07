@@ -24,8 +24,8 @@ class TeamcommitmentsController < ApplicationController
     end
     
     @missingdays = {}
-    @projectplan.to_a.each do |projectname, planned|
-      @missingdays[projectname] = Project.find_by_name(projectname).planeffort - planned
+    @projectplan.keys.each do |project_id|
+      @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
     end
     
     @teamcommitments = Teamcommitment.find(:all)

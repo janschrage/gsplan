@@ -30,10 +30,11 @@
 <div id="projectstats">	
 <h2>Projects</h2>
 <table>
-<tr><th>Project</th><th>Planned</th><th>Committed</th><th>Missing</th></tr>
-<%   @projectplan.to_a.each do |project, planned| %>
+<tr><th>Project</th><th>Planned</th><th>This Month</th><th>Committed Total</th><th>Missing</th></tr>
+<%   @projectplan.keys.each do |project| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td><%= h project %></td><td><%= h planned+@missingdays[project] %></td><td><%= h planned %></td><td><%= h @missingdays[project] %></td>
+	<td><%= h @projectplan[project][:name] %></td><td><%= h @projectplan[project][:committed_total] + @missingdays[project]%></td>
+	<td><%= h @projectplan[project][:committed_inper]%></td><td><%= h @projectplan[project][:committed_total] %></td></td><td><%= h @missingdays[project] %></td>
 </tr>
  <%end%>
 </table>
