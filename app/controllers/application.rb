@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
 protected
   def authorize
     unless User.find_by_id(session[:user_id]) or User.count.zero?
+      session[:original_uri] = request.request_uri
       flash[:notice] = "Please log in"
       redirect_to :controller => :admin, :action => :login
     end

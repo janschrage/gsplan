@@ -32,3 +32,27 @@ body {
 th { text-align: left }
 td { text-align: right }
 td.text { text-align: left }
+
+/* Login form */
+.login-form fieldset {
+  background: #efe;
+}
+
+.login-form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.login-form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+}
+
+.login-form .submit {
+  margin-left: 5.5em;
+}
