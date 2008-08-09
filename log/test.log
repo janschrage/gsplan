@@ -1,0 +1,46 @@
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000359)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000330)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000321)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000546)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000326)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.001183)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000295)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m

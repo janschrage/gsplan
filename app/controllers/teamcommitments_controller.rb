@@ -55,6 +55,8 @@ class TeamcommitmentsController < ApplicationController
         @outputlist << output
       end
     end
+
+    session[:original_uri] = request.request_uri
     
     respond_to do |format|
       format.html # index.html.erb

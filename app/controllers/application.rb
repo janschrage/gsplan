@@ -2,6 +2,9 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  
+  before_filter :authorize, :except => :login  
+
   helper :all # include all helpers, all the time
 
   # See ActionController::RequestForgeryProtection for details
@@ -15,4 +18,13 @@ class ApplicationController < ActionController::Base
   ActiveScaffold.set_defaults do |config| 
     config.ignore_columns.add [:created_at, :updated_at, :lock_version]
   end
+  
+protected
+  def authorize
+    unless User.find_by_id(session[:user_id]) or User.count.zero?
+      flash[:notice] = "Please log in"
+      redirect_to :controller => :admin, :action => :login
+    end
+  end
+  
 end

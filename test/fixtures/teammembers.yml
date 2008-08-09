@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  eid: 
-  tid: 
-  endda: 2008-08-01
+  employee_id: 1
+  team_id: 1
+  endda: 2008-12-31
   begda: 2008-08-01
 
 two:
-  eid: 
-  tid: 
-  endda: 2008-08-01
+  employee_id: 2 
+  team_id: 1
+  endda: 2008-08-31
   begda: 2008-08-01

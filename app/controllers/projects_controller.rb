@@ -78,6 +78,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    session[:original_uri] = request.request_uri
     @project = Project.find(params[:id])
   end
 
@@ -88,7 +89,7 @@ class ProjectsController < ApplicationController
       @project.status = 0;  #Project is open by default
       if @project.save
         flash[:notice] = 'Project was successfully created.'
-        format.html { redirect_to(@project) }
+        format.html { redirect_to(session[:original_uri]) }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
         format.html { render :action => "new" }
