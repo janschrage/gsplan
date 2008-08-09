@@ -7,7 +7,7 @@
 <div id="projects">
 <h2>Projects</h2>
 <table>
-<tr><th>Project</th><th>Begin (Plan)</th><th>End (Plan)</th><th>Effort (Plan)</th><th>Type</th><th>Country</th><th>Responsible</th><th>Committed</th><th>Missing</th></tr>
+<tr><th>Project</th><th>Begin (Plan)</th><th>End (Plan)</th><th>Effort (Plan)</th><th>Type</th><th>Country</th><th>Responsible</th><th>Committed</th><th>Missing</th><th>Status</th></tr>
 <%   @outputlist.each do |project| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
 	<td><%= h project[:name] %></td>
@@ -19,6 +19,7 @@
 	<td><%= h project[:employeename] %></td>
 	<td><%= h project[:committed] %></td>
 	<td><%= h project[:missing] %></td>
+	<td><%= h project[:status] %></td>
     <td><%= link_to 'Edit', edit_project_path(project[:classname]) %></td>
     <td><%= link_to 'Destroy', project[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>

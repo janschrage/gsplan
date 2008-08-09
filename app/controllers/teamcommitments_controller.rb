@@ -8,8 +8,12 @@ class TeamcommitmentsController < ApplicationController
     if params[:report_date]
       @report_date =  Date::strptime(params[:report_date])
     else
-      @report_date = Date.today
+      if cookies[:report_date]
+        @report_date =  Date::strptime(cookies[:report_date])
+      end
     end
+    @report_date = Date.today unless @report_date
+          
     cookies[:report_date]=@report_date.to_s
     
     @teamusage   = calculate_usage(@report_date)
@@ -39,8 +43,10 @@ class TeamcommitmentsController < ApplicationController
     
     @teamcommitments.each do |@commitment| 
       if @commitment.yearmonth <= month_end and @commitment.yearmonth >= month_begin then
-        teamname = Team.find_by_id(@commitment[:team_id]).name
-        projectname = Project.find_by_id(@commitment[:project_id]).name
+        team = Team.find_by_id(@commitment[:team_id])
+        teamname = Team.name unless team == nil
+        project = Project.find_by_id(@commitment[:project_id])
+        projectname = project.name unless project == nil
         output = { :classname => @commitment,
                    :teamname => teamname, 
                    :yearmonth => @commitment.yearmonth,

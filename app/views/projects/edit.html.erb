@@ -4,38 +4,44 @@
   <%= f.error_messages %>
 
    <p>
-    <%= f.label :name %><br />
+    <%= f.label "Name" %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :planbeg %><br />
+    <%= f.label "Begin (Planned)" %><br />
     <%= f.date_select :planbeg %>
   </p>
   <p>
-    <%= f.label :planend %><br />
+    <%= f.label "End (Planned)" %><br />
     <%= f.date_select :planend %>
   </p>
    <p>
-    <%= f.label :planeffort %><br />
+    <%= f.label "Effort (Planned)" %><br />
     <%= f.text_field :planeffort %>
   </p> 
   <p>
-    <%= f.label :country_id %><br />
+    <%= f.label "Country" %><br />
  	<%=
  		f.collection_select(:country_id, country_list, :id, :name)
 	%>
   </p>
 
   <p>
-    <%= f.label :worktype_id %><br />
+    <%= f.label "Type of Project" %><br />
  	<%=
  		f.collection_select(:worktype_id, worktype_list, :id, :name)
 	%>
   </p>
   <p>
-    <%= f.label :employee_id %><br />
+    <%= f.label "Responsible" %><br />
  	<%=
  		f.collection_select(:employee_id, employee_list, :id, :name)
+	%>
+  </p>
+    <p>
+    <%= f.label "Status" %><br />
+ 	<%=
+ 		f.collection_select(:status, @project.project_status_list, :id, :name)
 	%>
   </p>
   <p>

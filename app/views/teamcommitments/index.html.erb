@@ -19,7 +19,7 @@
 <%   @teamusage.to_a.each do |team, used| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
 	<td><%= h team %></td><td><%= h used %></td>
-	<td><%= h @capacities[team] %></td><td><%= h @freecapacity[team] %></td>
+	<td><%= h @capacities[team] %></td><td class="<%= 'cell-error' if @freecapacity[team]<0 %>"><%= h @freecapacity[team] %></td>
 </tr>
  <%end%>
 </table>
@@ -30,11 +30,15 @@
 <div id="projectstats">	
 <h2>Projects</h2>
 <table>
-<tr><th>Project</th><th>Planned</th><th>This Month</th><th>Committed Total</th><th>Missing</th></tr>
+<tr><th>Project</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Miss</th><th></th></tr>
 <%   @projectplan.keys.each do |project| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td><%= h @projectplan[project][:name] %></td><td><%= h @projectplan[project][:committed_total] + @missingdays[project]%></td>
-	<td><%= h @projectplan[project][:committed_inper]%></td><td><%= h @projectplan[project][:committed_total] %></td></td><td><%= h @missingdays[project] %></td>
+	<td><%= h @projectplan[project][:name] %></td>
+	<td><%= h @projectplan[project][:committed_total] + @missingdays[project]%></td>
+	<td><%= h @projectplan[project][:committed_inper]%></td>
+	<td class="<%= 'cell-OK' if @missingdays[project]==0 %>"><%= h @projectplan[project][:committed_total] %></td>
+	<td class="<%= 'cell-error' if @missingdays[project]<0 %>"><%= h @missingdays[project] %></td>
+	<td><img src="<%= project_status_image(@projectplan[project][:status]) %>"></td>
 </tr>
  <%end%>
 </table>

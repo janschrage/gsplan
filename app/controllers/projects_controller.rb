@@ -12,25 +12,29 @@ class ProjectsController < ApplicationController
  
     @outputlist = []
     
-    @projects.each do |project| 
-      countryname = Country.find_by_id(project[:country_id]).name
-      employeename = Employee.find_by_id(project[:employee_id]).name
-      worktypename = Worktype.find_by_id(project[:worktype_id]).name
+    if @projects != nil
+      @projects.each do |project| 
+       countryname = Country.find_by_id(project[:country_id]).name
+       employeename = Employee.find_by_id(project[:employee_id]).name
+       worktypename = Worktype.find_by_id(project[:worktype_id]).name
       
-      committed = @projectplan[project.id][:committed_total]
-      missing = project.planeffort - committed
+       committed = @projectplan[project.id][:committed_total]
+       missing = project.planeffort - committed
+       status = project.project_status_text(project.status)
       
-      output = { :classname => project,
-                 :countryname => countryname, 
-                 :employeename => employeename, 
-                 :worktypename => worktypename, 
-                 :planbeg => project.planbeg,
-                 :planend => project.planend,
-                 :name => project.name,
-                 :planeffort => project.planeffort,
-                 :committed => committed,
-                 :missing => missing}
-      @outputlist << output
+       output = { :classname => project,
+                  :countryname => countryname, 
+                  :employeename => employeename, 
+                  :worktypename => worktypename, 
+                  :planbeg => project.planbeg,
+                  :planend => project.planend,
+                  :name => project.name,
+                  :planeffort => project.planeffort,
+                  :committed => committed,
+                  :status => status,
+                  :missing => missing}
+        @outputlist << output
+      end
     end
     
     respond_to do |format|
@@ -54,6 +58,7 @@ class ProjectsController < ApplicationController
       countryname = Country.find_by_id(@project[:country_id]).name
       employeename = Employee.find_by_id(@project[:employee_id]).name
       worktypename = Worktype.find_by_id(@project[:worktype_id]).name
+      status = @project.project_status_text(@project.status)
             
       @output = { :classname => @project,
                  :countryname => countryname, 
@@ -62,6 +67,7 @@ class ProjectsController < ApplicationController
                  :planbeg => @project.planbeg,
                  :planend => @project.planend,
                  :name => @project.name,
+                 :status => status,
                  :planeffort => @project.planeffort}
 
     respond_to do |format|
@@ -79,6 +85,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
 
     respond_to do |format|
+      @project.status = 0;  #Project is open by default
       if @project.save
         flash[:notice] = 'Project was successfully created.'
         format.html { redirect_to(@project) }
@@ -109,9 +116,16 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
 
+    @teamcommitments = Teamcommitment.find_all_by_project_id(params[:id])
+    if @teamcommitments != nil
+      @teamcommitments.each do |@teamcommitment|
+       @teamcommitment.destroy
+     end
+    end
     respond_to do |format|
       format.html { redirect_to(projects_url) }
       format.xml  { head :ok }
     end
   end
+  
 end

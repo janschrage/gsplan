@@ -1,6 +1,5 @@
 TODO
 
-+ Add "closed" flag to projects
 + Create page that shows all (future?) team commitments
 + on projects page allow to filter out closed projects
 + Reporting dashboard
@@ -8,6 +7,7 @@ TODO
 DONE
 
 2008-08-09
++ Project status field added
 + Make Preload flag visible in worktype views
 + new teamcommitment => only allow if between begda,endda of project
 + Add check for begda<endda on projects, teammmembers

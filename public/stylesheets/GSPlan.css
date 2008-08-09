@@ -7,8 +7,20 @@ body {
 #teamcommitments {position: absolute; left: 10px; top: 440px; width: 630px;}
 
 .list-line-even {
-  background:   #e0f8f8 ;
+  background:   #aaaaff ;
 }
 .list-line-odd {
-  background:   #f8b0f8 ;
+  background:   #ddddff ;
+}
+
+.cell-OK {
+	background: #00ff00
+}
+
+.cell-warning {
+	background: #ffff00
+}
+
+.cell-error {
+	background: #ff0000
 }

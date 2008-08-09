@@ -69,7 +69,8 @@
       if  project.planbeg <= endda and project.planend >= begda 
         projectindex = { :name => project.name,
                          :committed_total => 0,
-                         :committed_inper => 0}
+                         :committed_inper => 0,
+                         :status => project.status }
         projectdays[project.id] = projectindex                 
       end
     end

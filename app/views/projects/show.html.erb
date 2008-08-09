@@ -27,6 +27,9 @@
   <%=h @output[:employeename] %>
 </p>
 
-
+<p>
+  <b>Status:</b>
+  <%=h @output[:status] %>
+</p>
 <%= link_to 'Edit', edit_project_path(@output[:classname]) %> |
 <%= link_to 'Back', projects_path %>
