@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  layout "projects"
   
   include Statistics
   

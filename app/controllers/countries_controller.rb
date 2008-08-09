@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.xml
-  layout "countries"
+  layout "ActScaffold"
   
   active_scaffold :country do |config|
     config.label = "Countries"

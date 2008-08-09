@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  layout "teams"
+  layout "ActScaffold"
   
   active_scaffold :team do |config|
     config.label = "Teams"

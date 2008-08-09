@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  layout "employees"
+  layout "ActScaffold"
   
   active_scaffold :employee do |config|
     config.label = "Employees"

@@ -1,6 +1,6 @@
 class WorktypesController < ApplicationController
-  # GET /worktypes
-  # GET /worktypes.xml
+  layout "ActScaffold"
+
    active_scaffold :worktype do |config|
     config.label = "Type of Work"
     config.columns = [:name, :description, :preload]

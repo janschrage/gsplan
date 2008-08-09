@@ -1,7 +1,6 @@
 class TeammembersController < ApplicationController
   # GET /teammembers
   # GET /teammembers.xml
-  layout "teammembers"
   
   def index
     
