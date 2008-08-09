@@ -9,10 +9,10 @@
 <tr><th>Team</th><th>Member</th><th>Begin</th><th>End</th></tr>
 <%   @outputlist.each do |teammember| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td><%= h teammember[:teamname] %></td>
-	<td><%= h teammember[:employeename] %></td>
-	<td><%= h teammember[:planbeg] %></td>
-	<td><%= h teammember[:planend] %></td>
+	<td class="text"><%= h teammember[:teamname] %></td>
+	<td class="text"><%= h teammember[:employeename] %></td>
+	<td class="text"><%= h teammember[:planbeg] %></td>
+	<td class="text"><%= h teammember[:planend] %></td>
     <td><%= link_to 'Edit', edit_teammember_path(teammember[:classname]) %></td>
     <td><%= link_to 'Destroy', teammember[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>

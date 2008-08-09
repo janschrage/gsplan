@@ -44,7 +44,7 @@ class TeamcommitmentsController < ApplicationController
     @teamcommitments.each do |@commitment| 
       if @commitment.yearmonth <= month_end and @commitment.yearmonth >= month_begin then
         team = Team.find_by_id(@commitment[:team_id])
-        teamname = Team.name unless team == nil
+        teamname = team.name unless team == nil
         project = Project.find_by_id(@commitment[:project_id])
         projectname = project.name unless project == nil
         output = { :classname => @commitment,

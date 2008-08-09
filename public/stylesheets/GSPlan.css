@@ -24,3 +24,11 @@ body {
 .cell-error {
 	background: #ff0000
 }
+
+.cell-action {
+	background: #ffff88
+}
+
+th { text-align: left }
+td { text-align: right }
+td.text { text-align: left }

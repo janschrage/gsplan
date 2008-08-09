@@ -1,0 +1,22 @@
+<h1>Listing cPro Links</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>cPro name</th>
+  </tr>
+
+<% for cpro_project in @cpro_projects %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%=h project_from_id(cpro_project.project_id) %></td>
+    <td><%=h cpro_project.cpro_name %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/info.png", :border=>0), cpro_project %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_cpro_project_path(cpro_project) %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), cpro_project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cPro Link', new_cpro_project_path %>

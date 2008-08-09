@@ -18,8 +18,10 @@
 <tr><th>Team</th<th>Committed</th><th>Capacity</th><th>Free</th></tr>
 <%   @teamusage.to_a.each do |team, used| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td><%= h team %></td><td><%= h used %></td>
-	<td><%= h @capacities[team] %></td><td class="<%= 'cell-error' if @freecapacity[team]<0 %>"><%= h @freecapacity[team] %></td>
+	<td class="text"><%= h team %></td>
+	<td><%= h used %></td>
+	<td><%= h @capacities[team] %></td>
+	<td class="<%= 'cell-error' if @freecapacity[team]<0 %>"><%= h @freecapacity[team] %></td>
 </tr>
  <%end%>
 </table>
@@ -33,12 +35,13 @@
 <tr><th>Project</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Miss</th><th></th></tr>
 <%   @projectplan.keys.each do |project| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td><%= h @projectplan[project][:name] %></td>
+	<td class="text"><%= h @projectplan[project][:name] %></td>
 	<td><%= h @projectplan[project][:committed_total] + @missingdays[project]%></td>
 	<td><%= h @projectplan[project][:committed_inper]%></td>
 	<td class="<%= 'cell-OK' if @missingdays[project]==0 %>"><%= h @projectplan[project][:committed_total] %></td>
 	<td class="<%= 'cell-error' if @missingdays[project]<0 %>"><%= h @missingdays[project] %></td>
 	<td><img src="<%= project_status_image(@projectplan[project][:status]) %>"></td>
+	<td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_project_path(project) %></td>
 </tr>
  <%end%>
 </table>
@@ -58,18 +61,16 @@
 
 <% for teamcommitment in @outputlist %>
   <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-    <td><%=h teamcommitment[:teamname] %></td>
-    <td><%=h teamcommitment[:yearmonth] %></td>
-    <td><%=h teamcommitment[:projectname] %></td>
+    <td class="text"><%=h teamcommitment[:teamname] %></td>
+    <td class="text"><%=h teamcommitment[:yearmonth] %></td>
+    <td class="text"><%=h teamcommitment[:projectname] %></td>
     <td><%=h teamcommitment[:days] %></td>
-    <td><%= link_to 'Show', teamcommitment[:classname] %></td>
-    <td><%= link_to 'Edit', edit_teamcommitment_path(teamcommitment[:classname]) %></td>
-    <td><%= link_to 'Destroy', teamcommitment[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/info.png", :border=>0), teamcommitment[:classname] %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_teamcommitment_path(teamcommitment[:classname]) %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), teamcommitment[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
 
 <%= link_to 'New Commitment', new_teamcommitment_path %>
 </div>

@@ -5,8 +5,8 @@ class Project < ActiveRecord::Base
   belongs_to :country
   belongs_to :employee
   belongs_to :worktype
-
-  has_many :teamcommitments
+  has_many   :teamcommitments
+  has_one    :cpro_project
   
   validates_presence_of :employee_id, :country_id, :worktype_id, :planbeg, :planend, :name, :planeffort
   validates_uniqueness_of :name

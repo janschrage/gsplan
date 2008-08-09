@@ -9,11 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080809123503) do
+ActiveRecord::Schema.define(:version => 20080809164844) do
 
   create_table "countries", :force => true do |t|
     t.string   "isocode"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cpro_projects", :force => true do |t|
+    t.integer  "project_id"
+    t.string   "cpro_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,6 +43,16 @@ ActiveRecord::Schema.define(:version => 20080809123503) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status",      :limit => 1
+  end
+
+  create_table "projecttracks", :force => true do |t|
+    t.integer  "team_id"
+    t.date     "yearmonth"
+    t.integer  "project_id"
+    t.date     "reportdate"
+    t.integer  "daysbooked"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "teamcommitments", :force => true do |t|

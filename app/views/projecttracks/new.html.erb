@@ -1,0 +1,31 @@
+<h1>New projecttrack</h1>
+
+<% form_for(@projecttrack) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :team_id %><br />
+    <%= f.text_field :team_id %>
+  </p>
+  <p>
+    <%= f.label :yearmonth %><br />
+    <%= f.date_select :yearmonth %>
+  </p>
+  <p>
+    <%= f.label :project_id %><br />
+    <%= f.text_field :project_id %>
+  </p>
+  <p>
+    <%= f.label :reportdate %><br />
+    <%= f.date_select :reportdate %>
+  </p>
+  <p>
+    <%= f.label :daysbooked %><br />
+    <%= f.text_field :daysbooked %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', projecttracks_path %>

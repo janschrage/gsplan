@@ -1,0 +1,13 @@
+<p>
+  <b>Project:</b>
+  <%=h project_from_id(@cpro_project.project_id) %>
+</p>
+
+<p>
+  <b>Cpro name:</b>
+  <%=h @cpro_project.cpro_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_cpro_project_path(@cpro_project) %> |
+<%= link_to 'Back', cpro_projects_path %>

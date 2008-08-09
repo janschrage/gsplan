@@ -4,23 +4,23 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :team_id %><br />
+    <%= f.label "Team" %><br />
 	<%=
  		f.collection_select(:team_id, team_list, :id, :name)
 	%>
   </p>
   <p>
-    <%= f.label :yearmonth %><br />
+    <%= f.label "Year/Month" %><br />
     <%= f.date_select :yearmonth %>
   </p>
   <p>
-    <%= f.label :project_id %><br />
+    <%= f.label "Project" %><br />
  	<%=
  		f.collection_select(:project_id, project_list, :id, :name)
 	%>
   </p>
   <p>
-    <%= f.label :days %><br />
+    <%= f.label "Commitment (PD)" %><br />
     <%= f.text_field :days %>
   </p>
   <p>

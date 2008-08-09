@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :cpro_projects
+
+  map.resources :projecttracks
+
   map.resources :teamcommitments
 
   map.resources :projects

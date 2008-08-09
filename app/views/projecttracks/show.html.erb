@@ -1,0 +1,28 @@
+<p>
+  <b>Team:</b>
+  <%=h @projecttrack.team_id %>
+</p>
+
+<p>
+  <b>Yearmonth:</b>
+  <%=h @projecttrack.yearmonth %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @projecttrack.project_id %>
+</p>
+
+<p>
+  <b>Reportdate:</b>
+  <%=h @projecttrack.reportdate %>
+</p>
+
+<p>
+  <b>Daysbooked:</b>
+  <%=h @projecttrack.daysbooked %>
+</p>
+
+
+<%= link_to 'Edit', edit_projecttrack_path(@projecttrack) %> |
+<%= link_to 'Back', projecttracks_path %>

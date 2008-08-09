@@ -4,10 +4,12 @@ TODO
 + on projects page allow to filter out closed projects
 + Reporting dashboard
 + Edit projects: Status list always starts with open, not with real status
++ Team commitment view: List current PLUS old still open projects
 
 DONE
 
 2008-08-09
++ Team commitment view: Add edit link to projects
 + Project status field added
 + Make Preload flag visible in worktype views
 + new teamcommitment => only allow if between begda,endda of project

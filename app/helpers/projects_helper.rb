@@ -1,4 +1,5 @@
 module ProjectsHelper
+
   def country_list
     @countries = Country.find(:all, :order => "name" )
     return @countries
@@ -13,5 +14,5 @@ module ProjectsHelper
     @employees = Employee.find(:all, :order => "name" )
     return @employees
   end
-  
+   
 end

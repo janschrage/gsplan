@@ -1,0 +1,28 @@
+<h1>Listing projecttracks</h1>
+
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Yearmonth</th>
+    <th>Project</th>
+    <th>Reportdate</th>
+    <th>Daysbooked</th>
+  </tr>
+
+<% for projecttrack in @projecttracks %>
+  <tr>
+    <td><%=h projecttrack.team_id %></td>
+    <td><%=h projecttrack.yearmonth %></td>
+    <td><%=h projecttrack.project_id %></td>
+    <td><%=h projecttrack.reportdate %></td>
+    <td><%=h projecttrack.daysbooked %></td>
+    <td><%= link_to 'Show', projecttrack %></td>
+    <td><%= link_to 'Edit', edit_projecttrack_path(projecttrack) %></td>
+    <td><%= link_to 'Destroy', projecttrack, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New projecttrack', new_projecttrack_path %>
