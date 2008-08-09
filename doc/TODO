@@ -3,6 +3,7 @@ TODO
 + Create page that shows all (future?) team commitments
 + on projects page allow to filter out closed projects
 + Reporting dashboard
++ Edit projects: Status list always starts with open, not with real status
 
 DONE
 

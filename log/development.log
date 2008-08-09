@@ -40658,3 +40658,133 @@ Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0f26662bbd696eea599fce636cab8223b498aea7
   [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
   [4;35;1mTeamcommitment Load (0.001741)[0m   [0mSELECT * FROM "teamcommitments" [0m
 Completed in 0.05068 (19 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.00411 (8%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-09 11:35:06) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJcGFnZSIGMSIJc29ydFsH
+IgluYW1lIghBU0M6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c66ac20126f61eb89011d4229ee1c13972bd8d28
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-08-09"}
+Cookie set: report_date=2008-08-09; path=/
+  [4;36;1mTeam Load (0.001267)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.003187)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001129)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001560)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000604)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000486)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mProject Load (0.000475)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000375)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000478)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000449)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000598)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/index
+Completed in 0.08359 (11 reqs/sec) | Rendering: 0.00573 (6%) | DB: 0.01061 (12%) | 200 OK [http://localhost/teamcommitments?report_date=2008-08-09]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-09 11:35:07) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJc29ydFsHIgluYW1lIghB
+U0MiCXBhZ2UiBjE6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0f26662bbd696eea599fce636cab8223b498aea7
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mTeam Load (0.001242)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001108)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001766)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.06069 (16 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.00412 (6%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-09 11:54:15) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJcGFnZSIGMSIJc29ydFsH
+IgluYW1lIghBU0M6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c66ac20126f61eb89011d4229ee1c13972bd8d28
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-08-09"}
+Cookie set: report_date=2008-08-09; path=/
+  [4;36;1mTeam Load (0.001257)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001802)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001253)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001281)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000588)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000510)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mProject Load (0.000473)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000365)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000474)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000425)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000335)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/index
+Completed in 0.08234 (12 reqs/sec) | Rendering: 0.00547 (6%) | DB: 0.00876 (10%) | 200 OK [http://localhost/teamcommitments?report_date=2008-08-09]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-09 11:54:15) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJc29ydFsHIgluYW1lIghB
+U0MiCXBhZ2UiBjE6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0f26662bbd696eea599fce636cab8223b498aea7
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mTeam Load (0.001242)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001250)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001733)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.04547 (21 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.00423 (9%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-09 11:54:35) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJcGFnZSIGMSIJc29ydFsH
+IgluYW1lIghBU0M6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c66ac20126f61eb89011d4229ee1c13972bd8d28
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-09-09"}
+Cookie set: report_date=2008-09-09; path=/
+  [4;36;1mTeam Load (0.001306)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001782)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001241)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001577)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000606)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mProject Load (0.000487)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000471)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;35;1mProject Load (0.000463)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mTeam Load (0.000519)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/index
+Completed in 0.07892 (12 reqs/sec) | Rendering: 0.00455 (5%) | DB: 0.00845 (10%) | 200 OK [http://localhost/teamcommitments?report_date=2008-09-09]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-09 11:54:36) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJc29ydFsHIgluYW1lIghB
+U0MiCXBhZ2UiBjE6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0f26662bbd696eea599fce636cab8223b498aea7
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mTeam Load (0.015438)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001803)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.002914)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+Completed in 0.12556 (7 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.02016 (16%) | 200 OK [http://localhost/report/graph_usage]

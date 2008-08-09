@@ -1,8 +1,8 @@
 module TeamcommitmentsHelper
  
-  ProjectStatusImages = [ "images/icons/clock_stop.png",
-                          "images/icons/clock_go.png",
-                          "images/icons/tick.png" ]    
+  ProjectStatusImages = [ "images/icons/stop.png",
+                          "images/icons/run.png",
+                          "images/icons/ok.png" ]    
  
   def project_list 
     @projects = Project.find(:all, :order => "name" )
