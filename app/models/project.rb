@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
   
   validates_presence_of :employee_id, :country_id, :worktype_id, :planbeg, :planend, :name, :planeffort
   validates_uniqueness_of :name
-  validate :begda_is_before_endda
+  validate :begda_is_before_endda, :planeffort_is_positive
   
   def employeename
     @employee = Employee.find_by_id(employee_id)
@@ -46,6 +46,11 @@ class Project < ActiveRecord::Base
   
  protected
   def begda_is_before_endda
+    return if planbeg.nil? or planend.nil?
     errors.add(:planend, "End date must not be before begin date.") if planbeg > planend
+  end
+  
+  def planeffort_is_positive
+    errors.add(:planeffort, "Planned effort must be >0") if planeffort.nil? || planeffort <= 0
   end
 end

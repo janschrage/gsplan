@@ -44,3 +44,235 @@ WARNING: Can't mass-assign these protected attributes: id
   [4;35;1mSQL (0.001183)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
 WARNING: Can't mass-assign these protected attributes: id
   [4;36;1mSQL (0.000295)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000321)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000563)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000270)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000322)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000509)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000294)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000328)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000542)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000293)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000369)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000534)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000477)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000544)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000368)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000598)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000353)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000534)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000333)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000545)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000395)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000260)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000506)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000249)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000247)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000818)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000421)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000339)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000518)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000263)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000338)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000284)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000521)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000372)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000245)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000410)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000239)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000416)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000238)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000410)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000238)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000413)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000388)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000262)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000506)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000326)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000128)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000437)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000442)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001026)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000413)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001037)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.001047)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m

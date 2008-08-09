@@ -45069,3 +45069,201 @@ ewAGOgpAdXNlZHsA--a408a871b2ae9083c7d4633b5da49f68ece47529
   [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
   [4;36;1mTeamcommitment Load (0.001602)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
 Completed in 0.05244 (19 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.00379 (7%) | 200 OK [http://localhost/report/graph_usage]
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001937)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001081)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000333)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001100)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000928)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000107)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000086)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000413)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.224513)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000603)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007244)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000730)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.059874)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000882)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007590)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001033)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006451)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001186)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007717)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001312)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.010525)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001614)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008222)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001601)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009593)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001759)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006609)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001912)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006347)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.007107)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002075)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000248)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.008345)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.005577)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.005780)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.005883)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.006007)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.007284)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.006269)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005199)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.005612)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.007480)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.006523)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.017538)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001999)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000972)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000336)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000993)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000940)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000081)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000102)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000079)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000089)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000283)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.196486)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000600)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.013207)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000737)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005355)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000978)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007923)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000973)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006158)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001191)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006050)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001309)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009112)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001453)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007841)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001580)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007276)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001890)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008757)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001914)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005184)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.005952)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002023)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000259)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.006089)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.006376)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.004704)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.004458)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.004324)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.006767)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.009464)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.006614)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.006348)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.005317)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.005270)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.007449)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m

@@ -2,6 +2,8 @@ require 'test_helper'
 
 class EmployeeTest < ActiveSupport::TestCase
   
+  fixtures :employees
+  
   def test_empty_ee
     ee=Employee.new
     assert !ee.valid?
