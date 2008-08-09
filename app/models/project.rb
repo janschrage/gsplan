@@ -9,7 +9,8 @@ class Project < ActiveRecord::Base
   
   validates_presence_of :employee_id, :country_id, :worktype_id, :planbeg, :planend, :name, :planeffort
   validates_uniqueness_of :name
-
+  validate :begda_is_before_endda
+  
   def employeename
     @employee = Employee.find_by_id(employee_id)
     "#{@employee.name}"
@@ -23,5 +24,10 @@ class Project < ActiveRecord::Base
   def countryname
     @country = Country.find_by_id(country_id)
     "#{@country.name}"
+  end
+  
+ protected
+  def begda_is_before_endda
+    errors.add(:planend, "End date must not be before begin date.") if planbeg > planend
   end
 end

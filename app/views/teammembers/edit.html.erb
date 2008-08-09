@@ -6,15 +6,13 @@
   <p>
     <%= f.label :employee_id %><br />
  	<%=
- 		@employees = Employee.find(:all, :order => "name" )
- 		f.collection_select(:employee_id, @employees, :id, :name)
+ 		f.collection_select(:employee_id, employee_list, :id, :name)
 	%>
   </p>
   <p>
     <%= f.label :team_id %><br />
  	<%=
- 		@teams = Team.find(:all, :order => "name" )
- 		f.collection_select(:team_id, @teams, :id, :name)
+ 		f.collection_select(:team_id, team_list, :id, :name)
 	%>
   </p>  
   <p>

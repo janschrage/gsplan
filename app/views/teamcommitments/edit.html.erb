@@ -6,8 +6,7 @@
   <p>
     <%= f.label :team_id %><br />
 	<%=
- 		@teams = Team.find(:all, :order => "name" )
- 		f.collection_select(:team_id, @teams, :id, :name)
+ 		f.collection_select(:team_id, team_list, :id, :name)
 	%>
   </p>
   <p>
@@ -17,8 +16,7 @@
   <p>
     <%= f.label :project_id %><br />
  	<%=
- 		@projects = Project.find(:all, :order => "name" )
- 		f.collection_select(:project_id, @projects, :id, :name)
+ 		f.collection_select(:project_id, project_list, :id, :name)
 	%>
   </p>
   <p>

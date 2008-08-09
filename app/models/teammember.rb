@@ -2,7 +2,8 @@ class Teammember < ActiveRecord::Base
   
   belongs_to :team
   belongs_to :employee
-  validates_presence_of :employee_id, :team_id, :begda, :endda
+  validates_presence_of :employee_id, :team_id, :begda, :endda 
+  validate :begda_is_before_endda
   
  def teamname
     @team = Team.find_by_id(team_id)
@@ -24,5 +25,9 @@ class Teammember < ActiveRecord::Base
     end
     return count
   end
- 
+  
+protected
+  def begda_is_before_endda
+    errors.add(:endda, "End date must not be before begin date.") if begda > endda
+  end
 end

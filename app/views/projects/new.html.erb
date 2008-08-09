@@ -4,41 +4,38 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label "Project Name" %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :planbeg %><br />
+    <%= f.label "Begin (Planned)" %><br />
     <%= f.date_select :planbeg %>
   </p>
   <p>
-    <%= f.label :planend %><br />
+    <%= f.label "End (Planned)" %><br />
     <%= f.date_select :planend %>
   </p>
    <p>
-    <%= f.label :planeffort %><br />
+    <%= f.label "Effort (Planned)" %><br />
     <%= f.text_field :planeffort %>
   </p> 
   <p>
-    <%= f.label :country_id %><br />
+    <%= f.label "Country" %><br />
  	<%=
- 		@countries = Country.find(:all, :order => "name" )
- 		f.collection_select(:country_id, @countries, :id, :name)
+ 		f.collection_select(:country_id, country_list, :id, :name)
 	%>
   </p>
 
   <p>
-    <%= f.label :worktype_id %><br />
+    <%= f.label "Project Type" %><br />
  	<%=
- 		@worktypes = Worktype.find(:all, :order => "name" )
- 		f.collection_select(:worktype_id, @worktypes, :id, :name)
+ 		f.collection_select(:worktype_id, worktype_list, :id, :name)
 	%>
   </p>
   <p>
-    <%= f.label :employee_id %><br />
+    <%= f.label "Responsible" %><br />
  	<%=
- 		@employees = Employee.find(:all, :order => "name" )
- 		f.collection_select(:employee_id, @employees, :id, :name)
+ 		f.collection_select(:employee_id, employee_list, :id, :name)
 	%>
   </p>
   <p>

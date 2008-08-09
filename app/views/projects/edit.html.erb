@@ -22,23 +22,20 @@
   <p>
     <%= f.label :country_id %><br />
  	<%=
- 		@countries = Country.find(:all, :order => "name" )
- 		f.collection_select(:country_id, @countries, :id, :name)
+ 		f.collection_select(:country_id, country_list, :id, :name)
 	%>
   </p>
 
   <p>
     <%= f.label :worktype_id %><br />
  	<%=
- 		@worktypes = Worktype.find(:all, :order => "name" )
- 		f.collection_select(:worktype_id, @worktypes, :id, :name)
+ 		f.collection_select(:worktype_id, worktype_list, :id, :name)
 	%>
   </p>
   <p>
     <%= f.label :employee_id %><br />
  	<%=
- 		@employees = Employee.find(:all, :order => "name" )
- 		f.collection_select(:employee_id, @employees, :id, :name)
+ 		f.collection_select(:employee_id, employee_list, :id, :name)
 	%>
   </p>
   <p>

@@ -33765,3 +33765,1117 @@ c2h7AAY6CkB1c2VkewA=--5bfd7b75e8f99652e6e832ce713696cd2d9a1da9
   [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
   [4;35;1mTeamcommitment Load (0.001891)[0m   [0mSELECT * FROM "teamcommitments" [0m
 Completed in 0.06870 (14 reqs/sec) | Rendering: 0.00032 (0%) | DB: 0.00435 (6%) | 200 OK [http://localhost/report/graph_usage]
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2008-08-09 08:59:28) [GET]
+  Session ID: 54fb2dcf80247285d0f49e41c90386dc
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mSQL (0.003491)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates' for #<Class:0xb6777264>):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/base.rb:1667:in `method_missing'
+    /app/models/project.rb:12
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:215:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:215:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:214:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:95:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:260:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:467:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:479:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:272:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:467:in `const_missing'
+    /app/helpers/statistics.rb:67:in `calculate_project_days'
+    /app/controllers/projects_controller.rb:7:in `index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2008-08-09 08:59:43) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--816cc9b3a4a3cc4da21ba55d356492b2de10eb19
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mProject Load (0.001731)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mTeamcommitment Load (0.001493)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mCountry Load (0.000439)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000403)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 2) LIMIT 1[0m
+  [4;36;1mWorktype Load (0.000422)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000377)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000327)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;36;1mCountry Load (0.000328)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000323)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 4) LIMIT 1[0m
+  [4;36;1mWorktype Load (0.000339)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000330)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 0.25886 (3 reqs/sec) | Rendering: 0.09517 (36%) | DB: 0.00651 (2%) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2008-08-09 08:59:46) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mCountry Load (0.002574)[0m   [0;1mSELECT * FROM "countries" ORDER BY name[0m
+  [4;35;1mWorktype Load (0.000820)[0m   [0mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;36;1mEmployee Load (0.001163)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.28328 (3 reqs/sec) | Rendering: 0.26216 (92%) | DB: 0.00456 (1%) | 200 OK [http://localhost/projects/new]
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2008-08-09 08:59:59) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"commit"=>"Create", "project"=>{"name"=>"Datetest", "planend(3i)"=>"2", "planbeg(1i)"=>"2008", "country_id"=>"2", "planbeg(2i)"=>"8", "employee_id"=>"2", "planbeg(3i)"=>"9", "worktype_id"=>"1", "planend(1i)"=>"2008", "planend(2i)"=>"8", "planeffort"=>"30"}, "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "controller"=>"projects"}
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'Datetest') [0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mCountry Load (0.000879)[0m   [0;1mSELECT * FROM "countries" ORDER BY name[0m
+  [4;35;1mWorktype Load (0.000752)[0m   [0mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;36;1mEmployee Load (0.000986)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.06174 (16 reqs/sec) | Rendering: 0.03862 (62%) | DB: 0.00279 (4%) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2008-08-09 09:00:25) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"commit"=>"Create", "project"=>{"name"=>"Datetest", "planend(3i)"=>"2", "planbeg(1i)"=>"2008", "country_id"=>"2", "planbeg(2i)"=>"8", "employee_id"=>"2", "planbeg(3i)"=>"9", "worktype_id"=>"1", "planend(1i)"=>"2008", "planend(2i)"=>"8", "planeffort"=>"30"}, "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "controller"=>"projects"}
+  [4;35;1mSQL (0.000164)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'Datetest') [0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mCountry Load (0.000909)[0m   [0;1mSELECT * FROM "countries" ORDER BY name[0m
+  [4;35;1mWorktype Load (0.001427)[0m   [0mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;36;1mEmployee Load (0.001071)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.16588 (6 reqs/sec) | Rendering: 0.14337 (86%) | DB: 0.00357 (2%) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2008-08-09 09:01:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mCountry Load (0.000889)[0m   [0mSELECT * FROM "countries" ORDER BY name[0m
+  [4;36;1mWorktype Load (0.000765)[0m   [0;1mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;35;1mEmployee Load (0.001229)[0m   [0mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.06579 (15 reqs/sec) | Rendering: 0.04784 (72%) | DB: 0.00288 (4%) | 200 OK [http://localhost/projects/new]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2008-08-09 09:02:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mCountry Load (0.002200)[0m   [0;1mSELECT * FROM "countries" ORDER BY name[0m
+  [4;35;1mWorktype Load (0.000843)[0m   [0mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;36;1mEmployee Load (0.001049)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.16015 (6 reqs/sec) | Rendering: 0.14081 (87%) | DB: 0.00409 (2%) | 200 OK [http://localhost/projects/new]
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2008-08-09 09:03:58) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"commit"=>"Create", "project"=>{"name"=>"Datetest", "planend(3i)"=>"2", "planbeg(1i)"=>"2008", "country_id"=>"2", "planbeg(2i)"=>"8", "employee_id"=>"2", "planbeg(3i)"=>"9", "worktype_id"=>"1", "planend(1i)"=>"2008", "planend(2i)"=>"8", "planeffort"=>"30"}, "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "controller"=>"projects"}
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'Datetest') [0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mCountry Load (0.000882)[0m   [0;1mSELECT * FROM "countries" ORDER BY name[0m
+  [4;35;1mWorktype Load (0.000751)[0m   [0mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;36;1mEmployee Load (0.000994)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.06417 (15 reqs/sec) | Rendering: 0.04083 (63%) | DB: 0.00280 (4%) | 200 OK [http://localhost/projects]
+
+
+Processing TeammembersController#index (for 127.0.0.1 at 2008-08-09 09:04:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"teammembers"}
+  [4;35;1mTeammember Load (0.001648)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mEmployee Load (0.077912)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000431)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000388)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 4) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000364)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000344)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/teammembers
+Rendering teammembers/index
+Completed in 0.21458 (4 reqs/sec) | Rendering: 0.06471 (30%) | DB: 0.08109 (37%) | 200 OK [http://localhost/teammembers]
+
+
+Processing TeammembersController#new (for 127.0.0.1 at 2008-08-09 09:04:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"teammembers"}
+Rendering template within layouts/teammembers
+Rendering teammembers/new
+  [4;36;1mEmployee Load (0.001026)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+  [4;35;1mTeam Load (0.001011)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+Completed in 0.05043 (19 reqs/sec) | Rendering: 0.03498 (69%) | DB: 0.00204 (4%) | 200 OK [http://localhost/teammembers/new]
+
+
+Processing TeammembersController#create (for 127.0.0.1 at 2008-08-09 09:04:58) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "teammember"=>{"team_id"=>"1", "begda(2i)"=>"8", "begda(3i)"=>"9", "employee_id"=>"2", "endda(1i)"=>"2008", "endda(2i)"=>"8", "endda(3i)"=>"2", "begda(1i)"=>"2008"}, "controller"=>"teammembers"}
+
+
+NameError (undefined local variable or method `planbeg' for #<Teammember:0xb667e0ec>):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/attribute_methods.rb:256:in `method_missing'
+    /app/models/teammember.rb:31:in `begda_is_before_endda'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:173:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:173:in `evaluate_method'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:161:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:272:in `run_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/validations.rb:929:in `valid_without_callbacks?'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/callbacks.rb:267:in `valid?'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/validations.rb:900:in `save_without_dirty'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/dirty.rb:75:in `save_without_transactions'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:106:in `save_without_unsaved_flag'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:79:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:98:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:106:in `save_without_unsaved_flag'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:118:in `rollback_active_record_state!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:106:in `save_without_unsaved_flag'
+    /vendor/plugins/active_scaffold/lib/extensions/unsaved_record.rb:15:in `save'
+    /app/controllers/teammembers_controller.rb:68:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:106:in `respond_to'
+    /app/controllers/teammembers_controller.rb:67:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing TeammembersController#create (for 127.0.0.1 at 2008-08-09 09:05:18) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "teammember"=>{"team_id"=>"1", "begda(2i)"=>"8", "begda(3i)"=>"9", "employee_id"=>"2", "endda(1i)"=>"2008", "endda(2i)"=>"8", "endda(3i)"=>"2", "begda(1i)"=>"2008"}, "controller"=>"teammembers"}
+Rendering template within layouts/teammembers
+Rendering teammembers/new
+  [4;36;1mEmployee Load (0.001063)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+  [4;35;1mTeam Load (0.000902)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+Completed in 0.05977 (16 reqs/sec) | Rendering: 0.03783 (63%) | DB: 0.00197 (3%) | 200 OK [http://localhost/teammembers]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-09 09:12:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+Cookie set: report_date=2008-08-09; path=/
+  [4;36;1mTeam Load (0.001224)[0m   [0;1mSELECT * FROM "teams" [0m
+
+
+SyntaxError (/home/jan/projects/rails/GSPlan/app/models/teamcommitment.rb:14: syntax error, unexpected $end, expecting kEND):
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:215:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:215:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:214:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:95:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:260:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:467:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:479:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:272:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:467:in `const_missing'
+    /app/helpers/statistics.rb:39:in `calculate_usage'
+    /app/controllers/teamcommitments_controller.rb:15:in `index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-09 09:14:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+Cookie set: report_date=2008-08-09; path=/
+  [4;35;1mTeam Load (0.001260)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001439)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001093)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mProject Load (0.001192)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mProject Load (0.000548)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000442)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000350)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000432)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000330)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000334)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/index
+Completed in 0.10170 (9 reqs/sec) | Rendering: 0.03439 (33%) | DB: 0.00742 (7%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-09 09:14:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+Cookie set: report_date=2008-08-09; path=/
+  [4;36;1mTeam Load (0.001305)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001611)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001147)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.031992)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000547)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000600)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mTeam Load (0.000435)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;36;1mProject Load (0.000453)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000337)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000570)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/index
+Completed in 0.22211 (4 reqs/sec) | Rendering: 0.00965 (4%) | DB: 0.03900 (17%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-09 09:14:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mTeam Load (0.004659)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001114)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001473)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+Completed in 0.06222 (16 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.00725 (11%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#new (for 127.0.0.1 at 2008-08-09 09:14:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"teamcommitments"}
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/new
+  [4;35;1mTeam Load (0.001021)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+  [4;36;1mProject Load (0.001441)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.16394 (6 reqs/sec) | Rendering: 0.14405 (87%) | DB: 0.00246 (1%) | 200 OK [http://localhost/teamcommitments/new]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-09 09:14:23) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"teamcommitment"=>{"team_id"=>"1", "yearmonth(1i)"=>"2008", "project_id"=>"1", "days"=>"50", "yearmonth(2i)"=>"8", "yearmonth(3i)"=>"9"}, "commit"=>"Create", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;35;1mProject Load (0.000257)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = '--- :project_id
+') LIMIT 1[0m
+
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.planbeg):
+    /app/models/teamcommitment.rb:12:in `commitment_is_in_project_timeframe'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:173:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:173:in `evaluate_method'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:161:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:272:in `run_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/validations.rb:929:in `valid_without_callbacks?'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/callbacks.rb:267:in `valid?'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/validations.rb:900:in `save_without_dirty'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/dirty.rb:75:in `save_without_transactions'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:106:in `save_without_unsaved_flag'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:79:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:98:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:106:in `save_without_unsaved_flag'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:118:in `rollback_active_record_state!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/transactions.rb:106:in `save_without_unsaved_flag'
+    /vendor/plugins/active_scaffold/lib/extensions/unsaved_record.rb:15:in `save'
+    /app/controllers/teamcommitments_controller.rb:100:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:106:in `respond_to'
+    /app/controllers/teamcommitments_controller.rb:99:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing TeamcommitmentsController#new (for 127.0.0.1 at 2008-08-09 09:15:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"teamcommitments"}
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/new
+  [4;36;1mTeam Load (0.000935)[0m   [0;1mSELECT * FROM "teams" ORDER BY name[0m
+  [4;35;1mProject Load (0.001390)[0m   [0mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.05351 (18 reqs/sec) | Rendering: 0.03848 (71%) | DB: 0.00233 (4%) | 200 OK [http://localhost/teamcommitments/new]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-09 09:16:34) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"teamcommitment"=>{"team_id"=>"1", "yearmonth(1i)"=>"2008", "project_id"=>"1", "days"=>"50", "yearmonth(2i)"=>"8", "yearmonth(3i)"=>"9"}, "commit"=>"Create", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;36;1mProject Load (0.000513)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/new
+  [4;35;1mTeam Load (0.155916)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+  [4;36;1mProject Load (0.002671)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.21789 (4 reqs/sec) | Rendering: 0.02977 (13%) | DB: 0.15910 (73%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-09 09:17:27) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"teamcommitment"=>{"team_id"=>"1", "yearmonth(1i)"=>"2008", "project_id"=>"1", "days"=>"50", "yearmonth(2i)"=>"8", "yearmonth(3i)"=>"9"}, "commit"=>"Create", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;35;1mProject Load (0.000530)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/new
+  [4;36;1mTeam Load (0.002451)[0m   [0;1mSELECT * FROM "teams" ORDER BY name[0m
+  [4;35;1mProject Load (0.001301)[0m   [0mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.05291 (18 reqs/sec) | Rendering: 0.01882 (35%) | DB: 0.00428 (8%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-09 09:19:48) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"teamcommitment"=>{"team_id"=>"1", "yearmonth(1i)"=>"2008", "project_id"=>"1", "days"=>"50", "yearmonth(2i)"=>"8", "yearmonth(3i)"=>"9"}, "commit"=>"Create", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;36;1mProject Load (0.000511)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/new
+  [4;35;1mTeam Load (0.000878)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+  [4;36;1mProject Load (0.001327)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.05062 (19 reqs/sec) | Rendering: 0.01898 (37%) | DB: 0.00272 (5%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#new (for 127.0.0.1 at 2008-08-09 09:20:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"teamcommitments"}
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/new
+  [4;35;1mTeam Load (0.000937)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+  [4;36;1mProject Load (0.001463)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.06368 (15 reqs/sec) | Rendering: 0.04643 (72%) | DB: 0.00240 (3%) | 200 OK [http://localhost/teamcommitments/new]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-09 09:21:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mTeam Load (0.001228)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001075)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001631)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+Completed in 0.05659 (17 reqs/sec) | Rendering: 0.00050 (0%) | DB: 0.00393 (6%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#edit (for 127.0.0.1 at 2008-08-09 09:21:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"edit", "id"=>"12", "controller"=>"teamcommitments"}
+  [4;35;1mTeamcommitment Load (0.000526)[0m   [0mSELECT * FROM "teamcommitments" WHERE ("teamcommitments"."id" = 12) [0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/edit
+  [4;36;1mTeam Load (0.000918)[0m   [0;1mSELECT * FROM "teams" ORDER BY name[0m
+  [4;35;1mProject Load (0.001397)[0m   [0mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.05355 (18 reqs/sec) | Rendering: 0.03635 (67%) | DB: 0.00284 (5%) | 200 OK [http://localhost/teamcommitments/12/edit]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-09 09:21:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mTeam Load (0.001219)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001069)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001442)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.04119 (24 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.00373 (9%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeammembersController#index (for 127.0.0.1 at 2008-08-09 09:24:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"teammembers"}
+  [4;36;1mTeammember Load (0.001689)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mEmployee Load (0.000420)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000480)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000389)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 4) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000337)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000335)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/teammembers
+Rendering teammembers/index
+Completed in 0.04828 (20 reqs/sec) | Rendering: 0.00354 (7%) | DB: 0.00365 (7%) | 200 OK [http://localhost/teammembers]
+
+
+Processing TeammembersController#edit (for 127.0.0.1 at 2008-08-09 09:24:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"teammembers"}
+  [4;35;1mTeammember Load (0.000459)[0m   [0mSELECT * FROM "teammembers" WHERE ("teammembers"."id" = 2) [0m
+Rendering template within layouts/teammembers
+Rendering teammembers/edit
+  [4;36;1mEmployee Load (0.001020)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+  [4;35;1mTeam Load (0.002652)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+Completed in 0.05000 (20 reqs/sec) | Rendering: 0.03240 (64%) | DB: 0.00413 (8%) | 200 OK [http://localhost/teammembers/2/edit]
+
+
+Processing TeammembersController#new (for 127.0.0.1 at 2008-08-09 09:24:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"teammembers"}
+Rendering template within layouts/teammembers
+Rendering teammembers/new
+  [4;36;1mEmployee Load (0.001107)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+  [4;35;1mTeam Load (0.001107)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+Completed in 0.14810 (6 reqs/sec) | Rendering: 0.13414 (90%) | DB: 0.00221 (1%) | 200 OK [http://localhost/teammembers/new]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2008-08-09 09:28:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mProject Load (0.001715)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mTeamcommitment Load (0.001595)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCountry Load (0.000395)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000409)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 2) LIMIT 1[0m
+  [4;35;1mWorktype Load (0.000566)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;36;1mCountry Load (0.000378)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000333)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000334)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000325)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 4) LIMIT 1[0m
+  [4;35;1mWorktype Load (0.000460)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000333)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 0.07338 (13 reqs/sec) | Rendering: 0.00404 (5%) | DB: 0.00684 (9%) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2008-08-09 09:28:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mCountry Load (0.000884)[0m   [0mSELECT * FROM "countries" ORDER BY name[0m
+  [4;36;1mWorktype Load (0.000750)[0m   [0;1mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;35;1mEmployee Load (0.001095)[0m   [0mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.17492 (5 reqs/sec) | Rendering: 0.15601 (89%) | DB: 0.00273 (1%) | 200 OK [http://localhost/projects/new]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2008-08-09 09:28:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mProject Load (0.002399)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mTeamcommitment Load (0.001465)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCountry Load (0.000392)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000394)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 2) LIMIT 1[0m
+  [4;35;1mWorktype Load (0.000429)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;36;1mCountry Load (0.000355)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000323)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000328)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000322)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 4) LIMIT 1[0m
+  [4;35;1mWorktype Load (0.000364)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000333)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 0.07428 (13 reqs/sec) | Rendering: 0.00412 (5%) | DB: 0.00710 (9%) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2008-08-09 09:28:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"projects"}
+  [4;35;1mProject Load (0.000500)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/edit
+  [4;36;1mCountry Load (0.000882)[0m   [0;1mSELECT * FROM "countries" ORDER BY name[0m
+  [4;35;1mWorktype Load (0.000728)[0m   [0mSELECT * FROM "worktypes" ORDER BY name[0m
+  [4;36;1mEmployee Load (0.002351)[0m   [0;1mSELECT * FROM "employees" ORDER BY name[0m
+Completed in 0.16734 (5 reqs/sec) | Rendering: 0.14770 (88%) | DB: 0.00446 (2%) | 200 OK [http://localhost/projects/1/edit]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2008-08-09 09:28:23) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"commit"=>"Update", "project"=>{"name"=>"World domination through pizza", "planend(3i)"=>"15", "planbeg(1i)"=>"2008", "country_id"=>"3", "planbeg(2i)"=>"9", "employee_id"=>"1", "planbeg(3i)"=>"1", "worktype_id"=>"1", "planend(1i)"=>"2008", "planend(2i)"=>"10", "planeffort"=>"65"}, "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "_method"=>"put", "action"=>"update", "id"=>"1", "controller"=>"projects"}
+  [4;35;1mProject Load (0.000464)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;36;1mSQL (0.001708)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'World domination through pizza' AND "projects".id <> 1) [0m
+  [4;35;1mProject Update (0.000300)[0m   [0mUPDATE "projects" SET "employee_id" = 1, "updated_at" = '2008-08-09 12:28:23' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/projects/1
+Completed in 0.02886 (34 reqs/sec) | DB: 0.00247 (8%) | 302 Found [http://localhost/projects/1]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2008-08-09 09:28:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIilDb21taXRtZW50IHdhcyBzdWNjZXNzZnVsbHkgdXBk
+YXRlZC4GOgpAdXNlZHsGOwdG--3d2ffea4437e767569db0f208d9f15a5819232ca
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"projects"}
+  [4;36;1mProject Load (0.000543)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;35;1mCountry Load (0.000436)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000377)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 1) LIMIT 1[0m
+  [4;35;1mWorktype Load (0.000454)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/projects
+Rendering projects/show
+Completed in 0.07363 (13 reqs/sec) | Rendering: 0.02833 (38%) | DB: 0.00181 (2%) | 200 OK [http://localhost/projects/1]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2008-08-09 09:28:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIilDb21taXRtZW50IHdhcyBzdWNjZXNzZnVsbHkgdXBk
+YXRlZC4GOgpAdXNlZHsGOwdU--bfe272170f7f89ea0e2d105e267ac8cf0bc270c7
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mProject Load (0.001831)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mTeamcommitment Load (0.001603)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCountry Load (0.000410)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000487)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 1) LIMIT 1[0m
+  [4;35;1mWorktype Load (0.000434)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;36;1mCountry Load (0.000358)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000371)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000331)[0m   [0;1mSELECT * FROM "employees" WHERE ("employees"."id" = 4) LIMIT 1[0m
+  [4;35;1mWorktype Load (0.000347)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mEmployee Load (0.001741)[0m   [0mSELECT * FROM "employees" WHERE ("employees"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 0.07603 (13 reqs/sec) | Rendering: 0.00404 (5%) | DB: 0.00791 (10%) | 200 OK [http://localhost/projects]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-09 09:29:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzU4NDhlYTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIx
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--cc57725a2c3153af301c07ca7154e0c5c8077fbd
+  Parameters: {"action"=>"index", "controller"=>"worktypes"}
+  [4;35;1mSQL (0.000681)[0m   [0mSELECT count(*) AS count_all FROM "worktypes" [0m
+  [4;36;1mWorktype Load (0.001290)[0m   [0;1mSELECT * FROM "worktypes" ORDER BY worktypes."name" ASC LIMIT 15 OFFSET 0[0m
+Rendering worktypes/list
+Rendered worktypes/_list_column_headings (0.01228)
+Rendered worktypes/_messages (0.00013)
+Rendered worktypes/_list_actions (0.01817)
+Rendered worktypes/_list_record (0.02761)
+Rendered worktypes/_list_actions (0.00303)
+Rendered worktypes/_list_record (0.00740)
+Rendering template within layouts/worktypes
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/list.rhtml
+Rendered worktypes/_list_header (0.00822)
+Rendered worktypes/_list_column_headings (0.00804)
+Rendered worktypes/_messages (0.00008)
+Rendered worktypes/_list_actions (0.00316)
+Rendered worktypes/_list_record (0.00754)
+Rendered worktypes/_list_actions (0.00297)
+Rendered worktypes/_list_record (0.00991)
+Rendered worktypes/_list (0.03092)
+Completed in 0.24417 (4 reqs/sec) | Rendering: 0.11950 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes]
+
+
+Processing WorktypesController#edit (for 127.0.0.1 at 2008-08-09 09:29:35) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"adapter"=>"_list_inline_adapter", "_method"=>"get", "action"=>"edit", "id"=>"1", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.000523)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) [0m
+Rendered worktypes/_form_attribute (0.00039)
+Rendered worktypes/_form_attribute (0.00029)
+Rendered worktypes/_form_attribute (0.00023)
+Rendered worktypes/_form (0.00704)
+Rendered worktypes/_update_form (0.03391)
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/_list_inline_adapter.rhtml
+Rendered core/_messages (0.00005)
+Completed in 0.09355 (10 reqs/sec) | Rendering: 0.00778 (8%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes/1/edit?_method=get&adapter=_list_inline_adapter]
+
+
+Processing WorktypesController#update (for 127.0.0.1 at 2008-08-09 09:29:39) [PUT]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "_method"=>"put", "action"=>"update", "id"=>"1", "controller"=>"worktypes", "record"=>{"name"=>"LC", "description"=>"Legal Change", "preload"=>"true"}}
+  [4;36;1mWorktype Load (0.000547)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) [0m
+  [4;35;1mSQL (0.000159)[0m   [0mSELECT "name" FROM "worktypes" WHERE ("worktypes".name = 'LC' AND "worktypes".id <> 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT "name" FROM "worktypes" WHERE ("worktypes".name = 'LC' AND "worktypes".id <> 1) [0m
+Rendering worktypes/update.rjs
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/update.rjs
+Completed in 0.07031 (14 reqs/sec) | Rendering: 0.00614 (8%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes/1]
+
+
+Processing WorktypesController#row (for 127.0.0.1 at 2008-08-09 09:29:39) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"_method"=>"get", "action"=>"row", "id"=>"1", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.004410)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) [0m
+Rendered worktypes/_list_actions (0.00173)
+Rendered worktypes/_list_record (0.00444)
+Completed in 0.02238 (44 reqs/sec) | Rendering: 0.01086 (48%) | DB: 0.00441 (19%) | 200 OK [http://localhost/worktypes/1/row?_method=get]
+
+
+Processing WorktypesController#edit (for 127.0.0.1 at 2008-08-09 09:29:40) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"adapter"=>"_list_inline_adapter", "_method"=>"get", "action"=>"edit", "id"=>"2", "controller"=>"worktypes"}
+  [4;36;1mWorktype Load (0.000624)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) [0m
+Rendered worktypes/_form_attribute (0.00036)
+Rendered worktypes/_form_attribute (0.00027)
+Rendered worktypes/_form_attribute (0.00024)
+Rendered worktypes/_form (0.00619)
+Rendered worktypes/_update_form (0.00903)
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/_list_inline_adapter.rhtml
+Rendered core/_messages (0.00005)
+Completed in 0.02424 (41 reqs/sec) | Rendering: 0.00570 (23%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes/2/edit?_method=get&adapter=_list_inline_adapter]
+
+
+Processing WorktypesController#update (for 127.0.0.1 at 2008-08-09 09:29:43) [PUT]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "_method"=>"put", "action"=>"update", "id"=>"2", "controller"=>"worktypes", "record"=>{"name"=>"MAINT", "description"=>"Maintenance", "preload"=>"false"}}
+  [4;35;1mWorktype Load (0.000519)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) [0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mSELECT "name" FROM "worktypes" WHERE ("worktypes".name = 'MAINT' AND "worktypes".id <> 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT "name" FROM "worktypes" WHERE ("worktypes".name = 'MAINT' AND "worktypes".id <> 2) [0m
+  [4;36;1mWorktype Update (0.000225)[0m   [0;1mUPDATE "worktypes" SET "preload" = 'f', "updated_at" = '2008-08-09 12:29:43' WHERE "id" = 2[0m
+Rendering worktypes/update.rjs
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/update.rjs
+Completed in 0.04243 (23 reqs/sec) | Rendering: 0.00566 (13%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes/2]
+
+
+Processing WorktypesController#row (for 127.0.0.1 at 2008-08-09 09:29:43) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"_method"=>"get", "action"=>"row", "id"=>"2", "controller"=>"worktypes"}
+  [4;35;1mWorktype Load (0.000535)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 2) [0m
+Rendered worktypes/_list_actions (0.00169)
+Rendered worktypes/_list_record (0.00433)
+Completed in 0.01343 (74 reqs/sec) | Rendering: 0.00585 (43%) | DB: 0.00054 (3%) | 200 OK [http://localhost/worktypes/2/row?_method=get]
+
+
+Processing WorktypesController#index (for 127.0.0.1 at 2008-08-09 09:31:28) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"action"=>"index", "controller"=>"worktypes"}
+  [4;36;1mSQL (0.000384)[0m   [0;1mSELECT count(*) AS count_all FROM "worktypes" [0m
+  [4;35;1mWorktype Load (0.000677)[0m   [0mSELECT * FROM "worktypes" ORDER BY worktypes."name" ASC LIMIT 15 OFFSET 0[0m
+Rendering worktypes/list
+Rendered worktypes/_list_column_headings (0.00356)
+Rendered worktypes/_messages (0.00004)
+Rendered worktypes/_list_actions (0.00153)
+Rendered worktypes/_list_record (0.00392)
+Rendered worktypes/_list_actions (0.00154)
+Rendered worktypes/_list_record (0.00759)
+Rendering template within layouts/worktypes
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/list.rhtml
+Rendered worktypes/_list_header (0.00137)
+Rendered worktypes/_list_column_headings (0.00316)
+Rendered worktypes/_messages (0.00004)
+Rendered worktypes/_list_actions (0.00147)
+Rendered worktypes/_list_record (0.00374)
+Rendered worktypes/_list_actions (0.00151)
+Rendered worktypes/_list_record (0.00374)
+Rendered worktypes/_list (0.01325)
+Completed in 0.04701 (21 reqs/sec) | Rendering: 0.01813 (38%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes]
+
+
+Processing WorktypesController#edit (for 127.0.0.1 at 2008-08-09 09:31:31) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"adapter"=>"_list_inline_adapter", "_method"=>"get", "action"=>"edit", "id"=>"1", "controller"=>"worktypes"}
+  [4;36;1mWorktype Load (0.000526)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) [0m
+Rendered worktypes/_form_attribute (0.00037)
+Rendered worktypes/_form_attribute (0.00027)
+Rendered worktypes/_form_attribute (0.00028)
+Rendered worktypes/_form (0.00628)
+Rendered worktypes/_update_form (0.00921)
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/_list_inline_adapter.rhtml
+Rendered core/_messages (0.00005)
+Completed in 0.02490 (40 reqs/sec) | Rendering: 0.00595 (23%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes/1/edit?_method=get&adapter=_list_inline_adapter]
+
+
+Processing WorktypesController#update (for 127.0.0.1 at 2008-08-09 09:31:35) [PUT]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "_method"=>"put", "action"=>"update", "id"=>"1", "controller"=>"worktypes", "record"=>{"name"=>"LC", "description"=>"Legal Change", "preload"=>"1"}}
+  [4;35;1mWorktype Load (0.000517)[0m   [0mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) [0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mSELECT "name" FROM "worktypes" WHERE ("worktypes".name = 'LC' AND "worktypes".id <> 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT "name" FROM "worktypes" WHERE ("worktypes".name = 'LC' AND "worktypes".id <> 1) [0m
+Rendering worktypes/update.rjs
+Rendering /home/jan/projects/rails/GSPlan/app/views/../../vendor/plugins/active_scaffold/frontends/default/views/update.rjs
+Completed in 0.02351 (42 reqs/sec) | Rendering: 0.00473 (20%) | DB: 0.00000 (0%) | 200 OK [http://localhost/worktypes/1]
+
+
+Processing WorktypesController#row (for 127.0.0.1 at 2008-08-09 09:31:35) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"_method"=>"get", "action"=>"row", "id"=>"1", "controller"=>"worktypes"}
+  [4;36;1mWorktype Load (0.000504)[0m   [0;1mSELECT * FROM "worktypes" WHERE ("worktypes"."id" = 1) [0m
+Rendered worktypes/_list_actions (0.00162)
+Rendered worktypes/_list_record (0.00427)
+Completed in 0.01419 (70 reqs/sec) | Rendering: 0.00737 (51%) | DB: 0.00050 (3%) | 200 OK [http://localhost/worktypes/1/row?_method=get]
+
+
+Processing WorktypesController#update_table (for 127.0.0.1 at 2008-08-09 09:31:48) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ADoMY3NyZl9pZCIlNzU4NDhl
+YTU1OWQ3NmI3ZDAxZTg2YjUwYjJmNzIxOWIiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--48c8e67d33f5fc0f1d14643360beb574fcb26e38
+  Parameters: {"authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"update_table", "controller"=>"worktypes", "sort_direction"=>"DESC", "sort"=>"name", "page"=>"1"}
+  [4;35;1mSQL (0.000423)[0m   [0mSELECT count(*) AS count_all FROM "worktypes" [0m
+  [4;36;1mWorktype Load (0.000666)[0m   [0;1mSELECT * FROM "worktypes" ORDER BY worktypes."name" DESC LIMIT 15 OFFSET 0[0m
+Rendered worktypes/_list_column_headings (0.00448)
+Rendered worktypes/_messages (0.00005)
+Rendered worktypes/_list_actions (0.00271)
+Rendered worktypes/_list_record (0.00580)
+Rendered worktypes/_list_actions (0.00339)
+Rendered worktypes/_list_record (0.00789)
+Rendered worktypes/_list (0.02378)
+Completed in 0.03445 (29 reqs/sec) | Rendering: 0.02485 (72%) | DB: 0.00109 (3%) | 200 OK [http://localhost/worktypes/update_table?page=1&sort=name&sort_direction=DESC&authenticity_token=ffe8282b3d3ee373ffbec5ad7105df66f8f09f27]
+
+
+Processing WorktypesController#update_table (for 127.0.0.1 at 2008-08-09 09:31:49) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJcGFnZSIGMSIJc29ydFsH
+IgluYW1lIglERVNDOgxjc3JmX2lkIiU3NTg0OGVhNTU5ZDc2YjdkMDFlODZi
+NTBiMmY3MjE5YiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6
+OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--c989a42617ec682b58f4193598829c8b58128724
+  Parameters: {"authenticity_token"=>"ffe8282b3d3ee373ffbec5ad7105df66f8f09f27", "action"=>"update_table", "controller"=>"worktypes", "sort_direction"=>"ASC", "sort"=>"name", "page"=>"1"}
+  [4;35;1mSQL (0.000390)[0m   [0mSELECT count(*) AS count_all FROM "worktypes" [0m
+  [4;36;1mWorktype Load (0.000689)[0m   [0;1mSELECT * FROM "worktypes" ORDER BY worktypes."name" ASC LIMIT 15 OFFSET 0[0m
+Rendered worktypes/_list_column_headings (0.00569)
+Rendered worktypes/_messages (0.00005)
+Rendered worktypes/_list_actions (0.00166)
+Rendered worktypes/_list_record (0.00430)
+Rendered worktypes/_list_actions (0.00157)
+Rendered worktypes/_list_record (0.00381)
+Rendered worktypes/_list (0.01686)
+Completed in 0.02766 (36 reqs/sec) | Rendering: 0.01781 (64%) | DB: 0.00108 (3%) | 200 OK [http://localhost/worktypes/update_table?authenticity_token=ffe8282b3d3ee373ffbec5ad7105df66f8f09f27&page=1&sort=name&sort_direction=ASC&authenticity_token=ffe8282b3d3ee373ffbec5ad7105df66f8f09f27]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-09 09:33:08) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJc29ydFsHIgluYW1lIghB
+U0MiCXBhZ2UiBjE6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0f26662bbd696eea599fce636cab8223b498aea7
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+Cookie set: report_date=2008-08-09; path=/
+  [4;35;1mTeam Load (0.001258)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001472)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001144)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mProject Load (0.001332)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mProject Load (0.000537)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000449)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000363)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000448)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000335)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000333)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/teamcommitments
+Rendering teamcommitments/index
+Completed in 0.07612 (13 reqs/sec) | Rendering: 0.00494 (6%) | DB: 0.00767 (10%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-09 09:33:08) [GET]
+  Session ID: BAh7CCIRYXM6d29ya3R5cGVzewY6CWxpc3R7ByIJcGFnZSIGMSIJc29ydFsH
+IgluYW1lIghBU0M6DGNzcmZfaWQiJTc1ODQ4ZWE1NTlkNzZiN2QwMWU4NmI1
+MGIyZjcyMTliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6
+Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c66ac20126f61eb89011d4229ee1c13972bd8d28
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mTeam Load (0.001230)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001102)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001473)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.04143 (24 reqs/sec) | Rendering: 0.00031 (0%) | DB: 0.00380 (9%) | 200 OK [http://localhost/report/graph_usage]
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
