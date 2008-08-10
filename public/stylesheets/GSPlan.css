@@ -1,6 +1,7 @@
 body {
 }
 
+#pagecontent {position: absolute; top:80px; width: 100%}
 #teamgraph {position: absolute; left: 10px; top: 120px;}
 #teamstats {position: absolute; left: 650px; top: 120px;}
 #projectstats {position: absolute; left: 650px; top: 440px;}
