@@ -2,8 +2,9 @@
 
 one:
   project_id: 1
-  cpro_name: MyString
+  cpro_name: Identical
 
 two:
   project_id: 1
-  cpro_name: MyString
+  cpro_name: TestProx
+

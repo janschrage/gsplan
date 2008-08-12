@@ -276,3 +276,237 @@ WARNING: Can't mass-assign these protected attributes: id
   [4;35;1mProject Load (0.001037)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
 WARNING: Can't mass-assign these protected attributes: id
   [4;36;1mProject Load (0.001047)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000311)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000534)[0m   [0mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'Identical') [0m
+  [4;36;1mSQL (0.000285)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000625)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000272)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000313)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000288)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000522)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000387)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001106)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.001580)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.002275)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002031)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002042)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002006)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.003000)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002336)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002137)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002447)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002560)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002613)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002670)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002511)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002024)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002075)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002450)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002386)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001433)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001075)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000903)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001022)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000912)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000936)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001083)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000905)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001084)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.007984)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000982)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000962)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000928)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000941)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000904)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000896)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000950)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000906)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000899)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000952)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000899)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000939)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000940)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000915)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.000551)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000547)[0m   [0mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'Identical') [0m
+  [4;36;1mSQL (0.000309)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000529)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000296)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000611)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000297)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000799)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000393)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001039)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.006737)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000369)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'SomethingDifferent') [0m
+  [4;35;1mSQL (0.000250)[0m   [0mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000921)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'Identical') [0m
+  [4;35;1mSQL (0.000323)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000496)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000323)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000459)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000255)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000512)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000378)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.001022)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001150)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
