@@ -19,7 +19,8 @@ class ProjectsController < ApplicationController
       
        committed = @projectplan[project.id][:committed_total]
        missing = project.planeffort - committed
-       status = project.project_status_text(project.status)
+       #status = project.project_status_text(project.status)
+       status = project.status
       
        output = { :classname => project,
                   :countryname => countryname, 

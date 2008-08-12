@@ -2,7 +2,6 @@
 
 <script type="text/javascript" src="/javascripts/swfobject.js"></script>
 
-<div id="pagecontent">
 
 <div id="teammembers">
 <table>
@@ -13,12 +12,12 @@
 	<td class="text"><%= h teammember[:employeename] %></td>
 	<td class="text"><%= h teammember[:planbeg] %></td>
 	<td class="text"><%= h teammember[:planend] %></td>
-    <td><%= link_to 'Edit', edit_teammember_path(teammember[:classname]) %></td>
-    <td><%= link_to 'Destroy', teammember[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_teammember_path(teammember[:classname]) %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), teammember[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
  <%end%>
 </table>
 <%= link_to 'New teammember', new_teammember_path %>
 </div>
-</div>
+
 

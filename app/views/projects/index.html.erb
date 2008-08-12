@@ -5,7 +5,6 @@
 <div id="pagecontent">
 
 <div id="projects">
-<h2>Projects</h2>
 <table>
 <tr><th>Project</th><th>Begin (Plan)</th><th>End (Plan)</th><th>Effort (Plan)</th><th>Type</th><th>Country</th><th>Responsible</th><th>Committed</th><th>Missing</th><th>Status</th></tr>
 <%   @outputlist.each do |project| %>
@@ -19,9 +18,9 @@
 	<td class="text"><%= h project[:employeename] %></td>
 	<td><%= h project[:committed] %></td>
 	<td><%= h project[:missing] %></td>
-	<td class="text"><%= h project[:status] %></td>
-    <td><%= link_to 'Edit', edit_project_path(project[:classname]) %></td>
-    <td><%= link_to 'Destroy', project[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
+	<td class="text"><img src="<%= project_status_image(project[:status]) %>"></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_project_path(project[:classname]) %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), project[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
  <%end%>
 </table>
