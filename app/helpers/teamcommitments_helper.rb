@@ -1,9 +1,5 @@
 module TeamcommitmentsHelper
- 
-  ProjectStatusImages = [ "images/icons/stop.png",
-                          "images/icons/run.png",
-                          "images/icons/ok.png" ]    
- 
+  
   def project_list 
     @projects = Project.find(:all, :order => "name" )
     return @projects
@@ -14,7 +10,9 @@ module TeamcommitmentsHelper
     return @teams
   end
   
-  def project_status_image(status)
-    return ProjectStatusImages[status]
+
+  def country_by_id(country_id)
+    return Country.find_by_id(country_id)
   end
+
 end

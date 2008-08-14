@@ -19,3 +19,13 @@ two:
   planeffort: 1
   employee_id: 1
   country_id: 1
+
+unique:
+  id: 3
+  name: TestforUniqueCommitments
+  planend: 2010-12-31
+  planbeg: 2010-10-01
+  worktype_id: 1
+  planeffort: 1
+  employee_id: 1
+  country_id: 1

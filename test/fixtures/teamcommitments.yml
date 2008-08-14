@@ -8,6 +8,13 @@ one:
 
 two:
   team_id: 1
-  yearmonth: 2008-08-02
+  yearmonth: 2008-10-02
   project_id: 1
   days: 1
+
+unique:
+  team_id: 1
+  yearmonth: 2010-10-02
+  project_id: 3
+  days: 5
+  

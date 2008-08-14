@@ -1,6 +1,11 @@
 class Project < ActiveRecord::Base
 
   StatusType = Struct.new(:id,:name)
+
+  StatusOpen = 0
+  StatusInProgress = 1
+  StatusClosed = 2
+  StatusOverdue = 3
   
   belongs_to :country
   belongs_to :employee
@@ -41,6 +46,7 @@ class Project < ActiveRecord::Base
     @statuslist << StatusType.new("0","open")
     @statuslist << StatusType.new("1", "in progress")
     @statuslist << StatusType.new("2", "closed")
+    @statuslist << StatusType.new("3", "overdue")
     return @statuslist
   end
   

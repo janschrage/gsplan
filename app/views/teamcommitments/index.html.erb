@@ -32,16 +32,17 @@
 <div id="projectstats">	
 <h2>Projects</h2>
 <table>
-<tr><th>Project</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Miss</th><th></th></tr>
-<%   @projectplan.keys.each do |project| %>
+<tr><th>Ctry</th><th>Project</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Miss</th><th></th></tr>
+<%   @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}.each do |project| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td class="text"><%= h @projectplan[project][:name] %></td>
-	<td><%= h @projectplan[project][:committed_total] + @missingdays[project]%></td>
-	<td><%= h @projectplan[project][:committed_inper]%></td>
-	<td class="<%= 'cell-OK' if @missingdays[project]==0 %>"><%= h @projectplan[project][:committed_total] %></td>
-	<td class="<%= 'cell-error' if @missingdays[project]<0 %>"><%= h @missingdays[project] %></td>
-	<td><img src="<%= project_status_image(@projectplan[project][:status]) %>"></td>
-	<td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_project_path(project) %></td>
+	<td class="text"><%= h country_by_id(project[1][:country]).isocode %></td>
+	<td class="text"><%= h project[1][:name] %></td>
+	<td><%= h project[1][:committed_total] + @missingdays[project[0]]%></td>
+	<td><%= h project[1][:committed_inper]%></td>
+	<td class="<%= 'cell-OK' if @missingdays[project[0]]==0 %>"><%= h project[1][:committed_total] %></td>
+	<td class="<%= 'cell-error' if @missingdays[project[0]]<0 %>"><%= h @missingdays[project[0]] %></td>
+	<td><img src="<%= project_status_image(project[1][:status]) %>"></td>
+	<td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_project_path(project[0]) %></td>
 </tr>
  <%end%>
 </table>

@@ -48575,3 +48575,1733 @@ ZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVhbWNvbW1pdG1lbnRz--5d87921dc34dc00c4374e0a3bca142
   [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
   [4;35;1mTeamcommitment Load (0.001654)[0m   [0mSELECT * FROM "teamcommitments" [0m
 Completed in 0.16943 (5 reqs/sec) | Rendering: 0.00034 (0%) | DB: 0.00419 (2%) | 200 OK [http://localhost/report/graph_usage]
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+
+
+Processing AdminController#login (for 127.0.0.1 at 2008-08-13 21:12:03) [GET]
+  Session ID: 9f9139be8d908337bf83360a66856b86
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering template within layouts/GSPlan
+Rendering admin/login
+Completed in 0.09551 (10 reqs/sec) | Rendering: 0.08928 (93%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2008-08-13 21:12:10) [POST]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--171d1df8dcb8288007fbf280feedfe868eb12e92
+  Parameters: {"name"=>"Jan", "commit"=>"Login", "authenticity_token"=>"3e06f63ae1c0ced487193a90fcc02b054839d79e", "action"=>"login", "controller"=>"admin", "password"=>"test"}
+  [4;36;1mUser Load (0.024142)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'Jan') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 0.09030 (11 reqs/sec) | DB: 0.02414 (26%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2008-08-13 21:12:10) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpMA==--b53d4eb4fe46445cb4849e77d8bf69d543c8d5b7
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;35;1mUser Load (0.000429)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering admin/index
+Completed in 0.02465 (40 reqs/sec) | Rendering: 0.00306 (12%) | DB: 0.00043 (1%) | 200 OK [http://localhost/admin]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:12:12) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpMA==--b53d4eb4fe46445cb4849e77d8bf69d543c8d5b7
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+  [4;36;1mUser Load (0.000407)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-08-13; path=/
+  [4;35;1mTeam Load (0.000791)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001700)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001322)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mProject Load (0.001869)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mProject Load (0.003758)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;36;1mProject Load (0.000551)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;35;1mProject Load (0.000476)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000483)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;35;1mProject Load (0.000498)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mTeam Load (0.000375)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;36;1mProject Load (0.000483)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000337)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000550)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;35;1mCountry Load (0.000423)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCountry Load (0.000491)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.30121 (3 reqs/sec) | Rendering: 0.04265 (14%) | DB: 0.01451 (4%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:12:15) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mUser Load (0.000401)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000771)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001556)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.002977)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+Completed in 0.05728 (17 reqs/sec) | Rendering: 0.00033 (0%) | DB: 0.00570 (9%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:12:20) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-09-13"}
+  [4;35;1mUser Load (0.000486)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-09-13; path=/
+  [4;36;1mTeam Load (0.000798)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001743)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001427)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001741)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000609)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;35;1mProject Load (0.000501)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;36;1mProject Load (0.000469)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mProject Load (0.000461)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000498)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;35;1mProject Load (0.000470)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mTeam Load (0.000379)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;35;1mCountry Load (0.001418)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCountry Load (0.000449)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.11346 (8 reqs/sec) | Rendering: 0.01898 (16%) | DB: 0.01145 (10%) | 200 OK [http://localhost/teamcommitments?report_date=2008-09-13]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:12:21) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDktMTM=--35f28ffad86b82b70122544a317e31b1fc8964a7
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mUser Load (0.000377)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000729)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001251)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001611)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.19769 (5 reqs/sec) | Rendering: 0.00034 (0%) | DB: 0.00397 (2%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:12:25) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDktMTM=--35f28ffad86b82b70122544a317e31b1fc8964a7
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-08-13"}
+  [4;36;1mUser Load (0.000465)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-08-13; path=/
+  [4;35;1mTeam Load (0.000744)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001647)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.005569)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mProject Load (0.001815)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mProject Load (0.000649)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;36;1mProject Load (0.000475)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;35;1mProject Load (0.000556)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000469)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;35;1mProject Load (0.000467)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mTeam Load (0.000469)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;36;1mProject Load (0.000482)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000403)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000334)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;35;1mCountry Load (0.000406)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCountry Load (0.001329)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.12989 (7 reqs/sec) | Rendering: 0.02133 (16%) | DB: 0.01628 (12%) | 200 OK [http://localhost/teamcommitments?report_date=2008-08-13]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:12:26) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mUser Load (0.000403)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000754)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.005248)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001720)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+Completed in 0.06499 (15 reqs/sec) | Rendering: 0.00034 (0%) | DB: 0.00813 (12%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:13:28) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-08-13"}
+  [4;35;1mUser Load (0.000497)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-08-13; path=/
+  [4;36;1mTeam Load (0.000715)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001846)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001375)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001922)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000594)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;35;1mProject Load (0.000470)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;36;1mProject Load (0.000457)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000465)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mProject Load (0.000462)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000795)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000490)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000332)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000328)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;36;1mCountry Load (0.000418)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000395)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.10744 (9 reqs/sec) | Rendering: 0.01975 (18%) | DB: 0.01156 (10%) | 200 OK [http://localhost/teamcommitments?report_date=2008-08-13]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:13:29) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mUser Load (0.000393)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000726)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001275)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.005049)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.05804 (17 reqs/sec) | Rendering: 0.00033 (0%) | DB: 0.00744 (12%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:13:31) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-09-13"}
+  [4;36;1mUser Load (0.000414)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-09-13; path=/
+  [4;35;1mTeam Load (0.000730)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001695)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001335)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mProject Load (0.001740)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mProject Load (0.001702)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;36;1mProject Load (0.000555)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;35;1mProject Load (0.000484)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mProject Load (0.000483)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000487)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mProject Load (0.000483)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000430)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;36;1mCountry Load (0.000411)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000400)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.20978 (4 reqs/sec) | Rendering: 0.01747 (8%) | DB: 0.01135 (5%) | 200 OK [http://localhost/teamcommitments?report_date=2008-09-13]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:13:32) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDktMTM=--35f28ffad86b82b70122544a317e31b1fc8964a7
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mUser Load (0.000383)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000706)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001266)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001575)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+Completed in 0.05462 (18 reqs/sec) | Rendering: 0.00033 (0%) | DB: 0.00393 (7%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:13:35) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDktMTM=--35f28ffad86b82b70122544a317e31b1fc8964a7
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments", "report_date"=>"2008-08-13"}
+  [4;35;1mUser Load (0.000423)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-08-13; path=/
+  [4;36;1mTeam Load (0.000756)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.002809)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001355)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001903)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000626)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;35;1mProject Load (0.001476)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;36;1mProject Load (0.000520)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000553)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mProject Load (0.000491)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000367)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000529)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000356)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000347)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;36;1mCountry Load (0.000401)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000407)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.12613 (7 reqs/sec) | Rendering: 0.01819 (14%) | DB: 0.01332 (10%) | 200 OK [http://localhost/teamcommitments?report_date=2008-08-13]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:13:36) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mUser Load (0.000461)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000728)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001230)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001700)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.06319 (15 reqs/sec) | Rendering: 0.00044 (0%) | DB: 0.00412 (6%) | 200 OK [http://localhost/report/graph_usage]
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001979)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000944)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000542)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.011891)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001991)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000170)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000169)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000175)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000168)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000165)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000166)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000289)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000232)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.302224)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000610)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.015614)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000751)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009467)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000884)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.013344)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000571)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006075)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000650)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006520)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000724)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005989)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000799)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.010768)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000878)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.017541)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000931)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009189)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001066)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.058827)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.008062)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.001102)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.005990)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.005759)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.006117)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.007632)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.006748)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.012017)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.007062)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.011620)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.005408)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.007162)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.005840)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.009084)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001964)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000947)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000340)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000978)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000920)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000086)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000076)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000098)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000095)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000290)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.199096)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000610)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.004915)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000701)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005766)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000890)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008065)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001088)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005196)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001150)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008597)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001377)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005976)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001649)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006260)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001648)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008539)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001803)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005488)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001929)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007399)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.009520)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002158)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000256)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.004899)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.005327)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.005836)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.004497)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.008269)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.004529)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.005482)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005825)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.012077)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.009849)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.010210)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.007594)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.003422)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000949)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000328)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000973)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000907)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000085)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000101)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000297)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.245681)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000618)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008704)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000734)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008556)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000877)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006429)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001204)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005893)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001203)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009936)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001388)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005756)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001608)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.011577)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001662)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007781)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001826)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.035238)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002157)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006132)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.009689)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002130)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000254)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.004678)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.006240)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.015123)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.005092)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.005715)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.004820)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.004889)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.007315)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.007686)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.006926)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.005522)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.005002)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+
+
+Processing TeamcommitmentsController#new (for 127.0.0.1 at 2008-08-13 21:43:53) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"action"=>"new", "controller"=>"teamcommitments"}
+  [4;36;1mUser Load (0.000439)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/new
+  [4;35;1mTeam Load (0.001432)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+  [4;36;1mProject Load (0.003304)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.29657 (3 reqs/sec) | Rendering: 0.24627 (83%) | DB: 0.00518 (1%) | 200 OK [http://localhost/teamcommitments/new]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-13 21:44:03) [POST]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"teamcommitment"=>{"team_id"=>"1", "yearmonth(1i)"=>"2008", "project_id"=>"10", "days"=>"5", "yearmonth(2i)"=>"7", "yearmonth(3i)"=>"14"}, "commit"=>"Create", "authenticity_token"=>"3e06f63ae1c0ced487193a90fcc02b054839d79e", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;35;1mUser Load (0.000421)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000612)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000195)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 10 and team_id = 1) [0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/new
+  [4;36;1mTeam Load (0.000930)[0m   [0;1mSELECT * FROM "teams" ORDER BY name[0m
+  [4;35;1mProject Load (0.007617)[0m   [0mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.08359 (11 reqs/sec) | Rendering: 0.02585 (30%) | DB: 0.00978 (11%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-13 21:44:12) [POST]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIiwvdGVh
+bWNvbW1pdG1lbnRzP3JlcG9ydF9kYXRlPTIwMDgtMDgtMTM=--8053fcde51d976463085e7729fadc2f33288541e
+  Parameters: {"teamcommitment"=>{"team_id"=>"1", "yearmonth(1i)"=>"2008", "project_id"=>"10", "days"=>"5", "yearmonth(2i)"=>"8", "yearmonth(3i)"=>"14"}, "commit"=>"Create", "authenticity_token"=>"3e06f63ae1c0ced487193a90fcc02b054839d79e", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;36;1mUser Load (0.000381)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000544)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000166)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 10 and team_id = 1) [0m
+  [4;35;1mTeamcommitment Create (0.000342)[0m   [0mINSERT INTO "teamcommitments" ("team_id", "project_id", "days", "updated_at", "yearmonth", "created_at") VALUES(1, 10, 5, '2008-08-14 00:44:12', '2008-08-14', '2008-08-14 00:44:12')[0m
+Redirected to http://localhost:3000/teamcommitments/24
+Completed in 0.05293 (18 reqs/sec) | DB: 0.00143 (2%) | 302 Found [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#show (for 127.0.0.1 at 2008-08-13 21:44:12) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiKUNvbW1pdG1lbnQgd2FzIHN1Y2Nl
+c3NmdWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CEY6EW9yaWdpbmFsX3VyaSIs
+L3RlYW1jb21taXRtZW50cz9yZXBvcnRfZGF0ZT0yMDA4LTA4LTEz--da1d42233560a7f236d8230fecd98a05bd1ce968
+  Parameters: {"action"=>"show", "id"=>"24", "controller"=>"teamcommitments"}
+  [4;36;1mUser Load (0.000573)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000557)[0m   [0mSELECT * FROM "teamcommitments" WHERE ("teamcommitments"."id" = 24) [0m
+  [4;36;1mTeam Load (0.000397)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mProject Load (0.000552)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/show
+Completed in 0.07784 (12 reqs/sec) | Rendering: 0.02546 (32%) | DB: 0.00208 (2%) | 200 OK [http://localhost/teamcommitments/24]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:44:15) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiKUNvbW1pdG1lbnQgd2FzIHN1Y2Nl
+c3NmdWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CFQ6EW9yaWdpbmFsX3VyaSIs
+L3RlYW1jb21taXRtZW50cz9yZXBvcnRfZGF0ZT0yMDA4LTA4LTEz--e7e8fb6f10716865ddf779c17c3d0d7b8b34ec73
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+  [4;36;1mUser Load (0.000384)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-08-13; path=/
+  [4;35;1mTeam Load (0.000720)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.001715)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001241)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mProject Load (0.001915)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mProject Load (0.000668)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;36;1mProject Load (0.000524)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;35;1mProject Load (0.000494)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000545)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;35;1mProject Load (0.000484)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+  [4;35;1mTeam Load (0.000425)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;36;1mProject Load (0.000504)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000341)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000347)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;35;1mCountry Load (0.000432)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCountry Load (0.000408)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.24319 (4 reqs/sec) | Rendering: 0.02025 (8%) | DB: 0.01115 (4%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:44:15) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;36;1mUser Load (0.000428)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeam Load (0.000727)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeammember Load (0.001335)[0m   [0;1mSELECT * FROM "teammembers" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teams" [0m
+  [4;36;1mTeamcommitment Load (0.002304)[0m   [0;1mSELECT * FROM "teamcommitments" [0m
+Completed in 0.06012 (16 reqs/sec) | Rendering: 0.00058 (0%) | DB: 0.00479 (7%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#new (for 127.0.0.1 at 2008-08-13 21:44:20) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"action"=>"new", "controller"=>"teamcommitments"}
+  [4;35;1mUser Load (0.000424)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/new
+  [4;36;1mTeam Load (0.001745)[0m   [0;1mSELECT * FROM "teams" ORDER BY name[0m
+  [4;35;1mProject Load (0.004426)[0m   [0mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.08717 (11 reqs/sec) | Rendering: 0.04618 (52%) | DB: 0.00659 (7%) | 200 OK [http://localhost/teamcommitments/new]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-13 21:44:24) [POST]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"teamcommitment"=>{"team_id"=>"1", "yearmonth(1i)"=>"2008", "project_id"=>"10", "days"=>"5", "yearmonth(2i)"=>"8", "yearmonth(3i)"=>"14"}, "commit"=>"Create", "authenticity_token"=>"3e06f63ae1c0ced487193a90fcc02b054839d79e", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;36;1mUser Load (0.000384)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000548)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000404)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 10 and team_id = 1) [0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/new
+  [4;35;1mTeam Load (0.000869)[0m   [0mSELECT * FROM "teams" ORDER BY name[0m
+  [4;36;1mProject Load (0.001827)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Completed in 0.06523 (15 reqs/sec) | Rendering: 0.01973 (30%) | DB: 0.00403 (6%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#create (for 127.0.0.1 at 2008-08-13 21:44:34) [POST]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"teamcommitment"=>{"team_id"=>"2", "yearmonth(1i)"=>"2008", "project_id"=>"10", "days"=>"5", "yearmonth(2i)"=>"8", "yearmonth(3i)"=>"14"}, "commit"=>"Create", "authenticity_token"=>"3e06f63ae1c0ced487193a90fcc02b054839d79e", "action"=>"create", "controller"=>"teamcommitments"}
+  [4;35;1mUser Load (0.000435)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000575)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000186)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 10 and team_id = 2) [0m
+  [4;36;1mTeamcommitment Create (0.000289)[0m   [0;1mINSERT INTO "teamcommitments" ("team_id", "project_id", "days", "updated_at", "yearmonth", "created_at") VALUES(2, 10, 5, '2008-08-14 00:44:34', '2008-08-14', '2008-08-14 00:44:34')[0m
+Redirected to http://localhost:3000/teamcommitments/25
+Completed in 0.05749 (17 reqs/sec) | DB: 0.00149 (2%) | 302 Found [http://localhost/teamcommitments]
+
+
+Processing TeamcommitmentsController#show (for 127.0.0.1 at 2008-08-13 21:44:34) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiKUNvbW1pdG1lbnQgd2FzIHN1Y2Nl
+c3NmdWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CEY6EW9yaWdpbmFsX3VyaSIV
+L3RlYW1jb21taXRtZW50cw==--1244391c8d15616d86fca90753520cce87e08e01
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"teamcommitments"}
+  [4;35;1mUser Load (0.000379)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000438)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE ("teamcommitments"."id" = 25) [0m
+  [4;35;1mTeam Load (0.000408)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;36;1mProject Load (0.000532)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/show
+Completed in 0.05569 (17 reqs/sec) | Rendering: 0.00446 (8%) | DB: 0.00176 (3%) | 200 OK [http://localhost/teamcommitments/25]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:44:36) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiKUNvbW1pdG1lbnQgd2FzIHN1Y2Nl
+c3NmdWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CFQ6EW9yaWdpbmFsX3VyaSIV
+L3RlYW1jb21taXRtZW50cw==--c574352720e62c2a16b1a84aad935ec3e6934d52
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+  [4;35;1mUser Load (0.000388)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-08-13; path=/
+  [4;36;1mTeam Load (0.000727)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.010324)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001397)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001766)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000562)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;35;1mProject Load (0.000486)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;36;1mProject Load (0.000461)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000483)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mProject Load (0.000467)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000359)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000466)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000344)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000337)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;36;1mCountry Load (0.000402)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000376)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.12048 (8 reqs/sec) | Rendering: 0.01938 (16%) | DB: 0.01935 (16%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:44:37) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mUser Load (0.000408)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.001267)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.002418)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.003460)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.06121 (16 reqs/sec) | Rendering: 0.00034 (0%) | DB: 0.00755 (12%) | 200 OK [http://localhost/report/graph_usage]
+
+
+Processing TeamcommitmentsController#destroy (for 127.0.0.1 at 2008-08-13 21:44:43) [DELETE]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"authenticity_token"=>"3e06f63ae1c0ced487193a90fcc02b054839d79e", "_method"=>"delete", "action"=>"destroy", "id"=>"25", "controller"=>"teamcommitments"}
+  [4;36;1mUser Load (0.000382)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000442)[0m   [0mSELECT * FROM "teamcommitments" WHERE ("teamcommitments"."id" = 25) [0m
+  [4;36;1mTeamcommitment Destroy (0.000256)[0m   [0;1m DELETE FROM "teamcommitments"
+ WHERE "id" = 25
+[0m
+Redirected to http://localhost:3000/teamcommitments
+Completed in 0.03311 (30 reqs/sec) | DB: 0.00108 (3%) | 302 Found [http://localhost/teamcommitments/25]
+
+
+Processing TeamcommitmentsController#index (for 127.0.0.1 at 2008-08-13 21:44:43) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"action"=>"index", "controller"=>"teamcommitments"}
+  [4;35;1mUser Load (0.000401)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Cookie set: report_date=2008-08-13; path=/
+  [4;36;1mTeam Load (0.000757)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.001804)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001528)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mProject Load (0.001834)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mProject Load (0.000665)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 11) LIMIT 1[0m
+  [4;35;1mProject Load (0.000573)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 12) LIMIT 1[0m
+  [4;36;1mProject Load (0.000487)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;35;1mProject Load (0.000582)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mProject Load (0.000487)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "teamcommitments" [0m
+  [4;36;1mTeam Load (0.000371)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.000529)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000438)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000338)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 10) LIMIT 1[0m
+Rendering template within layouts/GSPlan
+Rendering teamcommitments/index
+  [4;36;1mCountry Load (0.000410)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) LIMIT 1[0m
+  [4;35;1mCountry Load (0.000382)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 3) LIMIT 1[0m
+Completed in 0.11820 (8 reqs/sec) | Rendering: 0.01953 (16%) | DB: 0.01159 (9%) | 200 OK [http://localhost/teamcommitments]
+
+
+Processing ReportController#graph_usage (for 127.0.0.1 at 2008-08-13 21:44:44) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMDM0Y2UxNTkwMjkwZTBkZWJmN2RjMzVjODEzODlm
+NTE6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRb3JpZ2luYWxfdXJpIhUvdGVh
+bWNvbW1pdG1lbnRz--76f8fa49f39242669ae452c0a1f10b4ecad6d6bc
+  Parameters: {"action"=>"graph_usage", "controller"=>"report"}
+  [4;35;1mUser Load (0.000512)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mTeam Load (0.000699)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeammember Load (0.001284)[0m   [0mSELECT * FROM "teammembers" [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeamcommitment Load (0.002203)[0m   [0mSELECT * FROM "teamcommitments" [0m
+Completed in 0.05572 (17 reqs/sec) | Rendering: 0.00033 (0%) | DB: 0.00470 (8%) | 200 OK [http://localhost/report/graph_usage]
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001925)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000938)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000332)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001281)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000923)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000081)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000083)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000079)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000089)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000086)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000288)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.200194)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000606)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.004969)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000699)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005129)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000860)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.024169)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001067)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.018379)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001201)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.010910)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001404)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007990)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001522)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007524)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001660)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007674)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001812)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.010518)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001973)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005755)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.009585)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002179)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000251)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.008757)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.005371)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.006522)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.004928)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.006799)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.011450)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.006603)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005269)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.005971)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.007689)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.006072)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.005683)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001945)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000938)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000462)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001863)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000952)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000079)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000089)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000318)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000238)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.019328)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000357)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.013335)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000422)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007274)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000495)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005420)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000689)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005507)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000881)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006521)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000874)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007347)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000963)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.011976)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001192)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008141)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001165)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006047)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001232)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006336)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.008720)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.001661)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.005538)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.007042)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.004796)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.005604)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.006521)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.006602)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.007703)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005311)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.005167)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.005340)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.008655)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.007550)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.022324)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002705)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000334)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001007)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000914)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000081)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000135)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000292)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000224)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.138259)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000601)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005031)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000718)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008728)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001044)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.019873)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001120)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009401)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001199)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005985)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001321)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005595)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001486)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.013415)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001677)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008837)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001825)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009280)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002178)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006070)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.006583)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002287)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.005750)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.006988)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.004648)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.005950)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.004672)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.007927)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.007038)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005252)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.006059)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.004875)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.006943)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.008174)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001953)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000944)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000339)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001010)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000917)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000120)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000081)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000289)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000226)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.161215)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000604)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.004730)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000736)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.004968)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000830)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005798)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001034)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009350)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001358)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008088)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001404)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008769)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001554)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007699)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001674)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006792)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001797)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008687)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001988)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006561)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.012405)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002230)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000256)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.007992)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.005848)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.005318)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.006892)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.009429)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.005986)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.005662)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005559)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.005587)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.007810)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.005843)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.005598)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001911)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001148)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000537)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.002373)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002055)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000174)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000195)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000178)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000185)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000169)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000229)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000174)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000167)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000286)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.011736)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000365)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005500)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000416)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005348)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000490)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.010090)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000562)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.012455)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000604)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008752)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001014)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009503)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000980)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005813)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001056)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007736)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001162)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007179)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001232)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007858)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.009307)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.001393)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.008290)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.006284)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.006223)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.005791)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.004841)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.004912)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.006315)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005195)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.005587)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.005119)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.006294)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.006890)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001972)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000936)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000341)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000970)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000903)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000105)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000082)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000079)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000283)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.181582)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000612)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007925)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000856)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.012877)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001017)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008534)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001050)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005611)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001163)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006732)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001560)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008605)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001531)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007778)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001707)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.018227)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001830)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006541)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001966)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006266)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.007184)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002105)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000248)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.007483)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.004799)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.005587)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.004868)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.005353)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.006843)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.005189)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.006931)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.008902)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.045530)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.010946)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.006642)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001980)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000950)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000322)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001114)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001020)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000094)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000099)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000089)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000299)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000228)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.167284)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000621)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.004781)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000688)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005269)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000881)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006390)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001018)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009027)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001195)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006351)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001311)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006521)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001493)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.016194)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001687)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.025093)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001863)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005667)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001931)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.009133)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.007103)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002251)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.004756)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.006536)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.005651)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.007112)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.037787)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.004427)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.006848)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.019009)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.004886)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.004284)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.005812)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.004383)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+  [4;36;1mSQL (0.001961)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001053)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000321)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001092)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000915)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000083)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mPRAGMA index_list("cpro_projects")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("employees")[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("projecttracks")[0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mPRAGMA index_list("teamcommitments")[0m
+  [4;35;1mSQL (0.000087)[0m   [0mPRAGMA index_list("teammembers")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("teams")[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list("worktypes")[0m
+  [4;35;1mSQL (0.000397)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.160070)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isocode" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000605)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.011672)[0m   [0mCREATE TABLE "cpro_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer DEFAULT NULL NULL, "cpro_name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000776)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005801)[0m   [0mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pernr" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000858)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005644)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "planend" date DEFAULT NULL NULL, "planbeg" date DEFAULT NULL NULL, "worktype_id" integer DEFAULT NULL NULL, "planeffort" integer DEFAULT NULL NULL, "employee_id" integer DEFAULT NULL NULL, "country_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "status" integer(1) DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001038)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008452)[0m   [0mCREATE TABLE "projecttracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "reportdate" date DEFAULT NULL NULL, "daysbooked" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001180)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.005866)[0m   [0mCREATE TABLE "teamcommitments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "team_id" integer DEFAULT NULL NULL, "yearmonth" date DEFAULT NULL NULL, "project_id" integer DEFAULT NULL NULL, "days" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001303)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006369)[0m   [0mCREATE TABLE "teammembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer DEFAULT NULL NULL, "team_id" integer DEFAULT NULL NULL, "endda" date DEFAULT NULL NULL, "begda" date DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001490)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.011143)[0m   [0mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001660)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.006987)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001764)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008122)[0m   [0mCREATE TABLE "worktypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "preload" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002270)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.007689)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.007525)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002145)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.005454)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809182316')[0m
+  [4;36;1mSQL (0.007734)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171016')[0m
+  [4;35;1mSQL (0.005332)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171413')[0m
+  [4;36;1mSQL (0.005157)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801171601')[0m
+  [4;35;1mSQL (0.005541)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801171745')[0m
+  [4;36;1mSQL (0.007346)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080801180329')[0m
+  [4;35;1mSQL (0.011862)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080801195623')[0m
+  [4;36;1mSQL (0.005135)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080802021521')[0m
+  [4;35;1mSQL (0.005474)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080802161026')[0m
+  [4;36;1mSQL (0.005884)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809123503')[0m
+  [4;35;1mSQL (0.005800)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080809164727')[0m
+  [4;36;1mSQL (0.007045)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080809164844')[0m

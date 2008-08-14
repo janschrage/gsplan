@@ -27,7 +27,7 @@
     return membercount
   end
   
-   def calculate_usage(report_date)
+  def calculate_usage(report_date)
     # count team members
     commitmentcount = {}
     teamindex = {}
@@ -66,15 +66,25 @@
     
     @projects = Project::find(:all)
     @projects.each do |project|
-      if  project.planbeg <= endda and project.planend >= begda 
-        projectindex = { :name => project.name,
-                         :committed_total => 0,
-                         :committed_inper => 0,
-                         :status => project.status }
-        projectdays[project.id] = projectindex                 
-      end
+        if  project.planbeg <= endda and project.planend >= begda 
+          projectindex = { :name => project.name,
+			                     :country => project.country_id,
+                           :committed_total => 0,
+                           :committed_inper => 0,
+                           :status => project.status }
+          projectdays[project.id] = projectindex                 
+        else
+          if project.planend <= begda and project.status != Project::StatusClosed
+                projectindex = { :name => project.name,
+		                           	 :country => project.country_id,
+                                 :committed_total => 0,
+                                 :committed_inper => 0,
+                                 :status => Project::StatusOverdue } 
+                projectdays[project.id] = projectindex                 
+	        end
+        end
     end
-    
+ 
     commitments = Teamcommitment::find(:all)
     
     commitments.each do |commitment|
