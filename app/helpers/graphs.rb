@@ -1,7 +1,7 @@
 module Graphs
   
   def graph_capacity
-   date = Date.today
+   date = Date::strptime(cookies[:report_date]) || Date.today
    @capacities = calculate_capacities(date)
    title = Title.new("Team Capacity")
     # group by team and use subject as the key

@@ -1,5 +1,7 @@
 class AdminController < ApplicationController
 
+  layout :determine_layout
+  
   def login
     session[:user_id] = nil
     if request.post?
@@ -24,4 +26,12 @@ class AdminController < ApplicationController
   def index
   end
 
+private
+  def determine_layout
+    if session[:user_id] 
+      "GSPlan"
+    else
+      "GSPlan_noauth"
+    end
+  end
 end

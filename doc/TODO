@@ -1,14 +1,19 @@
 TODO
 
-+ Teamcommitment create view: show current report date, no edit of date
++ Use calendar widget for date selection
++ Remove active scaffold
 + Create page that shows all (future?) team commitments
 + on projects page allow to filter out closed projects
++ BW file uploads
++ Extend auth model (roles admin, team lead, viewer), access control
 + Reporting dashboard
-+ Edit projects: Status list always starts with open, not with real status
++ BUG: Edit projects: Status list always starts with open, not with real status
 
 DONE
 
 2008-08-14
++ Add percentage to teammembers, use for capacity calculation, make 16 days a constant
++ Teamcommitment create view: show current report date, no edit of date
 + Project tracks, commitments: db change days to decimal
 
 2008-08-12

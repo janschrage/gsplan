@@ -1,5 +1,7 @@
  module Statistics
  
+  DaysPerPerson = 16;
+  
   def get_month_beg_end(curdate)
     month_begin = Date::strptime(curdate.year().to_s+'-'+curdate.month().to_s+'-01')
     month_end = (month_begin>>(1)) - 1
@@ -10,21 +12,21 @@
   
   def calculate_capacities(report_date)
     # count team members
-    membercount = {}
+    capacity = {}
     teamindex = {}
     @teams = Team::find(:all)
     @teams.each do |@team|
-      membercount[@team.name] = 0;
+      capacity[@team.name] = 0;
       teamindex[@team.id] = @team.name
     end
     teammembers = Teammember::find(:all)
     
     teammembers.each do |@teammember|
       if @teammember.endda >= report_date then
-        membercount[teamindex[@teammember.team_id]] += 1*16
+        capacity[teamindex[@teammember.team_id]] += DaysPerPerson * (@teammember.percentage || 100)/100
       end
     end
-    return membercount
+    return capacity
   end
   
   def calculate_usage(report_date)

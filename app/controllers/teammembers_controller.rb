@@ -14,7 +14,8 @@ class TeammembersController < ApplicationController
         teamname = Team.find_by_id(teammember[:team_id]).name
       
         output = { :classname => teammember,
-                   :employeename => employeename, 
+                   :employeename => employeename,
+                   :percentage => teammember.percentage,
                    :planbeg => teammember.begda,
                    :planend => teammember.endda,
                    :teamname => teamname}
@@ -44,7 +45,8 @@ class TeammembersController < ApplicationController
     teamname = Team.find_by_id(teammember[:team_id]).name
       
     @output = {:classname => teammember,
-               :employeename => employeename, 
+               :employeename => employeename,
+               :percentage => teammember.percentage,
                :planbeg => teammember.begda,
                :planend => teammember.endda,
                :teamname => teamname}

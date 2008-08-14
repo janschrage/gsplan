@@ -11,7 +11,9 @@
   </p>
   <p>
     <%= f.label "Year/Month" %><br />
-    <%= f.date_select :yearmonth %>
+	<% yearmonth=cookies[:report_date] || Date.today %>
+    <%= f.hidden_field :yearmonth, :value => yearmonth %>
+    <%= f.label yearmonth %>
   </p>
   <p>
     <%= f.label "Project" %><br />

@@ -5,13 +5,14 @@
 
 <div id="teammembers">
 <table>
-<tr><th>Team</th><th>Member</th><th>Begin</th><th>End</th></tr>
+<tr><th>Team</th><th>Member</th><th>Avail. %</th><th>Begin</th><th>End</th></tr>
 <%   @outputlist.each do |teammember| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
 	<td class="text"><%= h teammember[:teamname] %></td>
 	<td class="text"><%= h teammember[:employeename] %></td>
+	<td><%= h teammember[:percentage] %></td>  </p>
 	<td class="text"><%= h teammember[:planbeg] %></td>
-	<td class="text"><%= h teammember[:planend] %></td>
+	<td class="text"><%= h teammember[:planend] %></td>  </p>
     <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_teammember_path(teammember[:classname]) %></td>
     <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), teammember[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>

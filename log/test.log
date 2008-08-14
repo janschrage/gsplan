@@ -2397,3 +2397,179 @@ WARNING: Can't mass-assign these protected attributes: id
 WARNING: Can't mass-assign these protected attributes: id
   [4;35;1mProject Load (0.000519)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
   [4;36;1mTeamcommitment Load (0.000517)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 1 and team_id = 1) [0m
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'SomethingDifferent') [0m
+  [4;35;1mSQL (0.000123)[0m   [0mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000312)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'Identical') [0m
+  [4;35;1mSQL (0.000154)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000508)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000130)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000312)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000595)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;36;1mProjecttrack Load (0.000218)[0m   [0;1mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-08-15') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000193)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000517)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000162)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000549)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000189)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000595)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000161)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000597)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000167)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000693)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000169)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-11-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000502)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000398)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-15') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000522)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000368)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 3 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000591)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000361)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 3 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000225)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000507)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000526)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 1 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000578)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000521)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 1 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000371)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'SomethingDifferent') [0m
+  [4;35;1mSQL (0.000251)[0m   [0mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000564)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'Identical') [0m
+  [4;35;1mSQL (0.000282)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000483)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000308)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000319)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000257)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.003652)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001065)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;36;1mProjecttrack Load (0.000392)[0m   [0;1mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-08-15') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000193)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000657)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000167)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000511)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000166)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000708)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000168)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000525)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000159)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000497)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000161)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-11-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000497)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000410)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-15') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000519)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000364)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 3 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000538)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000421)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 3 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000190)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000566)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000527)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 1 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000507)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000516)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 1 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+ActiveScaffold: extending RESTful routes for countries
+ActiveScaffold: extending RESTful routes for worktypes
+ActiveScaffold: extending RESTful routes for teams
+ActiveScaffold: extending RESTful routes for employees
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000338)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'SomethingDifferent') [0m
+  [4;35;1mSQL (0.000295)[0m   [0mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000538)[0m   [0;1mSELECT "cpro_name" FROM "cpro_projects" WHERE ("cpro_projects".cpro_name = 'Identical') [0m
+  [4;35;1mSQL (0.000349)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000519)[0m   [0;1mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123456') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000266)[0m   [0mSELECT "pernr" FROM "employees" WHERE ("employees".pernr = 'I123458') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.001938)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-3') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.000287)[0m   [0mSELECT "name" FROM "projects" WHERE ("projects".name IS NULL) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.000653)[0m   [0;1mSELECT "name" FROM "projects" WHERE ("projects".name = 'TestProject-1') [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001253)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;36;1mProjecttrack Load (0.000336)[0m   [0;1mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-08-15') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000348)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.001834)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000343)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.001063)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000391)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.001039)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000329)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.001188)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000333)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000546)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000164)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-11-01' and reportdate = '2008-09-01') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000504)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1[0m
+  [4;35;1mProjecttrack Load (0.000398)[0m   [0mSELECT * FROM "projecttracks" WHERE (project_id = 4 and team_id = 1 and yearmonth = '2008-09-01' and reportdate = '2008-09-15') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000516)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000368)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 3 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000768)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1[0m
+  [4;35;1mTeamcommitment Load (0.000377)[0m   [0mSELECT * FROM "teamcommitments" WHERE (project_id = 3 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mProject Load (0.000186)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" IS NULL) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.000496)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000598)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 1 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mProject Load (0.001927)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) LIMIT 1[0m
+  [4;36;1mTeamcommitment Load (0.000559)[0m   [0;1mSELECT * FROM "teamcommitments" WHERE (project_id = 1 and team_id = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+WARNING: Can't mass-assign these protected attributes: id
+WARNING: Can't mass-assign these protected attributes: id

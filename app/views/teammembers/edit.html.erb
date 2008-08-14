@@ -14,7 +14,13 @@
  	<%=
  		f.collection_select(:team_id, team_list, :id, :name)
 	%>
-  </p>  
+  </p>
+  </p>
+  <%= f.label "% available" %><br />
+ 	<%=
+ 		f.text_field(:percentage, :size => 3)
+	%>
+  </p>     
   <p>
     <%= f.label :begda %><br />
     <%= f.date_select :begda %>
