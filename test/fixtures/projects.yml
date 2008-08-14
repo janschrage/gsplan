@@ -29,3 +29,13 @@ unique:
   planeffort: 1
   employee_id: 1
   country_id: 1
+  
+projecttrack_ok:
+  id: 4
+  name: TestforProjectTrack_OK
+  planend: 2008-09-30
+  planbeg: 2008-08-01
+  worktype_id: 1
+  planeffort: 20
+  employee_id: 1
+  country_id: 1

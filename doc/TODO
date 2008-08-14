@@ -1,12 +1,15 @@
 TODO
 
-+ Project tracks, commitments: db change days to decimal
++ Teamcommitment create view: show current report date, no edit of date
 + Create page that shows all (future?) team commitments
 + on projects page allow to filter out closed projects
 + Reporting dashboard
 + Edit projects: Status list always starts with open, not with real status
 
 DONE
+
+2008-08-14
++ Project tracks, commitments: db change days to decimal
 
 2008-08-12
 + Team commitment view: List current PLUS old still open projects

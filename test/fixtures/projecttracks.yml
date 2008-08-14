@@ -1,15 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+unique:
   team_id: 1
-  yearmonth: 2008-08-09
-  project_id: 1
-  reportdate: 2008-08-09
-  daysbooked: 1
+  yearmonth: 2008-09-01
+  project_id: 4
+  reportdate: 2008-09-15
+  daysbooked: 5
 
-two:
-  team_id: 1
-  yearmonth: 2008-08-09
-  project_id: 1
-  reportdate: 2008-08-09
-  daysbooked: 1
+
