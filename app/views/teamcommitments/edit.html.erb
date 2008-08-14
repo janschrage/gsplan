@@ -16,7 +16,7 @@
   <p>
     <%= f.label :project_id %><br />
  	<%=
- 		f.collection_select(:project_id, project_list, :id, :name)
+ 		f.collection_select(:project_id, project_list_current, :id, :name)
 	%>
   </p>
   <p>

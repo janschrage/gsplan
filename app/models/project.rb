@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   StatusType = Struct.new(:id,:name)
 
   StatusOpen = 0
-  StatusInProgress = 1
+  StatusInProcess = 1
   StatusClosed = 2
   StatusOverdue = 3
   
