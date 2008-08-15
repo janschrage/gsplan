@@ -2,6 +2,8 @@ require 'csv'
 
 class ProjecttracksController < ApplicationController
   
+  include ProjecttracksHelper
+  
   TaskNotAssigned = "Not assigned"         #Time on cost center, ADMI etc
   TaskTotal       = "Result"               #Total for that person, ignore
   
@@ -113,6 +115,14 @@ class ProjecttracksController < ApplicationController
     end
   end
 
+  def show_commit
+    @report_date = Date::strptime(cookies[:report_date])
+    respond_to do |format|
+        format.html { render :action => "show_commit" }
+        format.xml  { render :xml => @errors }
+    end
+  end
+  
   def do_import
     @report_date = Date::strptime(params[:dump][:report_date])
     cookies[:report_date]=@report_date.to_s
@@ -187,5 +197,37 @@ class ProjecttracksController < ApplicationController
   
   def do_commit
     #commit upload to db
+    @report_date = Date::strptime(cookies[:report_date])
+    @today = Date.today
+    @errors=[]
+    @key=""
+    @tracks=params[:tracks]
+    @projects=[]
+    begin
+      Projecttrack.transaction do
+        @tracks.keys.each do |key|
+          @key=key
+          @pt = Projecttrack.new(:team_id => @tracks[key][:team_id], :project_id => @tracks[key][:project_id], :yearmonth => @report_date, :reportdate => @today, :daysbooked => @tracks[key][:days])
+          if !@pt.valid? then
+            @errors << "Error for #{team_by_id(@tracks[@key][:team_id])} / #{project_by_id(@tracks[@key][:project_id])}"
+            @pt.errors.each_full {|msg| @errors<<msg}
+            raise "Transaction failure"
+          end
+          @projects << @pt
+        end
+        @projects.each do |project|
+          project.save
+        end
+      end
+    rescue
+       
+       @errors << "Transaction aborted."
+    end
+ 
+    respond_to do |format|
+        flash[:notice] = 'Data was successfully committed.' if @errors.empty?
+        format.html { render :action => "show_commit" }
+        format.xml  { render :xml => @errors }
+    end 
   end
 end

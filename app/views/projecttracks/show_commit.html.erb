@@ -1,0 +1,16 @@
+<h1>Commit Results</h1>
+
+<p>
+	Reporting month: <%=h @report_date.to_s %>
+</p>
+
+<p>
+<span class="error">	
+<% @errors.each do |error|%>
+<%=h error %><br />
+<%end%>
+</span>
+</p>
+
+<%=  button_to("Return", :controller => :admin, :action => :index) %>
+</p>
