@@ -6,14 +6,18 @@
     <th>Name</th>
     <th>Task</th>
     <th>Days</th>
-  </tr>
+    <th>EE</th>
+	<th>Prj</th>  
+</tr>
 
 <% for track in @tracks %>
-  <tr>
-    <td><%=h track[:pernr] %></td>
-    <td><%=h track[:name] %></td>
-    <td><%=h track[:task] %></td>
-    <td><%=h track[:days] %></td>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td class="text"><%=h track[:pernr] %></td>
+    <td class="text"><%=h track[:name] %></td>
+    <td class="text"><%=h track[:task] %></td>
+    <td class="text"><%=h track[:days] %></td>
+    <td class="text"><img src="<%= track_status_image(track[:eeok]) %>"></td>
+    <td class="text"><img src="<%= track_status_image(track[:prok]) %>"></td>
   </tr>
 <% end %>
 </table>

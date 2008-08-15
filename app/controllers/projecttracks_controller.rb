@@ -115,6 +115,7 @@ class ProjecttracksController < ApplicationController
     pernr=""
     name=""
     days=0.0
+    errors=0
     @parsed_file.each  do |row|
       #pt=Projecttrack.new() 
       pernr=row[3] unless row[3].nil?
@@ -128,7 +129,13 @@ class ProjecttracksController < ApplicationController
       end  
       n=n+1
       if task != TaskTotal and days > 0
-        track={ :pernr => pernr, :name => name, :task => task , :days => days}
+        #Check for errors
+        eeok=true
+        prok=true
+        eeok = false unless Employee.find_by_pernr(pernr)
+        prok = false unless CproProject.find_by_cpro_name(task)
+        errors = errors + 1 unless prok and eeok
+        track={ :pernr => pernr, :name => name, :task => task , :days => days, :eeok => eeok, :prok => prok}
         @tracks << track
       end
     end
