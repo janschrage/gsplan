@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'projecttracks/import', :controller => "projecttracks", :action => "import"
   map.connect 'projecttracks/show_import', :controller => "projecttracks", :action => "show_import"
   map.connect 'projecttracks/do_import', :controller => "projecttracks", :action => "do_import"
+  map.connect 'projecttracks/show_conversion', :controller => "projecttracks", :action => "show_conversion"
+  map.connect 'projecttracks/do_conversion', :controller => "projecttracks", :action => "do_conversion"
   
   map.resources :users
 

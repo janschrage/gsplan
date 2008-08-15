@@ -14,6 +14,12 @@ body {
   background:   #ddddff ;
 }
 
+span.error { 
+  padding: 2px;
+  border: 2px solid red;
+  display: table;
+}
+  
 .cell-OK {
 	background: #00ff00
 }

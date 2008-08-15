@@ -97,25 +97,33 @@ class ProjecttracksController < ApplicationController
     end
   end
 
-  def show_import
-      
+  def show_import      
+    @report_date = Date::strptime(cookies[:report_date])
     respond_to do |format|
         format.html { render :action => "show_import" }
         format.xml  { render :xml => @tracks }
     end
-  
+  end
+
+  def show_conversion 
+    @report_date = Date::strptime(cookies[:report_date])
+    respond_to do |format|
+        format.html { render :action => "show_import", :report_date => @report_date }
+        format.xml  { render :xml => @tracks }
+    end
   end
 
   def do_import
- 
+    @report_date = Date::strptime(params[:dump][:report_date])
+    cookies[:report_date]=@report_date.to_s
+    
     @parsed_file=CSV::Reader.parse(params[:dump][:file], ';')
-    n=0
     track={}
     @tracks=[]
     pernr=""
     name=""
     days=0.0
-    errors=0
+    @errors=0
     @parsed_file.each  do |row|
       #pt=Projecttrack.new() 
       pernr=row[3] unless row[3].nil?
@@ -127,14 +135,13 @@ class ProjecttracksController < ApplicationController
       else
         days=row[7].gsub(',','.').to_f
       end  
-      n=n+1
       if task != TaskTotal and days > 0
         #Check for errors
         eeok=true
         prok=true
         eeok = false unless Employee.find_by_pernr(pernr)
         prok = false unless CproProject.find_by_cpro_name(task)
-        errors = errors + 1 unless prok and eeok
+        @errors = @errors + 1 unless prok and eeok
         track={ :pernr => pernr, :name => name, :task => task , :days => days, :eeok => eeok, :prok => prok}
         @tracks << track
       end
@@ -143,8 +150,42 @@ class ProjecttracksController < ApplicationController
     respond_to do |format|
         format.html { render :action => "show_import" }
         format.xml  { render :xml => @tracks }
-    end
-    
+    end  
   end
   
+  def do_conversion
+    #Do the conversion to team data here
+    @tracks=params[:tracks]
+    @teamtracks={}
+    @report_date = Date::strptime(cookies[:report_date])
+    @errors = []
+    @tracks.each do |track|
+      ee_id=Employee.find_by_pernr(track[:pernr]).id
+      teamlink=Teammember.find(:first, :conditions => ["employee_id = ? and begda <= ? and endda >= ?", ee_id, @report_date,@report_date])
+      if teamlink then 
+        team_id = teamlink.team_id      
+        project_id=CproProject.find_by_cpro_name(track[:task]).project_id
+        key = team_id.to_s+"x"+project_id.to_s
+        prevtrack=@teamtracks[key]
+        if prevtrack then
+          prevtrack[:days] = prevtrack[:days] + track[:days]
+          @teamtracks[key]=prevtrack
+        else 
+          @teamtracks[key]={:team_id => team_id, :project_id => project_id, :days => track[:days]}
+        end
+      else
+        @errors << "No team found in reporting period: Employee #{track[:pernr]}"
+      end
+    end
+    @errors = @errors.uniq
+    
+    respond_to do |format|
+        format.html { render :action => "show_conversion" }
+        format.xml  { render :xml => @teamtracks }
+    end 
+  end
+  
+  def do_commit
+    #commit upload to db
+  end
 end

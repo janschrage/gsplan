@@ -82,7 +82,7 @@ class TeammembersController < ApplicationController
 
     respond_to do |format|
       if @teammember.update_attributes(params[:teammember])
-        flash[:notice] = 'Commitment was successfully updated.'
+        flash[:notice] = 'Team member was successfully updated.'
         format.html { redirect_to(@teammember) }
         format.xml  { head :ok }
       else

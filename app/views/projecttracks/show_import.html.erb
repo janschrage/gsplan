@@ -1,5 +1,12 @@
 <h1>Imported Data</h1>
 
+<p>
+	Reporting month: <%=h @report_date.to_s %>
+</p>
+<%= "Total number of lines with errors: "+@errors.to_s if @errors>0 %>
+<%= "Data OK." if @errors == 0 %> 
+<%=  button_to("Proceed", :action => :do_conversion, :tracks => @tracks) if @errors==0 %>
+</p>
 <table>
   <tr>
     <th>Pernr</th>
@@ -15,7 +22,7 @@
     <td class="text"><%=h track[:pernr] %></td>
     <td class="text"><%=h track[:name] %></td>
     <td class="text"><%=h track[:task] %></td>
-    <td class="text"><%=h track[:days] %></td>
+    <td><%=h track[:days] %></td>
     <td class="text"><img src="<%= track_status_image(track[:eeok]) %>"></td>
     <td class="text"><img src="<%= track_status_image(track[:prok]) %>"></td>
   </tr>

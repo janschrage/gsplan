@@ -1,6 +1,10 @@
 <h1>Import a BW file</h1>
 
  <% form_for :dump, :url=>{:controller=>"projecttracks", :action=>"do_import"}, :html => { :multipart => true } do |f| -%>
+<p>
+	   	<label for="report_date">Date for BW data (yyyy-mm-dd), dd can be any day</label><br />
+		<%= f.text_field :report_date %>
+</p>
  <table>
    <tr>
      <td>
