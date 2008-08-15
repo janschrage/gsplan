@@ -1,3 +1,5 @@
+require 'csv'
+
 class ProjecttracksController < ApplicationController
   # GET /projecttracks
   # GET /projecttracks.xml
@@ -82,4 +84,46 @@ class ProjecttracksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def import
+  
+    respond_to do |format|
+        format.html { render :action => "import" }
+        format.xml  { render :xml => @tracks }
+    end
+  end
+
+  def show_import
+      
+    respond_to do |format|
+        format.html { render :action => "show_import" }
+        format.xml  { render :xml => @tracks }
+    end
+  
+  end
+
+  def do_import
+ 
+    @parsed_file=CSV::Reader.parse(params[:dump][:file], ';')
+    n=0
+    track={}
+    @tracks=[]
+    @parsed_file.each  do |row|
+      #pt=Projecttrack.new() 
+      pernr=row[3] unless row[3].nil?
+      name=row[4] unless row[3].nil?
+      task=row[5]
+      days=row[7]
+      n=n+1
+      track={ :pernr => pernr, :name => name, :task => task , :days => days}
+      @tracks << track
+    end 
+    
+    respond_to do |format|
+        format.html { render :action => "show_import" }
+        format.xml  { render :xml => @tracks }
+    end
+    
+  end
+  
 end

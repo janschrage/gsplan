@@ -1,0 +1,21 @@
+<h1>Imported Data</h1>
+
+<table>
+  <tr>
+    <th>Pernr</th>
+    <th>Name</th>
+    <th>Task</th>
+    <th>Days</th>
+  </tr>
+
+<% for track in @tracks %>
+  <tr>
+    <td><%=h track[:pernr] %></td>
+    <td><%=h track[:name] %></td>
+    <td><%=h track[:task] %></td>
+    <td><%=h track[:days] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

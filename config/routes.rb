@@ -2,6 +2,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect '', :controller => "teamcommitments"
 
+  map.connect 'projecttracks/import', :controller => "projecttracks", :action => "import"
+  map.connect 'projecttracks/show_import', :controller => "projecttracks", :action => "show_import"
+  map.connect 'projecttracks/do_import', :controller => "projecttracks", :action => "do_import"
+  
   map.resources :users
 
   map.resources :cpro_projects

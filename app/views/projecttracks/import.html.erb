@@ -1,0 +1,21 @@
+<h1>Import a BW file</h1>
+
+ <% form_for :dump, :url=>{:controller=>"projecttracks", :action=>"do_import"}, :html => { :multipart => true } do |f| -%>
+ <table>
+   <tr>
+     <td>
+      <label for="filename">
+        Select a CSV File :
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   <tr>
+     <td colspan='2'>
+       <%= submit_tag 'Import' -%>
+     </td>
+   </tr>
+ </table>
+<% end -%>
