@@ -1,6 +1,10 @@
 require 'csv'
 
 class ProjecttracksController < ApplicationController
+  
+  TaskNotAssigned = "Not assigned"         #Time on cost center, ADMI etc
+  TaskTotal       = "Result"               #Total for that person, ignore
+  
   # GET /projecttracks
   # GET /projecttracks.xml
   def index
@@ -108,16 +112,26 @@ class ProjecttracksController < ApplicationController
     n=0
     track={}
     @tracks=[]
+    pernr=""
+    name=""
+    days=0.0
     @parsed_file.each  do |row|
       #pt=Projecttrack.new() 
       pernr=row[3] unless row[3].nil?
-      name=row[4] unless row[3].nil?
+      pernr[0,1]="I" if pernr[0,1]=="1"
+      name=row[4] unless row[4].nil?
       task=row[5]
-      days=row[7]
+      if task == TaskNotAssigned
+        days=row[6].gsub(',','.').to_f
+      else
+        days=row[7].gsub(',','.').to_f
+      end  
       n=n+1
-      track={ :pernr => pernr, :name => name, :task => task , :days => days}
-      @tracks << track
-    end 
+      if task != TaskTotal and days > 0
+        track={ :pernr => pernr, :name => name, :task => task , :days => days}
+        @tracks << track
+      end
+    end
     
     respond_to do |format|
         format.html { render :action => "show_import" }
