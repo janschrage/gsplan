@@ -4,12 +4,14 @@ TODO
 + Remove active scaffold
 + Create page that shows all (future?) team commitments
 + on projects page allow to filter out closed projects
-+ BW file uploads
 + Extend auth model (roles admin, team lead, viewer), access control
 + Reporting dashboard
 + BUG: Edit projects: Status list always starts with open, not with real status
 
 DONE
+
+2008-08-15
++ BW file uploads
 
 2008-08-14
 + Add percentage to teammembers, use for capacity calculation, make 16 days a constant
