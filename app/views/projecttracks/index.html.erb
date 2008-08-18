@@ -3,22 +3,21 @@
 <table>
   <tr>
     <th>Team</th>
-    <th>Yearmonth</th>
+    <th>Year/month</th>
     <th>Project</th>
-    <th>Reportdate</th>
-    <th>Daysbooked</th>
+    <th>Report date</th>
+    <th>Days booked</th>
   </tr>
 
 <% for projecttrack in @projecttracks %>
-  <tr>
-    <td><%=h projecttrack.team_id %></td>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%=h team_by_id(projecttrack.team_id) %></td>
     <td><%=h projecttrack.yearmonth %></td>
-    <td><%=h projecttrack.project_id %></td>
+    <td><%=h project_by_id(projecttrack.project_id) %></td>
     <td><%=h projecttrack.reportdate %></td>
     <td><%=h projecttrack.daysbooked %></td>
-    <td><%= link_to 'Show', projecttrack %></td>
-    <td><%= link_to 'Edit', edit_projecttrack_path(projecttrack) %></td>
-    <td><%= link_to 'Destroy', projecttrack, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_projecttrack_path(projecttrack) %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), projecttrack, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

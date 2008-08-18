@@ -5,6 +5,12 @@ module ProjectsHelper
                           "/images/icons/ok.png",
                           "/images/icons/alert.png" ]    
 
+  ProjectTrendImages = [ "/images/icons/trend_under.png",
+                          "/images/icons/trend_neutral.png",
+                          "/images/icons/trend_over.png" ]    
+
+  ProjectDeltaNoDelta = 5 # delta <= 5% is on track
+
   def country_list
     @countries = Country.find(:all, :order => "name" )
     return @countries
@@ -24,5 +30,24 @@ module ProjectsHelper
     return "/images/icons/cache.png" if status.nil?
     return ProjectStatusImages[status]
   end
-   
+
+  def project_trend_image(plan,act)
+    plan = 0 if plan.nil?
+    act = 0 if act.nil?
+    
+    if plan != 0
+      percdelta = (plan-act).abs / plan * 100
+    else
+      percdelta = 0
+    end
+    
+    if percdelta > ProjectDeltaNoDelta 
+      trend = 0 if act < plan
+      trend = 2 if act > plan
+    else
+      trend = 1
+    end
+    return ProjectTrendImages[trend]
+  end
+
 end

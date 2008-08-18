@@ -66,13 +66,15 @@
       endda = Date::strptime('9999-12-31')
     end
     
-    @projects = Project::find(:all)
+    #Find the projects
+    @projects = Project::find(:all, :conditions => ["planbeg <= ? and status <> ?", endda, Project::StatusClosed])
     @projects.each do |project|
         if  project.planbeg <= endda and project.planend >= begda 
           projectindex = { :name => project.name,
 			                     :country => project.country_id,
                            :committed_total => 0,
                            :committed_inper => 0,
+                           :daysbooked => 0,
                            :status => project.status }
           projectdays[project.id] = projectindex                 
         else
@@ -81,17 +83,20 @@
 		                           	 :country => project.country_id,
                                  :committed_total => 0,
                                  :committed_inper => 0,
+                                 :daysbooked => 0,
                                  :status => Project::StatusOverdue } 
                 projectdays[project.id] = projectindex                 
 	        end
         end
     end
  
+
+    #Calculate the commitments
     commitments = Teamcommitment::find(:all)
     
     commitments.each do |commitment|
       thisproject = projectdays[commitment.project_id]
-      if  not thisproject == nil then
+      if  not thisproject.nil? then
         committed_total = thisproject[:committed_total] + commitment.days 
         if begda <= commitment.yearmonth and endda >= commitment.yearmonth
           committed_inper = thisproject[:committed_inper] + commitment.days
@@ -99,6 +104,15 @@
         end
         thisproject[:committed_total] = committed_total
         projectdays[commitment.project_id]=thisproject
+      end
+    end
+    
+    #Calculate the days booked
+    tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda])
+    tracks.each do |track|
+      thisproject = projectdays[track.project_id]
+      if not thisproject.nil? then
+        thisproject[:daysbooked] = thisproject[:daysbooked] + track.daysbooked
       end
     end
     return projectdays

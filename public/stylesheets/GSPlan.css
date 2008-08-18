@@ -7,6 +7,14 @@ body {
 #projectstats {position: absolute; left: 650px; top: 440px;}
 #teamcommitments {position: absolute; left: 10px; top: 440px; width: 630px;}
 
+/* Maintenance view */
+#maint-wrap {display: table}
+#maint-row {display: table-row;}
+#maint-left,#maint-middle,#maint-middle   {vertical-align: top; display: table-cell; padding-left: 20px; padding-right: 20px;}
+
+ 
+
+/* Lists */
 .list-line-even {
   background:   #aaaaff ;
 }
