@@ -66,6 +66,9 @@
       endda = Date::strptime('9999-12-31')
     end
     
+    #Find the date of the last BW upload for the given period
+    last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
+
     #Find the projects
     @projects = Project::find(:all, :conditions => ["planbeg <= ? and status <> ?", endda, Project::StatusClosed])
     @projects.each do |project|
@@ -75,6 +78,7 @@
                            :committed_total => 0,
                            :committed_inper => 0,
                            :daysbooked => 0,
+			   :reportdate => last_report_date,
                            :status => project.status }
           projectdays[project.id] = projectindex                 
         else
@@ -84,6 +88,7 @@
                                  :committed_total => 0,
                                  :committed_inper => 0,
                                  :daysbooked => 0,
+				 :reportdate => last_report_date,
                                  :status => Project::StatusOverdue } 
                 projectdays[project.id] = projectindex                 
 	        end
@@ -107,14 +112,37 @@
       end
     end
     
-    #Calculate the days booked
-    tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda])
+    #Calculate the days booked from the last BW data set
+    tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and reportdate = ?",endda, begda, last_report_date])
+
     tracks.each do |track|
       thisproject = projectdays[track.project_id]
       if not thisproject.nil? then
         thisproject[:daysbooked] = thisproject[:daysbooked] + track.daysbooked
+	projectdays[track.project_id] = thisproject
       end
     end
     return projectdays
   end    
+
+  def calculate_worktype_distribution(report_date)
+
+    # Get the bookings per project
+    projectdays = calculate_project_days(report_date)
+  
+    wt_distrib = {}
+
+    projectdays.each do |project|
+      wt = Project.find_by_id(project[0]).worktype_id
+      if wt_distrib[wt].nil?
+	wt_distrib[wt] = { :daysbooked => project[1][:daysbooked],
+			   :committed_inper => project[1][:committed_inper] }
+      else
+	wt_distrib[wt][:daysbooked] = wt_distrib[wt][:daysbooked] + project[1][:daysbooked]
+	wt_distrib[wt][:committed_inper] = wt_distrib[wt][:committed_inper] + project[1][:committed_inper] 
+      end
+    end
+    return wt_distrib
+  end
 end
+

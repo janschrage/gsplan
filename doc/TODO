@@ -10,6 +10,9 @@ TODO
 
 DONE
 
+2008-08-18
++ BUG: Select only latest set of BW data per month in statistics.rb, otherwise tracking data will be wrong if more than one exists
+
 2008-08-15
 + BW file uploads
 

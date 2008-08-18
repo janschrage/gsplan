@@ -81,4 +81,36 @@ module Graphs
     chart.add_element(bar3)
     render :text => chart.to_s
   end
+
+  def graph_worktypes
+    date = Date::strptime(cookies[:report_date])
+    @worktype_distribution = calculate_worktype_distribution(date)
+  
+    pie = Pie.new
+    title = Title.new("Worktypes by days booked")
+    pie.start_angle = 35
+    pie.animate = true
+    pie.tooltip = '#val# of #total#<br>#percent# of 100%'
+    pievalues = []
+
+    @worktype_distribution.keys.each do |wt|
+      wt_name = Worktype::find_by_id(wt).name
+      wt_daysbooked = @worktype_distribution[wt][:daysbooked]
+      pievalues << PieValue.new(wt_daysbooked,"#{wt_name}")
+    end
+    pie.values = pievalues.to_a
+    #pie.colours = ["#d01f3c", "#356aa0", "#C79810"]
+
+    chart = OpenFlashChart.new
+    chart.title = title
+    chart.add_element(pie)
+
+    chart.x_axis = nil
+
+    render :text => chart.to_s
+
+  end
+
+
 end
+

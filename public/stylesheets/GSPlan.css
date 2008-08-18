@@ -1,6 +1,7 @@
 body {
 }
 
+/* Planning Dashboard */
 #pagecontent {position: absolute; top:80px; width: 100%}
 #teamgraph {position: absolute; left: 10px; top: 120px;}
 #teamstats {position: absolute; left: 650px; top: 120px;}
@@ -10,9 +11,13 @@ body {
 /* Maintenance view */
 #maint-wrap {display: table}
 #maint-row {display: table-row;}
-#maint-left,#maint-middle,#maint-middle   {vertical-align: top; display: table-cell; padding-left: 20px; padding-right: 20px;}
+#maint-left,#maint-middle,#maint-right   {vertical-align: top; display: table-cell; padding-left: 20px; padding-right: 20px;}
 
- 
+/* Reporting Dashboard */
+#projects-wrap {display: table}
+#projects-row {display: table-row;}
+#projects-left,#projects-middle,#projects-right   {vertical-align: top; display: table-cell; padding-left: 20px; padding-right: 20px;}
+/* Generic for all pages */
 
 /* Lists */
 .list-line-even {

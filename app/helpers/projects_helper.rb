@@ -9,7 +9,7 @@ module ProjectsHelper
                           "/images/icons/trend_neutral.png",
                           "/images/icons/trend_over.png" ]    
 
-  ProjectDeltaNoDelta = 5 # delta <= 5% is on track
+  ProjectDeltaNoDelta = 10 # delta <= 10% is on track
 
   def country_list
     @countries = Country.find(:all, :order => "name" )

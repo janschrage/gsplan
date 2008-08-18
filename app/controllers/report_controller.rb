@@ -17,8 +17,10 @@ class ReportController < ApplicationController
     
     
     @projectplan = calculate_project_days(@report_date)
-    
-#    @graph_wt = open_flash_chart_object(200,200,"/report/graph_worktypes")
+    firstproject = @projectplan[@projectplan.keys.first]
+    @last_report_date = firstproject[:reportdate]
+
+    @graph_wt = open_flash_chart_object(300,300,"/report/graph_worktypes")
   end
    
 end
