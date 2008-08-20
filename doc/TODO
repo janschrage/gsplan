@@ -4,11 +4,13 @@ TODO
 + Remove active scaffold
 + Create page that shows all (future?) team commitments
 + on projects page allow to filter out closed projects
-+ Extend auth model (roles admin, team lead, viewer), access control
 + Reporting dashboard
 + BUG: Edit projects: Status list always starts with open, not with real status
 
 DONE
+
+2008-08-20
++ Extend auth model (roles admin, team lead, viewer), access control
 
 2008-08-18
 + BUG: Select only latest set of BW data per month in statistics.rb, otherwise tracking data will be wrong if more than one exists

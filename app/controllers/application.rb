@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   layout "GSPlan"
-  before_filter :authorize, :except => :login  
+  before_filter :authenticate_user, :check_authorization, :except => :login  
 
   helper :all # include all helpers, all the time
 
@@ -20,12 +20,25 @@ class ApplicationController < ActionController::Base
   end
   
 protected
-  def authorize
+  def authenticate_user
     unless User.find_by_id(session[:user_id]) or User.count.zero?
       session[:original_uri] = request.request_uri
       flash[:notice] = "Please log in"
       redirect_to :controller => :admin, :action => :login
     end
+    return false
   end
-  
+
+  def check_authorization
+    user = User.find_by_id(session[:user_id])
+    unless user.roles.detect{|role|
+      role.rights.detect{|right|
+        (right.action == action_name || right.action == '*' ) && ( right.controller == self.class.controller_path || right.controller == '*')
+        }
+      }
+      flash[:notice] = "You are not authorized to view the page you requested"
+      request.env["HTTP_REFERER" ] ? (redirect_to :back) : (redirect_to "/")
+      return false
+    end
+  end
 end

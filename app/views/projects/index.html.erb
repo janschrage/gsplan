@@ -3,7 +3,10 @@
 <script type="text/javascript" src="/javascripts/swfobject.js"></script>
 
 
+
 <div id="projects">
+<%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_project_path %><%= link_to 'New Project', new_project_path %>
+
 <table>
 <tr><th>Project</th><th>Begin (Plan)</th><th>End (Plan)</th><th>Effort (Plan)</th><th>Type</th><th>Country</th><th>Responsible</th><th>Committed</th><th>Missing</th><th>Status</th></tr>
 <%   @outputlist.each do |project| %>
@@ -23,7 +26,6 @@
 </tr>
  <%end%>
 </table>
-<%= link_to 'New Project', new_project_path %>
 </div>
 
 

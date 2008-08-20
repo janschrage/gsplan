@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :rights
+
+  map.resources :roles
+
 
   map.connect '', :controller => "teamcommitments"
 
