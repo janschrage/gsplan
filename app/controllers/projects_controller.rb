@@ -3,9 +3,9 @@ class ProjectsController < ApplicationController
   include Statistics
   
   def index
-    @projectplan = calculate_project_days(nil)
+    #@projectplan = calculate_project_days(nil)
         
-    @missingdays = {}
+    #@missingdays = {}
     
     @projects = Project.find(:all)
  
@@ -17,8 +17,8 @@ class ProjectsController < ApplicationController
        employeename = Employee.find_by_id(project[:employee_id]).name
        worktypename = Worktype.find_by_id(project[:worktype_id]).name
       
-       committed = @projectplan[project.id][:committed_total]
-       missing = project.planeffort - committed
+       #committed = @projectplan[project.id][:committed_total]
+       #missing = project.planeffort - committed
        #status = project.project_status_text(project.status)
        status = project.status
       
@@ -30,9 +30,7 @@ class ProjectsController < ApplicationController
                   :planend => project.planend,
                   :name => project.name,
                   :planeffort => project.planeffort,
-                  :committed => committed,
-                  :status => status,
-                  :missing => missing}
+                  :status => status}
         @outputlist << output
       end
     end

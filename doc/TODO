@@ -1,11 +1,15 @@
 TODO
 
-+ Use calendar widget for date selection
++ ???Use calendar widget for date selection
 + Remove active scaffold
 + Create page that shows all (future?) team commitments
 + on projects page allow to filter out closed projects
 + Reporting dashboard
 + BUG: Edit projects: Status list always starts with open, not with real status
++ BW import: fix date entry to date selector not string
++ Roles, Rights: Put on maintenance screen, adjust views to standard layout
++ All index screens: hook to show only allowed actions for that role
++ Password change screen
 
 DONE
 
