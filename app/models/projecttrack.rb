@@ -27,6 +27,8 @@ protected
   def track_is_unique
     return if yearmonth.nil? or project_id.nil? or team_id.nil? or reportdate.nil?
     prevtracks = Projecttrack.find(:first, :conditions => ["project_id = ? and team_id = ? and yearmonth = ? and reportdate = ?", project_id, team_id, yearmonth, reportdate])
-    errors.add(:reportdate, "Track for this team/project/period/report date already exists.") if !prevtracks.nil?
+    if !prevtracks.nil? 
+      errors.add(:reportdate, "Track for this team/project/period/report date already exists.") unless prevtracks.id == self.id
+    end
   end    
 end

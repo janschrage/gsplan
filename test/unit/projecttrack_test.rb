@@ -77,4 +77,10 @@ class ProjecttrackTest < ActiveSupport::TestCase
     assert !pt.errors.invalid?(:yearmonth)
     assert !pt.errors.invalid?(:daysbooked)
   end
+
+  def test_update
+    pt = Projecttrack.find(1)
+    pt.daysbooked = 7
+    assert pt.save!
+  end
 end

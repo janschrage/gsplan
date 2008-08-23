@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 unique:
+  id: 1
   team_id: 1
   yearmonth: 2008-09-01
   project_id: 4

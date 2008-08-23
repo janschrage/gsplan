@@ -31,4 +31,10 @@ class TeamcommitmentTest < ActiveSupport::TestCase
     tc2 = Teamcommitment.new( :id => 5, :team_id => 1, :project_id => 3, :yearmonth => Date::strptime("2010-11-05"), :days => 15 )
     assert tc2.valid?
   end
+
+  def test_update
+    tc = Teamcommitment.find_by_id(2)
+    tc.days = 5
+    assert tc.save!
+  end
 end

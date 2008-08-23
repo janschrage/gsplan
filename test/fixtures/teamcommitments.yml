@@ -7,6 +7,7 @@ one:
   days: 1
 
 two:
+  id: 2
   team_id: 1
   yearmonth: 2008-10-02
   project_id: 1

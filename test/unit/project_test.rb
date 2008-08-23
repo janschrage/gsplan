@@ -29,4 +29,11 @@ class ProjectTest < ActiveSupport::TestCase
     prj = Project.new( :id => 3, :name => "TestProject-3", :planbeg => Date::strptime("2008-08-31"), :planend => Date::strptime("2008-09-30"), :planeffort => "5", :worktype_id => "1", :country_id => "1", :employee_id => "1")
     assert prj.valid?
   end
+
+  def test_update
+    prj = Project.find_by_id(2)
+    prj.planend = Date::strptime("2008-09-30");
+    assert prj.save!
+  end
+
 end

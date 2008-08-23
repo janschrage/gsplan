@@ -28,7 +28,7 @@ protected
     month=get_month_beg_end(yearmonth)
     prevcommitments.each do |prev|
       if month[:first_day] <= prev.yearmonth and month[:last_day] >= prev.yearmonth
-        errors.add(:yearmonth, "Commitment for this team/project/period already exists.")
+        errors.add(:yearmonth, "Commitment for this team/project/period already exists.") unless prev.id == self.id
       end
     end
   end
