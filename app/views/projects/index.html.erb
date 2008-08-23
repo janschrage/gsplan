@@ -5,7 +5,10 @@
 
 
 <div id="projects">
-<%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_project_path %><%= link_to 'New Project', new_project_path %>
+<div class="link-create">
+<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_project_path %></span>
+<span class="vcenter"><%= link_to 'New Project', new_project_path %></span>
+</div>
 
 <table>
 <tr><th>Project</th><th>Begin (Plan)</th><th>End (Plan)</th><th>Effort (Plan)</th><th>Type</th><th>Country</th><th>Responsible</th><th>Status</th></tr>

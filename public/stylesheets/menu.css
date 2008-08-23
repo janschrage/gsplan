@@ -18,7 +18,7 @@ width: 100%;
 background: transparent url('/images/aeroleft.gif') no-repeat top left;
 display: block;
 float: left;
-font: bold 13px Verdana, Trebuchet MS; /* Change 13px as desired */
+font: bold 13px sans-serif; /* Change 13px as desired */
 line-height: 23px; /* This value + 8px should equal height of button background (default is 31px) */
 height: 31px; /* Height of button background height */
 padding-left: 10px; /* Width of left menu image */

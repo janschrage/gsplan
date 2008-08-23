@@ -17,7 +17,63 @@ body {
 #projects-wrap {display: table}
 #projects-row {display: table-row;}
 #projects-left,#projects-middle,#projects-right   {vertical-align: top; display: table-cell; padding-left: 20px; padding-right: 20px;}
+
+/* Login form */
+.login-form fieldset {
+  background: #efe;
+}
+
+.login-form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.login-form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+}
+
+.login-form .submit {
+  margin-left: 5.5em;
+}
+
+
 /* Generic for all pages */
+
+/* Styles */
+#notice-confidential {  
+  font-family: sans-serif;
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0.2em 1em; 
+  }
+
+.link-create {}
+.vcenter {
+  vertical-align: middle;
+  }
+
+/* Floats */
+.left { float: left; text-align: left;}
+.right{ float: right; text-align: right;}
+.usermenu { 
+  float: top;
+  width: auto;
+  }
+
+.usermenu a { 
+  text-align: right; 
+  width: auto;
+  font-family: sans-serif; 
+  color: #446655; 
+  display: block;
+  }
 
 /* Lists */
 .list-line-even {
@@ -53,26 +109,3 @@ th { text-align: left }
 td { text-align: right }
 td.text { text-align: left }
 
-/* Login form */
-.login-form fieldset {
-  background: #efe;
-}
-
-.login-form legend {
-  color: #dfd;
-  background: #141;
-  font-family: sans-serif;
-  padding: 0.2em 1em;
-}
-
-.login-form label {
-  width: 5em;
-  float: left;
-  text-align: right;
-  margin-right: 0.5em;
-  display: block;
-}
-
-.login-form .submit {
-  margin-left: 5.5em;
-}

@@ -15,8 +15,8 @@ class AddRolesRightsData < ActiveRecord::Migration
     right_list_tc = Right.create :name => "list_teamcommitments", :controller => "teamcommitments", :action => "index"
     right_graph_us = Right.create :name => "graph_usage", :controller => "report", :action => "graph_usage"
     right_graph_wt = Right.create :name => "graph_worktypes", :controller => "report", :action => "graph_worktypes"
-    right_graph_wt = Right.create :name => "logout", :controller => "admin", :action => "logout"
-    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, logout]
+    right_logout = Right.create :name => "logout", :controller => "admin", :action => "logout"
+    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, right_logout]
     role_tl.save!
     
   end

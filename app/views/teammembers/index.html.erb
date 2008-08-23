@@ -4,6 +4,10 @@
 
 
 <div id="teammembers">
+<div class="link-create">
+<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_teammember_path %></span>
+<span class="vcenter"><%= link_to 'New teammember', new_teammember_path %></span>
+</div>
 <table>
 <tr><th>Team</th><th>Member</th><th>Avail. %</th><th>Begin</th><th>End</th></tr>
 <%   @outputlist.each do |teammember| %>
@@ -18,7 +22,8 @@
 </tr>
  <%end%>
 </table>
-<%= link_to 'New teammember', new_teammember_path %>
+
+
 </div>
 
 

@@ -10,10 +10,19 @@
  </head>
 <body>
 
+<div class="usermenu">
+<%= link_to "Logout", :controller => "admin", :action => "logout" %>
+</div>
+
 <div class="aerobuttonmenu">
+<div class="left">
 <a href="/teamcommitments" class="aero"><span>Plan</span></a> 
 <a href="/report" class="aero"><span>Report</span></a> 
 <a href="/admin" class="aero"><span>Maintain</span></a> 
+</div>
+<div id="notice-confidential" class="right">
+Internal &amp; Confidential
+</div>
 </div>
 
 
