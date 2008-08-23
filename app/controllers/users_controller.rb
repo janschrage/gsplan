@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    session[:original_uri] = request.request_uri
     @user = User.find(params[:id])
   end
 
@@ -61,8 +62,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = "User #{@user.name} was successfully created."
-        format.html { redirect_to(:action=>:index) }
+        flash[:notice] = "User #{@user.name} was successfully updated."
+        format.html { redirect_to(session[:original_uri]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -87,4 +88,9 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def change_password
+    session[:original_uri] = request.env["HTTP_REFERER"]
+    @user = User.find(session[:user_id])
+  end 
 end

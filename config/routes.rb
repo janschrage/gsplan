@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
 
   map.connect '', :controller => "teamcommitments"
+  map.connect 'users/change_password', :controller => "users", :action => "change_password"
 
   map.connect 'projecttracks/import', :controller => "projecttracks", :action => "import"
   map.connect 'projecttracks/show_import', :controller => "projecttracks", :action => "show_import"

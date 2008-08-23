@@ -63,16 +63,19 @@ body {
 .left { float: left; text-align: left;}
 .right{ float: right; text-align: right;}
 .usermenu { 
+  overflow: hidden;
   float: top;
   width: auto;
   }
 
 .usermenu a { 
+  float: right;
   text-align: right; 
   width: auto;
   font-family: sans-serif; 
   color: #446655; 
   display: block;
+  padding: 2px 4px 2px 2px
   }
 
 /* Lists */

@@ -8,10 +8,12 @@ TODO
 + BUG: Edit projects: Status list always starts with open, not with real status
 + BW import: fix date entry to date selector not string
 + Roles, Rights: Put on maintenance screen, adjust views to standard layout
-+ All index screens: hook to show only allowed actions for that role
-+ Password change screen
 
 DONE
+
+2008-08-23
++ Password change screen
++ Team commitments index screen: hook to show only allowed actions for that role
 
 2008-08-20
 + Extend auth model (roles admin, team lead, viewer), access control
