@@ -141,9 +141,9 @@ class ProjecttracksController < ApplicationController
       name=row[4] unless row[4].nil?
       task=row[5]
       if task == TaskNotAssigned
-        days=row[6].gsub(',','.').to_f
+        days=row[6].gsub(',','.').to_f unless row[6].nil?
       else
-        days=row[7].gsub(',','.').to_f
+        days=row[7].gsub(',','.').to_f unless row[7].nil?
       end  
       if task != TaskTotal and days > 0
         #Check for errors
@@ -165,7 +165,7 @@ class ProjecttracksController < ApplicationController
   
   def do_conversion
     #Do the conversion to team data here
-    @tracks=params[:tracks]
+    @tracks=flash[:tracks]
     @teamtracks={}
     @report_date = Date::strptime(cookies[:report_date])
     @errors = []
@@ -201,7 +201,7 @@ class ProjecttracksController < ApplicationController
     @today = Date.today
     @errors=[]
     @key=""
-    @tracks=params[:tracks]
+    @tracks=flash[:tracks]
     @projects=[]
     begin
       Projecttrack.transaction do

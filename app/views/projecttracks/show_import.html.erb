@@ -5,7 +5,8 @@
 </p>
 <%= "Total number of lines with errors: "+@errors.to_s if @errors>0 %>
 <%= "Data OK." if @errors == 0 %> 
-<%=  button_to("Proceed", :action => :do_conversion, :tracks => @tracks) if @errors==0 %>
+<% flash[:tracks] = @tracks if @errors=0 %>
+<%=  button_to("Proceed", :action => :do_conversion) if @errors==0 %>
 </p>
 <table>
   <tr>

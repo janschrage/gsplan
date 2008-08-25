@@ -8,7 +8,12 @@
 <span class="error"><%=h error %></span><br />
 <%end%>
 </p>
-<%=  button_to("Commit to database", :action => :do_commit, :tracks => @teamtracks) if @errors.empty? %>
+<% if @errors.empty? then 
+	 flash[:tracks] = @teamtracks
+   else
+	 flash[:tracks] = nil
+   end %>
+<%=  button_to("Commit to database", :action => :do_commit) if @errors.empty? %>
 <table>
   <tr>
     <th>Team</th>
