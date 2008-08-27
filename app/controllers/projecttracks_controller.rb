@@ -211,10 +211,11 @@ class ProjecttracksController < ApplicationController
           if !@pt.valid? then
             @errors << "Error for #{team_by_id(@tracks[@key][:team_id])} / #{project_by_id(@tracks[@key][:project_id])}"
             @pt.errors.each_full {|msg| @errors<<msg}
-            raise "Transaction failure"
+            #raise "Transaction failure"
           end
-          @projects << @pt
+          @projects << @pt if @pt.valid?
         end
+        raise "Transaction failure" unless @errors.empty?
         @projects.each do |project|
           project.save
         end

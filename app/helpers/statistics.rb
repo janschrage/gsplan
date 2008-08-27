@@ -70,7 +70,7 @@
     last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
 
     #Find the projects
-    @projects = Project::find(:all, :conditions => ["planbeg <= ? and status <> ?", endda, Project::StatusClosed])
+    @projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? ) ", endda, begda, Project::StatusClosed])
     @projects.each do |project|
         if  project.planbeg <= endda and project.planend >= begda 
           projectindex = { :name => project.name,

@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
   
   def new
     @project = Project.new
-
+    session[:original_uri] = "/projects"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @project }

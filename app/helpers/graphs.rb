@@ -99,7 +99,7 @@ module Graphs
       pievalues << PieValue.new(wt_daysbooked,"#{wt_name}")
     end
     pie.values = pievalues.to_a
-    #pie.colours = ["#d01f3c", "#356aa0", "#C79810"]
+    pie.colours = ["#d01f3c", "#356aa0", "#C79810", "#aaff00", "#ffaa00", "#00aaff", "#00ffaa"]
 
     chart = OpenFlashChart.new
     chart.title = title

@@ -36,16 +36,21 @@ module ProjectsHelper
     act = 0 if act.nil?
     
     if plan != 0
-      percdelta = (plan-act).abs / plan * 100
+      percdelta = ((plan-act) / plan * 100).abs
     else
       percdelta = 0
     end
     
-    if percdelta > ProjectDeltaNoDelta 
+    if percdelta > ProjectDeltaNoDelta
       trend = 0 if act < plan
       trend = 2 if act > plan
     else
-      trend = 1
+      if plan == 0
+      	trend = 1 if act <= 0.5 
+      	trend = 2 if act >  0.5
+      else
+        trend = 1
+      end
     end
     return ProjectTrendImages[trend]
   end
