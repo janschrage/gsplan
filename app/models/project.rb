@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
   StatusInProcess = 1
   StatusClosed = 2
   StatusOverdue = 3
+  StatusPilot = 4
   
   belongs_to :country
   belongs_to :employee
@@ -43,10 +44,11 @@ class Project < ActiveRecord::Base
   
   def project_status_list
     @statuslist = []
-    @statuslist << StatusType.new("0","open")
-    @statuslist << StatusType.new("1", "in progress")
-    @statuslist << StatusType.new("2", "closed")
-    @statuslist << StatusType.new("3", "overdue")
+    @statuslist << StatusType.new(StatusOpen, "open")
+    @statuslist << StatusType.new(StatusInProcess, "in process")
+    @statuslist << StatusType.new(StatusClosed, "closed")
+    @statuslist << StatusType.new(StatusOverdue, "overdue")
+    @statuslist << StatusType.new(StatusPilot, "pilot")
     return @statuslist
   end
   
