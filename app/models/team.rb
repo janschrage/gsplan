@@ -4,6 +4,8 @@ class Team < ActiveRecord::Base
   
   has_and_belongs_to_many :employees
   has_many :teamcommitments
-  has_and_belongs_to_many :projects
+  has_many :users
+  has_many :countries
+#  has_and_belongs_to_many :projects
 
 end

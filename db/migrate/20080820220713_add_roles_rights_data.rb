@@ -18,7 +18,10 @@ class AddRolesRightsData < ActiveRecord::Migration
     right_logout = Right.create :name => "logout", :controller => "admin", :action => "logout"
     right_change_pw = Right.create :name => "change_password", :controller => "users", :action =>"change_password"
     right_update_user = Right.create :name => "update_user", :controller => "users", :action =>"update" #Needed for pw change
-    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, right_logout, right_change_pw, right_update_user]
+    right_new_project = Right.create :name => "new_project", :controller => "projects", :action =>"new"
+    right_create_project = Right.create :name => "create_project", :controller => "projects", :action =>"create"
+    right_myteam = Right.create :name => "myteam", :controller => "myteam", :action => "index"
+    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, right_logout, right_change_pw, right_update_user, right_new_project, right_create_project, right_myteam]
     role_tl.save!
     
   end

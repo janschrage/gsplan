@@ -3,10 +3,12 @@ body {
 
 /* Planning Dashboard */
 #pagecontent {position: absolute; top:80px; width: 100%}
-#teamgraph {position: absolute; left: 10px; top: 120px;}
-#teamstats {position: absolute; left: 650px; top: 120px;}
-#projectstats {position: absolute; left: 650px; top: 440px;}
-#teamcommitments {position: absolute; left: 10px; top: 440px; width: 630px;}
+#top {position: absolute; left: 0px; top: 120px; height: 439px;}
+#middle {position: absolute; left: 0px; top: 440px;}
+#teamgraph {position: absolute; left: 10px; /*top: 120px;*/}
+#teamstats {position: absolute; left: 650px; /*top: 120px;*/}
+#projectstats {position: absolute; left: 650px; /*top: 440px;*/}
+#teamcommitments {position: absolute; left: 10px; /*top: 440px;*/ width: 630px;}
 
 /* Maintenance view */
 #maint-wrap {display: table}

@@ -9,13 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080820220713) do
+ActiveRecord::Schema.define(:version => 20080926222456) do
 
   create_table "countries", :force => true do |t|
     t.string   "isocode"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   create_table "cpro_projects", :force => true do |t|
@@ -115,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20080820220713) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   create_table "worktypes", :force => true do |t|

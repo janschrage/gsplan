@@ -8,6 +8,7 @@
 <script type="text/javascript" src="/javascripts/swfobject.js"></script>
 
 <div id="pagecontent">
+<div id="top">
 <div id="teams">
 <div id="teamgraph">
 <%= @graph %>
@@ -27,7 +28,9 @@
 </table>
 </div>
 </div>
+</div>
 
+<div id="middle">
 <div id="projects">
 <div id="projectstats">	
 <h2>Projects</h2>
@@ -50,6 +53,9 @@
 	<td class="<%= 'cell-error' if @missingdays[project[0]]<0 %>"><%= h @missingdays[project[0]] %></td>
 	<td><img src="<%= project_status_image(project[1][:status]) %>"></td>
 <% if check_link_auth("projects","edit") then %>
+	<td class="cell-action"><%= link_to image_tag("/images/icons/player_play.png", :border=>0), edit_project_path(project[0]) %></td>	
+	<td class="cell-action"><%= link_to image_tag("/images/icons/launch_22x22.png", :border=>0), edit_project_path(project[0]) %></td>	
+	<td class="cell-action"><%= link_to image_tag("/images/icons/player_stop.png", :border=>0), edit_project_path(project[0]) %></td>
 	<td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_project_path(project[0]) %></td>
 <% end %>
 </tr>
@@ -90,5 +96,6 @@
   </tr>
 <% end %>
 </table>
+</div>
 </div>
 </div>

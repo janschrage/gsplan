@@ -49,6 +49,7 @@ class Project < ActiveRecord::Base
     @statuslist << StatusType.new(StatusClosed, "closed")
     @statuslist << StatusType.new(StatusOverdue, "overdue")
     @statuslist << StatusType.new(StatusPilot, "pilot")
+    @statuslist << StatusType.new(StatusPilot, "proposed")
     return @statuslist
   end
   

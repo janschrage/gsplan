@@ -84,7 +84,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
 
     respond_to do |format|
-      @project.status = 0;  #Project is open by default
+      @project.status = 5;  #Project is "proposed" on creation
       if @project.save
         flash[:notice] = 'Project was successfully created.'
         format.html { redirect_to(session[:original_uri]) }
@@ -101,7 +101,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        flash[:notice] = 'Commitment was successfully updated.'
+        flash[:notice] = 'Project was successfully updated.'
         format.html { redirect_to(@project) }
         format.xml  { head :ok }
       else

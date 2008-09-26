@@ -24,7 +24,11 @@
 <%= if check_link_auth("report","index") then	
 		"<a href=\"/report\" class=\"aero\"><span>Report</span></a>"
 	end
-%> 
+%>
+<%= if check_link_auth("myteam","index") then	
+		"<a href=\"/myteam\" class=\"aero\"><span>My Team</span></a>"
+	end
+%>  
 <%= if check_link_auth("admin","index") then	
 		"<a href=\"/admin\" class=\"aero\"><span>Maintain</span></a>"
 	end

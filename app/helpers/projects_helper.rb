@@ -4,7 +4,8 @@ module ProjectsHelper
                           "/images/icons/run.png",
                           "/images/icons/ok.png",
                           "/images/icons/alert.png",
-			  "/images/icons/launch_22x22.png"]    
+			  "/images/icons/launch_22x22.png",
+			  "/images/icons/agt_announcements.png"]    
 
   ProjectTrendImages = [ "/images/icons/trend_under.png",
                           "/images/icons/trend_neutral.png",

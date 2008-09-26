@@ -3,7 +3,8 @@ require 'digest/sha1'
 class User < ActiveRecord::Base
 
   has_and_belongs_to_many :roles
-  
+  belongs_to :team
+
   validates_presence_of     :name
   validates_uniqueness_of   :name
   attr_accessor :password_confirmation
