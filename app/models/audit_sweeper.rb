@@ -1,5 +1,5 @@
 class AuditSweeper < ActionController::Caching::Sweeper
-  observe Project
+  observe Project,Teamcommitment
 
   def after_destroy(record)
     log(record, "DESTROY" )

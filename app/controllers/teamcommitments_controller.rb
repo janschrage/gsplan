@@ -1,6 +1,7 @@
 class TeamcommitmentsController < ApplicationController
   # GET /teamcommitments
   # GET /teamcommitments.xml
+  cache_sweeper :audit_sweeper
   
   include Statistics, Graphs
   
