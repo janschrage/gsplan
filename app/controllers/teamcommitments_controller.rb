@@ -18,7 +18,6 @@ class TeamcommitmentsController < ApplicationController
     
     @teamusage   = calculate_usage(@report_date)
     @capacities  = calculate_capacities(@report_date)
-    @projectplan = calculate_project_days(@report_date)
     
     @graph = open_flash_chart_object(600,300,"/report/graph_usage")
  
@@ -28,10 +27,12 @@ class TeamcommitmentsController < ApplicationController
     end
     
     @missingdays = {}
+    @projectplan = calculate_project_days(@report_date)
     @projectplan.keys.each do |project_id|
       @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
     end
-    
+    @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
+
     @teamcommitments = Teamcommitment.find(:all)
  
     @outputlist = []
@@ -55,6 +56,7 @@ class TeamcommitmentsController < ApplicationController
         @outputlist << output
       end
     end
+    @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
 
     session[:original_uri] = request.request_uri
 

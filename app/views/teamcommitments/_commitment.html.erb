@@ -1,0 +1,12 @@
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td class="text"><%=h commitment[:teamname] %></td>
+    <td class="text"><%=h commitment[:yearmonth] %></td>
+    <td class="text"><%=h commitment[:projectname] %></td>
+    <td><%=h commitment[:days] %></td>
+<% if check_link_auth("teamcommitments","edit") then %>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_teamcommitment_path(commitment[:classname]) %></td>
+<% end %>
+<% if check_link_auth("teamcommitments","delete") then %>
+	<td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), commitment[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
+</tr>

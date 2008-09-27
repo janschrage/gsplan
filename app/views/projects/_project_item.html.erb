@@ -1,0 +1,24 @@
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+	<td class="text"><%= h country_by_id(project_item[1][:country]).isocode %></td>
+	<td class="text"><%= h project_item[1][:name] %></td>
+	<td><%= h project_item[1][:committed_total] + @missingdays[project_item[0]]%></td>
+	<td><%= h project_item[1][:committed_inper]%></td>
+	<td class="<%= 'cell-OK' if @missingdays[project_item[0]]==0 %>"><%= h project_item[1][:committed_total] %></td>
+	<td class="<%= 'cell-error' if @missingdays[project_item[0]]<0 %>"><%= h @missingdays[project_item[0]] %></td>
+	<td><img src="<%= project_status_image(project_item[1][:status]) %>"></td>
+<% if check_link_auth("projects","prj_start") then %>
+	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/player_play.png", :border=>0), :url => {:controller => "projects", :action => "prj_start", :id => project_item[0]},
+	 :update => { :success => "project_list"} %></td>	
+<% end %>
+<% if check_link_auth("projects","prj_pilot") then %>
+	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/launch_22x22.png", :border=>0), :url => {:controller => "projects", :action => "prj_pilot", :id => project_item[0]},
+	:update => { :success => "project_list"} %></td>	
+<% end %>
+<% if check_link_auth("projects","prj_close") then %>
+	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/player_stop.png", :border=>0), :url => {:controller => "projects", :action => "prj_close", :id => project_item[0]},
+        :update => { :success => "project_list"} %></td>
+<% end %>
+<% if check_link_auth("projects","edit") then %>
+	<td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_project_path(project_item[0]) %></td>
+<% end %>
+</tr>

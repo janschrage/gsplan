@@ -3,12 +3,9 @@ class ProjectsController < ApplicationController
   include Statistics
   
   def index
-    #@projectplan = calculate_project_days(nil)
-        
-    #@missingdays = {}
-    
+     
     @projects = Project.find(:all)
- 
+
     @outputlist = []
     
     if @projects != nil
@@ -84,7 +81,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
 
     respond_to do |format|
-      @project.status = 5;  #Project is "proposed" on creation
+      @project.status = Project::StatusProposed;  #Project is "proposed" on creation
       if @project.save
         flash[:notice] = 'Project was successfully created.'
         format.html { redirect_to(session[:original_uri]) }
@@ -127,4 +124,51 @@ class ProjectsController < ApplicationController
     end
   end
   
+  def prj_start
+    @project = Project.find(params[:id])
+    @project.status = Project::StatusInProcess
+    if @project.save
+      set_project_plan
+      true
+    else
+      false
+    end
+  end
+
+  def prj_pilot
+    @project = Project.find(params[:id])
+    @project.status = Project::StatusPilot
+    if @project.save
+      set_project_plan
+      true
+    else
+      false
+    end
+  end
+  
+  def prj_close
+    @project = Project.find(params[:id])
+    @project.status = Project::StatusClosed
+    if @project.save
+      set_project_plan
+      true
+    else
+      false
+    end
+  end
+
+  def set_project_plan
+   if cookies[:report_date]
+     @report_date =  Date::strptime(cookies[:report_date])
+    end
+    @report_date = Date.today unless @report_date
+
+    @missingdays = {}
+    @projectplan = calculate_project_days(@report_date)
+    @projectplan.keys.each do |project_id|
+      @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
+    end
+    @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
+  end
+
 end

@@ -7,7 +7,8 @@ class Project < ActiveRecord::Base
   StatusClosed = 2
   StatusOverdue = 3
   StatusPilot = 4
-  
+  StatusProposed = 5
+
   belongs_to :country
   belongs_to :employee
   belongs_to :worktype
@@ -49,7 +50,7 @@ class Project < ActiveRecord::Base
     @statuslist << StatusType.new(StatusClosed, "closed")
     @statuslist << StatusType.new(StatusOverdue, "overdue")
     @statuslist << StatusType.new(StatusPilot, "pilot")
-    @statuslist << StatusType.new(StatusPilot, "proposed")
+    @statuslist << StatusType.new(StatusProposed, "proposed")
     return @statuslist
   end
   
