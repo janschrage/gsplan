@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080926222456) do
+ActiveRecord::Schema.define(:version => 20080927144051) do
+
+  create_table "audit_trails", :force => true do |t|
+    t.integer  "record_id"
+    t.string   "record_type"
+    t.string   "event"
+    t.integer  "user_id"
+    t.datetime "created_at"
+  end
 
   create_table "countries", :force => true do |t|
     t.string   "isocode"

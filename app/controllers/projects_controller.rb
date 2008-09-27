@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  
+  cache_sweeper :audit_sweeper
+
   include Statistics
   
   def index
