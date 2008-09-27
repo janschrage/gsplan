@@ -5,6 +5,7 @@ class TeamcommitmentsController < ApplicationController
   include Statistics, Graphs
   
   def index
+    session[:team_id] = nil  #no filtering by team
     if params[:report_date]
       @report_date =  Date::strptime(params[:report_date])
     else

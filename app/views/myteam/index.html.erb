@@ -7,65 +7,12 @@
 
 <div id="projects">
 <div id="projectstats">	
-<h2>Projects</h2>
-<% if check_link_auth("projects","new") then %>
-	<div class="link-create">	
-		<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_project_path %></span>
-        <span class="vcenter"><%= link_to 'New Project', new_project_path %></span>
-	</div>
-<% end %>
-
-<table>
-<tr><th>Ctry</th><th>Project</th><th>Plan</th><th></th></tr>
-<%   @projects.each do |project| %>
-<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td class="text"><%= h country_by_id(project.country).isocode %></td>
-	<td class="text"><%= h project.name %></td>
-	<td class="text"><%= h project.planeffort %></td>
-	<td><img src="<%= project_status_image(project.status) %>"></td>
-<% if check_link_auth("projects","edit") then %>
-	<td class="cell-action"><%= link_to image_tag("/images/icons/player_play.png", :border=>0), edit_project_path(project) %></td>	
-	<td class="cell-action"><%= link_to image_tag("/images/icons/launch_22x22.png", :border=>0), edit_project_path(project) %></td>	
-	<td class="cell-action"><%= link_to image_tag("/images/icons/player_stop.png", :border=>0), edit_project_path(project) %></td>
-	<td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_project_path(project) %></td>
-<% end %>
-</tr>
- <%end%>
+<%= render(:partial => "projects/project_list", :object => @projectplan) %>
 </table>
 </div>
 </div>
 
 <div id="teamcommitments">
-<h2>Commitments</h2>
-<% if check_link_auth("teamcommitments","new") then %>
-	<div class="link-create">
-		<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_teamcommitment_path %></span>
-		<span class=\"vcenter"><%= link_to 'New Commitment', new_teamcommitment_path %></span>
-	</div>
-<% end %>
-
-<table>
-  <tr>
-    <th>Team</th>
-    <th>Month/Year</th>
-    <th>Project</th>
-    <th>Days</th>
-  </tr>
-
-<% for teamcommitment in @outputlist %>
-  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-    <td class="text"><%=h teamcommitment[:teamname] %></td>
-    <td class="text"><%=h teamcommitment[:yearmonth] %></td>
-    <td class="text"><%=h teamcommitment[:projectname] %></td>
-    <td><%=h teamcommitment[:days] %></td>
-<% if check_link_auth("teamcommitments","edit") then %>
-    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_teamcommitment_path(teamcommitment[:classname]) %></td>
-<% end %>
-<% if check_link_auth("teamcommitments","delete") then %>
-	<td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), teamcommitment[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
-<% end %>
-  </tr>
-<% end %>
-</table>
+<%= render(:partial => "teamcommitments/commitment_list", :object => @outputlist) %>
 </div>
 </div>

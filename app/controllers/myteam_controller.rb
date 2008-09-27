@@ -3,6 +3,10 @@ class MyteamController < ApplicationController
   include Statistics, Graphs
 
   def index
+    # filter by team
+    team_id = User.find_by_id(session[:user_id]).team_id
+    session[:team_id] = team_id  
+
     if params[:report_date]
       @report_date =  Date::strptime(params[:report_date])
     else
@@ -13,11 +17,16 @@ class MyteamController < ApplicationController
     @report_date = Date.today unless @report_date
     cookies[:report_date]=@report_date.to_s
 
-    @projects = get_projects_for_team_and_month(@report_date)
+    @projectplan = get_projects_for_team_and_month(@report_date)
     commitments = get_commitments_for_team_and_month(@report_date)
 
     session[:original_uri] = request.request_uri
- 
+
+    @missingdays = {}
+    @projectplan.keys.each do |project_id|
+      @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
+    end
+    @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
 
     @outputlist = []
     commitments.each do |commitment| 

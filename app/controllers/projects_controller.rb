@@ -164,7 +164,11 @@ class ProjectsController < ApplicationController
     @report_date = Date.today unless @report_date
 
     @missingdays = {}
-    @projectplan = calculate_project_days(@report_date)
+    if session[:team_id] then
+      @projectplan = get_projects_for_team_and_month(@report_date)
+    else
+      @projectplan = calculate_project_days(@report_date)
+    end
     @projectplan.keys.each do |project_id|
       @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
     end

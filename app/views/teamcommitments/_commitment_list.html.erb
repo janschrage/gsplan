@@ -1,0 +1,14 @@
+<h2>Commitments</h2>
+<% if check_link_auth("teamcommitments","new") then %>
+	<div class="link-create">
+		<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_teamcommitment_path %></span>
+		<span class=\"vcenter"><%= link_to 'New Commitment', new_teamcommitment_path %></span>
+	</div>
+<% end %>
+
+<table>
+  <tr>
+    <th>Team</th><th>Month/Year</th><th>Project</th><th>Days</th>
+  </tr>
+<%= render(:partial => "teamcommitments/commitment", :collection => commitment_list) %>
+</table>

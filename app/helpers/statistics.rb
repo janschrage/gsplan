@@ -146,9 +146,8 @@
   end
 
   def get_projects_for_team_and_month(report_date)
-    # Get the team of the user
-    team_id = User.find_by_id(session[:user_id]).team_id
-    team = Team.find_by_id(team_id)
+    # Get the team of the user 
+    team = Team.find_by_id(session[:team_id])
     countries = team.countries
     
     report_date=Date.today unless report_date
@@ -156,12 +155,10 @@
     begda = month[:first_day]
     endda = month[:last_day]
     
-    projects = Project.find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? )", endda, begda, Project::StatusClosed])
-
+    projectplan = calculate_project_days(report_date)
     # filter by countries
-    projects.delete_if{ |prj| countries.find_by_id(prj.country_id).nil?}
-
-    return projects
+    projectplan.delete_if{ |prj| countries.find_by_id(prj[1][:country]).nil?}
+    return projectplan
   end
 
   def get_commitments_for_team_and_month(report_date)
