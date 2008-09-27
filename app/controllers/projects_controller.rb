@@ -137,6 +137,7 @@ class ProjectsController < ApplicationController
 
   def prj_pilot
     @project = Project.find(params[:id])
+    return false if @project.status == Project::StatusProposed 
     @project.status = Project::StatusPilot
     if @project.save
       set_project_plan
@@ -148,6 +149,7 @@ class ProjectsController < ApplicationController
   
   def prj_close
     @project = Project.find(params[:id])
+    return false if @project.status == Project::StatusProposed 
     @project.status = Project::StatusClosed
     if @project.save
       set_project_plan

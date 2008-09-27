@@ -5,6 +5,12 @@ class MyteamController < ApplicationController
   def index
     # filter by team
     team_id = User.find_by_id(session[:user_id]).team_id
+    if team_id.nil? then
+      flash[:error] = "You are not assigned to a team."
+      #redirect_to :controller => "teamcommitments", :action => "index"
+      redirect_to :back
+      return false
+    end
     session[:team_id] = team_id  
 
     if params[:report_date]
