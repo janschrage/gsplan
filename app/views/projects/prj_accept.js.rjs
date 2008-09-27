@@ -1,0 +1,1 @@
+page.replace_html("projectstats", :partial => "project_list", :object => @projectplan)

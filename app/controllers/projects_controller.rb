@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
   
   def new
     @project = Project.new
-    session[:original_uri] = "/projects"
+    #session[:original_uri] = "/projects"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @project }
@@ -124,8 +124,33 @@ class ProjectsController < ApplicationController
     end
   end
   
+  def prj_accept
+    @project = Project.find(params[:id])
+    return false if @project.status != Project::StatusProposed 
+    @project.status = Project::StatusOpen
+    if @project.save
+      set_project_plan
+      true
+    else
+      false
+    end
+  end
+
+  def prj_reject
+    @project = Project.find(params[:id])
+    return false if @project.status != Project::StatusProposed 
+    @project.status = Project::StatusRejected
+    if @project.save
+      set_project_plan
+      true
+    else
+      false
+    end
+  end
+
   def prj_start
     @project = Project.find(params[:id])
+    return false if @project.status == Project::StatusProposed 
     @project.status = Project::StatusInProcess
     if @project.save
       set_project_plan
