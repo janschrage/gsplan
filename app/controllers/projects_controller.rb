@@ -130,6 +130,7 @@ class ProjectsController < ApplicationController
     return false if @project.status != Project::StatusProposed 
     @project.status = Project::StatusOpen
     if @project.save
+      @changed_project = @project.id
       set_project_plan
       true
     else
@@ -142,6 +143,7 @@ class ProjectsController < ApplicationController
     return false if @project.status != Project::StatusProposed 
     @project.status = Project::StatusRejected
     if @project.save
+      @changed_project = @project.id
       set_project_plan
       true
     else
@@ -154,6 +156,7 @@ class ProjectsController < ApplicationController
     return false if @project.status == Project::StatusProposed 
     @project.status = Project::StatusInProcess
     if @project.save
+      @changed_project = @project.id
       set_project_plan
       true
     else
@@ -166,6 +169,7 @@ class ProjectsController < ApplicationController
     return false if @project.status == Project::StatusProposed 
     @project.status = Project::StatusPilot
     if @project.save
+      @changed_project = @project.id
       set_project_plan
       true
     else
@@ -178,6 +182,7 @@ class ProjectsController < ApplicationController
     return false if @project.status == Project::StatusProposed 
     @project.status = Project::StatusClosed
     if @project.save
+      @changed_project = @project.id
       set_project_plan
       true
     else
