@@ -16,7 +16,7 @@
 <div id="teamstats">
 <h2>Teams</h2>
 <table>
-<tr><th>Team</th<th>Committed</th><th>Capacity</th><th>Free</th></tr>
+<tr><th>Team</th><th>Committed</th><th>Capacity</th><th>Free</th></tr>
 <%   @teamusage.to_a.each do |team, used| %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
 	<td class="text"><%= h team %></td>

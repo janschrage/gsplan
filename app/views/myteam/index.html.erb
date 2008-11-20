@@ -5,6 +5,7 @@
 <%= link_to '>>>',  {:action => "index", :controller =>
 "myteam", :report_date => @report_date>>(1) } %></h2>
 
+<div id="top">
 <div id="projects">
 <div id="projectstats">	
 <%= render(:partial => "projects/project_list", :object => @projectplan) %>

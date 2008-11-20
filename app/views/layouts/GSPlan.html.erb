@@ -13,6 +13,7 @@
 <div class="usermenu">
 <%= link_to "Logout", :controller => "admin", :action => "logout" %>
 <%= link_to "Change Password", :controller => "users", :action => "change_password" %>	
+<a href="/info.html" target="_blank">Information</a>
 </div>
 
 <div class="aerobuttonmenu">
@@ -45,5 +46,9 @@ Internal &amp; Confidential
 
 <%= yield  %>
 
+<div id="pagebottom">
+<hr />
+<img src="/images/gplv3-88x31.png" alt="GPL v3"> Author: Jan Schrage <a href="mailto:jan@jschrage.de">&lt;jan@jschrage.de&gt;</a>. Released under the <a target="_blank" href="http://www.gnu.org/licenses/">GPL v3</a>.
+</div>
 </body>
 </html>
