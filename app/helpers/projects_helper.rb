@@ -58,4 +58,20 @@ module ProjectsHelper
     return ProjectTrendImages[trend]
   end
 
+  def project_quintile(plan, act)
+    plan = 0 if plan.nil?
+    act = 0 if act.nil?
+    # 0 = no work planned, no work done (unfinished business)
+    return 0 if plan == 0 and act == 0
+    # 6 = no work planned but work done (intransparent)
+    return 6 if plan == 0 and act > 0
+    # 1..5 0-20%,...,>80% in 20% steps  
+    quintile = ((act-plan)/plan*5).abs.ceil.to_i
+    return 5 if quintile > 5
+    return quintile if quintile <= 5
+  end
+
+  def project_type_of(project_id)
+    return Project.find_by_id(project_id).worktype.name
+  end
 end

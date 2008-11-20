@@ -9,7 +9,7 @@ class TeammembersController < ApplicationController
     @outputlist = []
     
     @teammembers.each do |teammember| 
-      if teammember.endda >= Date.today
+      #if teammember.endda >= Date.today
         employeename = Employee.find_by_id(teammember[:employee_id]).name
         teamname = Team.find_by_id(teammember[:team_id]).name
       
@@ -20,7 +20,7 @@ class TeammembersController < ApplicationController
                    :planend => teammember.endda,
                    :teamname => teamname}
         @outputlist << output
-      end
+     # end
     end
     
     respond_to do |format|

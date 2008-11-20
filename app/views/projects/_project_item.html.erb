@@ -5,6 +5,7 @@
 <% end %>
 	<td class="text"><%= h country_by_id(project_item[1][:country]).isocode %></td>
 	<td class="text"><%= h project_item[1][:name] %></td>
+	<td class="text"><%= h project_type_of(project_item[0]) %></td>
 	<td><%= h project_item[1][:committed_total] + @missingdays[project_item[0]]%></td>
 	<td><%= h project_item[1][:committed_inper]%></td>
 	<td class="<%= 'cell-OK' if @missingdays[project_item[0]]==0 %>"><%= h project_item[1][:committed_total] %></td>

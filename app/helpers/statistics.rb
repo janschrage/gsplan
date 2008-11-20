@@ -22,7 +22,7 @@
     teammembers = Teammember::find(:all)
     
     teammembers.each do |@teammember|
-      if @teammember.endda >= report_date then
+      if @teammember.endda >= report_date and @teammember.begda <= report_date then
         capacity[teamindex[@teammember.team_id]] += DaysPerPerson * (@teammember.percentage || 100)/100
       end
     end
@@ -74,13 +74,13 @@
     @projects.each do |project|
         if  project.planbeg <= endda and project.planend >= begda 
           projectindex = { :name => project.name,
-			                     :country => project.country_id,
+			   :country => project.country_id,
                            :committed_total => 0,
                            :committed_inper => 0,
                            :daysbooked => 0,
 			   :reportdate => last_report_date,
                            :status => project.status }
-          projectdays[project.id] = projectindex                 
+          projectdays[project.id] = projectindex
         else
           if project.planend <= begda and project.status != Project::StatusClosed
                 projectindex = { :name => project.name,

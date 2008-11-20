@@ -43,10 +43,12 @@ module Graphs
     labels = []
 
    @capacities.to_a.each do |team, capa|
-      capa_values << capa
-      usage_values << @usage[team]
-      free_values << capa-@usage[team]
-      labels << team
+      if capa > 0  #only if the team has capacity this month (temporary help from other LOBs,...)
+        capa_values << capa
+        usage_values << @usage[team]
+        free_values << capa-@usage[team]
+        labels << team
+      end
     end
     ymax = capa_values.max
     if free_values.min < 0 then
@@ -111,6 +113,51 @@ module Graphs
 
   end
 
+  def graph_quintiles
+   date = Date::strptime(cookies[:report_date]) || Date.today
+   projects = calculate_project_days(date)
+   teams = Team::find(:all)
+   bar = {}
+   values = {}
+   key = {}
+   colours = ["#459a89", "#9a89f9", "#115599", "#782836", "#19affe", "#ffbb30", "#00fae2","#2345aa"]
+   count = 0
+   teams.each do |team|
+        count += 1
+        bar[team] = BarGlass.new
+        bar[team].set_key(team.name,3)
+        bar[team].colour = colours[count]
+        values[team] = [0,0,0,0,0,0,0]
+   end
+   title = Title.new("Quality of commitment estimates")
+    # group by team and use subject as the key
+    x_axis = XAxis.new
+    y_axis = YAxis.new
+    labels = ["grave","0-20%","20-40%","40-60%","60-80%",">80%","zombie"]
+
+   projects.each do |project|
+      quintile = project_quintile(project[1][:committed_inper],project[1][:daysbooked])
+      team = Project.find_by_id(project[0]).country.team
+      values[team][quintile] += 1
+    end
+  
+    ymax = 0
+    teams.each do |team|
+      ymax = [ymax,values[team].max].max
+    end
+    y_axis.set_range(0,ymax+2,5)   
+  
+    x_axis.labels=labels
+    chart = OpenFlashChart.new
+    chart.title = title
+    chart.x_axis = x_axis
+    chart.y_axis = y_axis
+    teams.each do |team|
+      bar[team].set_values(values[team])
+      chart.add_element(bar[team])
+    end
+    render :text => chart.to_s
+  end
 
 end
 

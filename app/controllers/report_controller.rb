@@ -1,6 +1,6 @@
 class ReportController < ApplicationController
 
-  include Statistics, Graphs
+  include Statistics, Graphs, ProjectsHelper
  
   def index
     # Get/Set the report date
@@ -21,6 +21,9 @@ class ReportController < ApplicationController
     @last_report_date = firstproject[:reportdate]
 
     @graph_wt = open_flash_chart_object(300,300,"/report/graph_worktypes")
+
+    @graph_quint = open_flash_chart_object(500,300,"/report/graph_quintiles")
+
   end
    
 end
