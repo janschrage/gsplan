@@ -38,16 +38,16 @@
       commitmentcount[@team.name] = 0;
       teamindex[@team.id] = @team.name
     end
-    commitments = Teamcommitment::find(:all)
-    
+
     monthbegend = get_month_beg_end(report_date)
     month_begin = monthbegend[:first_day]
     month_end = monthbegend[:last_day]
+
+    commitments = Teamcommitment::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and status = ?",month_end,month_begin,Teamcommitment::StatusAccepted])
+    
     
     commitments.each do |commitment|
-      if commitment.yearmonth >= month_begin and commitment.yearmonth <= month_end then
-        commitmentcount[teamindex[commitment.team_id]] += commitment.days 
-      end
+      commitmentcount[teamindex[commitment.team_id]] += commitment.days 
     end
     return commitmentcount
   end    
@@ -100,15 +100,17 @@
     commitments = Teamcommitment::find(:all)
     
     commitments.each do |commitment|
-      thisproject = projectdays[commitment.project_id]
-      if  not thisproject.nil? then
-        committed_total = thisproject[:committed_total] + commitment.days 
-        if begda <= commitment.yearmonth and endda >= commitment.yearmonth
-          committed_inper = thisproject[:committed_inper] + commitment.days
-          thisproject[:committed_inper] = committed_inper
+      if commitment.status == Teamcommitment::StatusAccepted then
+        thisproject = projectdays[commitment.project_id]
+        if  not thisproject.nil? then
+          committed_total = thisproject[:committed_total] + commitment.days 
+          if begda <= commitment.yearmonth and endda >= commitment.yearmonth
+            committed_inper = thisproject[:committed_inper] + commitment.days
+            thisproject[:committed_inper] = committed_inper
+          end
+          thisproject[:committed_total] = committed_total
+          projectdays[commitment.project_id]=thisproject
         end
-        thisproject[:committed_total] = committed_total
-        projectdays[commitment.project_id]=thisproject
       end
     end
     
