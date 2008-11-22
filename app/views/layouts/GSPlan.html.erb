@@ -10,10 +10,16 @@
  </head>
 <body>
 
-<div class="usermenu">
+<div id="topbar">
+<div id="logo">
+<img src="images/GSPlan_Logo_small.png" alt="GSPlan">
+</div>
+
+<div id="usermenu">
 <%= link_to "Logout", :controller => "admin", :action => "logout" %>
 <%= link_to "Change Password", :controller => "users", :action => "change_password" %>	
 <a href="/info.html" target="_blank">Information</a>
+</div>
 </div>
 
 <div class="aerobuttonmenu">
