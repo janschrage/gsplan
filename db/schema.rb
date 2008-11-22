@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080927144051) do
+ActiveRecord::Schema.define(:version => 20081122122118) do
 
   create_table "audit_trails", :force => true do |t|
     t.integer  "record_id"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20080927144051) do
     t.decimal  "days"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",     :limit => 1
   end
 
   create_table "teammembers", :force => true do |t|

@@ -14,6 +14,6 @@ class AuditSweeper < ActionController::Caching::Sweeper
   end
 
   def log(record, event, user = controller.session[:user_id])
-    AuditTrail.create(:record_id => record.id, :record_type => record.type.name, :event => event, :user_id => user)
+    AuditTrail.create(:record_id => record.id, :record_type => record.class.name, :event => event, :user_id => user)
   end
 end

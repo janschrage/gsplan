@@ -35,28 +35,29 @@ class TeamcommitmentsController < ApplicationController
     end
     @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
 
-    @teamcommitments = Teamcommitment.find(:all)
- 
-    @outputlist = []
- 
     #Only show for current month
     monthbegend = get_month_beg_end(@report_date)
     month_begin = monthbegend[:first_day]
     month_end = monthbegend[:last_day]
+
+    @teamcommitments = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
+ 
+    @outputlist = []
+ 
     
-    @teamcommitments.each do |@commitment| 
-      if @commitment.yearmonth <= month_end and @commitment.yearmonth >= month_begin then
-        team = Team.find_by_id(@commitment[:team_id])
+    @teamcommitments.each do |commitment| 
+        team = Team.find_by_id(commitment[:team_id])
         teamname = team.name unless team == nil
-        project = Project.find_by_id(@commitment[:project_id])
+        project = Project.find_by_id(commitment[:project_id])
         projectname = project.name unless project == nil
-        output = { :classname => @commitment,
+        output = { :classname => commitment,
+                   :id => commitment.id,
                    :teamname => teamname, 
-                   :yearmonth => @commitment.yearmonth,
+                   :yearmonth => commitment.yearmonth,
                    :projectname => projectname,
-                   :days => @commitment.days }
+                   :days => commitment.days,
+                   :status => commitment.status }
         @outputlist << output
-      end
     end
     @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
 
@@ -109,6 +110,7 @@ class TeamcommitmentsController < ApplicationController
     @teamcommitment = Teamcommitment.new(params[:teamcommitment])
 
     respond_to do |format|
+      @teamcommitment.status = Teamcommitment::StatusProposed 
       if @teamcommitment.save
         flash[:notice] = 'Commitment was successfully created.'
         format.html { redirect_to(@teamcommitment) }
@@ -148,6 +150,52 @@ class TeamcommitmentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+ 
+  def commitment_accept
+    @commitment = Teamcommitment.find(params[:id])
+    return false if @commitment.status != Teamcommitment::StatusProposed 
+    @commitment.status = Teamcommitment::StatusAccepted
+    if @commitment.save
+      @changed_commitment = @commitment.id
+      set_commitment_list
+      true
+    else
+      false
+    end
+  end 
+
+  def set_commitment_list
+    if cookies[:report_date]
+     @report_date =  Date::strptime(cookies[:report_date])
+    end
+    @report_date = Date.today unless @report_date
+    
+    #Only show for current month
+    monthbegend = get_month_beg_end(@report_date)
+    month_begin = monthbegend[:first_day]
+    month_end = monthbegend[:last_day]
+
+    if session[:team_id] then
+      commitmentlist = get_commitments_for_team_and_month(@report_date)
+    else
+      commitmentlist = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
+    end
+    @outputlist = []
+    commitmentlist.each do |commitment|
+        team = Team.find_by_id(commitment[:team_id])
+        teamname = team.name unless team == nil
+        project = Project.find_by_id(commitment[:project_id])
+        projectname = project.name unless project == nil
+        output = { :classname => commitment,
+                   :id => commitment.id,
+                   :teamname => teamname, 
+                   :yearmonth => commitment.yearmonth,
+                   :projectname => projectname,
+                   :days => commitment.days,
+                   :status => commitment.status }
+        @outputlist << output    
+    end
+     @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
+  end
 
 end

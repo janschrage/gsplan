@@ -24,6 +24,10 @@
     <%= f.text_field :days %>
   </p>
   <p>
+    <%= f.label :status %><br />
+    <%= f.collection_select(:status, @teamcommitment.commitment_status_list, :id, :name) %>
+  </p>
+  <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>

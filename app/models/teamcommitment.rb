@@ -1,13 +1,34 @@
 class Teamcommitment < ActiveRecord::Base
   
   include Statistics
-  
+
+  StatusType = Struct.new(:id,:name)
+
+  StatusProposed = 0
+  StatusAccepted = 1
+
   belongs_to :team
   belongs_to :project
   
   validates_presence_of :team_id, :project_id, :yearmonth, :days
   validates_numericality_of :days
   validate :commitment_is_in_project_timeframe, :commitment_is_positive, :commitment_is_unique
+
+  def commitment_status_text(status)
+    if status == nil
+      statustext = "not set"
+    else
+      statustext = commitment_status_list[status][1]
+    end
+    return statustext             
+  end
+  
+  def commitment_status_list
+    @statuslist = []
+    @statuslist << StatusType.new(StatusProposed, "proposed")
+    @statuslist << StatusType.new(StatusAccepted, "accepted")
+    return @statuslist
+  end
  
 protected
   def commitment_is_in_project_timeframe

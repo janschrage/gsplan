@@ -24,7 +24,8 @@ class AddRolesRightsData < ActiveRecord::Migration
     right_pilot_project = Right.create :name => "pilot_project", :controller => "projects", :action =>"prj_pilot"
     right_close_project = Right.create :name => "close_project", :controller => "projects", :action =>"prj_close"
     right_myteam = Right.create :name => "myteam", :controller => "myteam", :action => "index"
-    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, right_logout, right_change_pw, right_update_user, right_new_project, right_create_project, right_myteam, right_pilot_project, right_close_project, right_start_project ]
+    right_create_commitment = Right.create :name => "create_commitment", :controller => "teamcommitments", :action => "create"
+    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, right_logout, right_change_pw, right_update_user, right_new_project, right_create_project, right_myteam, right_pilot_project, right_close_project, right_start_project, right_create_commitment ]
     role_tl.save!
     
   end

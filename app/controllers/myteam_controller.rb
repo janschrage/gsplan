@@ -41,10 +41,12 @@ class MyteamController < ApplicationController
         project = Project.find_by_id(commitment.project_id)
         projectname = project.name unless project == nil
         output = { :classname => commitment,
+                   :id => commitment.id,
                    :teamname => teamname, 
                    :yearmonth => commitment.yearmonth,
                    :projectname => projectname,
-                   :days => commitment.days }
+                   :days => commitment.days,
+                   :status => commitment.status }
         @outputlist << output
     end
     respond_to do |format|

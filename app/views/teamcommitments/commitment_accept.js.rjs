@@ -1,0 +1,2 @@
+page.replace_html("teamcommitments", :partial => "commitment_list", :object => @outputlist)
+page[:current_commitment].visual_effect :highlight
