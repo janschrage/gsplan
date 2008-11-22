@@ -136,14 +136,14 @@ class ProjecttracksController < ApplicationController
     @errors=0
     @parsed_file.each  do |row|
       #pt=Projecttrack.new() 
-      pernr=row[3] unless row[3].nil?
+      pernr=row[0] unless row[0].nil?
       pernr[0,1]="I" if pernr[0,1]=="1"
-      name=row[4] unless row[4].nil?
-      task=row[5]
+      name=row[1] unless row[1].nil?
+      task=row[2]
       if task == TaskNotAssigned
-        days=row[6].gsub(',','.').to_f unless row[6].nil?
+        days=row[3].gsub(',','.').to_f unless row[3].nil?
       else
-        days=row[7].gsub(',','.').to_f unless row[7].nil?
+        days=row[4].gsub(',','.').to_f unless row[4].nil?
       end  
       if task != TaskTotal and days > 0
         #Check for errors
