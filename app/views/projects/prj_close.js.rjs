@@ -1,2 +1,2 @@
 page.replace_html("projectstats", :partial => "project_list", :object => @projectplan)
-page[:current_item].visual_effect :highlight
+page[:current_item].visual_effect :highlight, :startcolor => @startcolor

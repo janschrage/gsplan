@@ -1,0 +1,39 @@
+<h1>Editing review</h1>
+
+<% form_for(@review) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "Project" %><br />
+ 	<%=
+ 		f.collection_select(:project_id, project_list_current, :id, :name)
+	%>
+  </p>
+  <p>
+    <%= f.label "Reviewer: " %>
+    <%= h User.find_by_id(@review.user_id).name %>
+  </p>
+  <p>
+    <%= f.label "Review notes" %><br />
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.label "Type of review" %><br />
+ 	<%=
+ 		f.collection_select(:rtype, review_type_list, :id, :name)
+	%>
+  </p>
+  <p>
+    <%= f.label "Result" %><br />
+ 	<%=
+ 		f.collection_select(:result, review_result_list, :id, :name)
+	%>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @review %> |
+<%= link_to 'Back', reviews_path %>

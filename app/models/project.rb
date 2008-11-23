@@ -30,11 +30,12 @@ class Project < ActiveRecord::Base
   belongs_to :worktype
   has_many   :teamcommitments
   has_one    :cpro_project
-  
+  has_many   :reviews
+
   validates_presence_of :employee_id, :country_id, :worktype_id, :planbeg, :planend, :name, :planeffort
   validates_uniqueness_of :name
-  validate :begda_is_before_endda, :planeffort_is_positive
-  
+  validate :begda_is_before_endda, :planeffort_is_positive, :reviews_ok_before_pilot_or_close  
+
   def employeename
     @employee = Employee.find_by_id(employee_id)
     "#{@employee.name}"
@@ -60,15 +61,15 @@ class Project < ActiveRecord::Base
   end
   
   def project_status_list
-    @statuslist = []
-    @statuslist << StatusType.new(StatusOpen, "open")
-    @statuslist << StatusType.new(StatusInProcess, "in process")
-    @statuslist << StatusType.new(StatusClosed, "closed")
-    @statuslist << StatusType.new(StatusOverdue, "overdue")
-    @statuslist << StatusType.new(StatusPilot, "pilot")
-    @statuslist << StatusType.new(StatusProposed, "proposed")
-    @statuslist << StatusType.new(StatusProposed, "rejected")
-    return @statuslist
+    statuslist = []
+    statuslist << StatusType.new(StatusOpen, "open")
+    statuslist << StatusType.new(StatusInProcess, "in process")
+    statuslist << StatusType.new(StatusClosed, "closed")
+    statuslist << StatusType.new(StatusOverdue, "overdue")
+    statuslist << StatusType.new(StatusPilot, "pilot")
+    statuslist << StatusType.new(StatusProposed, "proposed")
+    statuslist << StatusType.new(StatusProposed, "rejected")
+    return statuslist
   end
   
  protected
@@ -80,4 +81,31 @@ class Project < ActiveRecord::Base
   def planeffort_is_positive
     errors.add(:planeffort, "Planned effort must be >0") if planeffort.nil? || planeffort <= 0
   end
+
+  def reviews_ok_before_pilot_or_close
+    return true unless self.worktype.needs_review
+    return true unless self.status == StatusPilot or self.status == StatusClosed
+
+    reviews=Review.find(:all, :conditions => ["project_id = ?", self.id])
+    
+    rSpec   = false
+    rDesign = false
+    rCode   = false
+
+    if reviews.nil?
+      errors.add(:status, "All reviews missing. Cannot pilot or close project.")
+      return false
+    end
+
+    reviews.each do |review|
+      rSpec   = true if (review.rtype == Review::ReviewSpec   and review.result != Review::ResultFail)
+      rDesign = true if (review.rtype == Review::ReviewDesign and review.result != Review::ResultFail)
+      rCode   = true if (review.rtype == Review::ReviewCode   and review.result != Review::ResultFail)
+    end
+
+    errors.add(:status, "Spec review is missing or failed. Cannot pilot or close project.") unless rSpec
+    errors.add(:status, "Design review is missing or failed. Cannot pilot or close project.") unless rDesign
+    errors.add(:status, "Code review is missing or failed. Cannot pilot or close project.") unless rCode  
+  end
+
 end

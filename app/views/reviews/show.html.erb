@@ -1,0 +1,29 @@
+<p>
+  <b>Project:</b>
+  <%=h @review.project.name %>
+</p>
+
+<p>
+  <b>Reviewer:</b>
+  <%=h User.find(@review.user_id).name %>
+</p>
+<p>
+  <b>Type:</b>
+  <%=h review_type_text(@review.rtype) %>
+</p>
+
+<p>
+  <b>Result:</b>
+  <%=h review_result_text(@review.result) %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @review.notes %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

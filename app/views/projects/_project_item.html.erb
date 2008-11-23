@@ -14,7 +14,7 @@
 <% if project_item[1][:status] == Project::StatusProposed then %>
 <% if check_link_auth("projects","prj_accept") then %>
 	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/button_ok.png", :border=>0), :url => {:controller => "projects", :action => "prj_accept", :id => project_item[0]},
-	 :update => { :success => "project_list"} %></td>	
+	 :update => { :success => "project_list" } %></td>	
 <% end %>
 <% if check_link_auth("projects","prj_reject") then %>
 	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/button_cancel.png", :border=>0), :url => {:controller => "projects", :action => "prj_reject", :id => project_item[0]},
@@ -28,7 +28,7 @@
 <% end %>
 <% if check_link_auth("projects","prj_pilot") then %>
 	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/launch_22x22.png", :border=>0), :url => {:controller => "projects", :action => "prj_pilot", :id => project_item[0]},
-	:update => { :success => "project_list"} %></td>	
+	:update => { :success => "project_list" } %></td>	
 <% end %>
 <% if check_link_auth("projects","prj_close") then %>
 	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/player_stop.png", :border=>0), :url => {:controller => "projects", :action => "prj_close", :id => project_item[0]},

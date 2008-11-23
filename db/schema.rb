@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081123184400) do
+ActiveRecord::Schema.define(:version => 20081123190241) do
 
   create_table "audit_trails", :force => true do |t|
     t.integer  "record_id"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(:version => 20081123184400) do
     t.integer  "project_id"
     t.date     "reportdate"
     t.decimal  "daysbooked"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "project_id"
+    t.text     "notes"
+    t.integer  "user_id"
+    t.integer  "rtype"
+    t.integer  "result"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -134,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20081123184400) do
     t.boolean  "preload"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "needs_review"
   end
 
 end

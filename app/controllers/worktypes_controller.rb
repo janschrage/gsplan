@@ -18,11 +18,13 @@ class WorktypesController < ApplicationController
 
    active_scaffold :worktype do |config|
     config.label = "Type of Work"
-    config.columns = [:name, :description, :preload]
+    config.columns = [:name, :description, :preload, :needs_review]
     list.sorting = {:name => 'ASC'}
     columns[:name].label = "Type of Work"
     columns[:description].label = "Description"
     columns[:preload].label = "Preload?"
     columns[:preload].form_ui = :checkbox
+    columns[:needs_review].label = "Needs review?"
+    columns[:needs_review].form_ui = :checkbox
   end
 end

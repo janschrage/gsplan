@@ -115,7 +115,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update_attributes(params[:project])
         flash[:notice] = 'Project was successfully updated.'
-        format.html { redirect_to(@project) }
+s        format.html { redirect_to(@project) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -144,11 +144,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     return false if @project.status != Project::StatusProposed 
     @project.status = Project::StatusOpen
+    @changed_project = @project.id
     if @project.save
-      @changed_project = @project.id
-      set_project_plan
+      set_project_plan  #inside and twice, otherwise not updated with saved data
       true
     else
+      set_project_plan  #inside and twice, otherwise not updated with saved data
       false
     end
   end
@@ -157,37 +158,51 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     return false if @project.status != Project::StatusProposed 
     @project.status = Project::StatusRejected
+    @changed_project = @project.id
     if @project.save
-      @changed_project = @project.id
-      set_project_plan
+      set_project_plan  #inside and twice, otherwise not updated with saved data
       true
     else
+      set_project_plan  #inside and twice, otherwise not updated with saved data
       false
     end
   end
 
   def prj_start
     @project = Project.find(params[:id])
-    return false if @project.status == Project::StatusProposed 
+    @changed_project = @project.id
+    if @project.status == Project::StatusProposed or @project.status == Project::StatusClosed or @project.status == Project::StatusPilot
+      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ff0000"
+      return false
+    end
     @project.status = Project::StatusInProcess
     if @project.save
-      @changed_project = @project.id
-      set_project_plan
+      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ffff99"
       true
     else
+      set_project_plan  #inside and twice, otherwise not updated with saved data
       false
     end
   end
 
   def prj_pilot
     @project = Project.find(params[:id])
-    return false if @project.status == Project::StatusProposed 
+    @changed_project = @project.id
+    if @project.status == Project::StatusProposed or @project.status == Project::StatusClosed
+      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ff0000"
+      return false
+    end   
     @project.status = Project::StatusPilot
     if @project.save
-      @changed_project = @project.id
-      set_project_plan
+      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ffff99"
       true
     else
+      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ff0000"
       false
     end
   end
@@ -196,11 +211,14 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     return false if @project.status == Project::StatusProposed 
     @project.status = Project::StatusClosed
+    @changed_project = @project.id
     if @project.save
-      @changed_project = @project.id
-      set_project_plan
+      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ffff99"
       true
     else
+      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ff0000"
       false
     end
   end

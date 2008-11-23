@@ -1,0 +1,34 @@
+<h1>Listing reviews</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Reviewer</th>
+    <th>Type</th>
+    <th>Date</th>
+    <th>Result</th>
+    <th>Notes</th>
+  </tr>
+
+<% for review in @reviews %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td class="text"><%=h review.project.name %></td>
+    <td class="text"><%=h User.find(review.user_id).name %></td>
+    <td class="text"><%=h review_type_text(review.rtype) %></td>
+    <td class="text"><%=h review.created_at.to_s %></td>
+<% cclass = "cell-error" if review.result == Review::ResultFail
+   cclass = "cell-warning" if review.result == Review::ResultOKwithComments
+   cclass = "cell-OK" if review.result == Review::ResultOK
+%>
+    <td class="<%=cclass%>"><%=h review_result_text(review.result) %></td>
+    <td class="text"><%=h review.notes %></td>
+    <td class="text"><%= link_to 'Show', review %></td>
+    <td class="text"><%= link_to 'Edit', edit_review_path(review) %></td>
+    <td class="text"><%= link_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New review', new_review_path %>
