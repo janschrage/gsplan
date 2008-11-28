@@ -1,0 +1,31 @@
+<h1>Listing current projects for BW link</h1>
+
+<table>
+  <tr>
+    <th>Country</th>
+    <th>Project</th>
+    <th>Type</th>
+    <th>Begin Date</th>
+    <th>End Date (Planned)</th>
+    <th>BW Name</th>
+  </tr>
+
+<% for project in @projects %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td class="text"><%=h country_by_id(project.country).isocode %></td>
+    <td class="text"><%=h project.name %></td>
+    <td class="text"><%=h project.worktype.name %></td>
+    <td class="text"><%=h project.planbeg.to_s %></td>
+    <td class="text"><%=h project.planend.to_s %></td>
+    <td class="text"><%=h project.cpro_project.cpro_name unless project.cpro_project.nil? %></td>
+<% if check_link_auth("cpro_projects","new") and project.cpro_project.nil? %>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), "/cpro_projects/create_link/#{project.id}" %></td>
+<% end %>
+<% if check_link_auth("cpro_projects","new") and not project.cpro_project.nil? %>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), "/cpro_projects/edit/#{project.cpro_project.id}" %></td>
+<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />

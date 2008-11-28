@@ -6,12 +6,13 @@
   <p>
     <%= f.label "Project" %><br />
  	<%=
+                @cpro_project.project_id = flash[:project_id] if flash[:project_id]
  		f.collection_select(:project_id, project_list, :id, :name)
 	%>
   </p>
   </p>
   <p>
-    <%= f.label "cPro Name" %><br />
+    <%= f.label "BW Name" %><br />
     <%= f.text_field :cpro_name %>
   </p>
   <p>

@@ -14,10 +14,14 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 class CproProjectsController < ApplicationController
+
+  include TeamcommitmentsHelper
+
   # GET /cpro_projects
   # GET /cpro_projects.xml
   def index
     @cpro_projects = CproProject.find(:all)
+    session[:original_uri] = "/cpro_projects"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +29,15 @@ class CproProjectsController < ApplicationController
     end
   end
 
+  def current_projects
+    @projects = project_list_current()
+    session[:original_uri] = "/cpro_projects/current_projects"
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @projects }
+    end
+  end
   # GET /cpro_projects/1
   # GET /cpro_projects/1.xml
   def show
@@ -36,6 +49,11 @@ class CproProjectsController < ApplicationController
     end
   end
 
+  def create_link
+    project_id = params[:id]
+    flash[:project_id] = project_id
+    redirect_to(:action => :new)
+  end
   # GET /cpro_projects/new
   # GET /cpro_projects/new.xml
   def new

@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.connect 'cpro_projects/current_projects', :controller => "cpro_projects", :action => "current_projects"
 
   map.connect 'reviews/current_projects', :controller => "reviews", :action => "current_projects"
   map.resources :reviews
