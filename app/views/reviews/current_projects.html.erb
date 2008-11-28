@@ -22,7 +22,9 @@
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewSpec) %>"></td>
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewDesign) %>"></td>
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewCode) %>"></td>
+<% if check_link_auth("reviews","new") %>
     <td class="text"><%= link_to 'Review', "/reviews/review_project/#{project.id}" %></td>
+<% end %>
   </tr>
 <% end %>
 </table>

@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
   def review_project
     project_id = params[:id]
     flash[:project_id] = project_id
-    redirect_to (:action => :new)
+    redirect_to(:action => :new)
   end
 
   # GET /reviews/new
