@@ -8,6 +8,10 @@
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label "Team" %><br />
+    <%= f.collection_select(:team_id,Team.find(:all),:id,:name) %>
+  </p>
+  <p>
     <%= f.label "Password" %><br />
   	<%= f.password_field :password, :size => 40 %>
  </p>

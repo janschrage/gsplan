@@ -6,6 +6,7 @@
   <p>
     <%= f.label "Team" %><br />
 	<%=
+                @teamcommitment.team_id = User.find(session[:user_id]).team_id
  		f.collection_select(:team_id, team_list, :id, :name)
 	%>
   </p>
