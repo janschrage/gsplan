@@ -35,7 +35,6 @@ class ReportController < ApplicationController
     firstproject = @projectplan[@projectplan.keys.first]
     @last_report_date = firstproject[:reportdate]
 
-    @graph_wt = open_flash_chart_object(300,300,"/report/graph_worktypes")
 
     @graph_quint = open_flash_chart_object(500,300,"/report/graph_quintiles")
 

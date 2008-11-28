@@ -103,35 +103,25 @@ module Graphs
     date = Date::strptime(cookies[:report_date])
     @worktype_distribution = calculate_worktype_distribution(date)
   
-    pie = Pie.new
-    title = Title.new("Worktypes by days booked")
-    pie.start_angle = 35
-    pie.animate = true
-    pie.tooltip = '#val# of #total#<br>#percent# of 100%'
-    pievalues = []
+    pie = Gruff::Pie.new(300)
+    pie.title = "Worktypes by days booked"
 
     @worktype_distribution.keys.each do |wt|
       wt_name = Worktype::find_by_id(wt).name
       wt_daysbooked = @worktype_distribution[wt][:daysbooked]
-      pievalues << PieValue.new(wt_daysbooked,"#{wt_name}")
+      pie.data("#{wt_name}",wt_daysbooked)
     end
-    pie.values = pievalues.to_a
-    pie.colours = ["#d01f3c", "#356aa0", "#C79810", "#aaff00", "#ffaa00", "#00aaff", "#00ffaa"]
+    #pie.colours = ["#d01f3c", "#356aa0", "#C79810", "#aaff00", "#ffaa00", "#00aaff", "#00ffaa"]
 
-    chart = OpenFlashChart.new
-    chart.title = title
-    chart.add_element(pie)
-
-    chart.x_axis = nil
-
-    render :text => chart.to_s
-
+    
+    send_data(pie.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'wt_stats.png')
   end
 
   def graph_quintiles
    date = Date::strptime(cookies[:report_date]) || Date.today
    projects = calculate_project_days(date)
    teams = Team::find(:all)
+   chart = Gruff::Bar.new(500)
    bar = {}
    values = {}
    key = {}
@@ -144,11 +134,12 @@ module Graphs
         bar[team].colour = colours[count]
         values[team] = [0,0,0,0,0,0,0]
    end
-   title = Title.new("Quality of commitment estimates")
+   chart.title = "Errors of commitment estimates"
     # group by team and use subject as the key
-    x_axis = XAxis.new
-    y_axis = YAxis.new
-    labels = ["grave","0-20%","20-40%","40-60%","60-80%",">80%","zombie"]
+#    x_axis = XAxis.new
+#    y_axis = YAxis.new
+    chart.labels = { 0 => "grave", 1 => "0-20%", 2 => "20-40%", 3 => "40-60%", 
+               4 => "60-80%", 5 =>">80%", 6 => "zombie" }
 
    projects.each do |project|
       quintile = project_quintile(project[1][:committed_inper],project[1][:daysbooked])
@@ -160,18 +151,13 @@ module Graphs
     teams.each do |team|
       ymax = [ymax,values[team].max].max
     end
-    y_axis.set_range(0,ymax+2,5)   
+    #y_axis.set_range(0,ymax+2,5)   
   
-    x_axis.labels=labels
-    chart = OpenFlashChart.new
-    chart.title = title
-    chart.x_axis = x_axis
-    chart.y_axis = y_axis
+    #x_axis.labels=labels
     teams.each do |team|
-      bar[team].set_values(values[team])
-      chart.add_element(bar[team])
+      chart.data(team.name,values[team])
     end
-    render :text => chart.to_s
+    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'quintiles.png')
   end
 
 end
