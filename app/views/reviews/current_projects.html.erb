@@ -1,0 +1,32 @@
+<h1>Listing current projects for review</h1>
+
+<table>
+  <tr>
+    <th>Country</th>
+    <th>Project</th>
+    <th>Type</th>
+    <th>Begin Date</th>
+    <th>End Date (Planned)</th>
+    <th>Spec?</th>
+    <th>Design?</th>
+    <th>Code?</th>
+  </tr>
+
+<% for project in @projects %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td class="text"><%=h country_by_id(project.country).isocode %></td>
+    <td class="text"><%=h project.name %></td>
+    <td class="text"><%=h project.worktype.name %></td>
+    <td class="text"><%=h project.planbeg.to_s %></td>
+    <td class="text"><%=h project.planend.to_s %></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewSpec) %>"></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewDesign) %>"></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewCode) %>"></td>
+    <td class="text"><%= link_to 'Review', "/reviews/review_project/#{project.id}" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New review', new_review_path %>

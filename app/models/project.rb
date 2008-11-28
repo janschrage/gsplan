@@ -83,6 +83,8 @@ class Project < ActiveRecord::Base
   end
 
   def reviews_ok_before_pilot_or_close
+    return if self.nil?
+    return if self.worktype.nil?
     return true unless self.worktype.needs_review
     return true unless self.status == StatusPilot or self.status == StatusClosed
 

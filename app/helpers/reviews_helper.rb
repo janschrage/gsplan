@@ -3,6 +3,10 @@ module ReviewsHelper
   ResultType = Struct.new(:id,:name)
   ReviewType = Struct.new(:id,:name)
 
+  ReviewResultImg = ["/images/icons/edit_remove ----.png",
+                     "/images/icons/button_ok.png",
+                     "/images/icons/button_cancel.png"]
+
   def review_result_text(result)
     if result == nil
       resulttext = "not set"
@@ -10,6 +14,21 @@ module ReviewsHelper
       resulttext = review_result_list[result][1]
     end
     return resulttext
+  end
+
+  def review_result_img_for_prj(prj,rtype)
+    reviews=Review.find(:all, :conditions => ["project_id = ? and rtype = ?", prj, rtype])
+   
+    return ReviewResultImg[0] if reviews.nil?
+ 
+    rOK = false
+
+    reviews.each do |review|
+      rOK   = true if (review.result != Review::ResultFail)
+    end  
+    return ReviewResultImg[1] if rOK
+    return ReviewResultImg[2] if !rOK
+    
   end
 
   def review_type_text(rtype)

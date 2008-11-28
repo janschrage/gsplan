@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+
+
+  map.connect 'reviews/current_projects', :controller => "reviews", :action => "current_projects"
   map.resources :reviews
 
   map.resources :rights

@@ -115,7 +115,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update_attributes(params[:project])
         flash[:notice] = 'Project was successfully updated.'
-s        format.html { redirect_to(@project) }
+        format.html { redirect_to(@project) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

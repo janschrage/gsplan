@@ -1,15 +1,29 @@
 class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.xml
+  include TeamcommitmentsHelper
+
   def index
     @reviews = Review.find(:all)
+    session[:original_uri] = "/reviews"
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @reviews }
     end
   end
+  
+  def current_projects
+    @projects = project_list_current()
+    session[:original_uri] = "/reviews/current_projects"
+    @projects.delete_if { |project| project.worktype.needs_review.nil? } 
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @projects }
+    end
+  end
+  
   # GET /reviews/1
   # GET /reviews/1.xml
   def show
@@ -19,6 +33,12 @@ class ReviewsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @review }
     end
+  end
+
+  def review_project
+    project_id = params[:id]
+    flash[:project_id] = project_id
+    redirect_to (:action => :new)
   end
 
   # GET /reviews/new

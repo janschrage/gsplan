@@ -6,7 +6,10 @@
   <p>
     <%= f.label "Project" %><br />
  	<%=
- 		f.collection_select(:project_id, project_list_current, :id, :name)
+             if flash[:project_id] then
+                @review.project_id = flash[:project_id]
+             end
+             f.collection_select(:project_id, project_list_current, :id, :name)
 	%>
   </p>
   <p>
