@@ -18,7 +18,7 @@ class TeamcommitmentsController < ApplicationController
   # GET /teamcommitments.xml
   cache_sweeper :audit_sweeper
   
-  include Statistics, Graphs
+  include Statistics
   
   def index
     session[:team_id] = nil  #no filtering by team
@@ -35,9 +35,7 @@ class TeamcommitmentsController < ApplicationController
     
     @teamusage   = calculate_usage(@report_date)
     @capacities  = calculate_capacities(@report_date)
-    
-    @graph = open_flash_chart_object(600,300,"/report/graph_usage")
- 
+     
     @freecapacity = {}
     @capacities.to_a.each do |team, capacity|
       @freecapacity[team]=capacity - @teamusage[team]

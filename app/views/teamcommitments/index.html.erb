@@ -5,13 +5,11 @@
 <%= link_to '>>>',  {:action => "index", :controller =>
 "teamcommitments", :report_date => @report_date>>(1) } %></h2>
 
-<script type="text/javascript" src="/javascripts/swfobject.js"></script>
-
 <div id="pagecontent">
 <div id="top">
 <div id="teams">
 <div id="teamgraph">
-<%= @graph %>
+<%= image_tag('/graph/graph_usage', :format => 'png') %>
 </div>
 <div id="teamstats">
 <h2>Teams</h2>
