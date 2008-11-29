@@ -15,7 +15,7 @@
 
 class MyteamController < ApplicationController
 
-  include Statistics, Graphs
+  include Statistics
 
   def index
     # filter by team
