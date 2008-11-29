@@ -16,8 +16,6 @@
     <td><%=h project_by_id(projecttrack.project_id) %></td>
     <td><%=h projecttrack.reportdate %></td>
     <td><%=h projecttrack.daysbooked %></td>
-    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_projecttrack_path(projecttrack) %></td>
-    <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), projecttrack, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+  cache_sweeper :audit_sweeper
+
   # GET /reviews
   # GET /reviews.xml
   include TeamcommitmentsHelper
