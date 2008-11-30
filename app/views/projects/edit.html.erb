@@ -41,7 +41,7 @@
     <p>
     <%= f.label "Status" %><br />
  	<%=
- 		f.collection_select(:status, @project.project_status_list, :id, :name)
+ 		f.collection_select(:status, project_status_list, :id, :name)
 	%>
   </p>
   <p>

@@ -16,7 +16,7 @@
 class ProjectsController < ApplicationController
   cache_sweeper :audit_sweeper
 
-  include Statistics
+  include Statistics, ProjectsHelper
   
   def index
      
@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
       countryname = Country.find_by_id(@project[:country_id]).name
       employeename = Employee.find_by_id(@project[:employee_id]).name
       worktypename = Worktype.find_by_id(@project[:worktype_id]).name
-      status = @project.project_status_text(@project.status)
+      status = project_status_text(@project.status)
             
       @output = { :classname => @project,
                  :countryname => countryname, 
