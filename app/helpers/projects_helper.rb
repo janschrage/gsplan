@@ -15,12 +15,14 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 module ProjectsHelper
-  
-  ProjectStatusImages = [ "/images/icons/stop.png",
+ 
+  StatusType = Struct.new(:id,:name)
+ 
+  ProjectStatusImages = [ "/images/icons/empty.png",
                           "/images/icons/run.png",
                           "/images/icons/ok.png",
                           "/images/icons/alert.png",
-			  "/images/icons/launch_22x22.png",
+			  "/images/icons/xmag.png",
 			  "/images/icons/agt_announcements.png",
 			  "/images/icons/button_cancel.png"]    
 
@@ -74,6 +76,27 @@ module ProjectsHelper
     return ProjectTrendImages[trend]
   end
 
+  def project_status_text(status)
+    if status == nil
+      statustext = "not set"
+    else
+      statustext = project_status_list[status][1]
+    end
+    return statustext             
+  end
+  
+  def project_status_list
+    statuslist = []
+    statuslist << StatusType.new(Project::StatusOpen, "open")
+    statuslist << StatusType.new(Project::StatusInProcess, "in process")
+    statuslist << StatusType.new(Project::StatusClosed, "closed")
+    statuslist << StatusType.new(Project::StatusOverdue, "overdue")
+    statuslist << StatusType.new(Project::StatusPilot, "pilot")
+    statuslist << StatusType.new(Project::StatusProposed, "proposed")
+    statuslist << StatusType.new(Project::StatusProposed, "rejected")
+    return statuslist
+  end
+  
   def project_quintile(plan, act)
     plan = 0 if plan.nil?
     act = 0 if act.nil?

@@ -18,6 +18,9 @@ module TeamcommitmentsHelper
   TeamcommitmentStatusImages = [ "/images/icons/agt_announcements.png",
                                  "/images/icons/ok.png" ]    
 
+  TeamcommitmentStatusText = [ "proposed",
+                               "accepted" ]    
+
   def project_list_current
     # This is for the selection in edit/create. 
     # Pick only projects that are not closed and begin date <= end date of this period, i.e. include overdue
@@ -42,4 +45,8 @@ module TeamcommitmentsHelper
     return TeamcommitmentStatusImages[status]
   end
 
+  def teamcommitment_status_text(status)
+    return "undefined" if status.nil?
+    return TeamcommitmentStatusText[status]
+  end
 end

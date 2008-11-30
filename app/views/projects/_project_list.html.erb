@@ -1,12 +1,12 @@
 <h2>Projects</h2>
 <% if check_link_auth("projects","new") then %>
 	<div class="link-create">	
-		<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_project_path %></span>
+		<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0, :alt => "New project"), new_project_path %></span>
         <span class="vcenter"><%= link_to 'New Project', new_project_path %></span>
 	</div>
 <% end %>
 
 <table>
-<tr><th>Ctry</th><th>Project</th><th>Type</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Miss</th><th></th></tr>
+<tr><th>Ctry</th><th>Project</th><th>Type</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Miss</th><th>Stat</th></tr>
 <%= render(:partial => "projects/project_item", :collection => project_list) %> 
 </table>

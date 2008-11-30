@@ -21,7 +21,7 @@
 	<td><%= h project[1][:daysbooked] %></td>
 	<td><img src="<%= project_trend_image(project[1][:committed_inper],project[1][:daysbooked]) %>"></td>
 	<td class="text"><%= h project_quintile(project[1][:committed_inper],project[1][:daysbooked]) %></td>
-	<td><img src="<%= project_status_image(project[1][:status]) %>"></td>
+	<td><img src="<%= project_status_image(project[1][:status]) %>" alt="<%= project_status_text(project[1][:status]) %>"></td>
 </tr>
  <%end%>
 </table>
@@ -34,6 +34,10 @@
 <br>
 <div id="graph_quint">
 <%= image_tag('/graph/graph_quintiles', :format => 'png') %>
+</div>
+<br>
+<div id="graph_sumofdelta">
+<%= image_tag('/graph/graph_planning_delta_in_days', :format => 'png') %>
 </div>
 </div>
 </div>

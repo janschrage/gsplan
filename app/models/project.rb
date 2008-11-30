@@ -15,7 +15,6 @@
 
 class Project < ActiveRecord::Base
 
-  StatusType = Struct.new(:id,:name)
 
   StatusOpen = 0
   StatusInProcess = 1
@@ -51,27 +50,7 @@ class Project < ActiveRecord::Base
     "#{@country.name}"
   end
   
-  def project_status_text(status)
-    if status == nil
-      statustext = "not set"
-    else
-      statustext = project_status_list[status][1]
-    end
-    return statustext             
-  end
-  
-  def project_status_list
-    statuslist = []
-    statuslist << StatusType.new(StatusOpen, "open")
-    statuslist << StatusType.new(StatusInProcess, "in process")
-    statuslist << StatusType.new(StatusClosed, "closed")
-    statuslist << StatusType.new(StatusOverdue, "overdue")
-    statuslist << StatusType.new(StatusPilot, "pilot")
-    statuslist << StatusType.new(StatusProposed, "proposed")
-    statuslist << StatusType.new(StatusProposed, "rejected")
-    return statuslist
-  end
-  
+
  protected
   def begda_is_before_endda
     return if planbeg.nil? or planend.nil?

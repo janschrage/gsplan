@@ -33,7 +33,7 @@ class GraphController < ApplicationController
       if capa > 0  #only if the team has capacity this month (temporary help from other LOBs,...)
         capa_values << capa
         usage_values << @usage[team]
-        free_values << capa-@usage[team]
+        free_values << [0,capa-@usage[team]].max #no negative free capacity
         labels.merge!({ counter => team })
         counter += 1
       end
@@ -73,13 +73,8 @@ class GraphController < ApplicationController
    projects = calculate_project_days(date)
    teams = Team::find(:all)
    chart = Gruff::Bar.new('600x400')
-   bar = {}
    values = {}
-   key = {}
-   colours = ["#459a89", "#9a89f9", "#115599", "#782836", "#19affe", "#ffbb30", "#00fae2","#2345aa"]
-   count = 0
    teams.each do |team|
-        count += 1
         values[team] = [0,0,0,0,0,0,0]
    end
    chart.title = "Errors of commitment estimates"
@@ -105,6 +100,34 @@ class GraphController < ApplicationController
     end
     chart.theme_37signals   
     send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'quintiles.png')
+  end
+
+  def graph_planning_delta_in_days
+   date = Date::strptime(cookies[:report_date]) || Date.today
+   projects = calculate_project_days(date)
+   teams = Team::find(:all)
+   chart = Gruff::Bar.new('600x400')
+   values = {}
+
+   chart.title = "Absolute difference execution vs. planning"
+    # group by team and use subject as the key
+
+   teams.each do |team|
+        values[team] = 0
+   end
+
+   projects.each do |project|
+      delta = (project[1][:committed_inper] - project[1][:daysbooked]).abs
+      team = Project.find_by_id(project[0]).country.team
+      values[team] += delta
+    end
+  
+    chart.y_axis_label = "Sum of Delta (PD)"
+    teams.each do |team|
+      chart.data(team.name,values[team])
+    end
+    chart.theme_37signals   
+    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'sumofdeltas.png')
   end
 
 end
