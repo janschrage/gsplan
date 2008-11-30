@@ -67,11 +67,18 @@ module Statistics
     return commitmentcount
   end    
   
-  def calculate_project_days(report_date)
+  def calculate_project_days(report_date, team_id = '*')
     # count project days committed between dates and total
     projectindex = {}
     projectdays = {}
-    
+	
+    # identify countries to check based on team
+    if team_id != '*' then
+	countries = Team::find_by_id(team_id).countries
+    else
+        countries = Country::find(:all)
+    end
+
     if report_date then
       month = get_month_beg_end(report_date)
       begda = month[:first_day]
@@ -87,6 +94,7 @@ module Statistics
     #Find the projects
     @projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? ) ", endda, begda, Project::StatusClosed])
     @projects.each do |project|
+      if team_id == '*' or countries.find_by_id(project.country_id)
         if  project.planbeg <= endda and project.planend >= begda 
           projectindex = { :name => project.name,
 			   :country => project.country_id,
@@ -99,15 +107,16 @@ module Statistics
         else
           if project.planend <= begda and project.status != Project::StatusClosed
                 projectindex = { :name => project.name,
-		                           	 :country => project.country_id,
+		                 :country => project.country_id,
                                  :committed_total => 0,
                                  :committed_inper => 0,
                                  :daysbooked => 0,
 				 :reportdate => last_report_date,
                                  :status => Project::StatusOverdue } 
-                projectdays[project.id] = projectindex                 
-	        end
+                projectdays[project.id] = projectindex 
+	  end
         end
+      end
     end
  
 
@@ -142,10 +151,10 @@ module Statistics
     return projectdays
   end    
 
-  def calculate_worktype_distribution(report_date)
+  def calculate_worktype_distribution(report_date, team_id = '*')
 
     # Get the bookings per project
-    projectdays = calculate_project_days(report_date)
+    projectdays = calculate_project_days(report_date, team_id)
   
     wt_distrib = {}
 
@@ -172,9 +181,8 @@ module Statistics
     begda = month[:first_day]
     endda = month[:last_day]
     
-    projectplan = calculate_project_days(report_date)
-    # filter by countries
-    projectplan.delete_if{ |prj| countries.find_by_id(prj[1][:country]).nil?}
+    projectplan = calculate_project_days(report_date, team.id)
+
     return projectplan
   end
 

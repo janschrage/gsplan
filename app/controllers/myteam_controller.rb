@@ -40,6 +40,8 @@ class MyteamController < ApplicationController
 
     @projectplan = get_projects_for_team_and_month(@report_date)
     commitments = get_commitments_for_team_and_month(@report_date)
+    firstproject = @projectplan[@projectplan.keys.first]
+    @last_report_date = firstproject[:reportdate]
 
     session[:original_uri] = request.request_uri
 
@@ -64,6 +66,8 @@ class MyteamController < ApplicationController
                    :status => commitment.status }
         @outputlist << output
     end
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => [@projects,@outputlist] }

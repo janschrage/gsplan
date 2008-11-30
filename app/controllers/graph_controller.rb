@@ -53,7 +53,9 @@ class GraphController < ApplicationController
 
   def graph_worktypes
     date = Date::strptime(cookies[:report_date])
-    @worktype_distribution = calculate_worktype_distribution(date)
+    team_id = params[:id] || '*'
+
+    @worktype_distribution = calculate_worktype_distribution(date, team_id)
   
     chart = Gruff::Pie.new(400)
     chart.title = "Worktypes by days booked"

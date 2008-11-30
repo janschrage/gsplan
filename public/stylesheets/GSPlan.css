@@ -20,7 +20,7 @@ body {
 #teamgraph {position: relative; left: 10px; top: 0px;}
 #teamstats {position: absolute; left: 650px; top: 0px;}
 #projectstats {position: relative; left: 650px; top: 0px;}
-#teamcommitments {position: absolute; left: 10px; top:0px; width: 630px;}
+#teamcommitments {position: absolute; left: 10px; top:10px; width: 630px;}
 
 /* Maintenance view */
 #maint-wrap {display: table}
