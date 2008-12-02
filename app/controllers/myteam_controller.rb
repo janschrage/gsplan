@@ -15,7 +15,7 @@
 
 class MyteamController < ApplicationController
 
-  include Statistics
+  include Statistics, MyteamHelper
 
   def index
     # filter by team
@@ -67,6 +67,7 @@ class MyteamController < ApplicationController
         @outputlist << output
     end
 
+    @currentprojects = team_projects_current
 
     respond_to do |format|
       format.html # index.html.erb

@@ -8,7 +8,7 @@
 <% for user in @users %>
   <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
     <td class="text"><%=h user.name %></td>
-    <td class="text"><%=h user.team.name %></td>
+    <td class="text"><%=h user.team.name unless user.team.nil? %></td>
     <td class="cell-action"><%= link_to image_tag("/images/icons/info.png", :border=>0), user %></td>
     <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_user_path(user) %></td>
     <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), user, :confirm => 'Are you sure?', :method => :delete %></td>

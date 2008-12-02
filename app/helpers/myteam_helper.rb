@@ -14,4 +14,21 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 module MyteamHelper
+
+  def team_projects_current
+    # Pick only projects that are not closed and begin date <= end date of this period, i.e. include overdue
+    # Only projects for this team
+    projects = Project.find(:all, :conditions => ["status != ? and status != ?", Project::StatusClosed, Project::StatusRejected], :order => "name" )
+    endda = Date::strptime(cookies[:report_date]) || Date.today
+    projects.delete_if { |project|  project.planbeg > endda }
+
+    countries = Team.find(session[:team_id]).countries
+    currentprojects = []
+
+    projects.each do |project|
+      currentprojects << project if countries.find_by_id(project.country_id)
+    end
+       
+    return currentprojects
+  end
 end

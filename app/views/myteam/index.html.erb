@@ -19,6 +19,38 @@
 <%= render(:partial => "teamcommitments/commitment_list", :object => @outputlist) %>
 </div>
 </div>
+
+<div id="middle">
+<h2>Reviews (current projects)</h2>
+
+<table>
+  <tr>
+    <th>Country</th>
+    <th>Project</th>
+    <th>Type</th>
+    <th>Begin Date</th>
+    <th>End Date (Planned)</th>
+    <th>Spec?</th>
+    <th>Design?</th>
+    <th>Code?</th>
+  </tr>
+
+<% for project in @currentprojects %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td class="text"><%=h country_by_id(project.country).isocode %></td>
+    <td class="text"><%=h project.name %></td>
+    <td class="text"><%=h project.worktype.name %></td>
+    <td class="text"><%=h project.planbeg.to_s %></td>
+    <td class="text"><%=h project.planend.to_s %></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewSpec) %>"></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewDesign) %>"></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewCode) %>"></td>
+</tr>
+<% end %>
+</table>
+
+</div>
+
 <div id="projects-wrap">
 <h2>Report</h2>
 <p>Data based on BW upload from <%=h @last_report_date.to_s %>.</p>
@@ -45,6 +77,10 @@
 <div id="projects-middle">
 <div id="graph_wt">
 <%= image_tag("/graph/graph_worktypes/#{session[:team_id]}", :format => 'png') %>
+</div>
+<br>
+<div id="graph_sumofdelta">
+<%= image_tag('/graph/graph_planning_delta_in_days', :format => 'png') %>
 </div>
 </div>
 </div>
