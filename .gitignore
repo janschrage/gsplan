@@ -3,3 +3,6 @@ aptanaDB
 .project
 .loadpath
 *~
+GSPlan.kdevelop
+GSPlan.kdevses
+db/GSPlan_test
