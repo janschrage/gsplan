@@ -5,23 +5,23 @@
 <%= link_to '>>>',  {:action => "index", :controller =>
 "myteam", :report_date => @report_date>>(1) } %></h2>
 
-<div id="top">
+<div class="table-wrap">
 <h2>Plan</h2>
-
-<div id="projects">
-<div id="projectstats">	
+<div class="table-row">
+<div class="table-cell">
+<%= render(:partial => "teamcommitments/commitment_list", :object => @outputlist) %>
+</div>
+<div class="table-cell">	
 <%= render(:partial => "projects/project_list", :object => @projectplan) %>
 </table>
 </div>
 </div>
 
-<div id="teamcommitments">
-<%= render(:partial => "teamcommitments/commitment_list", :object => @outputlist) %>
-</div>
-</div>
 
-<div id="middle">
-<h2>Reviews (current projects)</h2>
+</div>
+</div>
+<div class="table-row">
+<h2>Reviews (current projects)</h2>	
 
 <table>
   <tr>
@@ -48,8 +48,10 @@
 </tr>
 <% end %>
 </table>
-
 </div>
+</div>
+
+<div class="table-row">
 
 <div id="projects-wrap">
 <h2>Report</h2>
@@ -81,6 +83,7 @@
 <br>
 <div id="graph_sumofdelta">
 <%= image_tag('/graph/graph_planning_delta_in_days', :format => 'png') %>
+</div>
 </div>
 </div>
 </div>

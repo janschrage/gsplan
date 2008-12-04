@@ -4,6 +4,7 @@ class Review < ActiveRecord::Base
   ResultFail           = 0
   ResultOK             = 1
   ResultOKwithComments = 2
+  ResultPartial        = 3
 
   ReviewSpec   = 0
   ReviewDesign = 1

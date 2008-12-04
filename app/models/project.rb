@@ -79,9 +79,9 @@ class Project < ActiveRecord::Base
     end
 
     reviews.each do |review|
-      rSpec   = true if (review.rtype == Review::ReviewSpec   and review.result != Review::ResultFail)
-      rDesign = true if (review.rtype == Review::ReviewDesign and review.result != Review::ResultFail)
-      rCode   = true if (review.rtype == Review::ReviewCode   and review.result != Review::ResultFail)
+      rSpec   = true if (review.rtype == Review::ReviewSpec   and (review.result == Review::ResultOK or review.result == Review::ResultOKwithComments))
+      rDesign = true if (review.rtype == Review::ReviewDesign and (review.result == Review::ResultOK or review.result == Review::ResultOKwithComments))
+      rCode   = true if (review.rtype == Review::ReviewCode   and (review.result == Review::ResultOK or review.result == Review::ResultOKwithComments))
     end
 
     errors.add(:status, "Spec review is missing or failed. Cannot pilot or close project.") unless rSpec
