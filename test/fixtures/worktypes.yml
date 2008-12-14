@@ -1,11 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  description: MyString
-  preload: false
+review:
+  id: 1
+  name: LC
+  description: Needs reviews
+  preload: true
+  needs_review: true
 
-two:
-  name: MyString
-  description: MyString
+noreview:
+  id: 2
+  name: ADM
+  description: Needs no reviews
   preload: false
+  needs_review: false
