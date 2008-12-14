@@ -85,7 +85,7 @@ class GraphController < ApplicationController
    end
    chart.title = "Delta planning/execution (no. tasks)"
     # group by team and use subject as the key
-    chart.labels = { 0 => "sleepers", 1 => "0-20%", 2 => "20-40%", 3 => "40-60%", 
+    chart.labels = { 0 => "pending", 1 => "0-20%", 2 => "20-40%", 3 => "40-60%", 
                4 => "60-80%", 5 =>">80%", 6 => "ad-hoc" }
 
    projects.each do |project|
