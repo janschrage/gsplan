@@ -83,10 +83,10 @@ class GraphController < ApplicationController
    teams.each do |team|
         values[team] = [0,0,0,0,0,0,0] if capacities[team.name] > 0
    end
-   chart.title = "Errors of commitment estimates"
+   chart.title = "Delta planning/execution (no. tasks)"
     # group by team and use subject as the key
-    chart.labels = { 0 => "grave", 1 => "0-20%", 2 => "20-40%", 3 => "40-60%", 
-               4 => "60-80%", 5 =>">80%", 6 => "zombie" }
+    chart.labels = { 0 => "sleepers", 1 => "0-20%", 2 => "20-40%", 3 => "40-60%", 
+               4 => "60-80%", 5 =>">80%", 6 => "ad-hoc" }
 
    projects.each do |project|
       quintile = project_quintile(project[1][:committed_inper],project[1][:daysbooked])
@@ -100,7 +100,7 @@ class GraphController < ApplicationController
 #    end
     #y_axis.set_range(0,ymax+2,5)   
   
-    chart.y_axis_label = "No. commitments"
+    chart.y_axis_label = "No. tasks"
     teams.each do |team|
       chart.data(team.name,values[team]) if capacities[team.name] > 0
     end
