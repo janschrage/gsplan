@@ -7,7 +7,7 @@
             <%= if project_item[1][:preload] == true then 
                   "<img src=\"/images/icons/up.png\" alt=\"Preload\">" 
             else
-                  "<img src=\"/images/icons/down.png\" alt=\"Preload\">" 
+                  "<img src=\"/images/icons/down.png\" alt=\"No Preload\">" 
             end
             %></td>
 	<td class="text"><%= h country_by_id(project_item[1][:country]).isocode %></td>
