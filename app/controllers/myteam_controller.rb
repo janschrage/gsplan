@@ -63,7 +63,8 @@ class MyteamController < ApplicationController
                    :yearmonth => commitment.yearmonth,
                    :projectname => projectname,
                    :days => commitment.days,
-                   :status => commitment.status }
+                   :status => commitment.status,
+                   :preload => project.worktype.preload }
         @outputlist << output
     end
 

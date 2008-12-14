@@ -5,6 +5,13 @@
 <% end %>
     <td class="text"><%=h commitment[:teamname] %></td>
     <td class="text"><%=h commitment[:yearmonth] %></td>
+	<td class="text">
+            <%= if commitment[:preload] == true then 
+                  "<img src=\"/images/icons/up.png\" alt=\"Preload\">" 
+            else
+                  "<img src=\"/images/icons/down.png\" alt=\"No Preload\">" 
+            end
+        %></td>
     <td class="text"><%=h commitment[:projectname] %></td>
     <td><%=h commitment[:days] %></td>
     <td><img src="<%= teamcommitment_status_image(commitment[:status]) %>" alt="<%= teamcommitment_status_text(commitment[:status]) %>"></td>
