@@ -102,7 +102,8 @@ module Statistics
                            :committed_inper => 0,
                            :daysbooked => 0,
 			   :reportdate => last_report_date,
-                           :status => project.status }
+                           :status => project.status,
+                           :preload => project.worktype.preload }
           projectdays[project.id] = projectindex
         else
           if project.planend <= begda and project.status != Project::StatusClosed
@@ -112,7 +113,8 @@ module Statistics
                                  :committed_inper => 0,
                                  :daysbooked => 0,
 				 :reportdate => last_report_date,
-                                 :status => Project::StatusOverdue } 
+                                 :status => Project::StatusOverdue,
+                                 :preload => project.worktype.preload } 
                 projectdays[project.id] = projectindex 
 	  end
         end

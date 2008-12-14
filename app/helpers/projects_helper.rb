@@ -113,4 +113,5 @@ module ProjectsHelper
   def project_type_of(project_id)
     return Project.find_by_id(project_id).worktype.name
   end
+
 end

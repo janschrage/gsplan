@@ -3,6 +3,13 @@
 <% else %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
 <% end %>
+	<td class="text">
+            <%= if project_item[1][:preload] == true then 
+                  "<img src=\"/images/icons/up.png\" alt=\"Preload\">" 
+            else
+                  "<img src=\"/images/icons/down.png\" alt=\"Preload\">" 
+            end
+            %></td>
 	<td class="text"><%= h country_by_id(project_item[1][:country]).isocode %></td>
 	<td class="text"><%= h project_item[1][:name] %></td>
 	<td class="text"><%= h project_type_of(project_item[0]) %></td>
