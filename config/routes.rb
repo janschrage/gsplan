@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :dashboard
+
 
   map.connect 'cpro_projects/current_projects', :controller => "cpro_projects", :action => "current_projects"
 

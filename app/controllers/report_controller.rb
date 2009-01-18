@@ -36,5 +36,6 @@ class ReportController < ApplicationController
     @last_report_date = firstproject[:reportdate]
 
   end
+
    
 end

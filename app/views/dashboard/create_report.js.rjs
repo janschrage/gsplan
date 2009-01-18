@@ -1,0 +1,1 @@
+page.replace_html("report", :partial => "report_data", :object => @report_data)

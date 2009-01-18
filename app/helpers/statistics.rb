@@ -155,23 +155,36 @@ module Statistics
 
   def calculate_worktype_distribution(report_date, team_id = '*')
 
-    # Get the bookings per project
-    projectdays = calculate_project_days(report_date, team_id)
+    if report_date then
+      month = get_month_beg_end(report_date)
+      begda = month[:first_day]
+      endda = month[:last_day]
+    else
+      begda = Date::strptime('1900-01-01')
+      endda = Date::strptime('9999-12-31')
+    end
+    
+    #Find the date of the last BW upload for the given period
+    last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
   
+    #Calculate the days booked from the last BW data set
+    tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and reportdate = ?",endda, begda, last_report_date])
+
     wt_distrib = {}
 
-    projectdays.each do |project|
-      wt = Project.find_by_id(project[0]).worktype_id
-      if wt_distrib[wt].nil?
-	wt_distrib[wt] = { :daysbooked => project[1][:daysbooked],
-			   :committed_inper => project[1][:committed_inper] }
-      else
-	wt_distrib[wt][:daysbooked] = wt_distrib[wt][:daysbooked] + project[1][:daysbooked]
-	wt_distrib[wt][:committed_inper] = wt_distrib[wt][:committed_inper] + project[1][:committed_inper] 
+    tracks.each do |track|
+      if (team_id == '*') or (track.team_id.to_s == team_id.to_s) then
+        wt = Project.find_by_id(track.project_id).worktype_id
+        if wt_distrib[wt].nil?
+          wt_distrib[wt] = { :daysbooked => track.daysbooked }
+        else
+	  wt_distrib[wt][:daysbooked] = wt_distrib[wt][:daysbooked] + track.daysbooked 
+        end
       end
     end
     return wt_distrib
   end
+
 
   def get_projects_for_team_and_month(report_date)
     # Get the team of the user 

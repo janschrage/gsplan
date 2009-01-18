@@ -53,18 +53,18 @@ class GraphController < ApplicationController
 
   def graph_worktypes
     date = Date::strptime(cookies[:report_date])
-    team_id = params[:id] || '*'
+    team_id = params[:id]
+    team_id = '*' if params[:id].nil?
 
-    @worktype_distribution = calculate_worktype_distribution(date, team_id)
+    worktype_distribution = calculate_worktype_distribution(date, team_id)
   
     chart = Gruff::Pie.new(400)
     chart.title = "Worktypes by days booked"
-
-    @worktype_distribution.keys.each do |wt|
+    worktype_distribution.keys.each do |wt|
       wt_name = Worktype::find_by_id(wt).name
-      wt_daysbooked = @worktype_distribution[wt][:daysbooked]
+      wt_daysbooked = worktype_distribution[wt][:daysbooked]
       chart.data("#{wt_name}",wt_daysbooked)
-    end
+   end
 
     chart.theme_37signals   
     send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'wt_stats.png')

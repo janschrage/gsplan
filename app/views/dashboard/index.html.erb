@@ -1,0 +1,22 @@
+<div id="pagecontent">
+
+<h1>Report Variables</h1>
+
+<% form_remote_for :report_variables, @report_variables, :url=>{:controller=>"dashboard", :action=>"create_report"}, :update => { :success => "report_data"}, :html => { :multipart => true } do |f| %>
+<table>
+<tr>
+<td class="text"><label for="begda">Begin date:</label></td><td><%= f.text_field :begda, :size => 10, :value => @report_variables[:begda].to_s %></td>
+</tr>
+<tr>
+<td class="text"><label for="endda">End date:</label></td><td><%= f.text_field :endda, :size => 10, :value => @report_variables[:endda].to_s  %></td>
+</tr>
+</table>
+<%= submit_tag "Go" %>
+<% end %>
+
+<div id="report">
+<%= render(:partial => "report_data", :object => @report_data) %>
+</div>
+
+</div>
+

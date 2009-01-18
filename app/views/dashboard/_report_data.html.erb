@@ -1,0 +1,10 @@
+<h2>Report Data - Worktype distribution</h2>
+
+<% if not @report_data.nil? %>
+<table>
+<th>Team</th><th>Worktype</th><th>Month</th><th>Days booked</th>
+
+<%= render(:partial => "report_item", :collection => report_data) %>
+
+</table>
+<%end%>
