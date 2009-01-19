@@ -15,7 +15,7 @@
 
 class DashboardController < ApplicationController
 
-  include Statistics, DashboardHelper
+  include Statistics, DashboardHelper, TeamcommitmentsHelper
 
   def index
 
@@ -38,6 +38,7 @@ class DashboardController < ApplicationController
     case @report_type
       when RepWT_Tracking: @report_data = worktype_distribution_tracking(begda, endda)
       when RepWT_Cumul:    @report_data = worktype_distribution_cumul(begda, endda)
+      when RepPRJ_Time_since_update: @report_data = project_age_current
     end
     return true
   end
@@ -86,5 +87,24 @@ class DashboardController < ApplicationController
       end
     end
     return wt_total
+  end
+
+  def project_age_current
+  # Reports on how much time it was since projects were last updated
+  # currently open projects only
+    projects = project_list_current
+    prj_age = []
+    projects.each do |prj|
+      wks_since_update = ((Date::today - prj.updated_at.to_date) / 7).truncate
+      wks_since_creation = ((Date::today - prj.created_at.to_date) / 7).truncate
+      prj_age << { :project_id => prj.id,
+                   :country_id => prj.country_id,
+                   :wks_since_update => wks_since_update,
+                   :wks_since_creation => wks_since_creation,
+                   :status => prj.status,
+                   :planeffort => prj.planeffort,
+                   :worktype_id => prj.worktype_id }
+    end
+    return prj_age
   end
 end

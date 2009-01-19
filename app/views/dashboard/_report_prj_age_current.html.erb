@@ -1,0 +1,9 @@
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td class="text"><%= h Project.find(report_prj_age_current[:project_id]).name %></td>
+<td class="text"><%= h Country.find(report_prj_age_current[:country_id]).isocode %></td>
+<td class="text"><%= h Worktype.find(report_prj_age_current[:worktype_id]).name %></td>
+<td><%= h report_prj_age_current[:planeffort] %></td>
+<td><%= h report_prj_age_current[:wks_since_creation] %></td>
+<td><%= h report_prj_age_current[:wks_since_update] %></td>
+<td><img src="<%= project_status_image(report_prj_age_current[:status])%>" alt="<%= project_status_text(report_prj_age_current[:status])%>"></td>
+</tr>

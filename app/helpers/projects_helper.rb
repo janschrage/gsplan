@@ -38,13 +38,13 @@ module ProjectsHelper
   end
   
   def worktype_list
-    @worktypes = Worktype.find(:all, :order => "name" )  
-    return @worktypes
+    worktypes = Worktype.find(:all, :order => "name" )  
+    return worktypes
   end
   
   def employee_list
-    @employees = Employee.find(:all, :order => "name" )
-    return @employees
+    employees = Employee.find(:all, :order => "name" )
+    return employees
   end
 
   def project_status_image(status)
