@@ -141,4 +141,46 @@ class GraphController < ApplicationController
     send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'sumofdeltas.png')
   end
 
+  def graph_project_age_current
+   
+    chart = Gruff::Line.new('600x400')
+    projects = project_age_current
+    prj_week = {}
+
+    chart.title = "Project age - last update"
+    chart.y_axis_label = "Number of projects"
+    chart.x_axis_label = "Weeks since update"
+
+    projects.each do |project|
+      prj_week[project[:wks_since_update]] = 0 if prj_week[project[:wks_since_update]].nil?
+      prj_week[project[:wks_since_update]] += 1
+    end
+
+    max_weeks=prj_week.keys.max
+  
+
+    y = []
+    labels = {}
+    
+    week=0
+    (max_weeks+1).times do  
+      if not prj_week[week].nil? then
+        y << prj_week[week]
+      else 
+        y << 0
+      end
+      labels[week] = week.to_s
+      week += 1
+    end
+
+    ymax=y.max
+  
+    chart.labels = labels
+    chart.minimum_value = 0
+    chart.maximum_value = ymax+2
+    chart.data('Current projects',y)
+    chart.theme_37signals   
+    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'project_age_current.png')
+  end
+
 end

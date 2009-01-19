@@ -19,10 +19,18 @@
 <% elsif @report_type == DashboardHelper::RepPRJ_Time_since_update then %>
 <h2>Project age - current projects</h2>
 <table>
+<tr>
+<td valign="top">
+<table>
 <th>Project</th><th>Ctry</th><th>WType</th><th>PD(Plan)</th><th>Wks s/creat.</th><th>Wks s/upd.</th><th>Stat</th>
 <%= render(:partial => "report_prj_age_current", :collection => report_data) %>
 </table>
-
+</td>
+<td valign="top">
+<div id="graph_project_age_current">
+<%= image_tag('/graph/graph_project_age_current', :format => 'png') %>
+</div>
+</td></tr></table>
 <%end%>
 <%end%>
 
