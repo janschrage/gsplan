@@ -1,10 +1,20 @@
-<h2>Report Data - Worktype distribution</h2>
+<h1>Report Data</h1>
 
-<% if not @report_data.nil? %>
+<% if not @report_data.nil? then 
+     if @report_type == DashboardHelper::RepWT_Tracking %>
+
+<h2>Work distribution - tracking</h2>
 <table>
-<th>Team</th><th>Worktype</th><th>Month</th><th>Days booked</th>
+<th>Team</th><th>Month</th><th>Work type</th><th>Days booked</th>
+<%= render(:partial => "report_wt_track", :collection => report_data) %>
+</table>
 
-<%= render(:partial => "report_item", :collection => report_data) %>
-
+<% elsif @report_type == DashboardHelper::RepWT_Cumul then %>
+<h2>Work distribution - cumulative</h2>
+<table>
+<th>Team</th><th>Worktype</th><th>Days booked</th>
+<%= render(:partial => "report_wt_cumul", :collection => report_data) %>
 </table>
 <%end%>
+<%end%>
+

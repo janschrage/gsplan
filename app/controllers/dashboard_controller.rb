@@ -15,7 +15,7 @@
 
 class DashboardController < ApplicationController
 
-  include Statistics, ProjectsHelper
+  include Statistics, DashboardHelper
 
   def index
 
@@ -26,18 +26,23 @@ class DashboardController < ApplicationController
     begda = "#{begda.year}-#{begda.month}-01".to_date
     endda = Date.today
     @report_variables = { :begda => begda,
-                          :endda => endda }
+                          :endda => endda,
+                          :report_type => RepWT_Tracking }
   end
 
   def create_report
     begda = params[:report_variables][:begda].to_date
     endda = params[:report_variables][:endda].to_date
+    @report_type = params[:report_variables][:report_type].to_i
 
-    @report_data = worktype_distribution(begda, endda)
+    case @report_type
+      when RepWT_Tracking: @report_data = worktype_distribution_tracking(begda, endda)
+      when RepWT_Cumul:    @report_data = worktype_distribution_cumul(begda, endda)
+    end
     return true
   end
 
-  def worktype_distribution(begda,endda)
+  def worktype_distribution_tracking(begda,endda)
     teams=Team.find(:all)
     curdate = begda
     wt_total = []
@@ -53,6 +58,32 @@ class DashboardController < ApplicationController
       end
 
       curdate = curdate >> 1
+    end
+    return wt_total
+  end
+
+  def worktype_distribution_cumul(begda,endda)
+    teams=Team.find(:all)
+    wt_total = []
+    teams.each do |team|
+      curdate = begda
+      wt_team = {}
+      until curdate > endda do
+        wt_month = calculate_worktype_distribution(curdate,team.id)
+        wt_month.keys.each do |wt|
+          if wt_team[wt].nil?
+            wt_team[wt] = { :daysbooked => wt_month[wt][:daysbooked] }
+          else
+	    wt_team[wt][:daysbooked] = wt_team[wt][:daysbooked] + wt_month[wt][:daysbooked] 
+          end
+        end
+        curdate = curdate >> 1
+      end
+      wt_team.keys.each do |wt|
+        wt_total << { :team_id => team.id,
+                      :worktype_id => wt,
+                      :daysbooked => wt_team[wt][:daysbooked] }
+      end
     end
     return wt_total
   end

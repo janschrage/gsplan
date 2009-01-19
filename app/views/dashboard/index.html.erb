@@ -10,6 +10,16 @@
 <tr>
 <td class="text"><label for="endda">End date:</label></td><td><%= f.text_field :endda, :size => 10, :value => @report_variables[:endda].to_s  %></td>
 </tr>
+<tr>
+<td class="text"><label for="report_type">Report type:</label></td>
+<td>
+<!-- TODO: should be a collection select -->
+<select id="report_type" name="report_variables[report_type]">
+<option value="1">Work distribution - tracking</option>
+<option value="2">Work distribution - cumulative</option></select>
+</select>
+</td>
+</tr>
 </table>
 <%= submit_tag "Go" %>
 <% end %>
