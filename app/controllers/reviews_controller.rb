@@ -7,9 +7,13 @@ class ReviewsController < ApplicationController
   include TeamcommitmentsHelper
 
   def index
-    @reviews = Review.find(:all)
-    session[:original_uri] = "/reviews"
-
+    if params[:id].nil?
+      @reviews = Review.find(:all)
+      session[:original_uri] = "/reviews"
+    else
+      @reviews = Review.find_by_project_id(params[:id])
+      session[:original_uri] = "/reivews/for_project"
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @reviews }

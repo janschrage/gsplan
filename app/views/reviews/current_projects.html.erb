@@ -24,6 +24,7 @@
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewCode) %>"></td>
 <% if check_link_auth("reviews","new") %>
     <td class="cell-action"><%= link_to 'Review', "/reviews/review_project/#{project.id}" %></td>
+    <td class="cell-action"><%= link_to 'View all Reviews', "/reviews/for_project/#{project.id}" %></td>
 <% end %>
   </tr>
 <% end %>
