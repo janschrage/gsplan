@@ -47,15 +47,18 @@ protected
   end
 
   def check_authorization
-    user = User.find_by_id(session[:user_id])
-    unless user.roles.detect{|role|
-      role.rights.detect{|right|
-        (right.action == action_name || right.action == '*' ) && ( right.controller == self.class.controller_path || right.controller == '*')
+    users = User.find(:all).size
+    unless users = 0
+      user = User.find_by_id(session[:user_id])
+      unless user.roles.detect{|role|
+        role.rights.detect{|right|
+          (right.action == action_name || right.action == '*' ) && ( right.controller == self.class.controller_path || right.controller == '*')
+          }
         }
-      }
-      flash[:error] = "You are not authorized to view the page you requested"
-      request.env["HTTP_REFERER" ] ? (redirect_to :back) : (redirect_to "/")
-      return false
+        flash[:error] = "You are not authorized to view the page you requested"
+        request.env["HTTP_REFERER" ] ? (redirect_to :back) : (redirect_to "/")
+        return false
+      end
     end
   end
   
