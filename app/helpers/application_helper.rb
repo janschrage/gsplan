@@ -17,7 +17,7 @@
 module ApplicationHelper
   def check_link_auth(link_controller, link_action)
     users = User.find(:all).size
-    unless users = 0
+    unless users == 0
       user = User.find_by_id(session[:user_id])
       unless user.roles.detect{|role|
         role.rights.detect{|right|
