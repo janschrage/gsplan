@@ -12,7 +12,8 @@ class ReviewsController < ApplicationController
       session[:original_uri] = "/reviews"
     else
       @reviews = Review.find_by_project_id(params[:id])
-      session[:original_uri] = "/reivews/for_project"
+      @reviews ||= []
+      session[:original_uri] = "/reviews/for_project"
     end
     respond_to do |format|
       format.html # index.html.erb
