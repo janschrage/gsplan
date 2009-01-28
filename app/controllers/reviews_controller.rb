@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
       @reviews = Review.find(:all)
       session[:original_uri] = "/reviews"
     else
-      @reviews = Review.find_by_project_id(params[:id])
+      @reviews = Review.find(:all,:conditions => ["project_id = ?",params[:id]])
       @reviews ||= []
       session[:original_uri] = "/reviews/for_project"
     end
