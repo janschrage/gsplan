@@ -22,13 +22,17 @@
 %>
     <td class="<%=cclass%>"><%=h review_result_text(review.result) %></td>
     <td class="text"><%=h review.notes %></td>
-    <td class="text"><%= link_to 'Show', review %></td>
-    <td class="text"><%= link_to 'Edit', edit_review_path(review) %></td>
-    <td class="text"><%= link_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="cell-action">
+      <div class="link-create">
+        <%= link_to image_tag("/images/icons/info.png", :border=>0, :alt => 'Show'), review %></div></td>
+    <% if check_link_auth("reviews","edit") then %>
+    <td class="cell-action">
+      <%= link_to image_tag("/images/icons/edit.png", :border=>0, :alt => 'Edit'), edit_review_path(review) %></td>
+    <%end%>
+    <% if check_link_auth("reviews","delete") then %>
+    <td class="cell-action">
+      <%= link_to image_tag("/images/icons/editdelete.png", :border=>0, :alt => 'Destroy'), review, :confirm => 'Are you sure?', :method => :delete %></td><%end%>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New review', new_review_path %>
