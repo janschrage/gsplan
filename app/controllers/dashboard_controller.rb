@@ -33,12 +33,17 @@ class DashboardController < ApplicationController
   def create_report
     begda = params[:report_variables][:begda].to_date
     endda = params[:report_variables][:endda].to_date
+
+    flash[:report_begda] = params[:report_variables][:begda]
+    flash[:report_endda] = params[:report_variables][:endda]
+
     @report_type = params[:report_variables][:report_type].to_i
 
     case @report_type
       when RepWT_Tracking: @report_data = worktype_distribution_tracking(begda, endda)
       when RepWT_Cumul:    @report_data = worktype_distribution_cumul(begda, endda)
       when RepPRJ_Time_since_update: @report_data = project_age_current
+      when RepPRJ_Project_times: @report_data = project_times(begda,endda)
     end
     return true
   end

@@ -183,4 +183,37 @@ class GraphController < ApplicationController
     send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'project_age_current.png')
   end
 
+  def graph_project_times(begda=nil,endda=nil)
+ 
+    begda = flash[:report_begda].to_date if begda.nil?
+    endda = flash[:report_endda].to_date if endda.nil?
+  
+    chart = Gruff::Line.new('600x400')
+    projects = project_times(begda,endda)
+    prj_week = {}
+
+    chart.title = "Project times"
+    chart.y_axis_label = "Effort booked/planned"
+
+    data = []
+    ideal = []
+
+    projects.each do |project|
+      data << project[1][:daysbooked] / project[1][:planeffort]
+      ideal << 1
+    end
+    data = data.sort
+
+    labels = {}
+
+    ymax = data.max + 2
+    chart.hide_lines = false
+    chart.labels = labels
+    chart.minimum_value = 0
+    chart.maximum_value = ymax
+    chart.data("Effort booked/planned",data)
+    chart.data("Target",ideal)
+    chart.theme_37signals   
+    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'project_times.png')
+  end
 end

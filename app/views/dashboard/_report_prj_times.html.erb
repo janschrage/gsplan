@@ -1,0 +1,8 @@
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td class="text"><%= h report_prj_times[1][:name] %></td>
+<td class="text"><%= h Country.find(report_prj_times[1][:country]).isocode %></td>
+<td class="text"><%= h Worktype.find(report_prj_times[1][:worktype]).name %></td>
+<td><%= h report_prj_times[1][:planeffort] %></td>
+<td><%= h report_prj_times[1][:daysbooked] %></td>
+<td><img src="<%= project_status_image(report_prj_times[1][:status])%>" alt="<%= project_status_text(report_prj_times[1][:status])%>"></td>
+</tr>

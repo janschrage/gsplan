@@ -94,8 +94,8 @@ module Statistics
     last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
 
     #Find the projects
-    @projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? ) ", endda, begda, Project::StatusClosed])
-    @projects.each do |project|
+    projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? ) ", endda, begda, Project::StatusClosed])
+    projects.each do |project|
       if team_id == '*' or countries.find_by_id(project.country_id)
         if  project.planbeg <= endda and project.planend >= begda 
           projectindex = { :name => project.name,
@@ -281,6 +281,51 @@ module Statistics
                    :worktype_id => prj.worktype_id }
     end
     return prj_age
+  end
+
+  def project_times(begda,endda)
+    projectindex = {}
+    projectdays = {}
+
+    #Find the projects
+    projects = Project::find(:all, :conditions => ["planbeg <= ? and planend >= ?", endda, begda])
+    projects.each do |project|
+       projectindex = { :id => project.id,
+                        :name => project.name,
+                        :country => project.country_id,
+                        :planeffort => project.planeffort,
+                        :daysbooked => 0,
+                        :status => project.status,
+                        :worktype => project.worktype }
+       projectdays[project.id] = projectindex
+    end
+
+    # Loop over the months
+    
+    curdate = begda
+    wt_total = []
+    until curdate > endda do
+      #Find the date of the last BW upload for the given period
+      curbegda = "#{curdate.year}-#{curdate.month}-01".to_date
+      tmp_month = (curbegda.month + 1)%12
+      tmp_month = 1 if tmp_month == 0
+      curendda = Date.new(curbegda.year, tmp_month ) - 1
+  
+      last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",curendda, curbegda]) 
+  
+      #Calculate the days booked from the last BW data set
+      tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and reportdate = ?",curendda, curbegda, last_report_date])
+  
+      tracks.each do |track|
+        thisproject = projectdays[track.project_id]
+        if not thisproject.nil? then
+          thisproject[:daysbooked] = thisproject[:daysbooked] + track.daysbooked
+          projectdays[track.project_id] = thisproject
+        end
+      end
+      curdate = curdate >> 1
+    end
+    return projectdays
   end
 
 end
