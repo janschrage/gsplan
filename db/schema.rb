@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081123190241) do
+ActiveRecord::Schema.define(:version => 20090129000058) do
 
   create_table "audit_trails", :force => true do |t|
     t.integer  "record_id"
@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(:version => 20081123190241) do
     t.datetime "updated_at"
   end
 
+  create_table "projectareas", :force => true do |t|
+    t.string   "area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.date     "planend"
@@ -51,7 +57,10 @@ ActiveRecord::Schema.define(:version => 20081123190241) do
     t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",      :limit => 1
+    t.integer  "status",         :limit => 1
+    t.string   "srs_url"
+    t.string   "sdd_url"
+    t.integer  "projectarea_id"
   end
 
   create_table "projecttracks", :force => true do |t|

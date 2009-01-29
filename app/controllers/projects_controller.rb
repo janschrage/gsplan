@@ -19,7 +19,8 @@ class ProjectsController < ApplicationController
   include Statistics, ProjectsHelper
   
   def index
-     
+    session[:original_uri] = "/projects"
+ 
     @projects = Project.find(:all)
 
     @outputlist = []
@@ -30,9 +31,6 @@ class ProjectsController < ApplicationController
        employeename = Employee.find_by_id(project[:employee_id]).name
        worktypename = Worktype.find_by_id(project[:worktype_id]).name
       
-       #committed = @projectplan[project.id][:committed_total]
-       #missing = project.planeffort - committed
-       #status = project.project_status_text(project.status)
        status = project.status
       
        output = { :classname => project,
@@ -56,7 +54,6 @@ class ProjectsController < ApplicationController
   
   def new
     @project = Project.new
-    #session[:original_uri] = "/projects"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @project }

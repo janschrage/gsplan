@@ -1,0 +1,15 @@
+<h1>New projectarea</h1>
+
+<% form_for(@projectarea) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :area %><br />
+    <%= f.text_field :area %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', projectareas_path %>

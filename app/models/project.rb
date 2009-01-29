@@ -29,6 +29,7 @@ class Project < ActiveRecord::Base
   belongs_to :worktype
   has_many   :teamcommitments
   has_one    :cpro_project
+  has_one    :project_area
   has_many   :reviews
 
   validates_presence_of :employee_id, :country_id, :worktype_id, :planbeg, :planend, :name, :planeffort

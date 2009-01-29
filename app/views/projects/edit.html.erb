@@ -4,8 +4,14 @@
   <%= f.error_messages %>
 
    <p>
-    <%= f.label "Name" %><br />
+    <%= f.label "Project name" %><br />
     <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label "Project area" %><br />
+ 	<%=
+ 		f.collection_select(:projectarea_id, projectarea_list, :id, :area)
+	%>
   </p>
   <p>
     <%= f.label "Begin (Planned)" %><br />
@@ -38,6 +44,19 @@
  		f.collection_select(:employee_id, employee_list, :id, :name)
 	%>
   </p>
+  <p>
+    <%= f.label "SRS location" %><br />
+ 	<%=
+ 		f.text_field :srs_url
+	%>
+  </p>
+  <p>
+    <%= f.label "SDD location" %><br />
+ 	<%=
+ 		f.text_field :sdd_url
+	%>
+  </p>
+
     <p>
     <%= f.label "Status" %><br />
  	<%=

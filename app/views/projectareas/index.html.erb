@@ -1,0 +1,18 @@
+<h1>Listing project areas</h1>
+
+<table>
+  <tr>
+    <th>Area</th>
+  </tr>
+  <tr><%= link_to image_tag("/images/icons/edit_add.png", :border=>0), new_projectarea_path%><%= link_to 'New project area', new_projectarea_path %></tr>
+<% for projectarea in @projectareas %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%=h projectarea.area %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0), edit_projectarea_path(projectarea) %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0), projectarea, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

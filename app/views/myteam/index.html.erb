@@ -29,6 +29,8 @@
     <th>Type</th>
     <th>Begin Date</th>
     <th>End Date (Planned)</th>
+    <th>SRS location</th>
+    <th>SDD location</th>
     <th>Spec?</th>
     <th>Design?</th>
     <th>Code?</th>
@@ -41,6 +43,8 @@
     <td class="text"><%=h project.worktype.name %></td>
     <td class="text"><%=h project.planbeg.to_s %></td>
     <td class="text"><%=h project.planend.to_s %></td>
+    <td class="text"><%=h project.srs_url %></td>
+    <td class="text"><%=h project.sdd_url %></td>
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewSpec) %>"></td>
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewDesign) %>"></td>
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewCode) %>"></td>
