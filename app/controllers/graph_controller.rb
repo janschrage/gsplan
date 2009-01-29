@@ -206,7 +206,7 @@ class GraphController < ApplicationController
 
     labels = {}
 
-    ymax = data.max + 2
+    ymax = data.max + 0.5
     chart.hide_lines = false
     chart.labels = labels
     chart.minimum_value = 0
