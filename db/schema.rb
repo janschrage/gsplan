@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090129000058) do
+ActiveRecord::Schema.define(:version => 20090130232227) do
 
   create_table "audit_trails", :force => true do |t|
     t.integer  "record_id"
@@ -71,6 +71,11 @@ ActiveRecord::Schema.define(:version => 20090129000058) do
     t.decimal  "daysbooked"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "reviewers", :force => true do |t|
+    t.integer "project_id"
+    t.integer "employee_id"
   end
 
   create_table "reviews", :force => true do |t|

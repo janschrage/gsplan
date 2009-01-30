@@ -31,6 +31,8 @@ class Project < ActiveRecord::Base
   has_one    :cpro_project
   belongs_to :projectarea
   has_many   :reviews
+  has_many   :reviewers
+  has_many   :employees, :through => :reviewers
 
   validates_presence_of :employee_id, :country_id, :worktype_id, :planbeg, :planend, :name, :planeffort
   validates_uniqueness_of :name
