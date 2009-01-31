@@ -30,6 +30,7 @@
     <th>Type</th>
     <th>Begin Date</th>
     <th>End Date (Planned)</th>
+    <th>Reviewers</th>
     <th>SRS location</th>
     <th>SDD location</th>
     <th>Spec?</th>
@@ -45,6 +46,10 @@
     <td class="text"><%=h project.worktype.name %></td>
     <td class="text"><%=h project.planbeg.to_s %></td>
     <td class="text"><%=h project.planend.to_s %></td>
+    <td class="text"><%project.employees.each do |ee|%>
+          <%=h "- #{ee.name}"%> 
+          <%end%>
+    </td>
     <td class="text"><%=h project.srs_url %></td>
     <td class="text"><%=h project.sdd_url %></td>
     <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewSpec) %>"></td>

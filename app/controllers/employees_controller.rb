@@ -18,10 +18,11 @@ class EmployeesController < ApplicationController
   
   active_scaffold :employee do |config|
     config.label = "Employees"
-    config.columns = [:pernr, :name]
+    config.columns = [:pernr, :name, :is_reviewer]
     list.sorting = {:name => 'ASC'}
     columns[:pernr].label = "ID"
     columns[:name].label = "Name"
+    columns[:name].label = "Reviewer?"
   end
 
 end

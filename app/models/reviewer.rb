@@ -1,13 +1,13 @@
-class Reviewers < ActiveRecord::Base
+class Reviewer < ActiveRecord::Base
   belongs_to :project
   belongs_to :employee
 
   validates_presence_of :employee_id, :project_id
-  validate :reviewer_is_unique, :ee_exists, :prj_exists
+  validate :reviewer_is_unique, :ee_exists, :prj_exists, :ee_is_reviewer
 
 protected
   def reviewer_is_unique
-    rev=Reviewers.find(:all, :conditions => ['employee_id = ? and project_id = ?',employee_id,project_id])
+    rev=Reviewer.find(:all, :conditions => ['employee_id = ? and project_id = ?',employee_id,project_id])
     errors.add(:project_id,'Reviewer already has this project.') unless rev.blank?
   end
 
@@ -19,5 +19,12 @@ protected
   def prj_exists
     prj=Project.find_by_id(project_id)
     errors.add(:project_id,'Project does not exist.') if prj.nil?
+  end
+
+  def ee_is_reviewer
+    ee=Employee.find_by_id(employee_id)
+    if !ee.nil?
+      errors.add(:employee_id,'Employee is not a reviewer.') if ee.is_reviewer.blank?
+    end
   end
 end

@@ -9,3 +9,10 @@
    id: 2
    pernr: I123457
    name: Mahatma Gandorf
+   is_reviewer: true
+
+ three:
+   id: 3
+   pernr: I324423
+   name: Hara Kiri
+   is_reviewer: false
