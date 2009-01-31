@@ -39,15 +39,16 @@
   </tr>
 
 <% for project in @currentprojects %>
-<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>" >
     <td class="text"><%=h country_by_id(project.country).isocode %></td>
     <td class="text"><%=h project.name %></td>
     <td class="text"><%=h project.projectarea.area unless project.projectarea.nil? %></td>
     <td class="text"><%=h project.worktype.name %></td>
     <td class="text"><%=h project.planbeg.to_s %></td>
     <td class="text"><%=h project.planend.to_s %></td>
-    <td class="text"><%project.employees.each do |ee|%>
-          <%=h "- #{ee.name}"%> 
+    <td class="text">
+          <%project.employees.each do |ee|%>
+            <%=h "- #{ee.name}"%> 
           <%end%>
     </td>
     <td class="text"><%=h project.srs_url %></td>

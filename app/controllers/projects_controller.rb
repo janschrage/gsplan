@@ -238,4 +238,8 @@ class ProjectsController < ApplicationController
     @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
   end
 
+  def assign_reviewers
+    session[:original_uri] = request.request_uri
+    @project = Project.find(params[:id])
+  end
 end

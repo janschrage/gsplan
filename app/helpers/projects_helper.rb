@@ -114,4 +114,9 @@ module ProjectsHelper
     return Project.find_by_id(project_id).worktype.name
   end
 
+  def is_project_reviewer(prj_id,ee_id)
+    return false if prj_id.nil? or ee_id.nil?
+    return true if Reviewer.find(:first,:conditions => ["project_id = ? and employee_id = ?",prj_id,ee_id])
+    return false
+  end
 end

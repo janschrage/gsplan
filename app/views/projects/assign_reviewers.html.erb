@@ -1,0 +1,18 @@
+<h1>Assign Reviewers for <%=h @project.name%></h1>
+
+<% form_for(@project) do |f| %>
+  <%= f.error_messages %>
+     <% employees = Employee.find(:all, :conditions => ["is_reviewer = ?",true]) %>
+<p>
+     <% for ee in employees -%>
+      <%= check_box_tag "project[employee_ids][]","#{ee.id}",
+          is_project_reviewer(@project.id,ee.id) -%> 
+      <%= "#{ee.name}" -%>
+    <br/>
+     <% end -%>
+</p>
+<p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
