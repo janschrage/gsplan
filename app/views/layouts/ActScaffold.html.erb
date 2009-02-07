@@ -4,21 +4,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Countries: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold', 'menu' %>
+  <title>GSPlan</title>
+  <%= stylesheet_link_tag 'scaffold', 'GSPlan', 'menu' %>
   <%= javascript_include_tag :defaults %>
   <%= active_scaffold_includes %> 
 </head>
-<body>
+<div id="topbar">
+<div id="logo">
+<img src="/images/GSPlan_Logo_small.png" alt="GSPlan">
+</div>
+
+<div id="usermenu">
+<%= link_to "Logout", :controller => "admin", :action => "logout" %>
+<%= link_to "Change Password", :controller => "users", :action => "change_password" %>	
+<a href="/info.html" target="_blank">About</a>
+</div>
+</div>
+
 <div class="aerobuttonmenu">
-<a href="/teamcommitments" class="aero"><span>Plan</span></a> 
-<a href="/report" class="aero"><span>Report</span></a> 
-<a href="/admin" class="aero"><span>Maintain</span></a> 
+<div class="left">
+<%= if check_link_auth("myteam","index") then	
+		"<a href=\"/myteam\" class=\"aero\"><span>My Team</span></a>"
+	end
+%>
+<%= if check_link_auth("teamcommitments","index") then	
+	    "<a href=\"/teamcommitments\" class=\"aero\"><span>Plan</span></a>"
+	end 
+%> 
+<%= if check_link_auth("reviews","current_projects") then	
+		"<a href=\"/reviews/current_projects\" class=\"aero\"><span>Review</span></a>"
+	end
+%>   
+<%= if check_link_auth("report","index") then	
+		"<a href=\"/report\" class=\"aero\"><span>Report</span></a>"
+	end
+%>
+<%= if check_link_auth("dashboard","index") then	
+		"<a href=\"/dashboard\" class=\"aero\"><span>Dashboard</span></a>"
+	end
+%>
+<%= if check_link_auth("admin","index") then	
+		"<a href=\"/admin\" class=\"aero\"><span>Maintain</span></a>"
+	end
+%> 
+</div>
+<div id="notice-confidential" class="right">
+Internal &amp; Confidential
+</div>
 </div>
 
 
 <p style="color: green"><%= flash[:notice] %></p>
-
+<p style="color: red; font-weight: bold;"><%= flash[:error] %></p>
 <%= yield  %>
 
 </body>
