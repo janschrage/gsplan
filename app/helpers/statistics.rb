@@ -306,10 +306,9 @@ module Statistics
     wt_total = []
     until curdate > endda do
       #Find the date of the last BW upload for the given period
-      curbegda = "#{curdate.year}-#{curdate.month}-01".to_date
-      tmp_month = (curbegda.month + 1)%12
-      tmp_month = 1 if tmp_month == 0
-      curendda = Date.new(curbegda.year, tmp_month ) - 1
+      month = get_month_beg_end(curdate)
+      curbegda = month[:first_day]
+      curendda = month[:last_day]
   
       last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",curendda, curbegda]) 
   
