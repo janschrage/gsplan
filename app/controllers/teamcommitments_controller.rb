@@ -21,6 +21,7 @@ class TeamcommitmentsController < ApplicationController
   include Statistics
   
   def index
+    session[:original_uri] = request.request_uri
     session[:team_id] = nil  #no filtering by team
     if params[:report_date]
       @report_date =  Date::strptime(params[:report_date])
@@ -116,6 +117,7 @@ class TeamcommitmentsController < ApplicationController
   # GET /teamcommitments/1/edit
   def edit
     @teamcommitment = Teamcommitment.find(params[:id])
+    session[:original_uri] = request.request_uri
   end
 
   # POST /teamcommitments
@@ -127,7 +129,7 @@ class TeamcommitmentsController < ApplicationController
       @teamcommitment.status = Teamcommitment::StatusProposed 
       if @teamcommitment.save
         flash[:notice] = 'Commitment was successfully created.'
-        format.html { redirect_to(@teamcommitment) }
+        format.html { redirect_to(session[:original_uri]) }
         format.xml  { render :xml => @teamcommitment, :status => :created, :location => @teamcommitment }
       else
         format.html { render :action => "new" }
@@ -144,7 +146,7 @@ class TeamcommitmentsController < ApplicationController
     respond_to do |format|
       if @teamcommitment.update_attributes(params[:teamcommitment])
         flash[:notice] = 'Commitment was successfully updated.'
-        format.html { redirect_to(@teamcommitment) }
+        format.html { redirect_to(session[:original_uri]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -212,8 +214,7 @@ class TeamcommitmentsController < ApplicationController
      @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
   end
 
-  def assign_developers
-    session[:original_uri] = request.request_uri
+  def assign_tasks
     @teamcommitment = Teamcommitment.find(params[:id])
   end
 end

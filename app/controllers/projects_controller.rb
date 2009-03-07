@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   include Statistics, ProjectsHelper
   
   def index
-    session[:original_uri] = "/projects"
+    session[:original_uri] = request.request_uri
  
     @projects = Project.find(:all)
 
@@ -112,7 +112,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update_attributes(params[:project])
         flash[:notice] = 'Project was successfully updated.'
-        format.html { redirect_to(@project) }
+        format.html { redirect_to(session[:original_uri]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -239,7 +239,6 @@ class ProjectsController < ApplicationController
   end
 
   def assign_reviewers
-    session[:original_uri] = request.request_uri
     @project = Project.find(params[:id])
   end
 end

@@ -17,9 +17,9 @@ class Employee < ActiveRecord::Base
   has_and_belongs_to_many :teams
   has_many :projects
   has_many :reviewers
-  has_many :developers
+  has_many :tasks
   has_many :projects, :through => :reviewers
-  has_many :teamcommitments, :through => :developers
+  has_many :teamcommitments, :through => :tasks
  
   validates_presence_of :pernr, :name
   validates_uniqueness_of :pernr

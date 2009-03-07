@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
   
   def current_projects
     @projects = project_list_current()
-    session[:original_uri] = "/reviews/current_projects"
+    session[:original_uri] = request.request_uri
     @projects.delete_if { |project| project.worktype.needs_review.nil? } 
 
     respond_to do |format|

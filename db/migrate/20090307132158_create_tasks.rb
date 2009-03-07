@@ -1,12 +1,12 @@
-class CreateDevelopers < ActiveRecord::Migration
+class CreateTasks < ActiveRecord::Migration
   def self.up
-    create_table :developers do |t|
+    create_table :tasks do |t|
       t.integer :teamcommitment_id
       t.integer :employee_id
     end
   end
 
   def self.down
-    drop_table :developers
+    drop_table :tasks
   end
 end

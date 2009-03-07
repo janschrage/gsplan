@@ -28,7 +28,8 @@ namespace :db do
     right_myteam = Right.create :name => "myteam", :controller => "myteam", :action => "index"
     right_create_commitment = Right.create :name => "create_commitment", :controller => "teamcommitments", :action => "create"
     right_list_current_reviews = Right.create :name => "reviews_list_current", :controller => "reviews", :action => "current_projects"
-    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, right_logout, right_change_pw, right_update_user, right_new_project, right_create_project, right_myteam, right_pilot_project, right_close_project, right_start_project, right_create_commitment, right_list_current_reviews, right_graph_delta ]
+    right_assign_tasks = Right.create :name => "teamcommitments_assign_tasks", :controller => "teamcommitments", :action => "assign_tasks"
+    role_tl.rights = [right_list_prj, right_list_rep, right_list_tc, right_graph_us, right_graph_wt, right_logout, right_change_pw, right_update_user, right_new_project, right_create_project, right_myteam, right_pilot_project, right_close_project, right_start_project, right_create_commitment, right_list_current_reviews, right_graph_delta, right_assign_tasks ]
     role_tl.save!
 
     #Team member

@@ -24,8 +24,8 @@ class Teamcommitment < ActiveRecord::Base
 
   belongs_to :team
   belongs_to :project
-  has_many   :developers
-  has_many   :employees, :through => :developers
+  has_many   :tasks
+  has_many   :employees, :through => :tasks
   
   validates_presence_of :team_id, :project_id, :yearmonth, :days
   validates_numericality_of :days

@@ -34,11 +34,6 @@ ActiveRecord::Schema.define(:version => 20090307132158) do
     t.datetime "updated_at"
   end
 
-  create_table "developers", :force => true do |t|
-    t.integer "teamcommitment_id"
-    t.integer "employee_id"
-  end
-
   create_table "employees", :force => true do |t|
     t.string   "pernr"
     t.string   "name"
@@ -120,6 +115,11 @@ ActiveRecord::Schema.define(:version => 20090307132158) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer "teamcommitment_id"
+    t.integer "employee_id"
   end
 
   create_table "teamcommitments", :force => true do |t|
