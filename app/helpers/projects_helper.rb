@@ -24,7 +24,8 @@ module ProjectsHelper
                           "/images/icons/alert.png",
 			  "/images/icons/xmag.png",
 			  "/images/icons/agt_announcements.png",
-			  "/images/icons/button_cancel.png"]    
+			  "/images/icons/button_cancel.png",
+                          "/images/icons/kteatime.png"]    
 
   ProjectTrendImages = [ "/images/icons/trend_under.png",
                           "/images/icons/trend_neutral.png",
@@ -93,7 +94,8 @@ module ProjectsHelper
     statuslist << StatusType.new(Project::StatusOverdue, "overdue")
     statuslist << StatusType.new(Project::StatusPilot, "pilot")
     statuslist << StatusType.new(Project::StatusProposed, "proposed")
-    statuslist << StatusType.new(Project::StatusProposed, "rejected")
+    statuslist << StatusType.new(Project::StatusRejected, "rejected")
+    statuslist << StatusType.new(Project::StatusParked, "parked")
     return statuslist
   end
   

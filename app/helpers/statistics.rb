@@ -94,7 +94,7 @@ module Statistics
     last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
 
     #Find the projects
-    projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? ) ", endda, begda, Project::StatusClosed])
+    projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? ) and status <> ?", endda, begda, Project::StatusClosed, Project::StatusParked])
     projects.each do |project|
       if team_id == '*' or countries.find_by_id(project.country_id)
         if  project.planbeg <= endda and project.planend >= begda 
@@ -108,7 +108,7 @@ module Statistics
                            :preload => project.worktype.preload }
           projectdays[project.id] = projectindex
         else
-          if project.planend <= begda and project.status != Project::StatusClosed
+          if project.planend <= begda and project.status != Project::StatusClosed and project.status != Project::StatusParked 
                 projectindex = { :name => project.name,
 		                 :country => project.country_id,
                                  :committed_total => 0,
@@ -328,5 +328,22 @@ module Statistics
     return projectdays
   end
 
+  def parking_lot(team='*')
+  # Reports on parked projects
+    projects = Project.find(:all, :conditions => ["status = ?", Project::StatusParked], :order => "updated_at")
+    parking_lot = []
+    projects.each do |prj|
+      wks_since_update = ((Date::today - prj.updated_at.to_date) / 7).truncate
+      wks_since_creation = ((Date::today - prj.created_at.to_date) / 7).truncate
+      parking_lot << { :project_id => prj.id,
+                       :country_id => prj.country_id,
+                       :wks_since_update => wks_since_update,
+                       :wks_since_creation => wks_since_creation,
+                       :status => prj.status,
+                       :planeffort => prj.planeffort,
+                       :worktype_id => prj.worktype_id }
+    end
+    return parking_lot
+  end
 end
 

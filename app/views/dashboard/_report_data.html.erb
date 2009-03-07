@@ -3,11 +3,15 @@
 <% if not @report_data.nil? then 
      if @report_type == DashboardHelper::RepWT_Tracking %>
 
+<!-- Work - tracking-->
+
 <h2>Work distribution - tracking</h2>
 <table>
 <th>Team</th><th>Month</th><th>Work type</th><th>Days booked</th>
 <%= render(:partial => "report_wt_track", :collection => report_data) %>
 </table>
+
+<!-- Work - cumulative-->
 
 <% elsif @report_type == DashboardHelper::RepWT_Cumul then %>
 <h2>Work distribution - cumulative</h2>
@@ -15,6 +19,8 @@
 <th>Team</th><th>Worktype</th><th>Days booked</th>
 <%= render(:partial => "report_wt_cumul", :collection => report_data) %>
 </table>
+
+<!-- Projects - time since update -->
 
 <% elsif @report_type == DashboardHelper::RepPRJ_Time_since_update then %>
 <h2>Project age - current projects</h2>
@@ -32,6 +38,7 @@
 </div>
 </td></tr></table>
 
+<!-- Project times -->
 <% elsif @report_type == DashboardHelper::RepPRJ_Project_times then %>
 <h2>Project times</h2>
 <table>
@@ -47,6 +54,18 @@
 <%= image_tag('/graph/graph_project_times', :format => 'png') %>
 </div>
 </td></tr></table>
+
+<!-- Parked projects -->
+<% elsif @report_type == DashboardHelper::RepPRJ_Parked then %>
+<h2>Parked projects</h2>
+<table>
+<tr>
+<td valign="top">
+<table>
+<th>Project</th><th>Ctry</th><th>WType</th><th>PD(Plan)</th><th>Wks s/creat.</th><th>Wks parked</th><th>Stat</th>
+<%= render(:partial => "report_parked", :collection => report_data) %>
+</table>
+
 <%end%>
 <%end%>
 

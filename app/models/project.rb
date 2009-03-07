@@ -23,6 +23,7 @@ class Project < ActiveRecord::Base
   StatusPilot = 4
   StatusProposed = 5
   StatusRejected = 6
+  StatusParked = 7
 
   belongs_to :country
   belongs_to :employee

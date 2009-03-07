@@ -44,6 +44,7 @@ class DashboardController < ApplicationController
       when RepWT_Cumul:    @report_data = worktype_distribution_cumul(begda, endda)
       when RepPRJ_Time_since_update: @report_data = project_age_current
       when RepPRJ_Project_times: @report_data = project_times(begda,endda)
+      when RepPRJ_Parked: @report_data = parking_lot('*') #all teams
     end
     return true
   end

@@ -1,0 +1,12 @@
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td class="text"><%= h Project.find(report_parked[:project_id]).name %></td>
+<td class="text"><%= h Country.find(report_parked[:country_id]).isocode %></td>
+<td class="text"><%= h Worktype.find(report_parked[:worktype_id]).name %></td>
+<td><%= h report_parked[:planeffort] %></td>
+<td><%= h report_parked[:wks_since_creation] %></td>
+<td><%= h report_parked[:wks_since_update] %></td>
+<td><img src="<%= project_status_image(report_parked[:status])%>" alt="<%= project_status_text(report_parked[:status])%>"></td>
+<% if check_link_auth("projects","edit") then %>
+	<td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0, :alt => "edit project data"), edit_project_path(report_parked[:project_id]) %></td>
+<% end %>
+</tr>
