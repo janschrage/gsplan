@@ -2,12 +2,12 @@
 
 <% form_for(@teamcommitment) do |f| %>
   <%= f.error_messages %>
-     <% employees = Employee.find(:all) %>
+     <% employees = Employee.find(:all, :order => "name") %>
 <p>
      <% for ee in employees -%>
-      <%= check_box_tag "teamcommitment[employee_ids][]","#{ee.id}",
-          is_project_reviewer(@teamcommitment.id,ee.id) -%> 
-      <%= "#{ee.name}" -%>
+      <%= check_box_tag "teamcommitment[employee_ids][]","#{ee.id}", ee_is_assigned_to(ee.id,@teamcommitment.id) -%> 
+      <% team=ee_current_team(ee.id,@teamcommitment.yearmonth) %>
+      <%= "#{ee.name} (#{team.name})" -%>
     <br/>
      <% end -%>
 </p>

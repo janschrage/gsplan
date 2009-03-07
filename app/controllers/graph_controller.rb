@@ -67,7 +67,7 @@ class GraphController < ApplicationController
    end
 
     chart.theme_37signals   
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'wt_stats.png')
+    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "wt_stats--#{date.to_s}.png")
   end
 
   def graph_quintiles
@@ -81,7 +81,7 @@ class GraphController < ApplicationController
    capacities = calculate_capacities(date) #only show teams with capa >0
 
    teams.each do |team|
-        values[team] = [0,0,0,0,0,0,0] if capacities[team.name] > 0
+        values[team.id] = [0,0,0,0,0,0,0] if capacities[team.name] > 0
    end
    chart.title = "Delta planning/execution (no. tasks)"
     # group by team and use subject as the key
@@ -90,9 +90,9 @@ class GraphController < ApplicationController
 
    projects.each do |project|
       quintile = project_quintile(project[1][:committed_inper],project[1][:daysbooked])
-      team = Project.find_by_id(project[0]).country.team 
-      values[team][quintile] += 1 if capacities[team.name] > 0
-    end
+      team = Project.find_by_id(project[0]).country.team
+      values[team.id][quintile] += 1 if capacities[team.name] > 0
+   end
   
 #    ymax = 0
 #    teams.each do |team|
@@ -102,11 +102,11 @@ class GraphController < ApplicationController
   
     chart.y_axis_label = "No. tasks"
     teams.each do |team|
-      chart.data(team.name,values[team]) if capacities[team.name] > 0
+      chart.data(team.name,values[team.id]) if capacities[team.name] > 0
     end
     chart.minimum_value = 0
     chart.theme_37signals   
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'quintiles.png')
+    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "quintiles-#{date.to_s}.png")
   end
 
   def graph_planning_delta_in_days
@@ -138,7 +138,7 @@ class GraphController < ApplicationController
     end
     chart.minimum_value = 0
     chart.theme_37signals   
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'sumofdeltas.png')
+    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "sumofdeltas-#{date.to_s}.png")
   end
 
   def graph_project_age_current

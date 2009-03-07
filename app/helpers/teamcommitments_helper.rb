@@ -49,4 +49,14 @@ module TeamcommitmentsHelper
     return "undefined" if status.nil?
     return TeamcommitmentStatusText[status]
   end
+
+  def ee_is_assigned_to(ee_id,tc_id)
+    return false if tc_id.nil? or ee_id.nil?
+    return true if Task.find(:first,:conditions => ["teamcommitment_id = ? and employee_id = ?",tc_id,ee_id])
+    return false
+  end
+
+  def ee_current_team(ee_id,date)
+    return Employee.find_by_id(ee_id).teams.find(:first, :conditions => ["endda >= ?", date]) 
+  end
 end

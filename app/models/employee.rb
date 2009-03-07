@@ -14,7 +14,8 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 class Employee < ActiveRecord::Base
-  has_and_belongs_to_many :teams
+  has_many :teammembers
+  has_many :teams, :through => :teammembers
   has_many :projects
   has_many :reviewers
   has_many :tasks
