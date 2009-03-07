@@ -159,7 +159,12 @@ class TeamcommitmentsController < ApplicationController
   # DELETE /teamcommitments/1.xml
   def destroy
     @teamcommitment = Teamcommitment.find(params[:id])
+    @tasks = @teamcommitment.tasks
+
     @teamcommitment.destroy
+    @tasks.each do |task| 
+      task.destroy 
+    end
 
     respond_to do |format|
       format.html { redirect_to(teamcommitments_url) }
