@@ -212,4 +212,8 @@ class TeamcommitmentsController < ApplicationController
      @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
   end
 
+  def assign_developers
+    session[:original_uri] = request.request_uri
+    @teamcommitment = Teamcommitment.find(params[:id])
+  end
 end

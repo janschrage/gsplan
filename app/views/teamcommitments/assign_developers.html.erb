@@ -1,0 +1,18 @@
+<h1>Assign developers to <%=h @teamcommitment.project.name%> in <%=h @teamcommitment.yearmonth.to_s %></h1>
+
+<% form_for(@teamcommitment) do |f| %>
+  <%= f.error_messages %>
+     <% employees = Employee.find(:all) %>
+<p>
+     <% for ee in employees -%>
+      <%= check_box_tag "teamcommitment[employee_ids][]","#{ee.id}",
+          is_project_reviewer(@teamcommitment.id,ee.id) -%> 
+      <%= "#{ee.name}" -%>
+    <br/>
+     <% end -%>
+</p>
+<p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+

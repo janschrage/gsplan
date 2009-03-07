@@ -14,6 +14,11 @@
         %></td>
     <td class="text"><%=h commitment[:projectname] %></td>
     <td><%=h commitment[:days] %></td>
+    <td class="text"><%= link_to 'Assign', :controller => "teamcommitments", :action => "assign_developers", :id => commitment[:id]%>
+          <%Teamcommitment.find_by_id(commitment[:id]).employees.each do |ee|%>
+            <%=h "- #{ee.name}"%> 
+          <%end%>
+    </td>
     <td><img src="<%= teamcommitment_status_image(commitment[:status]) %>" alt="<%= teamcommitment_status_text(commitment[:status]) %>"></td>
 <% if commitment[:status] == Teamcommitment::StatusProposed then %>
 <% if check_link_auth("teamcommitments","commitment_accept") then %>
