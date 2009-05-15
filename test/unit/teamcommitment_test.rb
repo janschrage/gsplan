@@ -52,4 +52,31 @@ class TeamcommitmentTest < ActiveSupport::TestCase
     tc.days = 5
     assert tc.save!
   end
+
+  def test_project_in_process
+    #status values 1,4 are valid (project ids 11,13)
+    tc = Teamcommitment.new( :id => 10, :team_id => 1, :project_id => 10, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert !tc.valid?
+    assert tc.errors.invalid?(:project_id)
+    tc = Teamcommitment.new( :id => 11, :team_id => 1, :project_id => 11, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert tc.valid?
+    tc = Teamcommitment.new( :id => 12, :team_id => 1, :project_id => 12, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert !tc.valid?
+    assert tc.errors.invalid?(:project_id)
+    tc = Teamcommitment.new( :id => 13, :team_id => 1, :project_id => 5, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert !tc.valid?
+    assert tc.errors.invalid?(:project_id)
+    tc = Teamcommitment.new( :id => 10, :team_id => 1, :project_id => 13, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert tc.valid?
+    tc = Teamcommitment.new( :id => 10, :team_id => 1, :project_id => 6, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert !tc.valid?
+    assert tc.errors.invalid?(:project_id)
+    tc = Teamcommitment.new( :id => 10, :team_id => 1, :project_id => 7, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert !tc.valid?
+    assert tc.errors.invalid?(:project_id)
+    tc = Teamcommitment.new( :id => 10, :team_id => 1, :project_id => 14, :yearmonth => Date::strptime("2010-11-01"), :days => 5 )
+    assert !tc.valid?
+    assert tc.errors.invalid?(:project_id)
+  end
+
 end

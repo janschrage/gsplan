@@ -29,7 +29,7 @@ class Teamcommitment < ActiveRecord::Base
   
   validates_presence_of :team_id, :project_id, :yearmonth, :days
   validates_numericality_of :days
-  validate :commitment_is_in_project_timeframe, :commitment_is_positive, :commitment_is_unique
+  validate :commitment_is_in_project_timeframe, :commitment_is_positive, :commitment_is_unique, :project_is_in_process
 
   def commitment_status_text(status)
     if status == nil
@@ -50,18 +50,24 @@ class Teamcommitment < ActiveRecord::Base
 protected
   def commitment_is_in_project_timeframe
     project = Project.find_by_id(project_id) 
-    return if project.nil?
+    if project.nil?
+      errors.add(:project_id,'The project does not exist')  
+      return false
+    end
     if yearmonth < project.planbeg or yearmonth > project.planend
-      errors.add(:yearmonth, "The commitment must be within the timeframe of the project ("+project.planbeg.to_s+" - "+project.planend.to_s+").")
+      errors.add(:yearmonth, 'The commitment must be within the timeframe of the project ('+project.planbeg.to_s+' - '+project.planend.to_s+').')
     end
   end
   
   def commitment_is_positive
-    errors.add(:days, "Commitments must be >0") if days.nil? || days <= 0
+    errors.add(:days, 'Commitments must be >0') if days.nil? || days <= 0
   end
   
   def commitment_is_unique
-    return if yearmonth.nil?
+    if yearmonth.nil?
+      errors.add(:yearmonth,'The date must be filled')  
+      return false
+    end 
     prevcommitments = Teamcommitment.find(:all, :conditions => ["project_id = ? and team_id = ?", project_id, team_id])
     month=get_month_beg_end(yearmonth)
     prevcommitments.each do |prev|
@@ -69,5 +75,14 @@ protected
         errors.add(:yearmonth, "Commitment for this team/project/period already exists.") unless prev.id == self.id
       end
     end
+  end
+
+  def project_is_in_process
+    project = Project.find_by_id(project_id) 
+    if project.nil?
+      errors.add(:project_id,'The project does not exist')  
+      return false
+    end
+    errors.add(:project_id, 'The project must be in process or in testing.') unless project.status==Project::StatusInProcess or project.status==Project::StatusPilot
   end
 end

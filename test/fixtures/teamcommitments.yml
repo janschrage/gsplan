@@ -14,6 +14,7 @@ two:
   days: 1
 
 unique:
+  id: 101
   team_id: 1
   yearmonth: 2010-10-02
   project_id: 3

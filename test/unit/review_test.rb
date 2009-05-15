@@ -23,7 +23,7 @@ class ReviewTest < ActiveSupport::TestCase
     assert !rev.valid?
     assert rev.errors.invalid?(:project_id)
 
-    rev = Review.new( :user_id => 1, :project_id => 3, :notes => "OK", :result => 1 )
+    rev = Review.new( :user_id => 1, :project_id => 15, :notes => "OK", :result => 1 )
     assert !rev.valid?
     assert rev.errors.invalid?(:project_id)
 
