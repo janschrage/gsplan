@@ -1,0 +1,8 @@
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td class="text"><%= h Project.find(report_pct[:project_id]).name %></td>
+<td class="text"><%= h Country.find(report_pct[:country_id]).isocode %></td>
+<td class="text"><%= h Worktype.find(report_pct[:worktype_id]).name %></td>
+<td><%= h report_pct[:planeffort] %></td>
+<td><%= h report_pct[:pct] %></td>
+<td><%= h report_pct[:pct_as_perc].round(1) %>&#37;</td>
+</tr>

@@ -6,6 +6,7 @@ module DashboardHelper
   RepPRJ_Time_since_update = 3
   RepPRJ_Project_times = 4
   RepPRJ_Parked = 5
+  RepPRJ_Cycle_times = 6
 
   ReportTypes = []
   ReportTypes << ReportType.new(RepWT_Tracking,"Work types tracking")
@@ -13,6 +14,7 @@ module DashboardHelper
   ReportTypes << ReportType.new(RepPRJ_Time_since_update,"Projects - time since update")
   ReportTypes << ReportType.new(RepPRJ_Project_times,"Project times")
   ReportTypes << ReportType.new(RepPRJ_Parked,"Parked projects")
+  ReportTypes << ReportType.new(RepPRJ_Cycle_times,"Process cycle times")
 
   def report_type_list
     return ReportTypes

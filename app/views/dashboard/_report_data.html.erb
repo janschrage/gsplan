@@ -66,6 +66,18 @@
 <%= render(:partial => "report_parked", :collection => report_data) %>
 </table>
 
+<!-- Process cycle times -->
+<% elsif @report_type == DashboardHelper::RepPRJ_Cycle_times then %>
+<h2>Process cycle times</h2>
+<h3>Work In Progress = <%=h @wip %></h3>
+<table>
+<tr>
+<td valign="top">
+<table>
+<th>Project</th><th>Ctry</th><th>WType</th><th>PD(plan)</th><th>PCT</th><th>PCT/PD(plan)</th>
+<%= render(:partial => "report_pct", :collection => report_data) %>
+</table>
+
 <%end%>
 <%end%>
 

@@ -344,5 +344,35 @@ module Statistics
     end
     return parking_lot
   end
+
+  def project_pct(begda,endda)
+  # Reports on process cycle times for project closed between begda, endda and work in progress
+ 
+    project_list = []
+    wip = 0
+
+    #Find the projects
+    projects = Project::find(:all, :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed])
+    projects.each do |project|
+       pct = (project.planend - project.planbeg).to_f
+       pct_as_perc = pct / project.planeffort * 100
+       projectdata  = { :project_id => project.id,
+                        :name => project.name,
+                        :country_id => project.country_id,
+                        :planeffort => project.planeffort,
+                        :pct => pct,
+                        :pct_as_perc => pct_as_perc,
+                        :worktype_id => project.worktype }
+      project_list << projectdata
+    end
+
+    return project_list
+  end
+
+  def project_wip
+    wip = Project.count :conditions => ["status = ? or status = ? or status = ?", Project::StatusOpen, Project::StatusInProcess, Project::StatusPilot]
+    return wip
+  end
+
 end
 

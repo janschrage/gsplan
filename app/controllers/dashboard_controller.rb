@@ -45,6 +45,9 @@ class DashboardController < ApplicationController
       when RepPRJ_Time_since_update: @report_data = project_age_current
       when RepPRJ_Project_times: @report_data = project_times(begda,endda)
       when RepPRJ_Parked: @report_data = parking_lot('*') #all teams
+      when RepPRJ_Cycle_times: 
+        @report_data = project_pct(begda,endda)
+        @wip = project_wip
     end
     return true
   end
