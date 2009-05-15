@@ -108,7 +108,7 @@ module Statistics
                            :preload => project.worktype.preload }
           projectdays[project.id] = projectindex
         else
-          if project.planend <= begda and project.status != Project::StatusClosed and project.status != Project::StatusParked 
+          if project.planend <= begda and project.status != Project::StatusClosed and project.status != Project::StatusParked and project.status != Project::StatusRejected
                 projectindex = { :name => project.name,
 		                 :country => project.country_id,
                                  :committed_total => 0,
