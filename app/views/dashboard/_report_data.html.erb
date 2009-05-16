@@ -7,7 +7,7 @@
 
 <h2>Work distribution - tracking</h2>
 <table>
-<th>Team</th><th>Month</th><th>Work type</th><th>Days booked</th>
+<th>Team</th><th>Month</th><th>Work type</th><th>Days booked</th><th>Percentage</th>
 <%= render(:partial => "report_wt_track", :collection => report_data) %>
 </table>
 
@@ -16,7 +16,7 @@
 <% elsif @report_type == DashboardHelper::RepWT_Cumul then %>
 <h2>Work distribution - cumulative</h2>
 <table>
-<th>Team</th><th>Worktype</th><th>Days booked</th>
+<th>Team</th><th>Worktype</th><th>Days booked</th><th>Percentage</th>
 <%= render(:partial => "report_wt_cumul", :collection => report_data) %>
 </table>
 

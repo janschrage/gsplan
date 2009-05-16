@@ -225,11 +225,19 @@ module Statistics
     until curdate > endda do
       teams.each do |team|
         wt_team_month = calculate_worktype_distribution(curdate,team.id)
+        # get the total time and calculate percentages
+        sum_of_times_booked = 0
         wt_team_month.keys.each do |wt|
+          sum_of_times_booked += wt_team_month[wt][:daysbooked]
+        end
+
+        wt_team_month.keys.each do |wt|
+          perc = (wt_team_month[wt][:daysbooked] / sum_of_times_booked)*100
           wt_total << { :month => Date::ABBR_MONTHNAMES[curdate.month], 
                         :team_id => team.id,
                         :worktype_id => wt,
-                        :daysbooked => wt_team_month[wt][:daysbooked]} 
+                        :daysbooked => wt_team_month[wt][:daysbooked],
+                        :perc => perc} 
         end
       end
 
@@ -255,10 +263,18 @@ module Statistics
         end
         curdate = curdate >> 1
       end
+      # get the total time and calculate percentages
+      sum_of_times_booked = 0
       wt_team.keys.each do |wt|
+        sum_of_times_booked += wt_team[wt][:daysbooked]
+      end
+
+      wt_team.keys.each do |wt|
+        perc = (wt_team[wt][:daysbooked]/sum_of_times_booked)*100
         wt_total << { :team_id => team.id,
                       :worktype_id => wt,
-                      :daysbooked => wt_team[wt][:daysbooked] }
+                      :daysbooked => wt_team[wt][:daysbooked],
+                      :perc => perc }
       end
     end
     return wt_total

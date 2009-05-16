@@ -3,4 +3,5 @@
 <td class="text"><%= h report_wt_track[:month]%></td>
 <td class="text"><%= h Worktype.find(report_wt_track[:worktype_id]).name %></td>
 <td><%= h report_wt_track[:daysbooked] %></td>
+<td><%= h report_wt_track[:perc].round(1) %>&#037;</td>
 </tr>
