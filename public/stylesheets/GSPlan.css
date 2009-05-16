@@ -35,7 +35,7 @@ body {
 /* Generic table */
 .table-wrap {display: table}
 .table-row {display: table-row;}
-.table-cell {display: table-cell; padding-left: 20px; padding-right: 20px;}
+.table-cell {vertical-align: top; display: table-cell; padding-left: 20px; padding-right: 20px;}
 
 /* Login form */
 .login-form fieldset {

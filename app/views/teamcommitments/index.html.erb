@@ -6,37 +6,25 @@
 "teamcommitments", :report_date => @report_date>>(1) } %></h2>
 
 <div id="pagecontent">
-<div id="top">
-<div id="teams">
-<div id="teamgraph">
+<div class="table-wrap">
+<div class="table-row">
+<div class="table-cell">
 <%= image_tag('/graph/graph_usage', :format => 'png') %>
 </div>
-<div id="teamstats">
-<h2>Teams</h2>
-<table>
-<tr><th>Team</th><th>Committed</th><th>Capacity</th><th>Free</th></tr>
-<%   @teamusage.to_a.each do |team, used| %>
-<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-	<td class="text"><%= h team %></td>
-	<td><%= h used %></td>
-	<td><%= h @capacities[team] %></td>
-	<td class="<%= 'cell-error' if @freecapacity[team]<0 %>"><%= h @freecapacity[team] %></td>
-</tr>
- <%end%>
-</table>
-</div>
+<div id="table-cell">
+<%= render(:partial => "team_data", :object => @teamusage) %>
 </div>
 </div>
 
-<div id="middle">
-<div id="projects">
-<div id="projectstats">
+
+<div class="table-row">
+<div class="table-cell">
+<%= render(:partial => "commitment_list", :object => @outputlist) %>
+</div>
+<div class="table-cell">
 <%= render(:partial => "projects/project_list", :object => @projectplan) %>
 </div>
 </div>
 
-<div id="teamcommitments">
-<%= render(:partial => "commitment_list", :object => @outputlist) %>
-</div>
 </div>
 </div>
