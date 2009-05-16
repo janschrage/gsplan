@@ -1,8 +1,10 @@
+<% team = team_data_item[0] %>
+<% if @capacities[team] > 0 %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-        <% team = team_data_item[0] %>
         <% free = @capacities[team] - team_data_item[1] %>
 	<td class="text"><%= h team %></td>
 	<td><%= h team_data_item[1] %></td>
 	<td><%= h @capacities[team] %></td>
         <td class="<%= 'cell-error' if free<0 %>"><%= h free %>
 </tr>
+<%end%>
