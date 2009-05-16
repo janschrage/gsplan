@@ -198,4 +198,15 @@ module DashboardHelper
     return wip
   end
 
+  def avg_pct(prj_list)
+    prj_count = 0
+    sum_pct = 0
+
+    prj_list.each do |prj|
+      sum_pct += prj[:pct]
+      prj_count += 1
+    end
+    
+    return sum_pct / prj_count
+  end
 end

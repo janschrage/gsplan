@@ -48,6 +48,8 @@ class DashboardController < ApplicationController
       when RepPRJ_Cycle_times: 
         @report_data = rep_project_pct(begda,endda)
         @wip = rep_project_wip
+        @projects_delivered = @report_data.size
+        @pct = rep_avg_pct(@report_data)
     end
     return true
   end
@@ -78,5 +80,9 @@ class DashboardController < ApplicationController
   
   def rep_project_wip
     project_wip
+  end
+
+  def rep_avg_pct(prj_list)
+    avg_pct(prj_list)
   end
 end
