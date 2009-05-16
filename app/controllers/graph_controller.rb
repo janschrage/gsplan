@@ -15,7 +15,7 @@
 
 class GraphController < ApplicationController
 
- include Statistics, ProjectsHelper
+ include Statistics, ProjectsHelper, DashboardHelper
 
  def graph_usage
    date = Date::strptime(cookies[:report_date])
@@ -204,16 +204,16 @@ class GraphController < ApplicationController
     end
     data = data.sort
 
-    labels = {}
+    #labels = {}
 
     ymax = data.max + 0.5
     chart.hide_lines = false
-    chart.labels = labels
+    #chart.labels = labels
     chart.minimum_value = 0
     chart.maximum_value = ymax
     chart.data("Effort booked/planned",data)
     chart.data("Target",ideal)
-    chart.theme_37signals   
+    chart.theme_37signals
     send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'project_times.png')
   end
 end
