@@ -1,4 +1,4 @@
-<h1>Import a BW file</h1>
+<h1>Import time data</h1>
 
  <% form_for :dump, :url=>{:controller=>"projecttracks", :action=>"do_import"}, :html => { :multipart => true } do |f| -%>
 <p>
@@ -23,3 +23,15 @@
    </tr>
  </table>
 <% end -%>
+
+<h2>Upload file format:</h2>
+<p>
+CSV, columns are separated by semicolon (;)<br/>
+<table>
+<tr>
+<th>Column</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th>
+</tr>
+<tr class="list-line-odd">
+<th bgcolor="#ffffff">Content</th><td>Personnel ID</td><td>Employee name</td><td>Task</td><td>Time (unproductive)</td><td>Time (productive)</td><td>unused</td>
+</tr>
+</table>
