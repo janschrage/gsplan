@@ -19,6 +19,7 @@ module Statistics
 
   DaysPerPerson = 16;
   
+  # TODO: Refactor. Duplicated in lib/report/worktype.rb, Report::Projects during refactoring.
   def get_month_beg_end(curdate)
     month_begin = Date::strptime(curdate.year().to_s+'-'+curdate.month().to_s+'-01')
     month_end = (month_begin>>(1)) - 1
@@ -27,6 +28,7 @@ module Statistics
     return month
   end
   
+  # TODO: Refactor. Should be a method of Team.
   def calculate_capacities(report_date)
     # count team members
     capacity = {}
@@ -46,6 +48,7 @@ module Statistics
     return capacity
   end
   
+  # TODO: Refactor. Should be a method of Team.
   def calculate_usage(report_date)
     # count team members
     commitmentcount = {}
@@ -69,6 +72,7 @@ module Statistics
     return commitmentcount
   end    
   
+  # TODO: Refactor. Is a report.
   def calculate_project_days(report_date, team_id = '*')
     # count project days committed between dates and total
     projectindex = {}
@@ -156,35 +160,8 @@ module Statistics
   end    
 
   def calculate_worktype_distribution(report_date, team_id = '*')
-
-    if report_date then
-      month = get_month_beg_end(report_date)
-      begda = month[:first_day]
-      endda = month[:last_day]
-    else
-      begda = Date::strptime('1900-01-01')
-      endda = Date::strptime('9999-12-31')
-    end
-    
-    #Find the date of the last BW upload for the given period
-    last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
-  
-    #Calculate the days booked from the last BW data set
-    tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and reportdate = ?",endda, begda, last_report_date])
-
-    wt_distrib = {}
-
-    tracks.each do |track|
-      if (team_id == '*') or (track.team_id.to_s == team_id.to_s) then
-        wt = Project.find_by_id(track.project_id).worktype_id
-        if wt_distrib[wt].nil?
-          wt_distrib[wt] = { :daysbooked => track.daysbooked }
-        else
-	  wt_distrib[wt][:daysbooked] = wt_distrib[wt][:daysbooked] + track.daysbooked 
-        end
-      end
-    end
-    return wt_distrib
+    wt_report = Report::Worktype.new
+    return wt_report.calculate_worktype_distribution(report_date, team_id = '*')
   end
 
 

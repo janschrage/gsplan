@@ -21,13 +21,11 @@ module TeamcommitmentsHelper
   TeamcommitmentStatusText = [ "proposed",
                                "accepted" ]    
 
+  # This is for the selection in edit/create. 
   def project_list_current
-    # This is for the selection in edit/create. 
-    # Pick only projects that are not closed/parked and begin date <= end date of this period, i.e. include overdue
-    projects = Project.find(:all, :conditions => ["status != ? and status != ? and status != ?", Project::StatusClosed, Project::StatusRejected, Project::StatusParked], :order => "name" )
+    prj_report=Report::Projects.new
     endda = Date::strptime(cookies[:report_date]) || Date.today
-    projects.delete_if { |project|  project.planbeg > endda }
-    return projects
+    return prj_report.current_projects(endda)
   end
   
   def team_list

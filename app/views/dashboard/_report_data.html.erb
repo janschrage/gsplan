@@ -68,17 +68,19 @@
 
 <!-- Process cycle times -->
 <% elsif @report_type == DashboardHelper::RepPRJ_Cycle_times then %>
-<h2>Process cycle times</h2>
+<h2>Process cycle time</h2>
 <p>
 <strong>Work In Progress (WIP)= <%=h @wip %></strong><br/>
 <strong>Projects delivered = <%=h @projects_delivered %></strong><br/>
 <strong>Process cycle time (PCT) = <%=h @pct.round %> days</strong><br/>
 </p>
+
+<h2>Process lead times</h2>
 <table>
 <tr>
 <td valign="top">
 <table>
-<th>Project</th><th>Ctry</th><th>WType</th><th>PD(plan)</th><th>PCT(days)</th><th>PCT/PD(plan)</th>
+<th>Project</th><th>Ctry</th><th>WType</th><th>PD(plan)</th><th>PLT(days)</th><th>PLT/PD(plan)</th>
 <%= render(:partial => "report_pct", :collection => report_data) %>
 </table>
 

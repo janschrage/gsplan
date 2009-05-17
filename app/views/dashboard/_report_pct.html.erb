@@ -3,6 +3,6 @@
 <td class="text"><%= h Country.find(report_pct[:country_id]).isocode %></td>
 <td class="text"><%= h Worktype.find(report_pct[:worktype_id]).name %></td>
 <td><%= h report_pct[:planeffort] %></td>
-<td><%= h report_pct[:pct] %></td>
-<td><%= h report_pct[:pct_as_perc].round(1) %>&#37;</td>
+<td><%= h report_pct[:plt] %></td>
+<td><%= h report_pct[:plt_as_perc].round(1) %>&#37;</td>
 </tr>
