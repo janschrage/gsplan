@@ -152,11 +152,6 @@ module Statistics
     return projectdays
   end    
 
-  def calculate_worktype_distribution(report_date, team_id = '*')
-    wt_report = Report::Worktype.new
-    return wt_report.calculate_worktype_distribution(report_date, team_id = '*')
-  end
-
 
   def get_projects_for_team_and_month(report_date)
     # Get the team of the user 
