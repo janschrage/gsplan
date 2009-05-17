@@ -15,7 +15,9 @@
 
 class GraphController < ApplicationController
 
- include Statistics, ProjectsHelper, DashboardHelper
+  include Statistics, ProjectsHelper, DashboardHelper
+  include Report::Worktype
+  include Report::Projects
 
  def graph_usage
    date = Date::strptime(cookies[:report_date])

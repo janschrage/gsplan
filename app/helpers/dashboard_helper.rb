@@ -1,7 +1,6 @@
 module DashboardHelper
 
   include Statistics
-
   ReportType = Struct.new(:report_type, :name)
 
   RepWT_Tracking = 1
@@ -24,44 +23,4 @@ module DashboardHelper
     return ReportTypes
   end
 
-## Here come the reports
-  def worktype_distribution_tracking(begda,endda)
-    report = Report::Worktype.new
-    return report.tracking(begda,endda)
-  end
-
-  def worktype_distribution_cumul(begda,endda)
-    report = Report::Worktype.new
-    report.cumul(begda,endda)
-  end
-
-  def project_age_current
-    report = Report::Projects.new
-    return report.project_age_current
-  end
-
-  def project_times(begda,endda)
-    report = Report::Projects.new
-    return report.project_times(begda,endda)
-  end
-
-  def parking_lot(team)
-    report = Report::Projects.new
-    return report.parking_lot(team)
-  end
-
-  def project_plt(begda,endda)
-    report = Report::Process.new
-    return report.project_plt(begda,endda)
-  end
-
-  def project_wip
-    report = Report::Process.new
-    return report.project_wip
-  end
-
-  def project_pct(begda, endda)
-    report = Report::Process.new
-    return report.pct(begda, endda)
-  end
 end

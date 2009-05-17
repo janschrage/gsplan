@@ -15,7 +15,9 @@
 
 
 # Implements the reporting related to projects.
-class Report::Projects
+module Report::Projects
+
+  include Report::DateHelpers
 
   # Reports on how much time it was since projects were last updated.
   # Currently open projects only.
@@ -105,12 +107,5 @@ class Report::Projects
     return projects
   end
 
-  # TODO: Refactor. Duplicated in statistics.rb, Report::Worktype during refactoring.
-  def get_month_beg_end(curdate)
-    month_begin = Date::strptime(curdate.year().to_s+'-'+curdate.month().to_s+'-01')
-    month_end = (month_begin>>(1)) - 1
-    month = { :first_day => month_begin,
-              :last_day  => month_end }
-    return month
-  end
+
 end

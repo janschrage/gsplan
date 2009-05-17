@@ -15,8 +15,7 @@
 
 
 # Implements the reporting related to the process, such as PCT, WIP.
-class Report::Process
-
+module Report::Process
 
   # Reports on process lead times for project closed between begda and endda.
   # The dates used to calculate PLT for a project are planned begin date and last update.
@@ -44,7 +43,7 @@ class Report::Process
   end
 
   # Calculates work in progress (WIP).
-  def project_wip
+  def wip
     wip = Project.count :conditions => ["status = ? or status = ? or status = ?", Project::StatusOpen, Project::StatusInProcess, Project::StatusPilot]
     return wip
   end

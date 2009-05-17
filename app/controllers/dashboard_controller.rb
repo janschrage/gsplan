@@ -16,6 +16,9 @@
 class DashboardController < ApplicationController
 
   include Statistics, DashboardHelper, TeamcommitmentsHelper
+  include Report::Process
+  include Report::Worktype
+  include Report::Projects
 
   def index
 
@@ -40,16 +43,16 @@ class DashboardController < ApplicationController
     @report_type = params[:report_variables][:report_type].to_i
 
     case @report_type
-      when RepWT_Tracking: @report_data = worktype_distribution_tracking(begda, endda)
-      when RepWT_Cumul:    @report_data = worktype_distribution_cumul(begda, endda)
+      when RepWT_Tracking: @report_data = worktype_tracking(begda, endda)
+      when RepWT_Cumul:    @report_data = worktype_cumul(begda, endda)
       when RepPRJ_Time_since_update: @report_data = project_age_current
       when RepPRJ_Project_times: @report_data = project_times(begda,endda)
       when RepPRJ_Parked: @report_data = parking_lot('*') #all teams
       when RepPRJ_Cycle_times: 
         @report_data = project_plt(begda,endda)
-        @wip = project_wip
+        @wip = wip
         @projects_delivered = @report_data.size
-        @pct = project_pct(begda,endda)
+        @pct = pct(begda,endda)
     end
     return true
   end

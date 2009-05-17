@@ -16,17 +16,10 @@
 module Statistics
  
   include TeamcommitmentsHelper
+  include Report::DateHelpers
 
   DaysPerPerson = 16;
   
-  # TODO: Refactor. Duplicated in lib/report/worktype.rb, Report::Projects during refactoring.
-  def get_month_beg_end(curdate)
-    month_begin = Date::strptime(curdate.year().to_s+'-'+curdate.month().to_s+'-01')
-    month_end = (month_begin>>(1)) - 1
-    month = { :first_day => month_begin,
-              :last_day  => month_end }
-    return month
-  end
   
   # TODO: Refactor. Should be a method of Team.
   def calculate_capacities(report_date)
@@ -194,8 +187,6 @@ module Statistics
 
     return commitments
   end
-
-
 
 end
 

@@ -15,11 +15,13 @@
 
 
 # Implements the reporting related to work distribution over the various work types.
-class Report::Worktype
+module Report::Worktype
+
+  include Report::DateHelpers
 
   # Implements a tracking report for distribution of work types per team and month
   # between begda and endda.
-  def tracking(begda,endda)
+  def worktype_tracking(begda,endda)
     teams=Team.find(:all)
     curdate = begda
     wt_total = []
@@ -49,7 +51,7 @@ class Report::Worktype
 
   # Implements a cumulative report for distribution of work types per team 
   # between begda and endda.
-  def cumul(begda,endda)
+  def worktype_cumul(begda,endda)
     teams=Team.find(:all)
     wt_total = []
     teams.each do |team|
@@ -117,12 +119,4 @@ class Report::Worktype
     return wt_distrib
   end
 
-  # TODO: Refactor. Duplicated in statistics.rb, Report::Projects during refactoring.
-  def get_month_beg_end(curdate)
-    month_begin = Date::strptime(curdate.year().to_s+'-'+curdate.month().to_s+'-01')
-    month_end = (month_begin>>(1)) - 1
-    month = { :first_day => month_begin,
-              :last_day  => month_end }
-    return month
-  end
 end
