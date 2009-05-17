@@ -50,4 +50,9 @@ class UserTest < ActiveSupport::TestCase
     barney = User.authenticate('barney','testme')
     assert barney.nil?
   end
+
+  def test_destroy_last_user
+    fred = User.find_by_name('fred')
+    assert_raise(RuntimeError, "Can't delete last user") { fred.destroy }
+  end
 end
