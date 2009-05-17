@@ -16,8 +16,38 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  # Create user and set password
+  def test_create_user
+    freddie = User.new
+    assert !freddie.nil?
+
+    freddie.name = 'freddie'
+    # No save with blank passwords
+    freddie.password=''
+    assert !freddie.save
+
+    # Should save with password
+    freddie.password='testmequick'
+    assert_equal freddie.password, 'testmequick'
+    assert freddie.save
+  end
+
+  def test_authenticate_user
+    # Exists
+    fred = User.authenticate('fred','testme')
+    assert !fred.nil?
+    assert_equal fred.name, 'fred'
+
+    # Wrong password
+    fred2 = User.authenticate('fred','wrong')
+    assert fred2.nil?
+
+    # Capitalization
+    fred3 = User.authenticate('Fred','testme')
+    assert fred3.nil?
+
+    # Does not exist
+    barney = User.authenticate('barney','testme')
+    assert barney.nil?
   end
 end
