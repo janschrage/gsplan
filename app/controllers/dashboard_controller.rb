@@ -40,49 +40,18 @@ class DashboardController < ApplicationController
     @report_type = params[:report_variables][:report_type].to_i
 
     case @report_type
-      when RepWT_Tracking: @report_data = rep_worktype_distribution_tracking(begda, endda)
-      when RepWT_Cumul:    @report_data = rep_worktype_distribution_cumul(begda, endda)
-      when RepPRJ_Time_since_update: @report_data = rep_project_age_current
-      when RepPRJ_Project_times: @report_data = rep_project_times(begda,endda)
-      when RepPRJ_Parked: @report_data = rep_parking_lot('*') #all teams
+      when RepWT_Tracking: @report_data = worktype_distribution_tracking(begda, endda)
+      when RepWT_Cumul:    @report_data = worktype_distribution_cumul(begda, endda)
+      when RepPRJ_Time_since_update: @report_data = project_age_current
+      when RepPRJ_Project_times: @report_data = project_times(begda,endda)
+      when RepPRJ_Parked: @report_data = parking_lot('*') #all teams
       when RepPRJ_Cycle_times: 
-        @report_data = rep_project_pct(begda,endda)
-        @wip = rep_project_wip
+        @report_data = project_pct(begda,endda)
+        @wip = project_wip
         @projects_delivered = @report_data.size
-        @pct = rep_avg_pct(@report_data)
+        @pct = avg_pct(@report_data)
     end
     return true
   end
 
-  def rep_worktype_distribution_tracking(begda, endda)
-    worktype_distribution_tracking(begda, endda)
-  end
-
-  def rep_worktype_distribution_cumul(begda, endda)
-    worktype_distribution_cumul(begda, endda)
-  end
-
-  def rep_project_age_current
-    project_age_current
-  end
-
-  def rep_project_times(begda,endda)
-    project_times(begda,endda)
-  end
-
-  def rep_parking_lot(team)
-    parking_lot(team)
-  end
-
-  def rep_project_pct(begda,endda)
-    project_pct(begda,endda)
-  end
-  
-  def rep_project_wip
-    project_wip
-  end
-
-  def rep_avg_pct(prj_list)
-    avg_pct(prj_list)
-  end
 end

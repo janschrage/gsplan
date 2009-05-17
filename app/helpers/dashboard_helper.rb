@@ -178,7 +178,7 @@ module DashboardHelper
     #Find the projects
     projects = Project::find(:all, :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed])
     projects.each do |project|
-       pct = (project.planend - project.planbeg).to_f
+       pct = (project.updated_at.to_date - project.planbeg).to_f
        pct_as_perc = pct / project.planeffort * 100
        projectdata  = { :project_id => project.id,
                         :name => project.name,
