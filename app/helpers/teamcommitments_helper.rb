@@ -14,6 +14,8 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 module TeamcommitmentsHelper
+
+  include Report::Projects
   
   TeamcommitmentStatusImages = [ "/images/icons/agt_announcements.png",
                                  "/images/icons/ok.png" ]    
@@ -21,13 +23,12 @@ module TeamcommitmentsHelper
   TeamcommitmentStatusText = [ "proposed",
                                "accepted" ]    
 
-  # This is for the selection in edit/create. 
+  # This is for the selection in edit/create.
   def project_list_current
-    prj_report=Report::Projects.new
     endda = Date::strptime(cookies[:report_date]) || Date.today
-    return prj_report.current_projects(endda)
+    return list_current_projects(endda)
   end
-  
+
   def team_list
     teams = Team.find(:all, :order => "name" )
     return teams

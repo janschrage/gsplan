@@ -22,7 +22,7 @@ module Report::Projects
   # Reports on how much time it was since projects were last updated.
   # Currently open projects only.
   def project_age_current
-    projects = current_projects
+    projects = list_current_projects
     prj_age = []
     projects.each do |prj|
       wks_since_update = ((Date::today - prj.updated_at.to_date) / 7).truncate
@@ -101,7 +101,7 @@ module Report::Projects
   end
 
   # Pick only projects that are not closed/parked and begin date <= end date of this period, i.e. include overdue
-  def current_projects(endda=Date.today)
+  def list_current_projects(endda=Date.today)
     projects = Project.find(:all, :conditions => ["status != ? and status != ? and status != ?", Project::StatusClosed, Project::StatusRejected, Project::StatusParked], :order => "name" )
     projects.delete_if { |project|  project.planbeg > endda }
     return projects
