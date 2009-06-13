@@ -25,8 +25,10 @@ module Report::Projects
     projects = list_current_projects
     prj_age = []
     projects.each do |prj|
+      wks_since_creation = 0
+
       wks_since_update = ((Date::today - prj.updated_at.to_date) / 7).truncate
-      wks_since_creation = ((Date::today - prj.created_at.to_date) / 7).truncate
+      wks_since_creation = ((Date::today - prj.created_at.to_date) / 7).truncate unless prj.created_at.nil?
       prj_age << { :project_id => prj.id,
                    :country_id => prj.country_id,
                    :wks_since_update => wks_since_update,
@@ -87,8 +89,9 @@ module Report::Projects
     projects = Project.find(:all, :conditions => ["status = ?", Project::StatusParked], :order => "updated_at")
     parking_lot = []
     projects.each do |prj|
+      wks_since_creation = 0
       wks_since_update = ((Date::today - prj.updated_at.to_date) / 7).truncate
-      wks_since_creation = ((Date::today - prj.created_at.to_date) / 7).truncate
+      wks_since_creation = ((Date::today - prj.created_at.to_date) / 7).truncate unless prj.created_at.nil?
       parking_lot << { :project_id => prj.id,
                        :country_id => prj.country_id,
                        :wks_since_update => wks_since_update,
