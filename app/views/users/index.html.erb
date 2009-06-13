@@ -1,5 +1,10 @@
 <h1>Listing users</h1>
 
+<div class="link-create">
+	<span class="vcenter"><%= link_to image_tag("/images/icons/edit_add.png", :border=>0, :alt => "new user"), new_user_path %></span>
+	<span class=\"vcenter"><%= link_to 'New User', new_user_path %></span>
+</div>
+
 <table>
   <tr>
     <th>Name</th><th>Team</th>
@@ -18,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New user', new_user_path %>
+
