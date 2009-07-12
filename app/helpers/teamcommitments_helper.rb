@@ -25,7 +25,11 @@ module TeamcommitmentsHelper
 
   # This is for the selection in edit/create.
   def project_list_current
-    endda = Date::strptime(cookies[:report_date]) || Date.today
+    if cookies[:report_date]
+      endda = Date::strptime(cookies[:report_date]) 
+    else
+      endda = Date.today
+    end
     return list_current_projects(endda)
   end
 

@@ -1,9 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  controller: MyString
-  action: MyString
+admin:
+  id: 1
+  name: admin
+  controller: *
+  action: *
 
 two:
   name: MyString
