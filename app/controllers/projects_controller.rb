@@ -27,9 +27,9 @@ class ProjectsController < ApplicationController
     
     if @projects != nil
       @projects.each do |project| 
-       countryname = Country.find_by_id(project[:country_id]).name
-       employeename = Employee.find_by_id(project[:employee_id]).name
-       worktypename = Worktype.find_by_id(project[:worktype_id]).name
+       countryname = Country.find_by_id(project[:country_id]).name if project.country 
+       employeename = Employee.find_by_id(project[:employee_id]).name if project.employee
+       worktypename = Worktype.find_by_id(project[:worktype_id]).name if project.worktype
       
        status = project.status
       
@@ -63,9 +63,9 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
  
-      countryname = Country.find_by_id(@project[:country_id]).name
-      employeename = Employee.find_by_id(@project[:employee_id]).name
-      worktypename = Worktype.find_by_id(@project[:worktype_id]).name
+      countryname = Country.find_by_id(@project[:country_id]).name if @project.country
+      employeename = Employee.find_by_id(@project[:employee_id]).name if @project.employee
+      worktypename = Worktype.find_by_id(@project[:worktype_id]).name if @project.worktype
       status = project_status_text(@project.status)
             
       @output = { :classname => @project,

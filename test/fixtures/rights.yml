@@ -6,7 +6,7 @@ admin:
   controller: *
   action: *
 
-two:
+one:
   name: MyString
   controller: MyString
   action: MyString
