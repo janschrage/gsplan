@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class WorktypesControllerTest < ActionController::TestCase
-fixtures :users, :roles, :rights, :rights_roles, :roles_users
+fixtures :worktypes, :users, :roles, :rights, :rights_roles, :roles_users
 
   def test_should_get_index
     get :index, {}, { :user_id => users(:fred).id }
@@ -16,7 +16,7 @@ fixtures :users, :roles, :rights, :rights_roles, :roles_users
 
   def test_should_create_worktype
     assert_difference('Worktype.count') do
-      post :create, {:worktype => { :id => 12345, :name => 'testtest', :description => 'test', :needs_review => false, :preload => true }}, { :user_id => users(:fred).id }
+      post :create, {:worktype => { :id => 12345, :name => 'TX', :description => 'test', :needs_review => false, :preload => true }}, { :user_id => users(:fred).id }
     end
 
     assert_redirected_to worktype_path(assigns(:worktype))
