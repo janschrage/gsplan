@@ -32,7 +32,23 @@ module ReviewsHelper
     return ReviewResultImg[1] if rOK
     return ReviewResultImg[3] if rPart
     return ReviewResultImg[2] #default
-    
+  end
+
+  def review_result_txt_for_prj(prj,rtype)
+    reviews=Review.find(:all, :conditions => ["project_id = ? and rtype = ?", prj, rtype])
+   
+    return "no review" if reviews.nil?
+ 
+    rOK = false
+    rPart = false
+
+    reviews.each do |review|
+      rOK   = true if (review.result == Review::ResultOK or review.result == Review::ResultOKwithComments)
+      rPart = true if (review.result == Review::ResultPartial)
+    end  
+    return "OK" if rOK
+    return "Partially reviewed" if rPart
+    return "Not OK" #default
   end
 
   def review_type_text(rtype)

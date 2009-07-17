@@ -31,9 +31,9 @@
     </td>
     <td class="text"><%=h project.srs_url %></td>
     <td class="text"><%=h project.sdd_url %></td>
-    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewSpec) %>"></td>
-    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewDesign) %>"></td>
-    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewCode) %>"></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewSpec) %>" title="<%= review_result_txt_for_prj(project.id,Review::ReviewSpec) %>" alt="<%= review_result_txt_for_prj(project.id,Review::ReviewSpec) %>"></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewDesign) %>" title="<%= review_result_txt_for_prj(project.id,Review::ReviewDesign) %>" alt="<%= review_result_txt_for_prj(project.id,Review::ReviewDesign) %>"></td>
+    <td class="text"><img src="<%= review_result_img_for_prj(project.id,Review::ReviewCode) %>" title="<%= review_result_txt_for_prj(project.id,Review::ReviewCode) %>" alt="<%= review_result_txt_for_prj(project.id,Review::ReviewCode) %>"></td>
 <% if check_link_auth("reviews","new") %>
     <td class="cell-action"><%= link_to 'Review', "/reviews/review_project/#{project.id}" %></td>
     <td class="cell-action"><%= link_to 'View all Reviews', "/reviews/for_project/#{project.id}" %></td>
