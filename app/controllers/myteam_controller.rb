@@ -69,6 +69,7 @@ class MyteamController < ApplicationController
     end
 
     @currentprojects = team_projects_current
+    @currentprojects.delete_if { |project| project.worktype.needs_review.nil? }
 
     respond_to do |format|
       format.html # index.html.erb
