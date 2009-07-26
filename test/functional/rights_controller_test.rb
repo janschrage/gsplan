@@ -4,7 +4,6 @@ class RightsControllerTest < ActionController::TestCase
   def test_should_get_index
     get :index, {}, { :user_id => users(:fred).id }
     assert_response :success
-    assert_not_nil assigns(:rights)
   end
 
   def test_should_get_new
@@ -14,9 +13,9 @@ class RightsControllerTest < ActionController::TestCase
 
   def test_should_create_right
     assert_difference('Right.count') do
-      post :create, {:right => { }}, { :user_id => users(:fred).id }
+      post :create, { :commit => :create, :record => { :name => 'all', :controller => '*', :action => '*'}}, { :user_id => users(:fred).id }
     end
-
+    assert_not_nil  assigns(:record)                                                                             
     assert_redirected_to right_path(assigns(:right))
   end
 
@@ -31,7 +30,12 @@ class RightsControllerTest < ActionController::TestCase
   end
 
   def test_should_update_right
-    put :update,{ :id => rights(:one).id, :right => { }}, { :user_id => users(:fred).id }
+    assert_difference('Right.count', 0) do    
+      put :update,{ :commit => :update, :id => rights(:one).id, :record => { :name => 'test', :controller => 'test', :action => '*'}}, { :user_id => users(:fred).id }
+    end
+    assert_not_nil  assigns(:record)                                                                             
+    right = Right.find(rights(:one).id)                                                                 
+    assert_equal  'test', right.controller
     assert_redirected_to right_path(assigns(:right))
   end
 
