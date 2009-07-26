@@ -57,6 +57,10 @@
  		f.text_field :sdd_url
 	%>
   </p>
+  <p>
+    <%= f.label "Ongoing work (not a project)?" %><br />
+    <%= f.check_box :is_no_project %>
+  </p>
 
   <p>
     <%= f.submit "Create" %>

@@ -27,16 +27,18 @@ module Report::Process
     #Find the projects
     projects = Project::find(:all, :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed])
     projects.each do |project|
-       plt = (project.updated_at.to_date - project.planbeg).to_f
-       plt_as_perc = plt / project.planeffort * 100
-       projectdata  = { :project_id => project.id,
-                        :name => project.name,
-                        :country_id => project.country_id,
-                        :planeffort => project.planeffort,
-                        :plt => plt,
-                        :plt_as_perc => plt_as_perc,
-                        :worktype_id => project.worktype }
-      project_list << projectdata
+       if !project.worktype.is_continuous
+        plt = (project.updated_at.to_date - project.planbeg).to_f
+        plt_as_perc = plt / project.planeffort * 100
+        projectdata  = { :project_id => project.id,
+                         :name => project.name,
+                         :country_id => project.country_id,
+                         :planeffort => project.planeffort,
+                         :plt => plt,
+                         :plt_as_perc => plt_as_perc,
+                         :worktype_id => project.worktype }
+        project_list << projectdata
+      end
     end
 
     return project_list
@@ -44,15 +46,18 @@ module Report::Process
 
   # Calculates work in progress (WIP).
   def wip
-    wip = Project.count :conditions => ["status = ? or status = ? or status = ?", Project::StatusOpen, Project::StatusInProcess, Project::StatusPilot]
+    projects = Project::find(:all, :conditions => ["status = ? or status = ? or status = ?", Project::StatusOpen, Project::StatusInProcess, Project::StatusPilot])
+    projects.delete_if { |prj| prj.worktype.is_continuous }
+    wip = projects.size
     return wip
   end
 
   # Calculates the PCT for projects closed between begda and endda. 
   # PCT = days in interval/number of projects closed
   def pct(begda, endda)
-    prj_count = Project.count :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed]
-    
+    projects = Project::find(:all, :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed])
+    projects.delete_if { |prj| prj.worktype.is_continuous }
+    prj_count = projects.size
     return (endda-begda) / prj_count
   end
 end
