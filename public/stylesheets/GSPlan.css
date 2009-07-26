@@ -138,6 +138,9 @@ th { text-align: left }
 td { text-align: right }
 td.text { text-align: left }
 
+.active-scaffold td { text-align: left }
+
+
 #pagebottom { width: 100%;
               vertical-align: middle;
               font-style: italic;

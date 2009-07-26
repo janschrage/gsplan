@@ -70,7 +70,7 @@
 <% elsif @report_type == DashboardHelper::RepPRJ_Cycle_times then %>
 <h2>Process cycle time</h2>
 <p>
-<strong>Work In Progress (WIP)= <%=h @wip %></strong><br/>
+<strong>Work In Progress (WIP) = <%=h @wip %></strong><br/>
 <strong>Projects delivered = <%=h @projects_delivered %></strong><br/>
 <strong>Process cycle time (PCT) = <%=h @pct.round %> days</strong><br/>
 <strong>Projected days to deliver WIP = <%=h @pct.round*@wip %> (on <%= h Date::today+@pct.round*@wip %>) </strong><br/>
