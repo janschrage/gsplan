@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
   def current_projects
     @projects = project_list_current()
     session[:original_uri] = request.request_uri
-    @projects.delete_if { |project| project.worktype.needs_review.nil? } 
+    @projects.delete_if { |project| project.worktype.needs_review != true } 
 
     respond_to do |format|
       format.html # index.html.erb
