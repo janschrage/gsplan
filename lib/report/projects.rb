@@ -23,6 +23,7 @@ module Report::Projects
   # Currently open projects only.
   def project_age_current
     projects = list_current_projects
+    projects.delete_if { |prj| prj.worktype.is_continuous }
     prj_age = []
     projects.each do |prj|
       wks_since_creation = 0
@@ -47,6 +48,7 @@ module Report::Projects
 
     #Find the projects
     projects = Project::find(:all, :conditions => ["planbeg >= ? and planbeg <= ?", begda, endda])
+    projects.delete_if { |prj| prj.worktype.is_continuous }
     projects.each do |project|
        projectindex = { :id => project.id,
                         :name => project.name,

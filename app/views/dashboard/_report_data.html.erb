@@ -73,6 +73,7 @@
 <strong>Work In Progress (WIP)= <%=h @wip %></strong><br/>
 <strong>Projects delivered = <%=h @projects_delivered %></strong><br/>
 <strong>Process cycle time (PCT) = <%=h @pct.round %> days</strong><br/>
+<strong>Projected days to deliver WIP = <%=h @pct.round*@wip %> (on <%= h Date::today+@pct.round*@wip %>) </strong><br/>
 </p>
 
 <h2>Process lead times</h2>
