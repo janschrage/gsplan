@@ -36,7 +36,7 @@ fixtures :teams, :users, :roles, :rights, :rights_roles, :roles_users
       put :update, { :commit => :update, :id => teams(:one).id, :record => {:name => 'Blue', :description => 'Red' }},  { :user_id => users(:fred).id } 
     end
     assert_not_nil  assigns(:record)                                                                             
-    team = Team.find(countries(:one).id)                                                                 
+    team = Team.find(teams(:one).id)                                                                 
     assert_equal  'Red', team.description
     assert_redirected_to team_path(assigns(:team))
   end
