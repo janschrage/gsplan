@@ -5,10 +5,12 @@
      <% employees = Employee.find(:all, :order => "name") %>
 <p>
      <% for ee in employees -%>
-      <%= check_box_tag "teamcommitment[employee_ids][]","#{ee.id}", ee_is_assigned_to(ee.id,@teamcommitment.id) -%> 
       <% team=ee_current_team(ee.id,@teamcommitment.yearmonth) %>
-      <%= "#{ee.name} (#{team.name unless team.nil?})" -%>
-    <br/>
+      <% if !team.nil? %>
+        <%= check_box_tag "teamcommitment[employee_ids][]","#{ee.id}", ee_is_assigned_to(ee.id,@teamcommitment.id) -%> 
+        <%= "#{ee.name} (#{team.name})" -%>
+        <br/>
+      <% end -%>
      <% end -%>
 </p>
 <p>
