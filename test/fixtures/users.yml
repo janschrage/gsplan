@@ -8,3 +8,8 @@ fred:
   salt: <%= SALT %>
   hashed_password: <%= User.encrypted_password('testme' , SALT) %>
 
+one: 
+  id: 2
+  name: test
+  salt: <%= SALT %>
+  hashed_password: <%= User.encrypted_password('testme' , SALT) %>

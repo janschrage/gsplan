@@ -4,7 +4,7 @@
 </p>
 <p>
   <b>Team:</b>
-  <%=h @user.team.name %>
+  <%=h @user.team.name unless @user.team.nil? %>
 </p>
 
 <p>
