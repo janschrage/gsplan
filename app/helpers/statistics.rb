@@ -106,7 +106,7 @@ module Statistics
   end    
 
 
-  #TODO: Refactor. Belongs to Team.
+  #TODO: Refactor.
   def get_projects_for_team_and_month(report_date)
     # Get the team of the user 
     team = Team.find_by_id(session[:team_id])
