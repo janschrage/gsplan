@@ -21,6 +21,7 @@ two:
   employee_id: 1
   country_id: 1
   status: 2
+  updated_at: 2008-08-21
 
 unique:
   id: 3
@@ -153,3 +154,15 @@ wt_no_review:
   employee_id: 1
   country_id: 1
   status: 1
+
+closed_pct:
+  id: 9
+  name: Closed-2
+  planend: 2008-09-10
+  planbeg: 2008-08-01
+  worktype_id: 1
+  planeffort: 10
+  employee_id: 1
+  country_id: 1
+  status: 2
+  updated_at: 2008-09-09

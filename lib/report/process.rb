@@ -28,7 +28,7 @@ module Report::Process
     projects = Project::find(:all, :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed])
     projects.each do |project|
        if !project.worktype.is_continuous
-        plt = (project.updated_at.to_date - project.planbeg).to_f
+        plt = (project.updated_at.to_date - project.planbeg + 1).to_f
         plt_as_perc = plt / project.planeffort * 100
         projectdata  = { :project_id => project.id,
                          :name => project.name,
@@ -58,6 +58,6 @@ module Report::Process
     projects = Project::find(:all, :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed])
     projects.delete_if { |prj| prj.worktype.is_continuous }
     prj_count = projects.size
-    return (endda-begda) / prj_count
+    return (((endda-begda) + 1) / prj_count).to_i
   end
 end
