@@ -8,4 +8,11 @@ unique:
   reportdate: 2008-09-15
   daysbooked: 5
 
+one:
+  id: 2
+  team_id: 1
+  yearmonth: 2008-09-01
+  project_id: 4
+  reportdate: 2008-09-20
+  daysbooked: 6
 
