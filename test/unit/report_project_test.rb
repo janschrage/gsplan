@@ -47,15 +47,15 @@ class ProjectsReportTest < ActiveSupport::TestCase
 
   def test_project_times
     # projects 1,2,4,8,9
-    # 6 days booked on 4 (second of two bookings), rest is 0
+    # 9 days booked on 4, 5 on project 2, rest is 0
     prj_list = project_times('2008-08-01'.to_date, '2008-09-30'.to_date)
     assert_equal 5, prj_list.size
     assert !prj_list[1].nil? 
     assert_equal  0,prj_list[1][:daysbooked]   
     assert !prj_list[2].nil? 
-    assert_equal  0,prj_list[2][:daysbooked]   
+    assert_equal  5,prj_list[2][:daysbooked]   
     assert !prj_list[4].nil? 
-    assert_equal  6,prj_list[4][:daysbooked]   
+    assert_equal  16,prj_list[4][:daysbooked]   
     assert !prj_list[8].nil? 
     assert_equal  0,prj_list[8][:daysbooked]   
     assert !prj_list[9].nil? 
