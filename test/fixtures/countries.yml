@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  isocode: MyString
-  name: MyString
+  id: 1
+  isocode: US
+  name: USA
+  team_id: 1
 
 two:
-  isocode: MyString
-  name: MyString
+  id: 2
+  isocode: TC
+  name: TestCountry
+  team_id: 1

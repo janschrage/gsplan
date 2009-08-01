@@ -20,7 +20,8 @@ class GraphController < ApplicationController
   include Report::Projects
 
  def graph_usage
-   date = Date::strptime(cookies[:report_date])
+   date = Date::strptime(cookies[:report_date]) if cookies[:report_date]
+   date = Date::today unless date
    @capacities = calculate_capacities(date)
    @usage = calculate_usage(date)
    chart = Gruff::Bar.new('500x350')
@@ -54,7 +55,8 @@ class GraphController < ApplicationController
   end
 
   def graph_worktypes
-    date = Date::strptime(cookies[:report_date])
+    date = Date::strptime(cookies[:report_date]) if cookies[:report_date]
+    date = Date::today unless date
     team_id = params[:id]
     team_id = '*' if params[:id].nil?
 
@@ -73,8 +75,9 @@ class GraphController < ApplicationController
   end
 
   def graph_quintiles
+   date = Date::strptime(cookies[:report_date]) if cookies[:report_date]
+   date = Date::today unless date
 
-   date = Date::strptime(cookies[:report_date]) || Date.today
    projects = calculate_project_days(date)
    teams = Team::find(:all)
    chart = Gruff::Bar.new('600x400')
@@ -112,7 +115,8 @@ class GraphController < ApplicationController
   end
 
   def graph_planning_delta_in_days
-   date = Date::strptime(cookies[:report_date]) || Date.today
+   date = Date::strptime(cookies[:report_date]) if cookies[:report_date]
+   date = Date::today unless date
    projects = calculate_project_days(date)
    teams = Team::find(:all)
    chart = Gruff::Bar.new('600x400')

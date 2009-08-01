@@ -6,5 +6,6 @@ one:
   description: really cool testers
 
 two:
-  name: MyString
-  description: MyString
+  id: 2
+  name: mob
+  description: the other team
