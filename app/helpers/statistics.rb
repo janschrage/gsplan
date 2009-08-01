@@ -156,14 +156,15 @@ module Statistics
   def get_projects_for_team_and_month(report_date)
     # Get the team of the user 
     team = Team.find_by_id(session[:team_id])
-    countries = team.countries
+    countries = team.countries unless team.nil?
     
     report_date=Date.today unless report_date
     month = get_month_beg_end(report_date)
     begda = month[:first_day]
     endda = month[:last_day]
     
-    projectplan = calculate_project_days(report_date, team.id)
+    teamid = team.nil? ? '*' : team.id
+    projectplan = calculate_project_days(report_date, teamid)
 
     return projectplan
   end
