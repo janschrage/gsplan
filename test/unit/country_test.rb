@@ -16,8 +16,15 @@
 require 'test_helper'
 
 class CountryTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def test_validation_empty
+    ct = Country.new( :id => 3 )
+    assert !ct.valid?
+    assert ct.errors.invalid?(:name)
+    assert ct.errors.invalid?(:isocode)
+  end
+
+  def test_validation_ok
+    ct = Country.new( :id => 4, :name => 'test456', :isocode => 'TX' )
+    assert ct.valid?    
   end
 end

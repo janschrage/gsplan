@@ -16,8 +16,16 @@
 require 'test_helper'
 
 class WorktypeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+
+  def test_validation_empty
+    wt = Worktype.new( :id => 3 )
+    assert !wt.valid?
+    assert wt.errors.invalid?(:name)
+    assert wt.errors.invalid?(:description)
+  end
+
+  def test_validation_ok
+    wt = Worktype.new( :id => 4, :name => 'test456', :description => 'test description' )
+    assert wt.valid?    
   end
 end

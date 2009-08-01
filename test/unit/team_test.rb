@@ -16,8 +16,15 @@
 require 'test_helper'
 
 class TeamTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def test_validation_empty
+    team = Team.new( :id => 3 )
+    assert !team.valid?
+    assert team.errors.invalid?(:name)
+    assert team.errors.invalid?(:description)
+  end
+
+  def test_validation_ok
+    team = Team.new( :id => 4, :name => 'test456', :description => 'test team' )
+    assert team.valid?    
   end
 end
