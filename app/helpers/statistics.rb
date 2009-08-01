@@ -18,54 +18,7 @@ module Statistics
   include TeamcommitmentsHelper
   include Report::DateHelpers
 
-  DaysPerPerson = 16;
-  
-  
-  # TODO: Refactor. Should be a method of Team.
-  def calculate_capacities(report_date)
-    # count team members
-    capacity = {}
-    teamindex = {}
-    @teams = Team::find(:all)
-    @teams.each do |@team|
-      capacity[@team.name] = 0;
-      teamindex[@team.id] = @team.name
-    end
-    teammembers = Teammember::find(:all)
-    
-    teammembers.each do |@teammember|
-      if @teammember.endda >= report_date and @teammember.begda <= report_date then
-        capacity[teamindex[@teammember.team_id]] += DaysPerPerson * (@teammember.percentage || 100)/100
-      end
-    end
-    return capacity
-  end
-  
-  # TODO: Refactor. Should be a method of Team.
-  def calculate_usage(report_date)
-    # count team members
-    commitmentcount = {}
-    teamindex = {}
-    @teams = Team::find(:all)
-    @teams.each do |@team|
-      commitmentcount[@team.name] = 0;
-      teamindex[@team.id] = @team.name
-    end
-
-    monthbegend = get_month_beg_end(report_date)
-    month_begin = monthbegend[:first_day]
-    month_end = monthbegend[:last_day]
-
-    commitments = Teamcommitment::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and status = ?",month_end,month_begin,Teamcommitment::StatusAccepted])
-    
-    
-    commitments.each do |commitment|
-      commitmentcount[teamindex[commitment.team_id]] += commitment.days 
-    end
-    return commitmentcount
-  end    
-  
-  # TODO: Refactor. Is a report.
+  # TODO: Refactor. Is a report. And ugly.
   def calculate_project_days(report_date, team_id = '*')
     # count project days committed between dates and total
     projectindex = {}
@@ -153,6 +106,7 @@ module Statistics
   end    
 
 
+  #TODO: Refactor. Belongs to Team.
   def get_projects_for_team_and_month(report_date)
     # Get the team of the user 
     team = Team.find_by_id(session[:team_id])
@@ -169,6 +123,7 @@ module Statistics
     return projectplan
   end
 
+  #TODO: Refactor. Belongs to Team.
   def get_commitments_for_team_and_month(report_date)
 
     report_date=Date.today unless report_date

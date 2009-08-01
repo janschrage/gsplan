@@ -33,7 +33,7 @@ class TeamcommitmentsControllerTest < ActionController::TestCase
 
   def test_should_update_teamcommitment
     assert_difference('Teamcommitment.count', 0) do
-      put :update, {:id => teamcommitments(:one).id, :teamcommitment => { }}, { :user_id => users(:fred).id, :original_uri => teamcommitments_path }
+      put :update, {:id => teamcommitments(:unique).id, :teamcommitment => { }}, { :user_id => users(:fred).id, :original_uri => teamcommitments_path }
     end
     assert_not_nil assigns(:teamcommitment)
     assert_redirected_to teamcommitments_path

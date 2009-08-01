@@ -14,6 +14,8 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 class Team < ActiveRecord::Base
+  include Report::DateHelpers
+
   validates_presence_of :name, :description
   validates_uniqueness_of :name
   
@@ -24,4 +26,27 @@ class Team < ActiveRecord::Base
   has_many :countries
 #  has_and_belongs_to_many :projects
 
+  DaysPerPerson = 16;
+
+  def capacity(for_date)
+    capacity = 0
+    teammembers = Teammember::find(:all, :conditions => ["team_id = ? and begda <= ? and endda >= ?", self.id, for_date, for_date])
+    teammembers.each { |tm| capacity += DaysPerPerson * (tm.percentage || 100)/100 }
+    return capacity
+  end
+
+  def usage(for_date)
+    monthbegend = get_month_beg_end(for_date)
+    month_begin = monthbegend[:first_day]
+    month_end = monthbegend[:last_day]
+
+    commitments = Teamcommitment::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and status = ? and team_id = ?",month_end,month_begin,Teamcommitment::StatusAccepted, self.id])
+    
+    committed = 0
+    commitments.each do |commitment|
+      committed += commitment.days 
+    end
+    return committed
+
+  end
 end

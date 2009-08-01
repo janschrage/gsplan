@@ -1,10 +1,14 @@
-<% team = team_data_item[0] %>
-<% if @capacities[team] > 0 %>
+<% 
+   team = team_data_item
+   capa = team.capacity(@report_date)
+   usage = team.usage(@report_date)
+%>
+<% if  capa > 0 %>
 <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-        <% free = @capacities[team] - team_data_item[1] %>
-	<td class="text"><%= h team %></td>
-	<td><%= h team_data_item[1] %></td>
-	<td><%= h @capacities[team] %></td>
+        <% free = capa - usage %>
+	<td class="text"><%= h team.name %></td>
+	<td><%= h usage %></td>
+	<td><%= h capa %></td>
         <td class="<%= 'cell-error' if free<0 %>"><%= h free %>
 </tr>
 <%end%>

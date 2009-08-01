@@ -31,17 +31,10 @@ class TeamcommitmentsController < ApplicationController
       end
     end
     @report_date = Date.today unless @report_date
-          
+    @teams = Team.find(:all)
+      
     cookies[:report_date]=@report_date.to_s
-    
-    @teamusage   = calculate_usage(@report_date)
-    @capacities  = calculate_capacities(@report_date)
-     
-    @freecapacity = {}
-    @capacities.to_a.each do |team, capacity|
-      @freecapacity[team]=capacity - @teamusage[team]
-    end
-    
+      
     @missingdays = {}
     @projectplan = calculate_project_days(@report_date)
     @projectplan.keys.each do |project_id|

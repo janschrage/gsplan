@@ -5,6 +5,7 @@ one:
   yearmonth: 2008-08-02
   project_id: 1
   days: 1
+  status: 1
 
 two:
   id: 2
@@ -12,6 +13,21 @@ two:
   yearmonth: 2008-10-02
   project_id: 1
   days: 1
+  status: 1
+
+three:
+  team_id: 1
+  yearmonth: 2008-08-02
+  project_id: 4
+  days: 12
+  status: 1
+
+four:
+  team_id: 1
+  yearmonth: 2008-08-02
+  project_id: 1
+  days: 10
+  status: 0
 
 unique:
   id: 101
@@ -19,4 +35,5 @@ unique:
   yearmonth: 2010-10-02
   project_id: 3
   days: 5
+  status: 1
   

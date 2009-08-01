@@ -27,4 +27,16 @@ class TeamTest < ActiveSupport::TestCase
     team = Team.new( :id => 4, :name => 'test456', :description => 'test team' )
     assert team.valid?    
   end
+
+  def test_capacity
+    team = Team.find_by_id(1)
+    assert_equal 28,team.capacity('2008-08-01'.to_date)
+    assert_equal 16,team.capacity('2008-10-01'.to_date)     
+  end
+
+  def test_usage
+    team = Team.find_by_id(1)
+    assert_equal 13,team.usage('2008-08-01'.to_date)
+    assert_equal 1,team.usage('2008-10-01'.to_date)     
+  end
 end

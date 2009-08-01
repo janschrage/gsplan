@@ -22,36 +22,40 @@ class GraphController < ApplicationController
  def graph_usage
    date = Date::strptime(cookies[:report_date]) if cookies[:report_date]
    date = Date::today unless date
-   @capacities = calculate_capacities(date)
-   @usage = calculate_usage(date)
-   chart = Gruff::Bar.new('500x350')
-   chart.title = "Resource Usage"
+
    # group by team and use subject as the key
    capa_values = []
    usage_values = []
    free_values = []
    labels = {}
    counter = 0
-   @capacities.to_a.each do |team, capa|
-      if capa > 0  #only if the team has capacity this month (temporary help from other LOBs,...)
-        capa_values << capa
-        usage_values << @usage[team]
-        free_values << [0,capa-@usage[team]].max #no negative free capacity
-        labels.merge!({ counter => team })
-        counter += 1
-      end
-    end
-    chart.labels = labels
-    chart.y_axis_label = "PD"
-    #capacity
-    chart.data("Capacity",capa_values,'#0055ff')
-    #usage
-    chart.data("Utilization",usage_values,'#cc0000')
-    #free
-    chart.data("Free Capacity",free_values,'#00cc00')
+
+   team_list = Team.find(:all)
+   team_list.each do |team|
+     capa = team.capacity(date)
+     if capa > 0  #only if the team has capacity this month (temporary help from other LOBs,...)
+       usage = team.usage(date)
+       capa_values << capa
+       usage_values << usage
+       free_values << [0,capa-usage].max #no negative free capacity
+       labels.merge!({ counter => team.name })
+       counter += 1
+     end
+   end 
+
+   chart = Gruff::Bar.new('500x350')
+   chart.title = "Resource Usage"
+   chart.labels = labels
+   chart.y_axis_label = "PD"
+   #capacity
+   chart.data("Capacity",capa_values,'#0055ff')
+   #usage
+   chart.data("Utilization",usage_values,'#cc0000')
+   #free
+   chart.data("Free Capacity",free_values,'#00cc00')
     
-    chart.theme_37signals
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'team_usage.png')
+   chart.theme_37signals
+   send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'team_usage.png')
   end
 
   def graph_worktypes
@@ -83,10 +87,8 @@ class GraphController < ApplicationController
    chart = Gruff::Bar.new('600x400')
    values = {}
 
-   capacities = calculate_capacities(date) #only show teams with capa >0
-
    teams.each do |team|
-        values[team.id] = [0,0,0,0,0,0,0] if capacities[team.name] > 0
+        values[team.id] = [0,0,0,0,0,0,0] if team.capacity(date) > 0
    end
    chart.title = "Delta planning/execution (no. tasks)"
     # group by team and use subject as the key
@@ -96,7 +98,7 @@ class GraphController < ApplicationController
    projects.each do |project|
       quintile = project_quintile(project[1][:committed_inper],project[1][:daysbooked])
       team = Project.find_by_id(project[0]).country.team
-      values[team.id][quintile] += 1 if capacities[team.name] > 0
+      values[team.id][quintile] += 1 if team.capacity(date) > 0
    end
   
 #    ymax = 0
@@ -107,7 +109,7 @@ class GraphController < ApplicationController
   
     chart.y_axis_label = "No. tasks"
     teams.each do |team|
-      chart.data(team.name,values[team.id]) if capacities[team.name] > 0
+      chart.data(team.name,values[team.id]) if team.capacity(date) > 0
     end
     chart.minimum_value = 0
     chart.theme_37signals   
@@ -125,22 +127,20 @@ class GraphController < ApplicationController
    chart.title = "Absolute difference execution vs. planning"
     # group by team and use subject as the key
 
-   capacities = calculate_capacities(date) #only show teams with capa >0
-
    teams.each do |team|
-        values[team] = 0 if capacities[team.name] > 0
+        values[team] = 0 if team.capacity(date) > 0
    end
 
    projects.each do |project|
       delta = (project[1][:committed_inper] - project[1][:daysbooked]).abs
       team = Project.find_by_id(project[0]).country.team
-      values[team] += delta if capacities[team.name] > 0
+      values[team] += delta if team.capacity(date) > 0
     end
   
     chart.y_axis_label = "Sum of Delta (PD)"
 
     teams.each do |team|
-      chart.data(team.name,values[team]) if capacities[team.name] > 0
+      chart.data(team.name,values[team]) if team.capacity(date) > 0
     end
     chart.minimum_value = 0
     chart.theme_37signals   
