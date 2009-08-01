@@ -20,6 +20,7 @@ class TeamcommitmentsController < ApplicationController
   
   include Statistics
   
+  #TODO: Refactor.
   def index
     session[:original_uri] = request.request_uri
     session[:team_id] = nil  #no filtering by team
@@ -180,6 +181,7 @@ class TeamcommitmentsController < ApplicationController
     end
   end 
 
+  #TODO: Refactor. Code duplication.
   def set_commitment_list
     if cookies[:report_date]
      @report_date =  Date::strptime(cookies[:report_date])
@@ -192,7 +194,8 @@ class TeamcommitmentsController < ApplicationController
     month_end = monthbegend[:last_day]
 
     if session[:team_id] then
-      commitmentlist = get_commitments_for_team_and_month(@report_date)
+      team = Team.find_by_id(session[:team_id])
+      commitmentlist = team.commitments(@report_date)
     else
       commitmentlist = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
     end

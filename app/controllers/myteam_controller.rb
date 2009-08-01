@@ -40,7 +40,9 @@ class MyteamController < ApplicationController
     cookies[:report_date]=@report_date.to_s
 
     @projectplan = get_projects_for_team_and_month(@report_date)
-    commitments = get_commitments_for_team_and_month(@report_date)
+    
+    team = Team.find_by_id(team_id)
+    commitments = team.commitments(@report_date)
     firstproject = @projectplan[@projectplan.keys.first]
     @last_report_date = firstproject[:reportdate] unless firstproject.nil?
     session[:original_uri] = request.request_uri

@@ -123,21 +123,5 @@ module Statistics
     return projectplan
   end
 
-  #TODO: Refactor. Belongs to Team.
-  def get_commitments_for_team_and_month(report_date)
-
-    report_date=Date.today unless report_date
-    month = get_month_beg_end(report_date)
-    begda = month[:first_day]
-    endda = month[:last_day]
-
-    # Get the team of the user
-    team_id = User.find_by_id(session[:user_id]).team_id
-
-    commitments = Teamcommitment::find(:all, :conditions => ["team_id = ? and yearmonth >= ? and yearmonth <= ?", team_id, begda, endda])
-
-    return commitments
-  end
-
 end
 

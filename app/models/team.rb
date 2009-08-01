@@ -47,6 +47,17 @@ class Team < ActiveRecord::Base
       committed += commitment.days 
     end
     return committed
+  end
 
+  def commitments(for_date)
+
+    for_date=Date.today unless for_date
+    month = get_month_beg_end(for_date)
+    begda = month[:first_day]
+    endda = month[:last_day]
+
+    commitments = Teamcommitment::find(:all, :conditions => ["team_id = ? and yearmonth >= ? and yearmonth <= ?", self.id, begda, endda])
+
+    return commitments
   end
 end
