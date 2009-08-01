@@ -10,6 +10,7 @@ one:
   employee_id: 1
   country_id: 1
   status: 1
+  updated_at: 2008-08-01
 
 two:
   id: 2
@@ -55,6 +56,7 @@ projecttrack_ok:
   employee_id: 1
   country_id: 1
   status: 4
+  updated_at: 2008-08-14
 
 status_zero:
   id: 10
@@ -154,6 +156,7 @@ wt_no_review:
   employee_id: 1
   country_id: 1
   status: 1
+  updated_at: 2008-07-15
 
 closed_pct:
   id: 9

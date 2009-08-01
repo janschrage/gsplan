@@ -21,15 +21,15 @@ module Report::Projects
 
   # Reports on how much time it was since projects were last updated.
   # Currently open projects only.
-  def project_age_current
-    projects = list_current_projects
+  def project_age_current(endda=Date::today)
+    projects = list_current_projects(endda)
     projects.delete_if { |prj| prj.worktype.is_continuous }
     prj_age = []
     projects.each do |prj|
       wks_since_creation = 0
 
-      wks_since_update = ((Date::today - prj.updated_at.to_date) / 7).truncate
-      wks_since_creation = ((Date::today - prj.created_at.to_date) / 7).truncate unless prj.created_at.nil?
+      wks_since_update = ((endda - prj.updated_at.to_date) / 7).truncate unless prj.updated_at.nil?
+      wks_since_creation = ((endda - prj.created_at.to_date) / 7).truncate unless prj.created_at.nil?
       prj_age << { :project_id => prj.id,
                    :country_id => prj.country_id,
                    :wks_since_update => wks_since_update,
@@ -87,6 +87,7 @@ module Report::Projects
   end
 
   # Reports on parked projects
+  # TODO implement team filter (really?)
   def parking_lot(team='*')
     projects = Project.find(:all, :conditions => ["status = ?", Project::StatusParked], :order => "updated_at")
     parking_lot = []
