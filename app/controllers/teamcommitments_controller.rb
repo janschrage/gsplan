@@ -89,8 +89,10 @@ class TeamcommitmentsController < ApplicationController
   def show
     @teamcommitment = Teamcommitment.find(params[:id])
  
-    teamname = Team.find_by_id(@teamcommitment[:team_id]).name
-    projectname = Project.find_by_id(@teamcommitment[:project_id]).name
+    team = Team.find_by_id(@teamcommitment[:team_id])
+    project = Project.find_by_id(@teamcommitment[:project_id])
+    teamname = team.name unless team.nil?
+    projectname = project.name unless project.nil?
     @output = { :teamname => teamname, 
                 :yearmonth => @teamcommitment[:yearmonth],
                 :projectname => projectname,

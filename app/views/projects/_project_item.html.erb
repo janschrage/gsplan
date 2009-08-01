@@ -10,7 +10,8 @@
                   "<img src=\"/images/icons/down.png\" title=\"No Preload\" alt=\"No Preload\">" 
             end
             %></td>
-	<td class="text"><%= h country_by_id(project_item[1][:country]).isocode %></td>
+        <% country = country_by_id(project_item[1][:country]) %>
+	<td class="text"><%= h country.isocode unless country.nil? %></td>
 	<td class="text"><%= h project_item[1][:name] %></td>
 	<td class="text"><%= h project_type_of(project_item[0]) %></td>
 	<td><%= h project_item[1][:committed_total] + @missingdays[project_item[0]]%></td>
