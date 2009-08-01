@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class CountriesControllerTest < ActionController::TestCase
-fixtures :countries, :teams, :users, :roles, :rights, :rights_roles, :roles_users
 
   def test_should_get_index
     get :index, {}, { :user_id => users(:fred).id } 

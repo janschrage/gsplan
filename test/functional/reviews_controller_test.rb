@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ReviewsControllerTest < ActionController::TestCase
-fixtures :reviews, :users, :roles, :rights, :rights_roles, :roles_users
 
   def test_should_get_index
     get :index, {}, { :user_id => users(:fred).id, :original_uri => '/reviews'  }

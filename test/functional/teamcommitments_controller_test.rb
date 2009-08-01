@@ -15,7 +15,7 @@ class TeamcommitmentsControllerTest < ActionController::TestCase
 
   def test_should_create_teamcommitment
     assert_difference('Teamcommitment.count') do
-      post :create, { :teamcommitment => { :id => 1234, :team_id => teams(:one).id, :project_id => projects(:one).id, :yearmonth => '2008-08-01', :days => 10, :status => 0 } }, { :user_id => users(:fred).id, :original_uri => teamcommitments_path }
+      post :create, { :teamcommitment => { :id => 1234, :team_id => teams(:two).id, :project_id => projects(:one).id, :yearmonth => '2008-08-01', :days => 10, :status => 0 } }, { :user_id => users(:fred).id, :original_uri => teamcommitments_path }
     end
     assert_not_nil assigns(:teamcommitment)
     assert_redirected_to teamcommitments_path
