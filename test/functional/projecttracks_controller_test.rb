@@ -14,7 +14,7 @@ class ProjecttracksControllerTest < ActionController::TestCase
 
   def test_should_create_projecttrack
     assert_difference('Projecttrack.count') do
-      post :create, {:projecttrack => {  :team_id => 2, :yearmonth => '2008-09-01', :project_id => 4, :reportdate => '2008-09-20', :daysbooked => 1}}, { :user_id => users(:fred).id }
+      post :create, {:projecttrack => {  :team_id => 2, :yearmonth => '2008-08-01', :project_id => 4, :reportdate => '2008-09-20', :daysbooked => 1}}, { :user_id => users(:fred).id }
     end
  
     assert_redirected_to projecttrack_path(assigns(:projecttrack))
@@ -32,7 +32,7 @@ class ProjecttracksControllerTest < ActionController::TestCase
 
   def test_should_update_projecttrack
     assert_difference('Projecttrack.count', 0) do
-      put :update, {:id => projecttracks(:one).id, :projecttrack => { :team_id => 2, :yearmonth => '2008-09-01', :project_id => 4, :reportdate => '2008-09-20', :daysbooked => 4 }}, { :user_id => users(:fred).id }
+      put :update, {:id => projecttracks(:one).id, :projecttrack => { :team_id => 2, :yearmonth => '2008-08-01', :project_id => 4, :reportdate => '2008-09-20', :daysbooked => 4 }}, { :user_id => users(:fred).id }
     end                                                                          
     pt = Projecttrack.find(projecttracks(:one).id)                                                                 
     assert_equal  4, pt.daysbooked
