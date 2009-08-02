@@ -15,6 +15,7 @@
 
 class Project < ActiveRecord::Base
 
+  include Report::DateHelpers
 
   StatusOpen = 0
   StatusInProcess = 1
@@ -54,6 +55,46 @@ class Project < ActiveRecord::Base
     "#{@country.name}"
   end
   
+  # Find the committed and accepted time for this project
+  # either in the given month or for the entire project.
+  # yearmonth is a date in the month or '*' for the whole project.
+  def days_committed(yearmonth = '*')
+    if yearmonth == '*'
+      begda = self.planbeg
+      endda = self.planend
+    else
+      month = get_month_beg_end(yearmonth)
+      begda = month[:first_day]
+      endda = month[:last_day]
+    end
+    # All commitments must be between begin and end dates of the project (or, for this month)
+    commitments = Teamcommitment::find(:all, :conditions => ["yearmonth >= ? and yearmonth <= ? and project_id = ? and status = ?", begda, endda, self.id, Teamcommitment::StatusAccepted])
+    
+    days_committed = 0
+    commitments.each do |commitment|
+      days_committed += commitment.days 
+    end
+
+    return days_committed
+  end
+
+  # Find the days booked for this project in a given month
+  def days_booked(yearmonth)
+    #Find the date of the last BW upload for the given period
+    month = get_month_beg_end(yearmonth)
+    begda = month[:first_day]
+    endda = month[:last_day]
+    last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
+
+    #Calculate the days booked from the last BW data set
+    tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and reportdate = ? and project_id = ?",endda, begda, last_report_date, self.id])
+
+    days_booked = 0
+    tracks.each do |track|
+      days_booked += track.daysbooked
+    end
+    return days_booked
+  end
 
  protected
   def begda_is_before_endda

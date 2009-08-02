@@ -18,7 +18,7 @@ require 'test_helper'
 
 class ProjectTest < ActiveSupport::TestCase
 
-  fixtures :projects, :reviews
+  fixtures :projects, :reviews, :projecttracks
 
   def test_validation_empty
     prj = Project.new( :id => 3 )
@@ -55,5 +55,22 @@ class ProjectTest < ActiveSupport::TestCase
     prj = Project.find_by_id(2)
     prj.planend = Date::strptime("2008-09-30");
     assert !prj.save
+  end
+
+  def test_days_committed
+    prj4 = Project.find_by_id(4)
+    assert_equal 12,prj4.days_committed('2008-08-10'.to_date)
+    assert_equal 12,prj4.days_committed
+    prj1 = Project.find_by_id(1)
+    assert_equal 1,prj1.days_committed('2008-08-10'.to_date)
+    assert_equal 1,prj1.days_committed('2008-10-10'.to_date)
+    assert_equal 2,prj1.days_committed
+  end
+
+  def test_days_booked
+    prj4 = Project.find_by_id(4)
+    assert_equal 9,prj4.days_booked('2008-09-10'.to_date)
+    prj2 = Project.find_by_id(2)
+    assert_equal 5,prj2.days_booked('2008-09-10'.to_date)
   end
 end
