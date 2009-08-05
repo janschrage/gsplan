@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :roles
 
 
-  map.connect '', :controller => "teamcommitments"
+  map.connect '', :controller => "myteam"
   map.connect 'users/change_password', :controller => "users", :action => "change_password"
 
   map.connect 'projecttracks/import', :controller => "projecttracks", :action => "import"
