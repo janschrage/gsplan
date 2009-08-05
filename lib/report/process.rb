@@ -29,7 +29,9 @@ module Report::Process
     projects.each do |project|
        if !project.worktype.is_continuous
         plt = (project.updated_at.to_date - project.planbeg + 1).to_f
-        plt_as_perc = plt / project.planeffort * 100
+        #monthly cycle/monthly increments: measuring plt percentage in days makes no sense
+        #so we use a 30 day period here
+	plt_as_perc = plt / project.planeffort * 100 / 30 
         projectdata  = { :project_id => project.id,
                          :name => project.name,
                          :country_id => project.country_id,
