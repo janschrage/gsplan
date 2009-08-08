@@ -65,6 +65,7 @@
 <th>Project</th><th>Ctry</th><th>WType</th><th>PD(Plan)</th><th>Wks s/creat.</th><th>Wks parked</th><th>Stat</th>
 <%= render(:partial => "report_parked", :collection => report_data) %>
 </table>
+</td></tr></table>
 
 <!-- Process cycle times -->
 <% elsif @report_type == DashboardHelper::RepPRJ_Cycle_times then %>
@@ -81,10 +82,10 @@
 <tr>
 <td valign="top">
 <table>
-<th>Project</th><th>Ctry</th><th>WType</th><th>PD(plan)</th><th>PLT(days)</th><th>PLT/PD(plan)</th>
+<th>Project</th><th>Ctry</th><th>WType</th><th>PD(plan)</th><th>PLT(days)</th>
 <%= render(:partial => "report_pct", :collection => report_data) %>
 </table>
-
+</td></tr></table>
 <%end%>
 <%end%>
 
