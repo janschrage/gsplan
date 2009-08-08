@@ -10,9 +10,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'reviews/for_project/:id', :controller => 'reviews', :action => 'index'
   map.resources :reviews
 
-  map.resources :rights
+  map.resources :rights, :active_scaffold => true
 
-  map.resources :roles
+  map.resources :roles, :active_scaffold => true
 
 
   map.connect '', :controller => "myteam"
