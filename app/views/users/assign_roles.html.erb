@@ -1,0 +1,18 @@
+<h1>Assign Roles for <%=h @user.name%></h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+     <% roles = Role.find(:all) %>
+<p>
+     <% for role in roles -%>
+      <%= check_box_tag "user[role_ids][]","#{role.id}",
+          @user.roles.detect{ |r| r.id == role.id} -%> 
+      <%= "#{role.name}" -%>
+    <br/>
+     <% end -%>
+</p>
+<p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+

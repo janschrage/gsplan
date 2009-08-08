@@ -17,11 +17,17 @@ class UsersControllerTest < ActionController::TestCase
       post :create, { :user => { :name => 'testcreate', :password => 'testpw' } }, { :user_id => users(:fred).id }
     end
     assert_not_nil assigns(:user)
-    assert_redirected_to users_path
+    uid = User.find_by_name('testcreate').id
+    assert_redirected_to :action => :assign_roles, :params => {:id => uid }
   end
 
   def test_should_show_user
     get :show, {:id => users(:one).id}, { :user_id => users(:fred).id }
+    assert_response :success
+  end
+
+  def test_should_get_assign_roles
+    get :assign_roles, { :id => users(:fred).id }, { :user_id => users(:fred).id }
     assert_response :success
   end
 

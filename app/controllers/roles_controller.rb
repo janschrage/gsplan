@@ -21,6 +21,7 @@ class RolesController < ApplicationController
     config.columns = [:name]
     config.actions = [:list,:update, :nested,:delete,:create,:search]
     config.nested.add_link('Assign Rights',[:rights])
+    config.nested.shallow_delete = true
     list.sorting = {:name => 'ASC'}
     columns[:name].label = "Role"
   end
