@@ -35,7 +35,6 @@ class ProcessReportTest < ActiveSupport::TestCase
   def test_plt
     prj_list = project_plt('2008-08-01'.to_date, '2008-08-31'.to_date)
     assert_equal prj_list[0][:plt], 21
-    assert_equal prj_list[0][:plt_as_perc], 2100.0
   end
 
 end

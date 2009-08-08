@@ -12,7 +12,7 @@ class AdminControllerTest < ActionController::TestCase
     fred = users(:fred)
     post :login, :name => fred.name, :password => 'testme'
     #assert_redirected_to :controller => :teamcommitments
-    assert_redirected_to :controller => :teamcommitments
+    assert_redirected_to :controller => :myteam
     assert_equal fred.id, session[:user_id]
   end
 

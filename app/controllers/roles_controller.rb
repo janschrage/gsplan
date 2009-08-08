@@ -19,7 +19,10 @@ class RolesController < ApplicationController
    active_scaffold :role do |config|
     config.label = "Role"
     config.columns = [:name]
+    config.actions = [:list,:update, :nested,:delete,:create,:search]
+    config.nested.add_link('Assign Rights',[:rights])
     list.sorting = {:name => 'ASC'}
     columns[:name].label = "Role"
   end
+
 end

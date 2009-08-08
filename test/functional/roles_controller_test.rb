@@ -20,10 +20,10 @@ class RolesControllerTest < ActionController::TestCase
     assert_redirected_to role_path(assigns(:role))
   end
 
-  def test_should_show_role
-    get :show, {:id => roles(:one).id}, { :user_id => users(:fred).id }
-    assert_response :success
-  end
+#  def test_should_show_role
+#    get :show, {:id => roles(:one).id}, { :user_id => users(:fred).id }
+#    assert_response :success
+#  end
 
   def test_should_get_edit
     get :edit, {:id => roles(:one).id}, { :user_id => users(:fred).id }

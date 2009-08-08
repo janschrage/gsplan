@@ -1,6 +1,10 @@
 ##
 ## Initialize the environment
 ##
+unless Rails::VERSION::MAJOR == 2 && Rails::VERSION::MINOR == 1
+  raise "This version of ActiveScaffold requires Rails 2.1.  Please use another version."
+end
+
 require File.dirname(__FILE__) + '/environment'
 
 ##
@@ -10,5 +14,5 @@ require File.dirname(__FILE__) + '/environment'
 begin
   require File.dirname(__FILE__) + '/install_assets'
 rescue
-  raise $! unless RAILS_ENV == 'production'
+  raise $! unless Rails.env == 'production'
 end
