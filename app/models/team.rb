@@ -15,6 +15,7 @@
 
 class Team < ActiveRecord::Base
   include Report::DateHelpers
+  include Report::Projects
 
   validates_presence_of :name, :description
   validates_uniqueness_of :name
@@ -50,8 +51,7 @@ class Team < ActiveRecord::Base
   end
 
   def commitments(for_date)
-
-    for_date=Date.today unless for_date
+    for_date ||= Date.today
     month = get_month_beg_end(for_date)
     begda = month[:first_day]
     endda = month[:last_day]
@@ -59,5 +59,60 @@ class Team < ActiveRecord::Base
     commitments = Teamcommitment::find(:all, :conditions => ["team_id = ? and yearmonth >= ? and yearmonth <= ?", self.id, begda, endda])
 
     return commitments
+  end
+
+  def bookings(for_date)
+    for_date ||= Date.today
+    month = get_month_beg_end(for_date)
+    begda = month[:first_day]
+    endda = month[:last_day]
+    
+    last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda])
+    
+    bookings = Projecttrack.find(:all, :conditions => ["reportdate = ? and team_id = ?",last_report_date,self.id])
+    return bookings
+  end
+
+  def backlog(for_date)
+    # backlog in this definition is open projects without work done
+    for_date ||= Date.today 
+    month = get_month_beg_end(for_date)
+    endda = month[:last_day]
+    
+    # find all relevant projects
+    projects = list_current_projects(endda)
+    projects.delete_if { |project|  project.country.team_id != self.id }
+
+    backlog = { :projects   => 0,
+                :percentage => 0 
+              }
+    projects.each do |project|
+      backlog[:projects] += 1 if project.days_booked(for_date) == 0
+    end
+    backlog[:percentage] = (100 * backlog[:projects].to_f / projects.size.to_f).round 
+    return backlog
+  end
+
+  def ad_hoc_work(for_date)
+    # ad-hoc work is work done without commitment
+    for_date ||= Date.today
+    
+    # find all commitments and booking for this month, projects only
+    committed = commitments(for_date)
+    committed.delete_if { |com| com.project.worktype.is_continuous }
+
+    booked = bookings(for_date)
+    booked.delete_if { |bk| bk.project.worktype.is_continuous }
+
+    ad_hoc_work = { :tasks      => 0,
+                    :percentage => 0,
+                  } 
+    return ad_hoc_work if booked.size == 0
+
+    booked.each do |bk|
+      ad_hoc_work[:tasks] +=1 unless committed.find { |com| com.project_id == bk.project_id }
+    end
+    ad_hoc_work[:percentage] = (100 * ad_hoc_work[:tasks].to_f / booked.size.to_f).round  
+    return ad_hoc_work
   end
 end

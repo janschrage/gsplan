@@ -37,3 +37,18 @@ unique:
   days: 5
   status: 1
   
+ad_hoc_test:
+  id: 102
+  team_id: 1
+  yearmonth: 2008-11-02
+  project_id: 2
+  days: 5
+  status: 1
+
+ad_hoc_test2:
+  id: 103
+  team_id: 1
+  yearmonth: 2008-11-02
+  project_id: 3
+  days: 5
+  status: 1

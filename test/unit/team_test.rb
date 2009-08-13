@@ -39,4 +39,41 @@ class TeamTest < ActiveSupport::TestCase
     assert_equal 12,team.usage('2008-08-01'.to_date)
     assert_equal 1,team.usage('2008-10-01'.to_date)     
   end
+
+  def test_bookings
+    team1 = Team.find_by_id(1)
+    bookings = team1.bookings('2008-08-01'.to_date)
+    assert_equal 1,bookings.size
+    assert_equal 7,bookings[0].daysbooked
+    assert_equal 4,bookings[0].project_id
+
+    team2 = Team.find_by_id(2)
+    bookings2 = team2.bookings('2008-09-01'.to_date)
+    assert_equal 2,bookings2.size
+    assert bookings2.find { |bk| bk.project_id == 4 && bk.daysbooked == 3 }
+    assert bookings2.find { |bk| bk.project_id == 2 && bk.daysbooked == 5 }
+  end
+
+  def test_backlog
+    team = Team.find_by_id(1)
+    backlog = team.backlog('2008-08-01'.to_date)
+    assert_equal 2,backlog[:projects]
+    assert_equal 67,backlog[:percentage]
+  end
+
+  def test_ad_hoc
+    team2 = Team.find_by_id(2)
+    ad_hoc = team2.ad_hoc_work('2008-09-01'.to_date)
+    assert_equal 2,ad_hoc[:tasks]
+    assert_equal 100,ad_hoc[:percentage]
+
+    team1 = Team.find_by_id(1)
+    ad_hoc = team1.ad_hoc_work('2008-08-01'.to_date)
+    assert_equal 0,ad_hoc[:tasks]
+    assert_equal 0,ad_hoc[:percentage]
+
+    ad_hoc = team1.ad_hoc_work('2008-11-01'.to_date)
+    assert_equal 1,ad_hoc[:tasks]
+    assert_equal 50,ad_hoc[:percentage]
+  end
 end

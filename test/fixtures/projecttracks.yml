@@ -38,3 +38,19 @@ three:
   project_id: 2
   reportdate: 2008-09-20
   daysbooked: 5
+
+test_for_ad_hoc:
+  id: 5
+  team_id: 1
+  yearmonth: 2008-11-01
+  project_id: 4
+  reportdate: 2008-11-20
+  daysbooked: 7
+
+test_for_ad_hoc2:
+  id: 6
+  team_id: 1
+  yearmonth: 2008-11-01
+  project_id: 2
+  reportdate: 2008-11-20
+  daysbooked: 7
