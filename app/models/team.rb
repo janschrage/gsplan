@@ -86,8 +86,9 @@ class Team < ActiveRecord::Base
     backlog = { :projects   => 0,
                 :percentage => 0 
               }
+    return backlog if projects.size == 0
     projects.each do |project|
-      backlog[:projects] += 1 if project.days_booked(for_date) == 0
+      backlog[:projects] += 1 if project.days_committed(for_date) == 0
     end
     backlog[:percentage] = (100 * backlog[:projects].to_f / projects.size.to_f).round 
     return backlog

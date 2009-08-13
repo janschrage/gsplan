@@ -57,8 +57,8 @@ class TeamTest < ActiveSupport::TestCase
   def test_backlog
     team = Team.find_by_id(1)
     backlog = team.backlog('2008-08-01'.to_date)
-    assert_equal 2,backlog[:projects]
-    assert_equal 67,backlog[:percentage]
+    assert_equal 1,backlog[:projects]
+    assert_equal 33,backlog[:percentage]
   end
 
   def test_ad_hoc

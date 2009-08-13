@@ -23,7 +23,6 @@ class MyteamController < ApplicationController
     team_id = User.find_by_id(session[:user_id]).team_id
     if team_id.nil? then
       flash[:error] = "You are not assigned to a team."
-      #redirect_to :controller => "teamcommitments", :action => "index"
       redirect_to :back
       return false
     end
@@ -41,8 +40,9 @@ class MyteamController < ApplicationController
 
     @projectplan = get_projects_for_team_and_month(@report_date)
     
-    team = Team.find_by_id(team_id)
-    commitments = team.commitments(@report_date)
+    @team = Team.find_by_id(team_id)
+    teamname = @team.name unless @team == nil
+    commitments = @team.commitments(@report_date)
     firstproject = @projectplan[@projectplan.keys.first]
     @last_report_date = firstproject[:reportdate] unless firstproject.nil?
     session[:original_uri] = request.request_uri
@@ -55,8 +55,6 @@ class MyteamController < ApplicationController
 
     @outputlist = []
     commitments.each do |commitment| 
-        team = Team.find_by_id(commitment.team_id)
-        teamname = team.name unless team == nil
         project = Project.find_by_id(commitment.project_id)
         projectname = project.name unless project == nil
         output = { :classname => commitment,
