@@ -116,37 +116,6 @@ class GraphController < ApplicationController
     send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "quintiles-#{date.to_s}.png")
   end
 
-  def graph_planning_delta_in_days
-   date = Date::strptime(cookies[:report_date]) if cookies[:report_date]
-   date = Date::today unless date
-   projects = calculate_project_days(date)
-   teams = Team::find(:all)
-   chart = Gruff::Bar.new('600x400')
-   values = {}
-
-   chart.title = "Absolute difference execution vs. planning"
-    # group by team and use subject as the key
-
-   teams.each do |team|
-     values[team] = 0 if team.capacity(date) > 0
-   end
-
-   projects.each do |project|
-     delta = (project[1][:committed_inper] - project[1][:daysbooked]).abs
-     team = Project.find_by_id(project[0]).country.team
-     values[team] += delta if team.capacity(date) > 0
-   end
-  
-    chart.y_axis_label = "Sum of Delta (PD)"
-
-    teams.each do |team|
-      chart.data(team.name,values[team]) if team.capacity(date) > 0
-    end
-    chart.minimum_value = 0
-    chart.theme_37signals   
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "sumofdeltas-#{date.to_s}.png")
-  end
-
   def graph_project_age_current
    
     chart = Gruff::Line.new('600x400')

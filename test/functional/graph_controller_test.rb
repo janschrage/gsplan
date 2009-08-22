@@ -17,11 +17,6 @@ class GraphControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  def test_graph_planning_delta_in_days
-    get :graph_planning_delta_in_days, {}, { :user_id => users(:fred).id }
-    assert_response :success
-  end
-
   def test_graph_project_age_current
     get :graph_project_age_current, {}, { :user_id => users(:fred).id }
     assert_response :success
