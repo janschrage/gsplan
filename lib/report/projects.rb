@@ -47,8 +47,8 @@ module Report::Projects
     projectdays = {}
 
     #Find the projects
-    projects = Project::find(:all, :conditions => ["planbeg >= ? and planbeg <= ?", begda, endda])
-    projects.delete_if { |prj| prj.worktype.is_continuous }
+    projects = Project::find(:all, :conditions => ["planend >= ? and planbeg <= ?", begda, endda])
+
     projects.each do |project|
        projectindex = { :id => project.id,
                         :name => project.name,
