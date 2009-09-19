@@ -43,7 +43,7 @@ module Statistics
     last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",endda, begda]) 
 
     #Find the projects
-    projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or status <> ? ) and status <> ?", endda, begda, Project::StatusClosed, Project::StatusParked])
+    projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or ( status <> ? and status <> ? )) and status <> ?", endda, begda, Project::StatusClosed, Project::StatusRejected, Project::StatusParked])
     projects.each do |project|
       if team_id == '*' or countries.find_by_id(project.country_id)
         projectindex = { :name => project.name,
