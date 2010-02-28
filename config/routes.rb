@@ -1,4 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.graph_usage '/graph/graph_usage', :controller => 'graph', :action => 'graph_usage'
+  map.graph_worktypes '/graph/graph_worktypes', :controller => 'graph', :action => 'graph_worktypes'
+  map.graph_quintiles '/graph/graph_quintiles', :controller => 'graph', :action => 'graph_quintiles'
+  map.graph_project_age_current '/graph/graph_project_age_current', :controller => 'graph', :action => 'graph_project_age_current'
+  map.graph_project_times '/graph/graph_project_times', :controller => 'graph', :action => 'graph_project_times'
+
   map.resources :projectareas
 
   map.resources :dashboard

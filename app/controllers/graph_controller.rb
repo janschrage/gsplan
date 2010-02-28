@@ -14,7 +14,7 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 class GraphController < ApplicationController
-
+          
   include Statistics, ProjectsHelper, DashboardHelper
   include Report::Worktype
   include Report::Projects
@@ -29,33 +29,22 @@ class GraphController < ApplicationController
    free_values = []
    labels = {}
    counter = 0
+   chart = Ziya::Charts::Column.new("Resource Usage")
 
    team_list = Team.find(:all)
    team_list.each do |team|
      capa = team.capacity(date)
      if capa > 0  #only if the team has capacity this month (temporary help from other LOBs,...)
        usage = team.usage(date)
-       capa_values << capa
-       usage_values << usage
-       free_values << [0,capa-usage].max #no negative free capacity
-       labels.merge!({ counter => team.name })
-       counter += 1
+       free = [0,capa-usage].max #no negative free capacity
+       chart.add :series, team.name, [ capa, usage, free]
      end
    end 
-
-   chart = Gruff::Bar.new('500x350')
-   chart.title = "Resource Usage"
-   chart.labels = labels
-   chart.y_axis_label = "PD"
-   #capacity
-   chart.data("Capacity",capa_values,'#0055ff')
-   #usage
-   chart.data("Utilization",usage_values,'#cc0000')
-   #free
-   chart.data("Free Capacity",free_values,'#00cc00')
-    
-   chart.theme_37signals
-   send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'team_usage.png')
+   chart.add :axis_category_text, ["Capa","Use","Free"]
+     
+   respond_to do |fmt|
+     fmt.xml { render :xml => chart.to_xml }  
+   end
   end
 
   def graph_worktypes
@@ -66,16 +55,22 @@ class GraphController < ApplicationController
 
     worktype_distribution = calculate_worktype_distribution(date, team_id)
   
-    chart = Gruff::Pie.new(400)
-    chart.title = "Worktypes by days booked"
+    chart = Ziya::Charts::Pie.new("Worktype distribution")
+    
+    worktypes = []
+    workdays = []
     worktype_distribution.keys.each do |wt|
       wt_name = Worktype::find_by_id(wt).name
       wt_daysbooked = worktype_distribution[wt][:daysbooked]
-      chart.data("#{wt_name}",wt_daysbooked)
+      worktypes << wt_name
+      workdays  << wt_daysbooked
    end
-
-    chart.theme_37signals   
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "wt_stats--#{date.to_s}.png")
+   
+   chart.add :axis_category_text, worktypes
+   chart.add :series, workdays
+   respond_to do |fmt|
+     fmt.xml { render :xml => chart.to_xml }  
+   end
   end
 
   def graph_quintiles
@@ -84,16 +79,14 @@ class GraphController < ApplicationController
 
    projects = calculate_project_days(date)
    teams = Team::find(:all)
-   chart = Gruff::Bar.new('600x400')
+   chart = Ziya::Charts::Column.new("Delta planning/execution (no. tasks)")
    values = {}
 
    teams.each do |team|
         values[team.id] = [0,0,0,0,0,0,0] if team.capacity(date) > 0
    end
-   chart.title = "Delta planning/execution (no. tasks)"
    # group by team and use subject as the key
-   chart.labels = { 0 => "pending", 1 => "0-20%", 2 => "20-40%", 3 => "40-60%", 
-               4 => "60-80%", 5 =>">80%", 6 => "ad-hoc" }
+   chart.add :axis_category_text, ["pending", "0-20%", "20-40%", "40-60%","60-80%", ">80%", "ad-hoc"]
 
    projects.each do |project|
       quintile = project_quintile(project[1][:committed_inper],project[1][:daysbooked])
@@ -101,30 +94,19 @@ class GraphController < ApplicationController
       values[team.id][quintile] += 1 if team.capacity(date) > 0
    end
   
-#    ymax = 0
-#    teams.each do |team|
-#      ymax = [ymax,values[team].max].max
-#    end
-    #y_axis.set_range(0,ymax+2,5)   
-  
-    chart.y_axis_label = "No. tasks"
     teams.each do |team|
-      chart.data(team.name,values[team.id]) if team.capacity(date) > 0
+      chart.add(:series,team.name,values[team.id]) if team.capacity(date) > 0
     end
-    chart.minimum_value = 0
-    chart.theme_37signals   
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "quintiles-#{date.to_s}.png")
+    respond_to do |fmt|
+      fmt.xml { render :xml => chart.to_xml }  
+    end
   end
 
   def graph_project_age_current
    
-    chart = Gruff::Line.new('600x400')
+    chart = Ziya::Charts::Line.new("Project age - last update")
     projects = project_age_current
     prj_week = {}
-
-    chart.title = "Project age - last update"
-    chart.y_axis_label = "Number of projects"
-    chart.x_axis_label = "Weeks since update"
 
     projects.each do |project|
       prj_week[project[:wks_since_update]] = 0 if prj_week[project[:wks_since_update]].nil?
@@ -135,7 +117,7 @@ class GraphController < ApplicationController
   
 
     y = []
-    labels = {}
+    labels = []
     
     week=0
     (max_weeks+1).times do  
@@ -144,18 +126,17 @@ class GraphController < ApplicationController
       else 
         y << 0
       end
-      labels[week] = week.to_s
+      labels << week.to_s
       week += 1
     end
 
     ymax=y.max
   
-    chart.labels = labels
-    chart.minimum_value = 0
-    chart.maximum_value = ymax+2
-    chart.data('Current projects',y)
-    chart.theme_37signals   
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'project_age_current.png')
+    chart.add( :axis_category_text, labels)
+    chart.add( :series,'Current projects',y)
+    respond_to do |fmt|
+      fmt.xml { render :xml => chart.to_xml }  
+    end
   end
 
   def graph_project_times(begda=nil,endda=nil)
@@ -163,32 +144,25 @@ class GraphController < ApplicationController
     begda = flash[:report_begda].to_date if begda.nil?
     endda = flash[:report_endda].to_date if endda.nil?
   
-    chart = Gruff::Line.new('600x400')
+    chart = Ziya::Charts::Scatter.new("Planned vs. Booked")
     projects = project_times(begda,endda)
-    prj_week = {}
 
-    chart.title = "Project times"
-    chart.y_axis_label = "Effort booked/planned"
 
-    data = []
-    ideal = []
-
+    categories = []
     projects.each do |project|
-      data << project[1][:daysbooked] / project[1][:planeffort]
-      ideal << 1
+      if project[1][:daysbooked] > project[1][:planeffort]
+        categories << "over"
+      else
+        categories << "under"
+      end
+      chart.add :series, '', [project[1][:planeffort],project[1][:daysbooked]]
     end
-    data = data.sort
+    
 
-    #labels = {}
-
-    ymax = data.max + 0.5
-    chart.hide_lines = false
-    #chart.labels = labels
-    chart.minimum_value = 0
-    chart.maximum_value = ymax
-    chart.data("Effort booked/planned",data)
-    chart.data("Target",ideal)
-    chart.theme_37signals
-    send_data(chart.to_blob, :disposition => 'inline', :type => 'image/png', :filename => 'project_times.png')
+    chart.add :axis_category_text, categories
+ 
+    respond_to do |fmt|
+      fmt.xml { render :xml => chart.to_xml }  
+    end
   end
 end

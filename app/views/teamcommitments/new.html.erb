@@ -6,7 +6,9 @@
   <p>
     <%= f.label "Team" %><br />
 	<%=
-                @teamcommitment.team_id = User.find(session[:user_id]).team_id
+	    user = User.find(session[:user_id]) unless session[:user_id].nil?
+	    team_id = user.team_id unless user.nil?
+        @teamcommitment.team_id = team_id
  		f.collection_select(:team_id, team_list, :id, :name)
 	%>
   </p>

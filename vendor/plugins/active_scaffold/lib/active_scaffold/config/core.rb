@@ -81,8 +81,10 @@ module ActiveScaffold::Config
 
     # a generally-applicable name for this ActiveScaffold ... will be used for generating page/section headers
     attr_writer :label
-    def label
-      as_(@label)
+    def label(options={})
+      options[:count] ||= model.count
+      options[:default] ||= model.name.pluralize if options[:count].to_i > 1
+      as_(@label, options) || model.human_name(options)
     end
 
     ##
@@ -112,9 +114,6 @@ module ActiveScaffold::Config
 
       # inherit from the global set of action links
       @action_links = self.class.action_links.clone
-
-      # the default label
-      @label = self.model_id.pluralize.titleize
     end
 
     # To be called after your finished configuration
@@ -148,7 +147,8 @@ module ActiveScaffold::Config
     end
 
     def self.method_missing(name, *args)
-      if @@actions.include? name.to_s.underscore and ActiveScaffold::Config.const_defined? name.to_s.titleize
+      klass = "ActiveScaffold::Config::#{name.to_s.titleize}".constantize rescue nil
+      if @@actions.include? name.to_s.underscore and klass
         return eval("ActiveScaffold::Config::#{name.to_s.titleize}")
       end
       super

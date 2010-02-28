@@ -103,11 +103,11 @@ Ad-hoc work: unplanned work, time spent without commitment<br/>
 
 <div id="projects-middle">
 <div id="graph_wt">
-<%= image_tag("/graph/graph_worktypes/#{session[:team_id]}", :format => 'png') %>
+<%= ziya_chart graph_worktypes_path(session[:team_id]), :size => "400x400" -%>
 </div>
 <br>
 <div id="graph_quintiles">
-<%= image_tag('/graph/graph_quintiles', :format => 'png') %>
+<%= ziya_chart graph_quintiles_url, :size => "600x400" -%>
 </div>
 </div>
 </div>

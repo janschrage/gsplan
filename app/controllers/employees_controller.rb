@@ -22,7 +22,7 @@ class EmployeesController < ApplicationController
     list.sorting = {:name => 'ASC'}
     columns[:pernr].label = "ID"
     columns[:name].label = "Name"
-    columns[:name].label = "Reviewer?"
+    columns[:is_reviewer].label = "Reviewer?"
   end
 
 end

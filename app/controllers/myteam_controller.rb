@@ -20,7 +20,8 @@ class MyteamController < ApplicationController
   def index
 
     # filter by team
-    team_id = User.find_by_id(session[:user_id]).team_id
+    user = User.find_by_id(session[:user_id])
+    team_id = user.team_id unless user.nil?
     if team_id.nil? then
       flash[:error] = "You are not assigned to a team."
       redirect_to :back

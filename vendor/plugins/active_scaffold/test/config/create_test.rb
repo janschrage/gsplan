@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), '../test_helper.rb')
- 
+
 class Config::CreateTest < Test::Unit::TestCase
   def setup
     @config = ActiveScaffold::Config::Core.new :model_stub
@@ -15,7 +15,7 @@ class Config::CreateTest < Test::Unit::TestCase
     assert !@config.create.edit_after_create
     assert_equal 'Create Model Stub', @config.create.label
   end
- 
+
   def test_link_defaults
     link = @config.create.link
     assert !link.page?

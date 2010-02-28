@@ -9,7 +9,7 @@
 <div class="table-wrap">
 <div class="table-row">
 <div class="table-cell">
-<%= image_tag('/graph/graph_usage', :format => 'png') %>
+<%= ziya_chart graph_usage_url, :size => "500x350" -%>
 </div>
 <div id="table-cell">
 <%= render(:partial => "team_data", :object => @teams) %>

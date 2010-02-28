@@ -60,9 +60,9 @@ module ActiveScaffold::Actions
     def include_habtm_actions
       if nested_habtm?
         # Production mode is ok with adding a link everytime the scaffold is nested - we ar not ok with that.
-        active_scaffold_config.action_links.add('new_existing', :label => 'Add Existing', :type => :table, :security_method => :add_existing_authorized?) unless active_scaffold_config.action_links['new_existing']
+        active_scaffold_config.action_links.add('new_existing', :label => :add_existing, :type => :table, :security_method => :add_existing_authorized?) unless active_scaffold_config.action_links['new_existing']
         if active_scaffold_config.nested.shallow_delete
-          active_scaffold_config.action_links.add('destroy_existing', :label => 'Remove', :type => :record, :confirm => 'Are you sure?', :method => :delete, :position => false, :security_method => :delete_existing_authorized?) unless active_scaffold_config.action_links['destroy_existing']
+          active_scaffold_config.action_links.add('destroy_existing', :label => :remove, :type => :record, :confirm => 'are_you_sure', :method => :delete, :position => false, :security_method => :delete_existing_authorized?) unless active_scaffold_config.action_links['destroy_existing']
           active_scaffold_config.action_links.delete("destroy") if active_scaffold_config.action_links['destroy']
         end
         
@@ -77,7 +77,7 @@ module ActiveScaffold::Actions
         
         if active_scaffold_config.nested.shallow_delete
           active_scaffold_config.action_links.delete("destroy_existing") if active_scaffold_config.action_links['destroy_existing']
-          active_scaffold_config.action_links.add('destroy', :label => 'Delete', :type => :record, :confirm => 'Are you sure?', :method => :delete, :position => false, :security_method => :delete_authorized?) unless active_scaffold_config.action_links['destroy']
+          active_scaffold_config.action_links.add('destroy', :label => :delete, :type => :record, :confirm => 'are_you_sure', :method => :delete, :position => false, :security_method => :delete_authorized?) unless active_scaffold_config.action_links['destroy']
         end
         
       end
@@ -133,7 +133,7 @@ module ActiveScaffold::Actions::Nested
           end
         end
         type.js do
-          render(:partial => 'add_existing_form', :layout => false)
+          render(:partial => 'add_existing_form.rhtml', :layout => false)
         end
       end
     end
@@ -144,7 +144,7 @@ module ActiveScaffold::Actions::Nested
       respond_to do |type|
         type.html do
           if successful?
-            flash[:info] = as_('Created %s', @record.to_label)
+            flash[:info] = as_(:created_model, :model => @record.to_label)
             return_to_main
           else
             render(:action => 'add_existing_form', :layout => true)
@@ -170,7 +170,7 @@ module ActiveScaffold::Actions::Nested
 
       respond_to do |type|
         type.html do
-          flash[:info] = as_('Deleted %s', @record.to_label)
+          flash[:info] = as_(:deleted_model, :model => @record.to_label)
           return_to_main
         end
         type.js { render(:action => 'destroy.rjs', :layout => false) }

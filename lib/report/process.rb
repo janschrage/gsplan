@@ -56,6 +56,7 @@ module Report::Process
     projects = Project::find(:all, :conditions => ["planend >= ? and planend <= ? and status = ?", begda, endda, Project::StatusClosed])
     projects.delete_if { |prj| prj.worktype.is_continuous }
     prj_count = projects.size
+    return 0 if prj_count == 0
     return (((endda-begda) + 1) / prj_count).to_i
   end
 end

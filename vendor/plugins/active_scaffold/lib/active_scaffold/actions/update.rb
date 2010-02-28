@@ -13,7 +13,7 @@ module ActiveScaffold::Actions
       respond_to do |type|
         type.html do
           if successful?
-            render(:action => 'update_form', :layout => true)
+            render(:action => 'update', :layout => true)
           else
             return_to_main
           end
@@ -32,22 +32,22 @@ module ActiveScaffold::Actions
           if params[:iframe]=='true' # was this an iframe post ?
             responds_to_parent do
               if successful?
-                render :action => 'update.rjs', :layout => false
+                render :action => 'on_update', :layout => false
               else
-                render :action => 'form_messages.rjs', :layout => false
+                render :action => 'form_messages_on_update.rjs', :layout => false
               end
             end
           else # just a regular post
             if successful?
-              flash[:info] = as_('Updated %s', @record.to_label)
+              flash[:info] = as_(:updated_model, :model => @record.to_label)
               return_to_main
             else
-              render(:action => 'update_form', :layout => true)
+              render(:action => 'update', :layout => true)
             end
           end
         end
         type.js do
-          render :action => 'update.rjs', :layout => false
+          render :action => 'on_update', :layout => false
         end
         type.xml { render :xml => response_object.to_xml, :content_type => Mime::XML, :status => response_status }
         type.json { render :text => response_object.to_json, :content_type => Mime::JSON, :status => response_status }
@@ -85,7 +85,7 @@ module ActiveScaffold::Actions
         end
       rescue ActiveRecord::RecordInvalid
       rescue ActiveRecord::StaleObjectError
-        @record.errors.add_to_base as_("Version inconsistency - this record has been modified since you started editing it.")
+        @record.errors.add_to_base as_(:version_inconsistency)
         self.successful=false
       end
     end
@@ -93,7 +93,9 @@ module ActiveScaffold::Actions
     def do_update_column
       @record = find_if_allowed(params[:id], :update)
       if @record.authorized_for?(:action => :update, :column => params[:column])
-        @record.update_attributes(params[:column] => params[:value])
+        params[:value] ||= @record.column_for_attribute(params[:column]).default unless @record.column_for_attribute(params[:column]).null
+        @record.send("#{params[:column]}=", params[:value])
+        @record.save
       end
     end
 
