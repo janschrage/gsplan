@@ -107,6 +107,7 @@ module ProjectsHelper
     # 6 = no work planned but work done (intransparent)
     return 6 if plan == 0 and act > 0
     # 1..5 0-20%,...,>80% in 20% steps  
+    return 1 if act == plan
     quintile = ((act-plan)/plan*5).abs.ceil.to_i
     return 5 if quintile > 5
     return quintile if quintile <= 5
