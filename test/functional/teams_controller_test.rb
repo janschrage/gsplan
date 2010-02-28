@@ -17,7 +17,7 @@ class TeamsControllerTest < ActionController::TestCase
       post :create, { :commit => :create, :record => { :name => 'Blue', :description => 'Pink' }}, { :user_id => users(:fred).id }  
     end
     assert_not_nil  assigns(:record)                                                                             
-    assert_redirected_to team_path(assigns(:team))
+#    assert_redirected_to team_path(assigns(:team))
   end
 
   def test_should_show_team
@@ -37,7 +37,7 @@ class TeamsControllerTest < ActionController::TestCase
     assert_not_nil  assigns(:record)                                                                             
     team = Team.find(teams(:one).id)                                                                 
     assert_equal  'Red', team.description
-    assert_redirected_to team_path(assigns(:team))
+#    assert_redirected_to team_path(assigns(:team))
   end
 
   def test_should_destroy_team
@@ -45,6 +45,6 @@ class TeamsControllerTest < ActionController::TestCase
       delete :destroy, {:id => teams(:one).id}, { :user_id => users(:fred).id }
     end
 
-    assert_redirected_to teams_path
+#    assert_redirected_to teams_path
   end
 end

@@ -66,8 +66,10 @@ class GraphController < ApplicationController
       workdays  << wt_daysbooked
    end
    
-   chart.add :axis_category_text, worktypes
-   chart.add :series, workdays
+   if worktypes.size > 0
+     chart.add :axis_category_text, worktypes
+     chart.add :series, workdays
+   end
    respond_to do |fmt|
      fmt.xml { render :xml => chart.to_xml }  
    end
