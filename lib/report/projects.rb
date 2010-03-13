@@ -54,35 +54,12 @@ module Report::Projects
                         :name => project.name,
                         :country => project.country_id,
                         :planeffort => project.planeffort,
-                        :daysbooked => 0,
+                        :daysbooked => project.days_booked(),
                         :status => project.status,
                         :worktype => project.worktype }
        projectdays[project.id] = projectindex
     end
 
-    # Loop over the months
-    curdate = begda
-    wt_total = []
-    until curdate > endda do
-      #Find the date of the last BW upload for the given period
-      month = get_month_beg_end(curdate)
-      curbegda = month[:first_day]
-      curendda = month[:last_day]
-  
-      last_report_date = Projecttrack::maximum('reportdate', :conditions => ["yearmonth <= ? and yearmonth >= ?",curendda, curbegda]) 
-  
-      #Calculate the days booked from the last BW data set
-      tracks = Projecttrack::find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ? and reportdate = ?",curendda, curbegda, last_report_date])
-  
-      tracks.each do |track|
-        thisproject = projectdays[track.project_id]
-        if not thisproject.nil? then
-          thisproject[:daysbooked] = thisproject[:daysbooked] + track.daysbooked
-          projectdays[track.project_id] = thisproject
-        end
-      end
-      curdate = curdate >> 1
-    end
     return projectdays
   end
 

@@ -15,7 +15,7 @@ one:
 two:
   id: 2
   name: TestProject-2
-  planend: 2008-08-31
+  planend: 2008-11-30
   planbeg: 2008-08-01
   worktype_id: 1
   planeffort: 1
@@ -169,3 +169,16 @@ closed_pct:
   country_id: 1
   status: 2
   updated_at: 2008-09-09
+  
+test_pct:
+    id: 21
+    name: TestProject-21
+    planend: 2008-08-31
+    planbeg: 2008-08-01
+    worktype_id: 1
+    planeffort: 1
+    employee_id: 1
+    country_id: 1
+    status: 2
+    updated_at: 2008-08-21
+  

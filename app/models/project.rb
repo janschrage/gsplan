@@ -86,8 +86,21 @@ class Project < ActiveRecord::Base
     return days_committed
   end
 
-  # Find the days booked for this project in a given month
-  def days_booked(yearmonth)
+  # Find the days booked for this project over the whole project or in a given month
+  def days_booked(yearmonth = nil)
+    return days_booked_for_month(yearmonth) if !yearmonth.nil? 
+
+    curdate = self.planbeg
+    days = 0
+    until curdate > self.planend do
+      days += days_booked_for_month(curdate)
+      curdate = curdate >> 1
+    end
+    
+    return days
+  end
+
+  def days_booked_for_month(yearmonth)
     #Find the date of the last BW upload for the given period
     month = get_month_beg_end(yearmonth)
     begda = month[:first_day]
@@ -103,7 +116,7 @@ class Project < ActiveRecord::Base
     end
     return days_booked
   end
-
+  
  protected
   def begda_is_before_endda
     return if planbeg.nil? or planend.nil?

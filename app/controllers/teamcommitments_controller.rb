@@ -60,7 +60,7 @@ class TeamcommitmentsController < ApplicationController
                    :projectname => projectname,
                    :days => commitment.days,
                    :status => commitment.status,
-                   :project.preload? => project.worktype.project.preload? }
+                   :preload => project.preload? }
         @outputlist << output
     end
     @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}

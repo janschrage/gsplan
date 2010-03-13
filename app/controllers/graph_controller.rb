@@ -147,22 +147,16 @@ class GraphController < ApplicationController
     endda = flash[:report_endda].to_date if endda.nil?
   
     chart = Ziya::Charts::Scatter.new("Planned vs. Booked")
-    projects = project_times(begda,endda)
-
-
-    categories = []
-    projects.each do |project|
-      if project[1][:daysbooked] > project[1][:planeffort]
-        categories << "over"
-      else
-        categories << "under"
-      end
-      chart.add :series, '', [project[1][:planeffort],project[1][:daysbooked]]
-    end
     
+    #Find the projects
+    projects = Project::find(:all, :conditions => ["planend >= ? and planbeg <= ?", begda, endda])
 
-    chart.add :axis_category_text, categories
- 
+
+    projects.each do |project|
+      chart.add :series, '', [project.planeffort,project.days_booked()] if project.status == Project::StatusClosed
+    end
+    chart.add :axis_category_text, %w[x y]
+     
     respond_to do |fmt|
       fmt.xml { render :xml => chart.to_xml }  
     end

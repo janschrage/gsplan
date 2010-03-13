@@ -26,15 +26,15 @@ class ProcessReportTest < ActiveSupport::TestCase
   end
 
   def test_pct
-    assert_equal pct('2008-08-01'.to_date, '2008-08-31'.to_date), 31
-    assert_equal pct('2008-08-20'.to_date, '2008-08-31'.to_date), 12
-    assert_equal pct('2008-08-20'.to_date, '2008-09-09'.to_date), 21
-    assert_equal pct('2008-08-20'.to_date, '2008-09-10'.to_date), 11
+    assert_equal 31,  pct('2008-08-01'.to_date, '2008-08-31'.to_date)
+    assert_equal 12, pct('2008-08-20'.to_date, '2008-08-31'.to_date)
+    assert_equal 21, pct('2008-08-20'.to_date, '2008-09-09'.to_date)
+    assert_equal 11, pct('2008-08-20'.to_date, '2008-09-10'.to_date)
   end
 
   def test_plt
-    prj_list = project_plt('2008-08-01'.to_date, '2008-08-31'.to_date)
-    assert_equal prj_list[0][:plt], 21
+    prj_list = project_plt('2008-08-01'.to_date, '2008-11-30'.to_date)
+    assert_equal 21, prj_list[0][:plt]
   end
 
 end
