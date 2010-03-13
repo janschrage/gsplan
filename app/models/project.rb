@@ -55,6 +55,14 @@ class Project < ActiveRecord::Base
     "#{@country.name}"
   end
   
+  def preload?
+    return self.worktype.preload
+  end
+  
+  def status?
+    return self.status
+  end
+  
   # Find the committed and accepted time for this project
   # either in the given month or for the entire project.
   # yearmonth is a date in the month or '*' for the whole project.

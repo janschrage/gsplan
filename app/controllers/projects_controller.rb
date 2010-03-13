@@ -140,13 +140,14 @@ class ProjectsController < ApplicationController
   def prj_accept
     @project = Project.find(params[:id])
     return false if @project.status != Project::StatusProposed 
+    oldstatus = @project.status
     @project.status = Project::StatusOpen
-    @changed_project = @project.id
     if @project.save
-      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ffff99"      
       true
     else
-      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ff0000"
+      @project.status = oldstatus
       false
     end
   end
@@ -154,13 +155,15 @@ class ProjectsController < ApplicationController
   def prj_reject
     @project = Project.find(params[:id])
     return false if @project.status != Project::StatusProposed 
+    oldstatus = @project.status
     @project.status = Project::StatusRejected
     @changed_project = @project.id
     if @project.save
-      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ffff99"      
       true
     else
-      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @startcolor = "#ff0000"
+      @project.status = oldstatus
       false
     end
   end
@@ -169,37 +172,35 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @changed_project = @project.id
     if @project.status == Project::StatusProposed or @project.status == Project::StatusClosed or @project.status == Project::StatusPilot
-      set_project_plan  #inside and twice, otherwise not updated with saved data
       @startcolor = "#ff0000"
       return false
     end
+    oldstatus = @project.status
     @project.status = Project::StatusInProcess
     if @project.save
-      set_project_plan  #inside and twice, otherwise not updated with saved data
       @startcolor = "#ffff99"
       true
     else
-      set_project_plan  #inside and twice, otherwise not updated with saved data
+      @project.status = oldstatus
+      @startcolor = "#ff0000"
       false
     end
   end
 
   def prj_pilot
     @project = Project.find(params[:id])
-    @changed_project = @project.id
     if @project.status == Project::StatusProposed or @project.status == Project::StatusClosed
-      set_project_plan  #inside and twice, otherwise not updated with saved data
       @startcolor = "#ff0000"
       return false
     end   
+    oldstatus = @project.status
     @project.status = Project::StatusPilot
     if @project.save
-      set_project_plan  #inside and twice, otherwise not updated with saved data
       @startcolor = "#ffff99"
       true
     else
-      set_project_plan  #inside and twice, otherwise not updated with saved data
       @startcolor = "#ff0000"
+      @project.status = oldstatus
       false
     end
   end
@@ -207,36 +208,18 @@ class ProjectsController < ApplicationController
   def prj_close
     @project = Project.find(params[:id])
     return false if @project.status == Project::StatusProposed 
+    oldstatus = @project.status
     @project.status = Project::StatusClosed
-    @changed_project = @project.id
     if @project.save
-      set_project_plan  #inside and twice, otherwise not updated with saved data
       @startcolor = "#ffff99"
       true
     else
-      set_project_plan  #inside and twice, otherwise not updated with saved data
       @startcolor = "#ff0000"
+      @project.status = oldstatus
       false
     end
   end
 
-  def set_project_plan
-   if cookies[:report_date]
-     @report_date =  Date::strptime(cookies[:report_date])
-    end
-    @report_date = Date.today unless @report_date
-
-    @missingdays = {}
-    if session[:team_id] then
-      @projectplan = get_projects_for_team_and_month(@report_date)
-    else
-      @projectplan = calculate_project_days(@report_date)
-    end
-    @projectplan.keys.each do |project_id|
-      @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
-    end
-    @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
-  end
 
   def assign_reviewers
     @project = Project.find(params[:id])

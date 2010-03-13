@@ -36,12 +36,8 @@ class TeamcommitmentsController < ApplicationController
       
     cookies[:report_date]=@report_date.to_s
       
-    @missingdays = {}
-    @projectplan = calculate_project_days(@report_date)
-    @projectplan.keys.each do |project_id|
-      @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
-    end
-    @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
+    @projects = list_current_projects(@report_date)
+    @projects = @projects.sort{|a,b| a.country_id<=>b.country_id}
 
     #Only show for current month
     monthbegend = get_month_beg_end(@report_date)
@@ -50,8 +46,7 @@ class TeamcommitmentsController < ApplicationController
 
     @teamcommitments = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
  
-    @outputlist = []
- 
+    @outputlist = [] 
     
     @teamcommitments.each do |commitment| 
         team = Team.find_by_id(commitment[:team_id])
@@ -65,7 +60,7 @@ class TeamcommitmentsController < ApplicationController
                    :projectname => projectname,
                    :days => commitment.days,
                    :status => commitment.status,
-                   :preload => project.worktype.preload }
+                   :project.preload? => project.worktype.project.preload? }
         @outputlist << output
     end
     @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
@@ -212,7 +207,7 @@ class TeamcommitmentsController < ApplicationController
                    :projectname => projectname,
                    :days => commitment.days,
                    :status => commitment.status,
-                   :preload => project.worktype.preload  }
+                   :project.preload? => project.worktype.project.preload?  }
         @outputlist << output    
     end
      @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}

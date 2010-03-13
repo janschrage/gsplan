@@ -38,21 +38,11 @@ class MyteamController < ApplicationController
     end
     @report_date = Date.today unless @report_date
     cookies[:report_date]=@report_date.to_s
-
-    @projectplan = get_projects_for_team_and_month(@report_date)
-    
+        
     @team = Team.find_by_id(team_id)
     teamname = @team.name unless @team == nil
     commitments = @team.commitments(@report_date)
-    firstproject = @projectplan[@projectplan.keys.first]
-    @last_report_date = firstproject[:reportdate] unless firstproject.nil?
     session[:original_uri] = request.request_uri
-
-    @missingdays = {}
-    @projectplan.keys.each do |project_id|
-      @missingdays[project_id] = Project.find_by_id(project_id).planeffort - @projectplan[project_id][:committed_total]
-    end
-    @projectplan = @projectplan.sort{|a,b| a[1][:country]<=>b[1][:country]}
 
     @outputlist = []
     commitments.each do |commitment| 
@@ -65,11 +55,12 @@ class MyteamController < ApplicationController
                    :projectname => projectname,
                    :days => commitment.days,
                    :status => commitment.status,
-                   :preload => project.worktype.preload }
+                   :preload => project.preload? }
         @outputlist << output
     end
 
     @currentprojects = team_projects_current
+    @allprojects = @currentprojects
     @currentprojects.delete_if { |project| project.worktype.needs_review != true }
 
     respond_to do |format|

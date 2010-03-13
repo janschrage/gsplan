@@ -7,6 +7,10 @@
 <% end %>
 
 <table>
-<tr><th>Pre?</th><th>Ctry</th><th>Project</th><th>Type</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Miss</th><th>Stat</th></tr>
+	<thead>
+<tr><th>Pre?</th><th>Ctry</th><th>Project</th><th>Type</th><th>Plan</th><th>Curr</th><th>Tot</th><th>Stat</th></tr>
+</thead>
+<tbody>
 <%= render(:partial => "projects/project_item", :collection => project_list) %> 
+</tbody>
 </table>
