@@ -94,7 +94,7 @@ class GraphController < ApplicationController
    projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or ( status <> ? and status <> ? )) and status <> ?", endda, begda, Project::StatusClosed, Project::StatusRejected, Project::StatusParked])
 
    teams = Team::find(:all)
-   chart = Ziya::Charts::Column.new(license = nil,"Delta planning/execution")
+   chart = Ziya::Charts::Column.new(license = nil,"quintiles")
    values = {}
 
    teams.each do |team|
@@ -119,7 +119,7 @@ class GraphController < ApplicationController
 
   def graph_project_age_current
    
-    chart = Ziya::Charts::Line.new(license = nil,"Project age - last update")
+    chart = Ziya::Charts::Line.new(license = nil,"project_age")
     projects = project_age_current
     prj_week = {}
 
@@ -159,7 +159,7 @@ class GraphController < ApplicationController
     begda = flash[:report_begda].to_date if begda.nil?
     endda = flash[:report_endda].to_date if endda.nil?
   
-    chart = Ziya::Charts::Scatter.new(license = nil,"Planned vs. Booked")
+    chart = Ziya::Charts::Scatter.new(license = nil,"project_times")
     
     #Find the projects
     projects = Project::find(:all, :conditions => ["planend >= ? and planbeg <= ?", begda, endda])
@@ -169,7 +169,7 @@ class GraphController < ApplicationController
       chart.add :series, '', [project.planeffort,project.days_booked()] if project.status == Project::StatusClosed
     end
     chart.add :axis_category_text, %w[x y]
-    
+    chart.add :theme, 'neutral'
      
     respond_to do |fmt|
       fmt.xml { render :xml => chart.to_xml }  
