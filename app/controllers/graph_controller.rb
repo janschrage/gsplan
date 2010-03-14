@@ -24,12 +24,10 @@ class GraphController < ApplicationController
    date = Date::today unless date
 
    # group by team and use subject as the key
-   capa_values = []
-   usage_values = []
-   free_values = []
-   labels = {}
-   counter = 0
-   chart = Ziya::Charts::Column.new("Resource Usage")
+   series_usage = []
+   series_free = []
+   teams = []
+   chart = Ziya::Charts::StackedColumn.new(license = nil,"Resource Usage")
 
    team_list = Team.find(:all)
    team_list.each do |team|
@@ -37,11 +35,17 @@ class GraphController < ApplicationController
      if capa > 0  #only if the team has capacity this month (temporary help from other LOBs,...)
        usage = team.usage(date)
        free = [0,capa-usage].max #no negative free capacity
-       chart.add :series, team.name, [ capa, usage, free]
+       series_usage << usage
+       series_free << free
+       teams << team.name
      end
-   end 
-   chart.add :axis_category_text, ["Capa","Use","Free"]
-     
+   end
+   if teams.size > 0
+     chart.add :series, "Used", series_usage
+     chart.add :series, "Free", series_free
+     chart.add :axis_category_text, teams
+   end
+  
    respond_to do |fmt|
      fmt.xml { render :xml => chart.to_xml }  
    end
@@ -55,7 +59,7 @@ class GraphController < ApplicationController
 
     worktype_distribution = calculate_worktype_distribution(date, team_id)
   
-    chart = Ziya::Charts::Pie.new("Worktype distribution")
+    chart = Ziya::Charts::Pie.new(license = nil,"Worktype distribution")
     
     worktypes = []
     workdays = []
@@ -81,7 +85,7 @@ class GraphController < ApplicationController
 
    projects = calculate_project_days(date)
    teams = Team::find(:all)
-   chart = Ziya::Charts::Column.new("Delta planning/execution (no. tasks)")
+   chart = Ziya::Charts::Column.new(license = nil,"Delta planning/execution")
    values = {}
 
    teams.each do |team|
@@ -106,7 +110,7 @@ class GraphController < ApplicationController
 
   def graph_project_age_current
    
-    chart = Ziya::Charts::Line.new("Project age - last update")
+    chart = Ziya::Charts::Line.new(license = nil,"Project age - last update")
     projects = project_age_current
     prj_week = {}
 
@@ -146,7 +150,7 @@ class GraphController < ApplicationController
     begda = flash[:report_begda].to_date if begda.nil?
     endda = flash[:report_endda].to_date if endda.nil?
   
-    chart = Ziya::Charts::Scatter.new("Planned vs. Booked")
+    chart = Ziya::Charts::Scatter.new(license = nil,"Planned vs. Booked")
     
     #Find the projects
     projects = Project::find(:all, :conditions => ["planend >= ? and planbeg <= ?", begda, endda])
@@ -156,6 +160,7 @@ class GraphController < ApplicationController
       chart.add :series, '', [project.planeffort,project.days_booked()] if project.status == Project::StatusClosed
     end
     chart.add :axis_category_text, %w[x y]
+    
      
     respond_to do |fmt|
       fmt.xml { render :xml => chart.to_xml }  
