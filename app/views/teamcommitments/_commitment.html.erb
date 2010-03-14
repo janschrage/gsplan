@@ -1,35 +1,31 @@
-<% if @changed_commitment == commitment[:id] then %>
-<tr id="current_commitment" class="<%= cycle('list-line-odd', 'list-line-even') %>">
-<% else %>
-<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-<% end %>
-    <td class="text"><%=h commitment[:teamname] %></td>
-    <td class="text"><%=h commitment[:yearmonth] %></td>
+<tr id=<%= "commitment-#{commitment.id}"-%> class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td class="text"><%=h commitment.team.name %></td>
+    <td class="text"><%=h commitment.yearmonth %></td>
 	<td class="text">
-            <%= if commitment[:preload] == true then  
+            <%= if commitment.project.preload? == true then  
                   "<img src=\"/images/icons/up.png\" title=\"Preload\" alt=\"Preload\">" 
             else
                   "<img src=\"/images/icons/down.png\" title=\"No Preload\" alt=\"No Preload\">" 
             end
         %></td>
-    <td class="text"><%=h commitment[:projectname] %></td>
-    <td><%=h commitment[:days] %></td>
-    <td class="text"><%= link_to 'Assign', :controller => "teamcommitments", :action => "assign_tasks", :id => commitment[:id]%>
-          <%Teamcommitment.find_by_id(commitment[:id]).employees.each do |ee|%>
+    <td class="text"><%=h commitment.project.name %></td>
+    <td><%=h commitment.days %></td>
+    <td class="text"><%= link_to 'Assign', :controller => "teamcommitments", :action => "assign_tasks", :id => commitment.id%>
+          <% commitment.employees.each do |ee|%>
             <%=h "- #{ee.name}"%> 
           <%end%>
     </td>
-    <td><img src="<%= teamcommitment_status_image(commitment[:status]) %>" alt="<%= teamcommitment_status_text(commitment[:status]) %>"></td>
+    <td><img src="<%= teamcommitment_status_image(commitment.status) %>" alt="<%= teamcommitment_status_text(commitment.status) %>"></td>
 <% if commitment[:status] == Teamcommitment::StatusProposed then %>
 <% if check_link_auth("teamcommitments","commitment_accept") then %>
-	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/button_ok.png", :border=>0, :title => "accept commitment", :alt => "accept commitment"), :url => {:controller => "teamcommitments", :action => "commitment_accept", :id => commitment[:id]},
+	<td class="cell-action"><%= link_to_remote image_tag("/images/icons/button_ok.png", :border=>0, :title => "accept commitment", :alt => "accept commitment"), :url => {:controller => "teamcommitments", :action => "commitment_accept", :id => commitment.id},
 	 :update => { :success => "commitment_list"} %></td>	
 <% end %>
 <% end %>
 <% if check_link_auth("teamcommitments","delete") then %>
-	<td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0, :title => "delete commitment", :alt => "delete commitment"), commitment[:classname], :confirm => 'Are you sure?', :method => :delete %></td>
+	<td class="cell-action"><%= link_to image_tag("/images/icons/editdelete.png", :border=>0, :title => "delete commitment", :alt => "delete commitment"), commitment, :confirm => 'Are you sure?', :method => :delete %></td>
 <% end %>
 <% if check_link_auth("teamcommitments","edit") then %>
-    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0, :title => "edit commitment", :alt => "edit commitment"), edit_teamcommitment_path(commitment[:classname]) %></td>
+    <td class="cell-action"><%= link_to image_tag("/images/icons/edit.png", :border=>0, :title => "edit commitment", :alt => "edit commitment"), edit_teamcommitment_path(commitment) %></td>
 <% end %>
 </tr>

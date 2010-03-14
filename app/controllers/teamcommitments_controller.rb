@@ -45,26 +45,8 @@ class TeamcommitmentsController < ApplicationController
     month_end = monthbegend[:last_day]
 
     @teamcommitments = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
- 
-    @outputlist = [] 
+    @teamcommitments = @teamcommitments.sort{|a,b| a.team_id<=>b.team_id}
     
-    @teamcommitments.each do |commitment| 
-        team = Team.find_by_id(commitment[:team_id])
-        teamname = team.name unless team == nil
-        project = Project.find_by_id(commitment[:project_id])
-        projectname = project.name unless project == nil
-        output = { :classname => commitment,
-                   :id => commitment.id,
-                   :teamname => teamname, 
-                   :yearmonth => commitment.yearmonth,
-                   :projectname => projectname,
-                   :days => commitment.days,
-                   :status => commitment.status,
-                   :preload => project.preload? }
-        @outputlist << output
-    end
-    @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
-
     session[:original_uri] = request.request_uri
 
     respond_to do |format|
@@ -166,52 +148,18 @@ class TeamcommitmentsController < ApplicationController
   def commitment_accept
     @commitment = Teamcommitment.find(params[:id])
     return false if @commitment.status != Teamcommitment::StatusProposed 
+    oldstatus = @commitment.status
     @commitment.status = Teamcommitment::StatusAccepted
     if @commitment.save
-      @changed_commitment = @commitment.id
-      set_commitment_list
+      @startcolor = "#ffff99"
       true
     else
+      @commitment.status = oldstatus
+      @startcolor = "#ff0000"
       false
     end
   end 
 
-  #TODO: Refactor. Code duplication.
-  def set_commitment_list
-    if cookies[:report_date]
-     @report_date =  Date::strptime(cookies[:report_date])
-    end
-    @report_date = Date.today unless @report_date
-    
-    #Only show for current month
-    monthbegend = get_month_beg_end(@report_date)
-    month_begin = monthbegend[:first_day]
-    month_end = monthbegend[:last_day]
-
-    if session[:team_id] then
-      team = Team.find_by_id(session[:team_id])
-      commitmentlist = team.commitments(@report_date)
-    else
-      commitmentlist = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
-    end
-    @outputlist = []
-    commitmentlist.each do |commitment|
-        team = Team.find_by_id(commitment[:team_id])
-        teamname = team.name unless team == nil
-        project = Project.find_by_id(commitment[:project_id])
-        projectname = project.name unless project == nil
-        output = { :classname => commitment,
-                   :id => commitment.id,
-                   :teamname => teamname, 
-                   :yearmonth => commitment.yearmonth,
-                   :projectname => projectname,
-                   :days => commitment.days,
-                   :status => commitment.status,
-                   :project.preload? => project.worktype.project.preload?  }
-        @outputlist << output    
-    end
-     @outputlist = @outputlist.sort{|a,b| a[:teamname]<=>b[:teamname]}
-  end
 
   def assign_tasks
     @teamcommitment = Teamcommitment.find(params[:id])
