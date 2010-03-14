@@ -16,7 +16,7 @@
 class ProjectsController < ApplicationController
   cache_sweeper :audit_sweeper
 
-  include Statistics, ProjectsHelper
+  include ProjectsHelper
   
   def index
     session[:original_uri] = request.request_uri

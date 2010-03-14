@@ -15,7 +15,7 @@
 
 class Teamcommitment < ActiveRecord::Base
   
-  include Statistics
+  include DateHelper
 
   StatusType = Struct.new(:id,:name)
 

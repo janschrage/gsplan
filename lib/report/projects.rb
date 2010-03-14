@@ -17,7 +17,7 @@
 # Implements the reporting related to projects.
 module Report::Projects
 
-  include Report::DateHelpers
+  include DateHelper
 
   # Reports on how much time it was since projects were last updated.
   # Currently open projects only.

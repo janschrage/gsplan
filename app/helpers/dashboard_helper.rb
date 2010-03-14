@@ -1,6 +1,5 @@
 module DashboardHelper
 
-  include Statistics
   ReportType = Struct.new(:report_type, :name)
 
   RepWT_Tracking = 1

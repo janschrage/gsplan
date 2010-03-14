@@ -15,7 +15,7 @@
 
 class DashboardController < ApplicationController
 
-  include Statistics, DashboardHelper, TeamcommitmentsHelper
+  include DashboardHelper, TeamcommitmentsHelper
   include Report::Process
   include Report::Worktype
   include Report::Projects

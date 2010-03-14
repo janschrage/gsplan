@@ -15,7 +15,7 @@
 
 class GraphController < ApplicationController
           
-  include Statistics, ProjectsHelper, DashboardHelper
+  include ProjectsHelper, DashboardHelper
   include Report::Worktype
   include Report::Projects
 
@@ -73,7 +73,11 @@ class GraphController < ApplicationController
    if worktypes.size > 0
      chart.add :axis_category_text, worktypes
      chart.add :series, workdays
-   end
+   else
+     chart.add :axis_category_text, ["no data for work distribution"]
+     chart.add :series, [0,0] 
+    end
+
    respond_to do |fmt|
      fmt.xml { render :xml => chart.to_xml }  
    end
@@ -83,7 +87,12 @@ class GraphController < ApplicationController
    date = Date::strptime(cookies[:report_date]) if cookies[:report_date]
    date = Date::today unless date
 
-   projects = calculate_project_days(date)
+   month = get_month_beg_end(date)
+   begda = month[:first_day]
+   endda = month[:last_day]
+
+   projects = Project::find(:all, :conditions => ["planbeg <= ? and ( planend >= ? or ( status <> ? and status <> ? )) and status <> ?", endda, begda, Project::StatusClosed, Project::StatusRejected, Project::StatusParked])
+
    teams = Team::find(:all)
    chart = Ziya::Charts::Column.new(license = nil,"Delta planning/execution")
    values = {}
@@ -95,8 +104,8 @@ class GraphController < ApplicationController
    chart.add :axis_category_text, ["pending", "0-20%", "20-40%", "40-60%","60-80%", ">80%", "ad-hoc"]
 
    projects.each do |project|
-      quintile = project_quintile(project[1][:committed_inper],project[1][:daysbooked])
-      team = Project.find_by_id(project[0]).country.team
+      quintile = project_quintile(project.days_committed(begda),project.days_booked(begda))
+      team = project.country.team
       values[team.id][quintile] += 1 if team.capacity(date) > 0
    end
   

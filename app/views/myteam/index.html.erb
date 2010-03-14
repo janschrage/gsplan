@@ -3,13 +3,14 @@
 "myteam", :report_date => @report_date<<(1) } %>
 <%= h Date::MONTHNAMES[@report_date.month]+" "+@report_date.year.to_s %>
 <%= link_to '>>>',  {:action => "index", :controller =>
-"myteam", :report_date => @report_date>>(1) } %></h2>
+"myteam", :report_date => @report_date>>(1) } %>
+</h2>
 
 <div class="table-wrap">
 <h2>Plan</h2>
 <div class="table-row">
 <div class="table-cell">
-<%= render(:partial => "teamcommitments/commitment_list", :object => @outputlist) %>
+<%= render(:partial => "teamcommitments/commitment_list", :object => @teamcommitments) %>
 </div>
 <div id="projectstats" class="table-cell">	
 <%= render(:partial => "projects/project_list", :object => @allprojects) %>
@@ -65,7 +66,7 @@
 <div class="table-row">
 
 <div id="projects-wrap">
-<h2>Report</h2>
+<h2>Ad-hoc Report </h2>
 <div id="projects-row">
 
 

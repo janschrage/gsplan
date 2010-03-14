@@ -15,7 +15,7 @@
 
 
 # Implements helpers for date calculations in reporting.
-module Report::DateHelpers
+module DateHelper
 
   # Calculates begin and end date of the month in which curdate lies.
   def get_month_beg_end(curdate)

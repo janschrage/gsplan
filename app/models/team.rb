@@ -14,7 +14,6 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 class Team < ActiveRecord::Base
-  include Report::DateHelpers
   include Report::Projects
 
   validates_presence_of :name, :description

@@ -17,8 +17,8 @@
 # Implements the reporting related to work distribution over the various work types.
 module Report::Worktype
 
-  include Report::DateHelpers
-
+  include DateHelper
+  
   # Implements a tracking report for distribution of work types per team and month
   # between begda and endda.
   def worktype_tracking(begda,endda)

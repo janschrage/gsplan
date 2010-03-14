@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user, :check_authorization, :except => :login  
 
   helper :all # include all helpers, all the time
-
   
   # Specify ZiYa Helpers  
   helper Ziya::HtmlHelpers::Charts

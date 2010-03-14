@@ -17,6 +17,8 @@
 # Implements the reporting related to the process, such as PCT, WIP.
 module Report::Process
 
+  include DateHelper
+
   # Reports on process lead times for project closed between begda and endda.
   # The dates used to calculate PLT for a project are planned begin date and last update.
   def project_plt(begda,endda)

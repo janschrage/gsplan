@@ -17,10 +17,10 @@ class TeamcommitmentsController < ApplicationController
   # GET /teamcommitments
   # GET /teamcommitments.xml
   cache_sweeper :audit_sweeper
+    
+  include DateHelper, Report::Projects
   
-  include Statistics
-  
-  #TODO: Refactor.
+
   def index
     session[:original_uri] = request.request_uri
     session[:team_id] = nil  #no filtering by team

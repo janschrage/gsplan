@@ -15,7 +15,7 @@
 
 class Project < ActiveRecord::Base
 
-  include Report::DateHelpers
+  include DateHelper
 
   StatusOpen = 0
   StatusInProcess = 1

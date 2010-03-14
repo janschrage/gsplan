@@ -18,7 +18,7 @@ require 'test_helper'
 
 class DateHelpersTest < ActiveSupport::TestCase
 
-  include Report::DateHelpers
+  include DateHelper
 
   def test_month_begend
     mdate = '2009-02-23'.to_date

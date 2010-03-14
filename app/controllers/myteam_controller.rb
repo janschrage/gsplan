@@ -15,7 +15,7 @@
 
 class MyteamController < ApplicationController
 
-  include Statistics, MyteamHelper
+  include DateHelper,MyteamHelper
 
   def index
 
@@ -44,20 +44,13 @@ class MyteamController < ApplicationController
     commitments = @team.commitments(@report_date)
     session[:original_uri] = request.request_uri
 
-    @outputlist = []
-    commitments.each do |commitment| 
-        project = Project.find_by_id(commitment.project_id)
-        projectname = project.name unless project == nil
-        output = { :classname => commitment,
-                   :id => commitment.id,
-                   :teamname => teamname, 
-                   :yearmonth => commitment.yearmonth,
-                   :projectname => projectname,
-                   :days => commitment.days,
-                   :status => commitment.status,
-                   :preload => project.preload? }
-        @outputlist << output
-    end
+    #Only show for current month
+    monthbegend = get_month_beg_end(@report_date)
+    month_begin = monthbegend[:first_day]
+    month_end = monthbegend[:last_day]
+
+    @teamcommitments = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
+    @teamcommitments = @teamcommitments.sort{|a,b| a.team_id<=>b.team_id}
 
     @currentprojects = team_projects_current
     @allprojects = @currentprojects
