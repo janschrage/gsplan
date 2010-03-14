@@ -1,0 +1,16 @@
+<table>
+<tr><th>Ctry</th><th>Project</th><th>Plan</th><th>Act</th><th>Trend</th><th>Cat</th><th>Stat</th></tr>
+<%   project_report.each do |project| %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+	<td class="text"><%= h project.country.isocode %></td>
+	<td class="text"><%= h project.name %></td>
+	<% plan       = project.days_committed(@report_date) 
+	   act        = project.days_booked(@report_date) %>
+	<td><%= h plan %></td>
+	<td><%= h act %></td>
+	<td><img src="<%= project_trend_image(plan,act) %>"></td>
+	<td class="text"><%= h project_quintile(plan,act) %></td>
+	<td><img src="<%= project_status_image(project.status) %>" title= "<%= project_status_text(project.status) %>" alt="<%= project_status_text(project.status) %>"></td>
+</tr>
+ <%end%>
+</table>
