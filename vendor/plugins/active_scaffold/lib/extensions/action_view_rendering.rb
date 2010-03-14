@@ -26,6 +26,7 @@ module ActionView #:nodoc:
       if args.first == :super
         options = args[1] || {}
         options[:locals] ||= {}
+        options[:locals].reverse_merge! @local_assigns
 
         known_extensions = [:erb, :rhtml, :rjs, :haml]
         # search through call stack for a template file (normally matches on first caller)
@@ -36,11 +37,11 @@ module ActionView #:nodoc:
 
         # paths previous to current template_path must be ignored to avoid infinite loops when is called twice or more
         index = 0
-        controller.class.view_paths.each_with_index do |active_scaffold_template_path, i|
+        controller.class.active_scaffold_paths.each_with_index do |active_scaffold_template_path, i|
           index = i + 1 and break if template_path.include? active_scaffold_template_path
         end
 
-        controller.class.view_paths.slice(index..-1).each do |active_scaffold_template_path|
+        controller.class.active_scaffold_paths.slice(index..-1).each do |active_scaffold_template_path|
           active_scaffold_template = File.join(active_scaffold_template_path, template)
           return render(:file => active_scaffold_template, :locals => options[:locals]) if File.file? active_scaffold_template
         end
@@ -70,5 +71,30 @@ module ActionView #:nodoc:
         return controller.class.controller_path, partial_path
       end
     end
+    
+    # This is the template finder logic, keep it updated with however we find stuff in rails
+    # currently this very similar to the logic in ActionBase::Base.render for options file
+    # TODO: Work with rails core team to find a better way to check for this.
+    def template_exists?(template_name, lookup_overrides = false)
+      begin
+        method = 'find_template'
+        method << '_without_active_scaffold' unless lookup_overrides
+        self.view_paths.send(method, template_name, @template_format)
+        return true
+      rescue ActionView::MissingTemplate => e
+        return false
+      end
+    end
   end
+end
+
+module ActionView::Renderable
+  def render_with_active_scaffold(view, local_assigns = {})
+    old_local_assigns = view.instance_variable_get(:@local_assigns)
+    view.instance_variable_set(:@local_assigns, local_assigns)
+    output = render_without_active_scaffold(view, local_assigns)
+    view.instance_variable_set(:@local_assigns, old_local_assigns)
+    output
+  end
+  alias_method_chain :render, :active_scaffold
 end

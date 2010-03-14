@@ -8,10 +8,18 @@ module ActiveScaffold::DataStructures
     attr_accessor :name
 
     # Whether to enable inplace editing for this column. Currently works for text columns, in the List.
-    attr_accessor :inplace_edit
+    attr_reader :inplace_edit
+    def inplace_edit=(value)
+      self.clear_link if value
+      @inplace_edit = value
+    end
 
     # Whether this column set is collapsed by default in contexts where collapsing is supported
     attr_accessor :collapsed
+
+    # Whether to enable add_existing for this column
+    attr_accessor :allow_add_existing
+    @allow_add_existing = true
     
     # Any extra parameters this particular column uses.  This is for create/update purposes.
     def params
@@ -29,7 +37,11 @@ module ActiveScaffold::DataStructures
     # a textual description of the column and its contents. this will be displayed with any associated form input widget, so you may want to consider adding a content example.
     attr_writer :description
     def description
-      @description.is_a?(Symbol) ? as_(@description, {:scope => [:activerecord, :attributes, active_record_class.to_s.underscore.to_sym]}) : as_(@description) if @description
+      if @description
+        @description
+      else
+        I18n.t name, :scope => [:activerecord, :description, active_record_class.to_s.underscore.to_sym], :default => ''
+      end
     end
 
     # this will be /joined/ to the :name for the td's class attribute. useful if you want to style columns on different ActiveScaffolds the same way, but the columns have different names.
@@ -85,28 +97,27 @@ module ActiveScaffold::DataStructures
 
     attr_writer :search_ui
     def search_ui
-      @search_ui || @form_ui
-    end
-
-    # DEPRECATED
-    alias :ui_type :form_ui
-    def ui_type=(val)
-      ::ActiveSupport::Deprecation.warn("config.columns[:#{name}].ui_type will disappear in version 2.0. Please use config.columns[:#{name}].form_ui instead.", caller)
-      self.form_ui = val
+      @search_ui || @form_ui || (@association && !polymorphic_association? ? :select : nil)
     end
 
     # a place to store dev's column specific options
     attr_accessor :options
     def options
-      @options || {}
+      @options ||= {}
     end
 
     # associate an action_link with this column
     attr_reader :link
 
+    # set an action_link to nested list or inline form in this column
+    def autolink?
+      @autolink and self.association.reverse
+    end
+
     # this should not only delete any existing link but also prevent column links from being automatically added by later routines
     def clear_link
-      @link = false
+      @link = nil
+      @autolink = false
     end
 
     def set_link(action, options = {})
@@ -115,7 +126,7 @@ module ActiveScaffold::DataStructures
       else
         options[:label] ||= self.label
         options[:position] ||= :after unless options.has_key?(:position)
-        options[:type] ||= :record
+        options[:type] ||= :member
         @link = ActiveScaffold::DataStructures::ActionLink.new(action, options)
       end
     end
@@ -133,6 +144,9 @@ module ActiveScaffold::DataStructures
     def includes=(value)
       @includes = value.is_a?(Array) ? value : [value] # automatically convert to an array
     end
+
+    # a collection of columns to load when eager loading is disabled, if it's nil all columns will be loaded
+    attr_accessor :select_columns
 
     # describes how to search on a column
     #   search = true           default, uses intelligent search sql
@@ -165,7 +179,14 @@ module ActiveScaffold::DataStructures
     # whether a blank row must be shown in the subform
     cattr_accessor :show_blank_record
     @@show_blank_record = true
-    attr_accessor :show_blank_record
+    attr_writer :show_blank_record
+    def show_blank_record?(associated)
+      if @show_blank_record
+        return false if self.through_association?
+        return false unless self.association.klass.authorized_for?(:crud_type => :create)
+        self.plural_association? or (self.singular_association? and associated.empty?)
+      end
+    end
 
     # methods for automatic links in singular association columns
     cattr_accessor :actions_for_association_links
@@ -218,27 +239,19 @@ module ActiveScaffold::DataStructures
       self.name = name.to_sym
       @column = active_record_class.columns_hash[self.name.to_s]
       @association = active_record_class.reflect_on_association(self.name)
+      @autolink = !@association.nil?
       @active_record_class = active_record_class
       @table = active_record_class.table_name
       @weight = 0
       @associated_limit = self.class.associated_limit
       @associated_number = self.class.associated_number
       @show_blank_record = self.class.show_blank_record
-      @actions_for_association_links = self.class.actions_for_association_links if @association
+      @actions_for_association_links = self.class.actions_for_association_links.clone if @association
+      @options = {:format => :i18n_number} if @column.try(:number?)
 
       # default all the configurable variables
       self.css_class = ''
-      if active_record_class.respond_to? :reflect_on_validations_for
-        column_names = [name]
-        column_names << @association.primary_key_name if @association
-        self.required = column_names.any? do |column_name|
-          active_record_class.reflect_on_validations_for(column_name.to_sym).any? do |val|
-            val.macro == :validates_presence_of or (val.macro == :validates_inclusion_of and not val.options[:allow_nil] and not val.options[:allow_blank])
-          end
-        end
-      else
-        self.required = false
-      end
+      self.required = false
       self.sort = true
       self.search_sql = true
 
@@ -274,14 +287,13 @@ module ActiveScaffold::DataStructures
     end
 
     def initialize_search_sql
-      if self.virtual?
-        self.search_sql = nil
-      else
+      self.search_sql = unless self.virtual?
         if association.nil?
-          self.search_sql = self.field.to_s
-        else
-          # with associations we really don't know what to sort by without developer intervention. we could sort on the primary key ('id'), but that's hardly useful. previously ActiveScaffold would try and search using the same sql as from :sort, but we decided to just punt.
-          self.search_sql = nil
+          self.field.to_s
+        elsif !self.polymorphic_association?
+          [association.klass.table_name, association.klass.primary_key].collect! do |str|
+            association.klass.connection.quote_column_name str
+          end.join('.')
         end
       end
     end
@@ -291,7 +303,7 @@ module ActiveScaffold::DataStructures
 
     # the table.field name for this column, if applicable
     def field
-      @field ||= [@table, field_name].join('.')
+      @field ||= [@active_record_class.connection.quote_column_name(@table), field_name].join('.')
     end
   end
 end

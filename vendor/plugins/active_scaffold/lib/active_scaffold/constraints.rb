@@ -51,7 +51,7 @@ module ActiveScaffold
             field = far_association.klass.primary_key
             table = far_association.table_name
 
-            active_scaffold_joins.concat([{k => v.keys.first}]) # e.g. {:den => :park}
+            active_scaffold_includes.concat([{k => v.keys.first}]) # e.g. {:den => :park}
             constraint_condition_for("#{table}.#{field}", v.values.first)
 
           # association column constraint
@@ -59,13 +59,13 @@ module ActiveScaffold
             if column.association.macro == :has_and_belongs_to_many
               active_scaffold_habtm_joins.concat column.includes
             else
-              active_scaffold_joins.concat column.includes
+              active_scaffold_includes.concat column.includes
             end
             condition_from_association_constraint(column.association, v)
 
           # regular column constraints
           elsif column.searchable?
-            active_scaffold_joins.concat column.includes
+            active_scaffold_includes.concat column.includes
             constraint_condition_for(column.search_sql, v)
           end
         # unknown-to-activescaffold-but-real-database-column constraint
@@ -91,8 +91,10 @@ module ActiveScaffold
       # please see the relevant tests for concrete examples.
       field = if [:has_one, :has_many].include?(association.macro)
         association.klass.primary_key
+      elsif [:has_and_belongs_to_many].include?(association.macro)
+        association.association_foreign_key
       else
-        association.options[:association_foreign_key] || association.options[:foreign_key] || association.association_foreign_key
+        association.options[:foreign_key] || association.name.to_s.foreign_key
       end
 
       table = case association.macro
@@ -102,11 +104,12 @@ module ActiveScaffold
         when :belongs_to
         active_scaffold_config.model.table_name
 
-        when :has_many
-        association.table_name
-
         else
         association.table_name
+      end
+
+      if association.options[:primary_key]
+        value = association.klass.find(value).send(association.options[:primary_key])
       end
 
       condition = constraint_condition_for("#{table}.#{field}", value)

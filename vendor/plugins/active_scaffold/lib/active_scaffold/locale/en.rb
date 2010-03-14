@@ -4,13 +4,13 @@
       :add => 'Add',
       :add_existing => 'Add Existing',
       :add_existing_model => 'Add Existing {{model}}',
-      :are_you_sure => 'Are you sure?',
+      :are_you_sure_to_delete => 'Are you sure you want to delete {{label}}?',
       :cancel => 'Cancel',
       :click_to_edit => 'Click to edit',
       :close => 'Close',
       :create => 'Create',
       :create_model => 'Create {{model}}',
-      :create_another => 'Create Another',
+      :create_another => 'Create Another {{model}}',
       :created_model => 'Created {{model}}',
       :create_new => 'Create New',
       :customize => 'Customize',
@@ -49,7 +49,7 @@
       :_to_  => ' to ',
       :update => 'Update',
       :update_model => 'Update {{model}}',
-      :udated_model => 'Updated {{model}}',
+      :updated_model => 'Updated {{model}}',
       :'=' => '=',
       :'>=' => '>=',
       :'<=' => '<=',
@@ -59,6 +59,7 @@
       :between => 'Between',
 
       # error_messages
+      :cant_destroy_record => "{{record}} can't be destroyed",
       :internal_error => 'Request Failed (code 500, Internal Error)',
       :version_inconsistency => 'Version inconsistency - this record has been modified since you started editing it.'
     }

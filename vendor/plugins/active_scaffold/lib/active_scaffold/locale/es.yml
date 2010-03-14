@@ -3,13 +3,13 @@ es:
     add: 'Añadir'
     add_existing: 'Añadir Existente'
     add_existing_model: 'Añadir {{model}} Existente'
-    are_you_sure: '¿Estás seguro?'
+    are_you_sure_to_delete: '¿Estás seguro de que quieres borrar {{label}}?'
     cancel: 'Cancelar'
     click_to_edit: 'Pulsa para editar'
     close: 'Cerrar'
     create: 'Crear'
     create_model: 'Crear {{model}}'
-    create_another: 'Crear Otro'
+    create_another: 'Crear Otro {{model}}'
     created_model: '{{model}} creado'
     create_new: 'Crear Nuevo'
     customize: 'Personalizar'
@@ -50,7 +50,7 @@ es:
     _to_ : ' a '
     update: 'Actualizar'
     update_model: 'Actualizar {{model}}'
-    udated_model: '{{model}} actualizado'
+    updated_model: '{{model}} actualizado'
     '=': '='
     '>=': '>='
     '<=': '<='
@@ -60,5 +60,6 @@ es:
     between: 'entre'
 
     # error_messages
+    cant_destroy_record: "No se pudo borrar {{record}}"
     internal_error: 'Petición fallida (código 500, error interno)'
     version_inconsistency: 'Inconsistencia de versiones - este registro se ha modificado después de que empezó a editarlo.'
