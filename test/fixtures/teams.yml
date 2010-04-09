@@ -9,3 +9,8 @@ two:
   id: 2
   name: mob
   description: the other team
+
+three:
+    id: 3
+    name: three
+    description: the other other team

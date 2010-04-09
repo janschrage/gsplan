@@ -49,8 +49,7 @@ class MyteamController < ApplicationController
     month_begin = monthbegend[:first_day]
     month_end = monthbegend[:last_day]
 
-    @teamcommitments = Teamcommitment.find(:all, :conditions => ["yearmonth <= ? and yearmonth >= ?",month_end, month_begin])
-    @teamcommitments = @teamcommitments.sort{|a,b| a.team_id<=>b.team_id}
+    @teamcommitments = commitments.sort{|a,b| a.team_id<=>b.team_id}
 
     @currentprojects = team_projects_current
     @allprojects = @currentprojects
