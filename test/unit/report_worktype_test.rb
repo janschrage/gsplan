@@ -42,4 +42,11 @@ class WorktypeReportTest < ActiveSupport::TestCase
     assert_equal 14,wt_track[1][:daysbooked]
   end
 
+  def test_worktype_adhoc
+    adhoc =  worktype_adhoc('2008-08-01'.to_date, '2008-11-30'.to_date)
+    assert_equal 4, adhoc.size
+    assert adhoc.find { |ah| ah[:team_id] == 2 && ah[:month] == "AUG" && ah[:tasks] == 2 && ah[:percentage] == 100 }  
+    assert adhoc.find { |ah| ah[:team_id] == 1 && ah[:month] == "NOV" && ah[:tasks] == 1 && ah[:percentage] == 50 }  
+    assert adhoc.find { |ah| ah[:team_id] == 2 && ah[:month] == "NOV" && ah[:tasks] == 0 && ah[:percentage] == 0 }  
+  end
 end

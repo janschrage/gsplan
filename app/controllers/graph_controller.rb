@@ -175,4 +175,6 @@ class GraphController < ApplicationController
       fmt.xml { render :xml => chart.to_xml }  
     end
   end
+  
+  
 end

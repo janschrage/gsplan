@@ -51,7 +51,7 @@
 </td>
 <td valign="top">
 <div id="graph_project_times">
-	<h2>Booked vs. Planned Effort</h2>
+	<h2>Booked vs. Planned Effort (closed prjs)</h2>
 <%= ziya_chart graph_project_times_url, :size => "500x500" %>
 </div>
 </td></tr></table>
@@ -87,6 +87,19 @@
 <%= render(:partial => "report_pct", :collection => report_data) %>
 </table>
 </td></tr></table>
+
+<!-- Ad hoc work -->
+<% elsif @report_type == DashboardHelper::RepWT_AdHoc_Perc then %>
+<h2>Ad Hoc Work</h2>
+<table>
+<tr>
+<td valign="top">
+<table>
+<th>Team</th><th>Month</th><th>Ad Hoc Tasks</th><th>Ad Hoc %</th>
+<%= render(:partial => "report_wt_adhoc", :collection => report_data) %>
+</table>
+</td>
+</tr></table>
 <%end%>
 <%end%>
 

@@ -53,6 +53,8 @@ class DashboardController < ApplicationController
         @wip = wip
         @projects_delivered = @report_data.size
         @pct = pct(begda,endda)
+      when RepWT_AdHoc_Perc:
+        @report_data = worktype_adhoc(begda,endda)
     end
     return true
   end

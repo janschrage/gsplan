@@ -119,4 +119,27 @@ module Report::Worktype
     return wt_distrib
   end
 
+  # Implements a tracking report for ad hoc work per team and month
+  # between begda and endda.
+  def worktype_adhoc(begda,endda)
+    teams=Team.find(:all)
+    curdate = begda
+    ad_hoc = []
+    until curdate > endda do
+      teams.each do |team|
+          team_ad_hoc = team.ad_hoc_work(curdate)
+          
+          ad_hoc << {   :month => Date::ABBR_MONTHNAMES[curdate.month], 
+                        :team_id => team.id,
+                        :adhoc_tasks => team_ad_hoc[:tasks],
+                        :adhoc_perc => team_ad_hoc[:percentage],
+                      } 
+        
+      end
+
+      curdate = curdate >> 1
+    end
+    return ad_hoc
+  end
+
 end
