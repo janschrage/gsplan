@@ -1,0 +1,6 @@
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td class="text"><%= h Team.find(report_wt_adhoc[:team_id]).name  %></td>
+<td class="text"><%= h report_wt_adhoc[:month] %></td>
+<td ><%= h report_wt_adhoc[:adhoc_tasks] %></td>
+<td ><%= h report_wt_adhoc[:adhoc_perc] %></td>
+</tr>
